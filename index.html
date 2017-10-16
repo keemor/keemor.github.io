@@ -1,35 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<title>keemor's progressive web app</title>
-
-<head>
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="author" content="@keemor" />
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <meta name="theme-color" content="#ec2125">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" sizes="192x192" href="/icon.png">
-</head>
-
-<body>
-  <h1>Hello Keemor!</h1>
-  <p>I'm hosted with GitHub Pages.</p>
-</body>
-<script>
-  if ('serviceWorker' in navigator) {
-    console.log("Will the service worker register?");
-    navigator.serviceWorker.register('service-worker.js')
-      .then(function (reg) {
-        console.log("Yes, it did.");
-      }).catch(function (err) {
-        console.log("No it didn't. This happened: ", err)
-      });
-  }
-
-</script>
-
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>keemor.github.io</title>
+  </head>
+  <body>
+  <script type="text/javascript" src="./bundle.js"></script></body>
 </html>
