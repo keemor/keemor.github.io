@@ -1,7 +1,9 @@
 # keemor
-The smallest Preact + Webpack stack with webpack dev server
+The smallest Preact Progressive Web App stack with:
+- webpack dev server included for local development
+- service worker for serving files when offline
 
-<p>Demo: <a href="https://keemor.github.io/"> https://keemor.github.io </a></p>
+<p>Demo <a href="https://keemor.github.io/"> https://keemor.github.io </a></p>
 
 Local development
 ```

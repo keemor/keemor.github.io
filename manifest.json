@@ -1,16 +1,16 @@
 {
-  "name": "keemor's progressive web app",
-  "short_name": "keemor-pwa",
-  "start_url": "index.html",
-  "theme_color": "#000000",
-  "background_color": "#FFFFFF",
-  "display": "standalone",
-  "orientation": "portrait",
-  "icons": [
-    {
-      "src": "/icon.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-    ]  
+    "name": "keemor's progressive web app",
+    "short_name": "keemor.hithub.io",
+    "start_url": "index.html",
+    "theme_color": "#000000",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
 }
