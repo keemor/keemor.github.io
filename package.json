@@ -1,0 +1,33 @@
+{
+    "name": "keemor.github.io",
+    "version": "1.0.0",
+    "description": "progressive web app",
+    "main": "service-worker.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start":
+            "webpack-dev-server --config webpack.dev.js --progress --profile --colors --inline",
+        "build":
+            "webpack -p --config webpack.prod.js --progress --profile --colors"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/keemor/keemor.github.io.git"
+    },
+    "author": "keemor",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/keemor/keemor.github.io/issues"
+    },
+    "homepage": "https://github.com/keemor/keemor.github.io#readme",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
+        "babel-preset-env": "^1.6.0",
+        "html-webpack-plugin": "^2.30.1",
+        "preact": "^8.2.5",
+        "webpack": "^3.7.1",
+        "webpack-dev-server": "^2.9.2"
+    }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="mdc-typography">
 <title>
-    keemor.github.io
+    <%= htmlWebpackPlugin.options.title %>
 </title>
 
 <head>
@@ -18,7 +18,7 @@
     <link rel="icon" sizes="192x192" href="/icon.png">
 </head>
 
-<body><script type="text/javascript" src="./bundle.js"></script></body>
+<body></body>
 <script>
     if ('serviceWorker' in navigator) {
         console.log("Will the service worker register?");
