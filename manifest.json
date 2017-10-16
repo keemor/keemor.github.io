@@ -1,6 +1,6 @@
 {
     "name": "keemor's progressive web app",
-    "short_name": "keemor.hithub.io",
+    "short_name": "keemor",
     "start_url": "index.html",
     "theme_color": "#000000",
     "background_color": "#FFFFFF",
