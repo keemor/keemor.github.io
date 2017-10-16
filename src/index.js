@@ -15,7 +15,8 @@ class Hello extends Component {
         return (
             <div>
                 <h2>
-                    Hello: <input value={text} onInput={this.onInput} />
+                    <label for="hello">Hello</label>:{" "}
+                    <input id="hello" value={text} onInput={this.onInput} />
                 </h2>
 
                 <h2>
