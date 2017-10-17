@@ -6,7 +6,7 @@ const webpack = require("webpack");
 module.exports = {
     entry: ["./src/index.js"],
     output: {
-        filename: "bundle.js",
+        filename: "dist/bundle.js",
         publicPath: publicPath
     },
     module: {
@@ -14,6 +14,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: ["babel-loader"]
+            },
+            {
+                test: /\.scss$|\.css$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
             }
         ]
     },

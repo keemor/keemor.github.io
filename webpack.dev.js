@@ -5,7 +5,7 @@ module.exports = {
     devtool: "cheap-module-source-map",
     entry: ["./src/index.js"],
     output: {
-        filename: "bundle.js",
+        filename: "dist/bundle.js",
         publicPath: publicPath
     },
     plugins: [
@@ -20,6 +20,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: ["babel-loader"]
+            },
+            {
+                test: /\.scss$|\.css$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
             }
         ]
     },

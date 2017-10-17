@@ -1,30 +1,31 @@
+import { Router } from "preact-router";
 import { h, render, Component } from "preact";
+import { createHashHistory } from "history";
 
-class Hello extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { text: "type" };
-        this.onInput = this.onInput.bind(this);
-    }
+import "preact-material-components/Typography/style.css";
+import "preact-material-components/Theme/style.css";
 
-    onInput(e) {
-        this.setState({ text: e.target.value });
-    }
+//import 'preact/debug';
+//import 'preact/devtools';
 
-    render(props, { text }) {
+import Header from "./header";
+import Hello from "./hello";
+import Home from "./home";
+import About from "./about";
+
+class Index extends Component {
+    render() {
         return (
             <div>
-                <h2>
-                    <label for="hello">Hello</label>:{" "}
-                    <input id="hello" value={text} onInput={this.onInput} />
-                </h2>
-
-                <h2>
-                    Hello: <span>{text} </span>
-                </h2>
+                <Header />
+                <Router history={createHashHistory()}>
+                    <Home default path="/" />
+                    <Hello path="/hello" />
+                    <About path="/about" />
+                </Router>
             </div>
         );
     }
 }
 
-render(<Hello />, document.body);
+render(<Index />, document.body);

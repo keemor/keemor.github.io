@@ -1,5 +1,7 @@
 # keemor
 The smallest Preact Progressive Web App stack with:
+- preact-router with history
+- preact-material-components
 - webpack dev server included for local development
 - service worker for serving files when offline
 - 100% in Lighthouse Audit :)
