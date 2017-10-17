@@ -1,7 +1,7 @@
 self.addEventListener("install", function(e) {
     e.waitUntil(
         caches.open("keemor.github.io").then(function(cache) {
-            return cache.addAll(["/", "/index.html", "/bundle.js"]);
+            return cache.addAll(["/", "/index.html", "/dist/bundle.js"]);
         })
     );
 });
