@@ -1,12 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const publicPath = "/";
+const publicPath = "./";
 module.exports = {
     devtool: "cheap-module-source-map",
     entry: ["./src/index.js"],
     output: {
-        filename: "dist/bundle.js",
-        publicPath: publicPath
+        filename: "bundle.js"
     },
     plugins: [
         new HtmlWebpackPlugin({
