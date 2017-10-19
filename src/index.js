@@ -9,9 +9,9 @@ import "preact-material-components/Theme/style.css";
 //import 'preact/devtools';
 
 import Header from "./header";
-import Hello from "./hello";
-import Home from "./home";
-import About from "./about";
+import Hello from "./route/hello";
+import Home from "./route/home";
+import About from "./route/about";
 
 class Index extends Component {
     render() {
