@@ -93,26 +93,27 @@ export default class Header extends Component {
                             </Drawer.TemporaryDrawerHeader> */}
                             <Drawer.TemporaryDrawerContent>
                                 <List>
-                                    <List.LinkItem>
-                                        <Link
-                                            href="/"
-                                            class="mdc-list-item"
-                                            onClick={this._onClick}
-                                        >
+                                    <Link
+                                        href="/"
+                                        class="mdc-list-item"
+                                        onClick={this._onClick}
+                                    >
+                                        <List.LinkItem>
                                             <List.ItemIcon>home</List.ItemIcon>
                                             Home
-                                        </Link>
-                                    </List.LinkItem>
-                                    <List.LinkItem>
-                                        <Link
-                                            href="/hello"
-                                            class="mdc-list-item"
-                                            onClick={this._onClick}
-                                        >
+                                        </List.LinkItem>
+                                    </Link>
+
+                                    <Link
+                                        href="/hello"
+                                        class="mdc-list-item"
+                                        onClick={this._onClick}
+                                    >
+                                        <List.LinkItem>
                                             <List.ItemIcon>code</List.ItemIcon>
                                             Hello
-                                        </Link>
-                                    </List.LinkItem>
+                                        </List.LinkItem>
+                                    </Link>
                                 </List>
                             </Drawer.TemporaryDrawerContent>
                         </Drawer.TemporaryDrawer>
