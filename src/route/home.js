@@ -8,7 +8,7 @@ export default class Home extends Component {
             <Card>
                 <Card.Primary>
                     <Card.Title large={true}>
-                        Boilerplate for Preact Progressive Web App
+                        Preact Progressive Web App Boilerplate
                     </Card.Title>
                 </Card.Primary>
                 <Card.Media>

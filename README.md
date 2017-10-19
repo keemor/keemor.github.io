@@ -1,4 +1,4 @@
-# Boilerplate for Preact Progressive Web App
+# Preact Progressive Web App Boilerplate
 
 The smallest Preact Progressive Web App stack with:
 - ES6 & JSX supported by webpack
