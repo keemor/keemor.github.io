@@ -4,7 +4,7 @@ import { createHashHistory } from "history";
 
 import "preact-material-components/Typography/style.css";
 import "preact-material-components/Theme/style.css";
-
+import "./style/style.scss";
 //import 'preact/debug';
 //import 'preact/devtools';
 
@@ -18,11 +18,13 @@ class Index extends Component {
         return (
             <div>
                 <Header />
-                <Router history={createHashHistory()}>
-                    <Home default path="/" />
-                    <Hello path="/hello" />
-                    <About path="/about" />
-                </Router>
+                <div class="marginTop">
+                    <Router history={createHashHistory()}>
+                        <Home default path="/" />
+                        <Hello path="/hello" />
+                        <About path="/about" />
+                    </Router>
+                </div>
             </div>
         );
     }

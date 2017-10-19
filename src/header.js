@@ -68,7 +68,7 @@ export default class Header extends Component {
     }
     render() {
         return (
-            <Toolbar>
+            <Toolbar fixed={true}>
                 <Toolbar.Row>
                     <Toolbar.Section align-start={true}>
                         <Toolbar.Icon
@@ -134,15 +134,13 @@ export default class Header extends Component {
                                     this.menu = menu;
                                 }}
                             >
-                                <Menu.Item>
-                                    <Link
-                                        href="/about"
-                                        class="mdc-list-item"
-                                        onClick={this._onClickMenu}
-                                    >
-                                        About
-                                    </Link>
-                                </Menu.Item>
+                                <Link
+                                    href="/about"
+                                    class="mdc-list-item"
+                                    onClick={this._onClickMenu}
+                                >
+                                    <Menu.Item>About</Menu.Item>
+                                </Link>
                             </Menu>
                         </Menu.Anchor>
                     </Toolbar.Section>

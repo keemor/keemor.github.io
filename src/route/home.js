@@ -1,14 +1,13 @@
 import { h, render, Component } from "preact";
 import Card from "preact-material-components/Card";
 import "preact-material-components/Card/style.css";
-import "../style/style.scss";
 
 export default class Home extends Component {
     render(props, { text }) {
         return (
             <Card>
                 <Card.Primary>
-                    <Card.Title className="mdc-card__title--large">
+                    <Card.Title large={true}>
                         Boilerplate for Preact Progressive Web App
                     </Card.Title>
                 </Card.Primary>
