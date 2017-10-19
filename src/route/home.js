@@ -14,7 +14,6 @@ export default class Home extends Component {
                 <Card.Media>
                     The smallest Preact Progressive Web App stack with:
                     <ul>
-                        <li>ES6 & JSX supported by webpack </li>
                         <li>
                             <a href="https://github.com/developit/preact-router">
                                 preact router
@@ -26,6 +25,7 @@ export default class Home extends Component {
                                 preact material components
                             </a>
                         </li>
+                        <li>ES6 & JSX supported by webpack </li>
                         <li>
                             webpack dev server included for local development
                         </li>
@@ -33,12 +33,6 @@ export default class Home extends Component {
                         <li>SASS support</li>
                         <li>100% in Lighthouse Audit :)</li>
                     </ul>
-                    <p>
-                        Demo{" "}
-                        <a href="https://keemor.github.io/">
-                            https://keemor.github.io
-                        </a>
-                    </p>
                     <p>
                         Source code{" "}
                         <a href="https://github.com/keemor/keemor.github.io">
