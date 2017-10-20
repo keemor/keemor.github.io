@@ -5,7 +5,7 @@
 The smallest Preact Progressive Web App stack with:
 - preact-router with history
 - preact-material-components
-- ES6 & JSX supported by webpack
+- ES6 & JSX supported by babel & webpack
 - webpack dev server included for local development
 - service worker for serving files when offline
 - SASS support

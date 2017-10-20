@@ -20,6 +20,13 @@
         "url": "https://github.com/keemor/keemor.github.io/issues"
     },
     "homepage": "https://github.com/keemor/keemor.github.io#readme",
+    "keywords": [
+        "webpack",
+        "babel",
+        "preact",
+        "preact-material-components",
+        "preact-router"
+    ],
     "devDependencies": {
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",

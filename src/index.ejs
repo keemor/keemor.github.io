@@ -10,34 +10,34 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="@keemor" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="Preact Progressive Web App Boilerplate" />
+    <meta name="keywords" content="webpack, babel, preact, preact-material-components, preact-router" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimal-ui" />
     <meta name="theme-color" content="#3f51b5">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" sizes="192x192" href="/img/icon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8041220-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-8041220-2');
+    </script>
 </head>
-<noscript> Enable JavaScript to see this page</noscript>
+<noscript>Enable JavaScript to see this page</noscript>
 
 <body></body>
 <script>
-    if ('serviceWorker' in navigator) {
-        console.log("Will the service worker register?");
-        navigator.serviceWorker.register('service-worker.js')
-            .then(function (reg) {
-                console.log("Yes, it did.");
-            }).catch(function (err) {
-                console.log("No it didn't. This happened: ", err)
-            });
-    }
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8041220-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-8041220-2');
+        if ('serviceWorker' in navigator) {
+            console.log("Will the service worker register?");
+            navigator.serviceWorker.register('service-worker.js')
+                .then(function (reg) {
+                    console.log("Yes, it did.");
+                }).catch(function (err) {
+                    console.log("No it didn't. This happened: ", err)
+                });
+        }
 </script>
 
 </html>

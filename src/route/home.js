@@ -25,7 +25,7 @@ export default class Home extends Component {
                                 preact material components
                             </a>
                         </li>
-                        <li>ES6 & JSX supported by webpack </li>
+                        <li>ES6 & JSX supported by webpack & babel </li>
                         <li>
                             webpack dev server included for local development
                         </li>
