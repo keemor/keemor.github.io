@@ -1,6 +1,6 @@
 {
     "name": "keemor.github.io",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Preact Progressive Web App Boilerplate",
     "main": "src/index.js",
     "scripts": {
@@ -24,7 +24,6 @@
         "babel-loader": "^7.1.2",
         "babel-plugin-transform-react-jsx": "^6.24.1",
         "babel-preset-env": "^1.6.0",
-        "compression-webpack-plugin": "^1.0.1",
         "css-loader": "^0.28.7",
         "history": "^4.7.2",
         "html-webpack-plugin": "^2.30.1",

@@ -1,7 +1,6 @@
 import webpack from "webpack";
 import { resolve } from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import CompressionPlugin from "compression-webpack-plugin";
 import { getIfUtils, removeEmpty } from "webpack-config-utils";
 //https://medium.com/@ryandrewjohnson/one-webpack-config-to-rule-them-all-environments-that-is-277457769779
 
@@ -44,14 +43,6 @@ export default env => {
                         cache: true,
                         workers: 2
                     }
-                })
-            ),
-            ifProd(
-                new CompressionPlugin({
-                    asset: "[path].gz[query]",
-                    algorithm: "gzip",
-                    test: /\.(js)$/,
-                    deleteOriginalAssets: true
                 })
             ),
             new HtmlWebpackPlugin({
