@@ -5,9 +5,7 @@ export default class About extends Component {
         return (
             <div>
                 <h2>Source code</h2>
-                <a href="https://github.com/keemor/keemor.github.io">
-                    https://github.com/keemor/keemor.github.io
-                </a>
+                <a href="https://github.com/keemor/keemor.github.io">https://github.com/keemor/keemor.github.io</a>
             </div>
         );
     }

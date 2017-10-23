@@ -1,8 +1,8 @@
-# Preact Progressive Web App Boilerplate
+# Preact Progressive Web App Boilerplate 2017
 
 <p><strong>Demo</strong> <a href="https://keemor.github.io/"> https://keemor.github.io </a></p>
 
-The smallest Preact Progressive Web App stack with:
+The smallest Preact Progressive Web App 2017 stack with:
 - preact-router with history
 - preact-material-components
 - ES6 & JSX supported by babel & webpack

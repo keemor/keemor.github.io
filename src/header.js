@@ -29,12 +29,7 @@ export default class Header extends Component {
             target = node.getAttribute("target");
 
         // ignore links with targets and non-path URLs
-        if (
-            !href ||
-            !href.match(/^\//g) ||
-            (target && !target.match(/^_?self$/i))
-        )
-            return;
+        if (!href || !href.match(/^\//g) || (target && !target.match(/^_?self$/i))) return;
 
         // attempt to route, if no match simply cede control to browser
         return route(href);
@@ -93,22 +88,14 @@ export default class Header extends Component {
                             </Drawer.TemporaryDrawerHeader> */}
                             <Drawer.TemporaryDrawerContent>
                                 <List>
-                                    <Link
-                                        href="/"
-                                        class="mdc-list-item"
-                                        onClick={this._onClick}
-                                    >
+                                    <Link href="/" class="mdc-list-item" onClick={this._onClick}>
                                         <List.LinkItem>
                                             <List.ItemIcon>home</List.ItemIcon>
                                             Home
                                         </List.LinkItem>
                                     </Link>
 
-                                    <Link
-                                        href="/hello"
-                                        class="mdc-list-item"
-                                        onClick={this._onClick}
-                                    >
+                                    <Link href="/hello" class="mdc-list-item" onClick={this._onClick}>
                                         <List.LinkItem>
                                             <List.ItemIcon>code</List.ItemIcon>
                                             Hello
@@ -135,11 +122,7 @@ export default class Header extends Component {
                                     this.menu = menu;
                                 }}
                             >
-                                <Link
-                                    href="/about"
-                                    class="mdc-list-item"
-                                    onClick={this._onClickMenu}
-                                >
+                                <Link href="/about" class="mdc-list-item" onClick={this._onClickMenu}>
                                     <Menu.Item>About</Menu.Item>
                                 </Link>
                             </Menu>

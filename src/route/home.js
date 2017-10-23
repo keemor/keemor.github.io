@@ -7,18 +7,13 @@ export default class Home extends Component {
         return (
             <Card>
                 <Card.Primary>
-                    <Card.Title large={true}>
-                        Preact Progressive Web App Boilerplate
-                    </Card.Title>
+                    <Card.Title large={true}>Preact Progressive Web App Boilerplate 2017</Card.Title>
                 </Card.Primary>
                 <Card.Media>
                     The smallest Preact Progressive Web App stack with:
                     <ul>
                         <li>
-                            <a href="https://github.com/developit/preact-router">
-                                preact router
-                            </a>{" "}
-                            with history
+                            <a href="https://github.com/developit/preact-router">preact router</a> with history
                         </li>
                         <li>
                             <a href="https://github.com/prateekbh/preact-material-components">
@@ -26,9 +21,7 @@ export default class Home extends Component {
                             </a>
                         </li>
                         <li>ES6 & JSX supported by webpack & babel </li>
-                        <li>
-                            webpack dev server included for local development
-                        </li>
+                        <li>webpack dev server included for local development</li>
                         <li>service worker for serving files when offline</li>
                         <li>SASS support</li>
                         <li>100% in Lighthouse Audit :)</li>
