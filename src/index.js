@@ -5,7 +5,6 @@ import { createHashHistory } from "history";
 import "preact-material-components/Typography/style.css";
 import "preact-material-components/Theme/style.css";
 import "./style/style.scss";
-
 import "preact/debug";
 
 import Header from "./header";
@@ -15,7 +14,7 @@ import About from "./route/about";
 
 class Index extends Component {
     logPageView() {
-        window.dataLayer.push({ page: window.location.hash });
+        window.dataLayer.push({ event: window.location.hash });
     }
 
     render() {
