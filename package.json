@@ -6,7 +6,8 @@
     "scripts": {
         "test:build": "webpack --config webpack.config.babel.js --env.prod",
         "start": "webpack-dev-server --config webpack.config.babel.js --env.dev",
-        "build": "webpack --config webpack.config.babel.js --env.prod"
+        "build": "webpack --config webpack.config.babel.js --env.prod",
+        "build:watch": "webpack -w --config webpack.config.babel.js --env.prod"
     },
     "repository": {
         "type": "git",
