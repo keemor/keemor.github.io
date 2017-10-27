@@ -26,11 +26,9 @@ export default env => {
             ]
         },
         plugins: removeEmpty([
-            ifProd(
-                new webpack.DefinePlugin({
-                    "process.env.NODE_ENV": JSON.stringify("production")
-                })
-            ),
+            new webpack.DefinePlugin({
+                "process.env.NODE_ENV": JSON.stringify(ifProd("production", "development"))
+            }),
             ifProd(
                 new webpack.optimize.UglifyJsPlugin({
                     ie8: false,
