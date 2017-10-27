@@ -15,7 +15,7 @@ import About from "./route/about";
 
 class Index extends Component {
     logPageView() {
-        window.dataLayer.push({ page: window.location.pathname + window.location.search });
+        window.dataLayer.push({ page: window.location.hash });
     }
 
     render() {
