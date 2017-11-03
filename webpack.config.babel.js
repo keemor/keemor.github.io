@@ -25,6 +25,12 @@ export default env => {
                 }
             ]
         },
+        resolve: {
+            extensions: [".js"],
+            alias: {
+                ["~"]: resolve(__dirname, "src")
+            }
+        },
         plugins: removeEmpty([
             new webpack.DefinePlugin({
                 "process.env.NODE_ENV": JSON.stringify(ifProd("production", "development"))

@@ -4,3 +4,7 @@ li {
 .marginTop {
     margin-top: 70px;
 }
+.toolbarTitleLink {
+    color: var(--mdc-theme-text-primary-on-primary, white);
+    text-decoration: none;
+}
