@@ -101,6 +101,13 @@ export default class Header extends Component {
                                             Hello
                                         </List.LinkItem>
                                     </Link>
+
+                                    <Link href="/router" class="mdc-list-item" onClick={this._onClick}>
+                                        <List.LinkItem>
+                                            <List.ItemIcon>code</List.ItemIcon>
+                                            Router
+                                        </List.LinkItem>
+                                    </Link>
                                 </List>
                             </Drawer.TemporaryDrawerContent>
                         </Drawer.TemporaryDrawer>

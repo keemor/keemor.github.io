@@ -1,23 +1,12 @@
-import { Router } from "preact-router";
 import { h, render, Component } from "preact";
-import { createHashHistory } from "history";
+import { HighLight, THEME } from "preact-highlight";
 
-import "preact-material-components/Typography/style.css";
-import "preact-material-components/Theme/style.css";
-import "./style/style.scss";
-import "preact/debug";
-
-import Header from "./header";
-import Hello from "./route/hello";
-import Home from "./route/home";
-import About from "./route/about";
-import CodeRouter from "./route/code/router";
-
-class Index extends Component {
+export default class Router extends Component {
+    render(props, { text }) {
+        const demo = `class Index extends Component {
     logPageView() {
         window.dataLayer.push({ event: window.location.hash });
-    }
-
+    }        
     render() {
         return (
             <div>
@@ -33,6 +22,8 @@ class Index extends Component {
             </div>
         );
     }
-}
+    }`;
 
-render(<Index />, document.body);
+        return <HighLight language="JavaScript" className="cmp-high-light" code={demo} theme={THEME.monokaiSublime} />;
+    }
+}

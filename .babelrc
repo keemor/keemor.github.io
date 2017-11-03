@@ -1,4 +1,4 @@
 {
     "presets": ["env"],
-    "plugins": [["transform-react-jsx", { "pragma": "h" }]]
+    "plugins": ["transform-object-assign", ["transform-react-jsx", { "pragma": "h" }]]
 }

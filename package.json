@@ -1,41 +1,49 @@
 {
-    "name": "keemor.github.io",
-    "version": "1.0.2",
-    "description": "Preact Progressive Web App Boilerplate",
-    "main": "src/index.js",
-    "scripts": {
-        "test:build": "webpack --config webpack.config.babel.js --env.prod",
-        "start": "webpack-dev-server --config webpack.config.babel.js --env.dev",
-        "build": "webpack --config webpack.config.babel.js --env.prod",
-        "build:watch": "webpack -w --config webpack.config.babel.js --env.prod"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/keemor/keemor.github.io.git"
-    },
-    "author": "keemor@keemor.com",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/keemor/keemor.github.io/issues"
-    },
-    "homepage": "https://github.com/keemor/keemor.github.io#readme",
-    "keywords": ["webpack", "babel", "preact", "preact-material-components", "preact-router"],
-    "devDependencies": {
-        "babel-core": "^6.26.0",
-        "babel-loader": "^7.1.2",
-        "babel-plugin-transform-react-jsx": "^6.24.1",
-        "babel-preset-env": "^1.6.0",
-        "css-loader": "^0.28.7",
-        "history": "^4.7.2",
-        "html-webpack-plugin": "^2.30.1",
-        "node-sass": "^4.5.3",
-        "preact": "^8.2.5",
-        "preact-material-components": "^1.2.2",
-        "preact-router": "^2.5.7",
-        "sass-loader": "^6.0.6",
-        "style-loader": "^0.19.0",
-        "webpack": "^3.7.1",
-        "webpack-config-utils": "^2.3.0",
-        "webpack-dev-server": "^2.9.2"
-    }
+  "name": "keemor.github.io",
+  "version": "1.0.2",
+  "description": "Preact Progressive Web App Boilerplate",
+  "main": "src/index.js",
+  "scripts": {
+    "test:build": "webpack --config webpack.config.babel.js --env.prod",
+    "start": "webpack-dev-server --config webpack.config.babel.js --env.dev",
+    "build": "webpack --config webpack.config.babel.js --env.prod",
+    "build:watch": "webpack -w --config webpack.config.babel.js --env.prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keemor/keemor.github.io.git"
+  },
+  "author": "keemor@keemor.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keemor/keemor.github.io/issues"
+  },
+  "homepage": "https://github.com/keemor/keemor.github.io#readme",
+  "keywords": [
+    "webpack",
+    "babel",
+    "preact",
+    "preact-material-components",
+    "preact-router"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "history": "^4.7.2",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "preact": "^8.2.5",
+    "preact-highlight": "github:keemor/preact-highlight",
+    "preact-material-components": "^1.2.2",
+    "preact-router": "^2.5.7",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.7.1",
+    "webpack-config-utils": "^2.3.0",
+    "webpack-dev-server": "^2.9.2"
+  }
 }
