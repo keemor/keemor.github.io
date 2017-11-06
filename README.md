@@ -11,7 +11,7 @@ The smallest Preact Progressive Web App 2017 stack with:
 - <a href="https://github.com/webpack/webpack-dev-server">webpack dev server</a> included for local development
 - SASS support
 - Compatible with IE11 and higher
-- 100% in Lighthouse Audit :)
+- 100% in <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse Audit</a>
 
 Local development
 ```
