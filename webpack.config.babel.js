@@ -55,10 +55,15 @@ export default env => {
                 template: "src/index.ejs",
                 filename: "index.html"
             }),
-            new OfflinePlugin()
+            new OfflinePlugin({
+                ServiceWorker: {
+                    events: true
+                }
+            })
         ]),
         devServer: {
             host: "localhost",
+            port: 3333,
             watchContentBase: true,
             historyApiFallback: true
         }
