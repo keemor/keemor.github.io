@@ -1,6 +1,7 @@
 import webpack from "webpack";
 import { resolve } from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import OfflinePlugin from "offline-plugin";
 import { getIfUtils, removeEmpty } from "webpack-config-utils";
 //https://medium.com/@ryandrewjohnson/one-webpack-config-to-rule-them-all-environments-that-is-277457769779
 
@@ -53,7 +54,8 @@ export default env => {
                 title: "keemor.github.io",
                 template: "src/index.ejs",
                 filename: "index.html"
-            })
+            }),
+            new OfflinePlugin()
         ]),
         devServer: {
             host: "localhost",

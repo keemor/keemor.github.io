@@ -36,6 +36,7 @@
     "history": "^4.7.2",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
+    "offline-plugin": "^4.8.4",
     "preact": "^8.2.5",
     "preact-highlight": "github:keemor/preact-highlight",
     "preact-material-components": "^1.2.2",
