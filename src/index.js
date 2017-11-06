@@ -1,7 +1,7 @@
 import { Router } from "preact-router";
 import { h, render, Component } from "preact";
 import { createHashHistory } from "history";
-import * as OfflinePluginRuntime from "offline-plugin/runtime";
+import * as runtime from "offline-plugin/runtime";
 
 import "preact-material-components/Typography/style.css";
 import "preact-material-components/Theme/style.css";
@@ -17,7 +17,7 @@ import CodeRouter from "./route/code/router";
 class Index extends Component {
     constructor(props) {
         super(props);
-        OfflinePluginRuntime.install({
+        runtime.install({
             onUpdating: () => {
                 console.log("SW Event:", "onUpdating");
             },
