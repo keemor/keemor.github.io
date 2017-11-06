@@ -1,0 +1,10 @@
+CACHE MANIFEST
+#ver:2017-11-6 11:08:14
+#plugin:4.8.4
+
+CACHE:
+../dist/bundle.js
+../
+
+NETWORK:
+*
