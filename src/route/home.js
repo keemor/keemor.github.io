@@ -46,10 +46,7 @@ npm start`;
                         <li>SASS support</li>
                         <li>Compatible with IE11 and higher</li>
                         <li>
-                            100% in <a href="https://developers.google.com/web/tools/lighthouse/">
-                                Lighthouse Audit
-                            </a>{" "}
-                            :)
+                            100% in <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse Audit</a>
                         </li>
                     </ul>
                     <p>
