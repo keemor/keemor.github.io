@@ -1,7 +1,7 @@
 {
     "name": "keemor's progressive web app",
     "short_name": "keemor",
-    "start_url": "index.html",
+    "start_url": "/#",
     "theme_color": "#3f51b5",
     "background_color": "#FFFFFF",
     "display": "standalone",
