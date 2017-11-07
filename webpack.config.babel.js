@@ -5,8 +5,10 @@ import OfflinePlugin from "offline-plugin";
 import { getIfUtils, removeEmpty } from "webpack-config-utils";
 //https://medium.com/@ryandrewjohnson/one-webpack-config-to-rule-them-all-environments-that-is-277457769779
 
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+
 export default env => {
-    const { ifProd, ifNotProd } = getIfUtils(env);
+    const { ifProd, ifNotProd, ifTest } = getIfUtils(env);
 
     return {
         devtool: ifNotProd("cheap-module-source-map"),
@@ -59,7 +61,8 @@ export default env => {
                 ServiceWorker: {
                     events: true
                 }
-            })
+            }),
+            ifTest(new BundleAnalyzerPlugin())
         ]),
         devServer: {
             host: "localhost",
