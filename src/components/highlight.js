@@ -1,13 +1,24 @@
 import { h, render, Component } from "preact";
-//import { HighLight, THEME } from "preact-highlight";
+
+import hljs from "highlight.js/lib/highlight";
+import javascript from "highlight.js/lib/languages/javascript";
+import "highlight.js/styles/monokai-sublime.css";
 
 export default class HighLightJS extends Component {
+    componentDidMount() {
+        hljs.registerLanguage("javascript", javascript);
+        hljs.highlightBlock(this.element);
+    }
+
     render({ code }) {
         return (
-            <pre>
+            <pre
+                ref={ref => {
+                    this.element = ref;
+                }}
+            >
                 <code>{code}</code>
             </pre>
         );
-        //return <HighLight language="JavaScript" className="cmp-high-light" code={code} theme={THEME.monokaiSublime} />;
     }
 }
