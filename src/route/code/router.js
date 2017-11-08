@@ -4,8 +4,8 @@ import Card from "preact-material-components/Card";
 import HighLightJS from "~/components/highlight";
 
 export default class Router extends Component {
-    render(props, { text }) {
-        const demo = `
+  render(props, { text }) {
+    const demo = `
 import { Router } from "preact-router";
 import { h, render, Component } from "preact";
 import { createHashHistory } from "history";
@@ -31,18 +31,23 @@ class Index extends Component {
     }
 }`;
 
-        return (
-            <Card>
-                <Card.Primary>
-                    <Card.Title>
-                        Example of <a href="https://github.com/developit/preact-router">preact router</a> with hash{" "}
-                        <a href="https://github.com/ReactTraining/history">history</a> support
-                    </Card.Title>
-                </Card.Primary>
-                <Card.Media>
-                    <HighLightJS code={demo} />
-                </Card.Media>
-            </Card>
-        );
-    }
+    return (
+      <Card>
+        <Card.Primary>
+          <Card.Title>
+            Example of{" "}
+            <a href="https://github.com/developit/preact-router">
+              preact router
+            </a>{" "}
+            with hash{" "}
+            <a href="https://github.com/ReactTraining/history">history</a>{" "}
+            support
+          </Card.Title>
+        </Card.Primary>
+        <Card.Media>
+          <HighLightJS code={demo} />
+        </Card.Media>
+      </Card>
+    );
+  }
 }

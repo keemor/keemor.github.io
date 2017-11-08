@@ -15,47 +15,47 @@ import About from "./route/about";
 import CodeRouter from "./route/code/router";
 
 class Index extends Component {
-    constructor(props) {
-        super(props);
-        runtime.install({
-            onUpdating: () => {
-                console.log("SW Event:", "onUpdating");
-            },
-            onUpdateReady: () => {
-                console.log("SW Event:", "onUpdateReady");
-                // Tells to new SW to take control immediately
-                runtime.applyUpdate();
-            },
-            onUpdated: () => {
-                console.log("SW Event:", "onUpdated");
-                // Reload the webpage to load into the new version
-                window.location.reload();
-            },
+  constructor(props) {
+    super(props);
+    runtime.install({
+      onUpdating: () => {
+        console.log("SW Event:", "onUpdating");
+      },
+      onUpdateReady: () => {
+        console.log("SW Event:", "onUpdateReady");
+        // Tells to new SW to take control immediately
+        runtime.applyUpdate();
+      },
+      onUpdated: () => {
+        console.log("SW Event:", "onUpdated");
+        // Reload the webpage to load into the new version
+        window.location.reload();
+      },
 
-            onUpdateFailed: () => {
-                console.log("SW Event:", "onUpdateFailed");
-            }
-        });
-    }
-    logPageView() {
-        window.dataLayer.push({ event: window.location.hash });
-    }
+      onUpdateFailed: () => {
+        console.log("SW Event:", "onUpdateFailed");
+      }
+    });
+  }
+  logPageView() {
+    window.dataLayer.push({ event: window.location.hash });
+  }
 
-    render() {
-        return (
-            <div>
-                <Header />
-                <div class="marginTop">
-                    <Router history={createHashHistory()} onChange={this.logPageView}>
-                        <Home default path="/" />
-                        <Hello path="/hello" />
-                        <About path="/about" />
-                        <CodeRouter path="/router" />
-                    </Router>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Header />
+        <div class="marginTop">
+          <Router history={createHashHistory()} onChange={this.logPageView}>
+            <Home default path="/" />
+            <Hello path="/hello" />
+            <About path="/about" />
+            <CodeRouter path="/router" />
+          </Router>
+        </div>
+      </div>
+    );
+  }
 }
 
 render(<Index />, document.body);
