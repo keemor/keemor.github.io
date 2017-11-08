@@ -7,6 +7,7 @@ import "highlight.js/styles/monokai-sublime.css";
 export default class HighLightJS extends Component {
     componentDidMount() {
         hljs.registerLanguage("javascript", javascript);
+        //Wait until everything is ready to avoid duplication of tag <code></code>
         window.setTimeout(() => {
             hljs.highlightBlock(this.element);
         }, 0);
