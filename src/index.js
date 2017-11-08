@@ -12,7 +12,8 @@ import Header from "./components/header";
 import Hello from "./route/hello";
 import Home from "./route/home";
 import About from "./route/about";
-import CodeRouter from "./route/code/router";
+import RouterCode from "./route/code/router";
+import HighlightCode from "./route/code/highlight";
 
 class Index extends Component {
   constructor(props) {
@@ -50,7 +51,8 @@ class Index extends Component {
             <Home default path="/" />
             <Hello path="/hello" />
             <About path="/about" />
-            <CodeRouter path="/router" />
+            <RouterCode path="/router" />
+            <HighlightCode path="/highlight" />
           </Router>
         </div>
       </div>
