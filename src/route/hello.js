@@ -10,7 +10,7 @@ export default class Hello extends Component {
   }
 
   componentDidMount() {
-    document.getElementById("hello").focus();
+    this.element.focus();
   }
 
   onInput(e) {
@@ -23,7 +23,14 @@ export default class Hello extends Component {
         <Card.Media>
           <h4>
             <label for="hello">Your name</label>:{" "}
-            <input id="hello" value={text} onInput={this.onInput} />
+            <input
+              ref={ref => {
+                this.element = ref;
+              }}
+              id="hello"
+              value={text}
+              onInput={this.onInput}
+            />
           </h4>
           <h4>
             Hello: <span>{text} </span>

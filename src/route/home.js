@@ -17,7 +17,20 @@ npm start`;
             Preact Progressive Web App Boilerplate 2017
           </Card.Title>
         </Card.Primary>
+
         <Card.Media>
+          Code snippets:
+          <ul>
+            <li>
+              <a href="#/code/router">Router</a>
+            </li>
+            <li>
+              <a href="#/code/offline">Offline</a>
+            </li>
+            <li>
+              <a href="#/code/highlight">Highlight.js</a>
+            </li>
+          </ul>
           The smallest Preact Progressive Web App stack with:
           <ul>
             <li>

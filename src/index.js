@@ -1,5 +1,5 @@
-import { Router } from "preact-router";
 import { h, render, Component } from "preact";
+import { Router } from "preact-router";
 import { createHashHistory } from "history";
 import * as runtime from "offline-plugin/runtime";
 
@@ -9,10 +9,13 @@ import "./style/style.scss";
 import "preact/debug";
 
 import Header from "./components/header";
-import Hello from "./route/hello";
+
 import Home from "./route/home";
 import About from "./route/about";
+
+import Hello from "./route/hello";
 import RouterCode from "./route/code/router";
+import OfflineCode from "./route/code/offline";
 import HighlightCode from "./route/code/highlight";
 
 class Index extends Component {
@@ -51,8 +54,9 @@ class Index extends Component {
             <Home default path="/" />
             <Hello path="/hello" />
             <About path="/about" />
-            <RouterCode path="/router" />
-            <HighlightCode path="/highlight" />
+            <RouterCode path="/code/router" />
+            <OfflineCode path="/code/offline" />
+            <HighlightCode path="/code/highlight" />
           </Router>
         </div>
       </div>

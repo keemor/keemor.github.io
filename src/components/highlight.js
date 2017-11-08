@@ -1,5 +1,4 @@
 import { h, render, Component } from "preact";
-
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
 import "highlight.js/styles/monokai-sublime.css";

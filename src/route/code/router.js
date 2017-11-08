@@ -6,14 +6,9 @@ import HighLightJS from "~/components/highlight";
 export default class RouterCode extends Component {
   render(props, { text }) {
     const demo = `
-import { Router } from "preact-router";
 import { h, render, Component } from "preact";
+import { Router } from "preact-router";
 import { createHashHistory } from "history";
-
-import "preact-material-components/Typography/style.css";
-import "preact-material-components/Theme/style.css";
-import "./style/style.scss";
-import "preact/debug";
 
 import Header from "./components/header";
 import Hello from "./route/hello";

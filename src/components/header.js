@@ -108,7 +108,7 @@ export default class Header extends Component {
                   </Link>
 
                   <Link
-                    href="/router"
+                    href="/code/router"
                     class="mdc-list-item"
                     onClick={this._onClick}
                   >
@@ -117,9 +117,18 @@ export default class Header extends Component {
                       Router
                     </List.LinkItem>
                   </Link>
-
                   <Link
-                    href="/highlight"
+                    href="/code/offline"
+                    class="mdc-list-item"
+                    onClick={this._onClick}
+                  >
+                    <List.LinkItem>
+                      <List.ItemIcon>code</List.ItemIcon>
+                      Offline
+                    </List.LinkItem>
+                  </Link>
+                  <Link
+                    href="/code/highlight"
                     class="mdc-list-item"
                     onClick={this._onClick}
                   >
