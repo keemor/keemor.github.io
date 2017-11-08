@@ -10,7 +10,7 @@ export default class HighLightJS extends Component {
         //Wait until everything is ready to avoid duplication of tag <code></code>
         window.setTimeout(() => {
             hljs.highlightBlock(this.element);
-        }, 0);
+        }, 25);
     }
 
     render({ code }) {
