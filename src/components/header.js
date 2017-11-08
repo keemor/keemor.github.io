@@ -4,11 +4,11 @@ import { Link } from "preact-router/match";
 
 import Toolbar from "preact-material-components/Toolbar";
 import Drawer from "preact-material-components/Drawer";
-import List from "preact-material-components/List";
 import Menu from "preact-material-components/Menu";
 
+import DrawerList from "~/components/drawerList";
+
 import "preact-material-components/Toolbar/style.css";
-import "preact-material-components/List/style.css";
 import "preact-material-components/Menu/style.css";
 import "preact-material-components/Drawer/style.css";
 
@@ -88,56 +88,7 @@ export default class Header extends Component {
                                 Components
                             </Drawer.TemporaryDrawerHeader> */}
               <Drawer.TemporaryDrawerContent>
-                <List>
-                  <Link href="/" class="mdc-list-item" onClick={this._onClick}>
-                    <List.LinkItem>
-                      <List.ItemIcon>home</List.ItemIcon>
-                      Home
-                    </List.LinkItem>
-                  </Link>
-
-                  <Link
-                    href="/hello"
-                    class="mdc-list-item"
-                    onClick={this._onClick}
-                  >
-                    <List.LinkItem>
-                      <List.ItemIcon>code</List.ItemIcon>
-                      Hello
-                    </List.LinkItem>
-                  </Link>
-
-                  <Link
-                    href="/code/router"
-                    class="mdc-list-item"
-                    onClick={this._onClick}
-                  >
-                    <List.LinkItem>
-                      <List.ItemIcon>code</List.ItemIcon>
-                      Router
-                    </List.LinkItem>
-                  </Link>
-                  <Link
-                    href="/code/offline"
-                    class="mdc-list-item"
-                    onClick={this._onClick}
-                  >
-                    <List.LinkItem>
-                      <List.ItemIcon>code</List.ItemIcon>
-                      Offline
-                    </List.LinkItem>
-                  </Link>
-                  <Link
-                    href="/code/highlight"
-                    class="mdc-list-item"
-                    onClick={this._onClick}
-                  >
-                    <List.LinkItem>
-                      <List.ItemIcon>code</List.ItemIcon>
-                      Highlight.js
-                    </List.LinkItem>
-                  </Link>
-                </List>
+                <DrawerList onClick={this._onClick} />
               </Drawer.TemporaryDrawerContent>
             </Drawer.TemporaryDrawer>
             <Toolbar.Title>
