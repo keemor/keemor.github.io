@@ -1,13 +1,15 @@
 {
   "name": "keemor.github.io",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Preact Progressive Web App Boilerplate",
   "main": "src/index.js",
   "scripts": {
     "test:build": "webpack --color --config webpack.config.babel.js --env.prod",
-    "start": "webpack-dev-server --color --config webpack.config.babel.js --env.dev",
+    "start":
+      "webpack-dev-server --color --config webpack.config.babel.js --env.dev",
     "build": "webpack --color --config webpack.config.babel.js --env.prod",
-    "build:watch": "webpack --color -w --config webpack.config.babel.js --env.prod",
+    "build:watch":
+      "webpack --color -w --config webpack.config.babel.js --env.prod",
     "analyze": "webpack --color --config webpack.config.babel.js --env.test"
   },
   "repository": {
@@ -20,7 +22,13 @@
     "url": "https://github.com/keemor/keemor.github.io/issues"
   },
   "homepage": "https://github.com/keemor/keemor.github.io#readme",
-  "keywords": ["webpack", "babel", "preact", "preact-material-components", "preact-router"],
+  "keywords": [
+    "webpack",
+    "babel",
+    "preact",
+    "preact-material-components",
+    "preact-router"
+  ],
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
