@@ -6,40 +6,46 @@ import "preact-material-components/List/style.css";
 
 export default class DrawerList extends Component {
   render({ onClick }) {
+    const links = [
+      {
+        href: "/",
+        icon: "home",
+        name: "Home"
+      },
+      {
+        href: "/hello",
+        icon: "code",
+        name: "Hello"
+      },
+      {
+        href: "/code/router",
+        icon: "code",
+        name: "Router"
+      },
+      {
+        href: "/code/offline",
+        icon: "code",
+        name: "Offline"
+      },
+      {
+        href: "/code/highlight",
+        icon: "code",
+        name: " Highlight.js"
+      }
+    ];
+
     return (
       <List>
-        <Link href="/" class="mdc-list-item" onClick={onClick}>
-          <List.LinkItem>
-            <List.ItemIcon>home</List.ItemIcon>
-            Home
-          </List.LinkItem>
-        </Link>
-
-        <Link href="/hello" class="mdc-list-item" onClick={onClick}>
-          <List.LinkItem>
-            <List.ItemIcon>code</List.ItemIcon>
-            Hello
-          </List.LinkItem>
-        </Link>
-
-        <Link href="/code/router" class="mdc-list-item" onClick={onClick}>
-          <List.LinkItem>
-            <List.ItemIcon>code</List.ItemIcon>
-            Router
-          </List.LinkItem>
-        </Link>
-        <Link href="/code/offline" class="mdc-list-item" onClick={onClick}>
-          <List.LinkItem>
-            <List.ItemIcon>code</List.ItemIcon>
-            Offline
-          </List.LinkItem>
-        </Link>
-        <Link href="/code/highlight" class="mdc-list-item" onClick={onClick}>
-          <List.LinkItem>
-            <List.ItemIcon>code</List.ItemIcon>
-            Highlight.js
-          </List.LinkItem>
-        </Link>
+        {links.map(link => {
+          return (
+            <Link href={link.href} class="mdc-list-item" onClick={onClick}>
+              <List.LinkItem>
+                <List.ItemIcon>{link.icon}</List.ItemIcon>
+                {link.name}
+              </List.LinkItem>
+            </Link>
+          );
+        })}
       </List>
     );
   }

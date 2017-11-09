@@ -22,6 +22,9 @@ npm start`;
           Code snippets:
           <ul>
             <li>
+              <a href="#/code/hello">Hello</a>
+            </li>
+            <li>
               <a href="#/code/router">Router</a>
             </li>
             <li>
