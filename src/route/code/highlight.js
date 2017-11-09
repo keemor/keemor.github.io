@@ -6,32 +6,29 @@ import HighLightJS from "~/components/highlight";
 export default class HighlightCode extends Component {
   render(props, { text }) {
     const demo = `
-import { h, render, Component } from "preact";
+import { h } from "preact";
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
 import "highlight.js/styles/monokai-sublime.css";
 
-export default class HighLightJS extends Component {
-  componentDidMount() {
-    hljs.registerLanguage("javascript", javascript);
-    //Wait until everything is ready to avoid duplication of tag <code></code>
-    window.setTimeout(() => {
-      hljs.highlightBlock(this.element);
-    }, 25);
-  }
+const LANGUAGES = { javascript };
+Object.keys(LANGUAGES).forEach(key =>
+  hljs.registerLanguage(key, LANGUAGES[key])
+);
 
-  render({ code }) {
-    return (
-      <pre
-        ref={ref => {
-          this.element = ref;
-        }}
-      >
-        <code>{code}</code>
-      </pre>
-    );
-  }
-}`;
+export default ({ code }) => {
+  let text = code.replace(/(^\s+|\s+$)/g, ""),
+    highlighted = hljs.highlightAuto(text, Object.keys(LANGUAGES)),
+    hLang = highlighted.language;
+  return (
+    <pre class="highlight">
+      <code
+        class={\`hljs lang-\${hLang}\`}
+        dangerouslySetInnerHTML={{ __html: highlighted.value }}
+      />
+    </pre>
+  );
+};`;
 
     return (
       <Card>
@@ -40,6 +37,10 @@ export default class HighLightJS extends Component {
             Example of using{" "}
             <a href="https://github.com/isagalaev/highlight.js/">
               highlight.js
+            </a>{" "}
+            based on preact-material-components{" "}
+            <a href="https://github.com/prateekbh/preact-material-components/blob/master/docs/src/components/code-block/index.js">
+              code-block
             </a>
           </Card.Title>
         </Card.Primary>
