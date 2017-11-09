@@ -5,11 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "test:build": "webpack --color --config webpack.config.babel.js --env.prod",
-    "start":
-      "webpack-dev-server --color --config webpack.config.babel.js --env.dev",
+    "start": "webpack-dev-server --color --config webpack.config.babel.js --env.dev",
     "build": "webpack --color --config webpack.config.babel.js --env.prod",
-    "build:watch":
-      "webpack --color -w --config webpack.config.babel.js --env.prod",
+    "build:watch": "webpack --color -w --config webpack.config.babel.js --env.prod",
     "analyze": "webpack --color --config webpack.config.babel.js --env.test"
   },
   "repository": {
