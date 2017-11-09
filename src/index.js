@@ -13,7 +13,7 @@ import Header from "./components/header";
 import Home from "./route/home";
 import About from "./route/about";
 
-import Hello from "./route/hello";
+import Hello from "./route/code/hello";
 import RouterCode from "./route/code/router";
 import OfflineCode from "./route/code/offline";
 import HighlightCode from "./route/code/highlight";
@@ -52,8 +52,8 @@ class Index extends Component {
         <div class="marginTop">
           <Router history={createHashHistory()} onChange={this.logPageView}>
             <Home default path="/" />
-            <Hello path="/hello" />
             <About path="/about" />
+            <Hello path="/code/hello" />
             <RouterCode path="/code/router" />
             <OfflineCode path="/code/offline" />
             <HighlightCode path="/code/highlight" />
