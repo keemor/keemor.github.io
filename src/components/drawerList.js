@@ -30,12 +30,7 @@ export default class DrawerList extends Component {
       {
         href: "/code/highlight",
         icon: "code",
-        name: "Highlight.js"
-      },
-      {
-        href: "/code/whereami",
-        icon: "code",
-        name: "Where am I?"
+        name: " Highlight.js"
       }
     ];
 
