@@ -20,8 +20,9 @@ import HighlightCode from "./route/code/highlight";
 import WhereAmI from "./route/code/whereami";
 
 class Index extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+
     runtime.install({
       onUpdating: () => {
         console.log("SW Event:", "onUpdating");
