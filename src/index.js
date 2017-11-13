@@ -17,6 +17,7 @@ import Hello from "./route/code/hello";
 import RouterCode from "./route/code/router";
 import OfflineCode from "./route/code/offline";
 import HighlightCode from "./route/code/highlight";
+import WhereAmI from "./route/code/whereami";
 
 class Index extends Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class Index extends Component {
             <RouterCode path="/code/router" />
             <OfflineCode path="/code/offline" />
             <HighlightCode path="/code/highlight" />
+            <WhereAmI path="/code/whereami" />
           </Router>
         </div>
       </div>
