@@ -36,6 +36,11 @@ export default class DrawerList extends Component {
         href: "/code/whereami",
         icon: "code",
         name: "Where am I?"
+      },
+      {
+        href: "/code/asyncawait",
+        icon: "code",
+        name: "Async/await"
       }
     ];
 

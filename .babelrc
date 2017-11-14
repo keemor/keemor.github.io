@@ -1,4 +1,16 @@
 {
-    "presets": ["env"],
-    "plugins": ["transform-object-assign", ["transform-react-jsx", { "pragma": "h" }]]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 Chrome versions"]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-object-assign",
+    ["transform-react-jsx", { "pragma": "h" }]
+  ]
 }

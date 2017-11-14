@@ -18,6 +18,7 @@ import RouterCode from "./route/code/router";
 import OfflineCode from "./route/code/offline";
 import HighlightCode from "./route/code/highlight";
 import WhereAmI from "./route/code/whereami";
+import AsyncAwait from "./route/code/asyncawait";
 
 class Index extends Component {
   constructor() {
@@ -60,6 +61,7 @@ class Index extends Component {
             <OfflineCode path="/code/offline" />
             <HighlightCode path="/code/highlight" />
             <WhereAmI path="/code/whereami" />
+            <AsyncAwait path="/code/asyncawait" />
           </Router>
         </div>
       </div>
