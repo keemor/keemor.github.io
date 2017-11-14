@@ -7,12 +7,12 @@ import "preact-material-components/Card/style.css";
 export default class AsyncAwait extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: "" };
+    this.state = { text: "In progress ..." };
   }
 
   componentDidMount() {}
 
-  render(props, { text = "" }) {
+  render(props, { text }) {
     const demo = ``;
 
     //https://babeljs.io/docs/plugins/transform-runtime/
