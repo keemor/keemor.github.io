@@ -1,15 +1,15 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": ["last 2 versions"]
-        }
-      }
-    ]
-  ],
+  "presets": ["env"],
   "plugins": [
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+
     "transform-object-assign",
     ["transform-react-jsx", { "pragma": "h" }]
   ]
