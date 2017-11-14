@@ -1,1 +1,11136 @@
-!function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=24)}([function(e,t,n){"use strict";function r(){}function o(e,t){var n,o,i,a,s=I;for(a=arguments.length;a-- >2;)L.push(arguments[a]);for(t&&null!=t.children&&(L.length||L.push(t.children),delete t.children);L.length;)if((o=L.pop())&&void 0!==o.pop)for(a=o.length;a--;)L.push(o[a]);else"boolean"==typeof o&&(o=null),(i="function"!=typeof e)&&(null==o?o="":"number"==typeof o?o=String(o):"string"!=typeof o&&(i=!1)),i&&n?s[s.length-1]+=o:s===I?s=[o]:s.push(o),n=i;var l=new r;return l.nodeName=e,l.children=s,l.attributes=null==t?void 0:t,l.key=null==t?void 0:t.key,void 0!==D.vnode&&D.vnode(l),l}function i(e,t){for(var n in t)e[n]=t[n];return e}function a(e,t){return o(e.nodeName,i(i({},e.attributes),t),arguments.length>2?[].slice.call(arguments,2):e.children)}function s(e){!e._dirty&&(e._dirty=!0)&&1==H.push(e)&&(D.debounceRendering||N)(l)}function l(){var e,t=H;for(H=[];e=t.pop();)e._dirty&&S(e)}function c(e,t,n){return"string"==typeof t||"number"==typeof t?void 0!==e.splitText:"string"==typeof t.nodeName?!e._componentConstructor&&d(e,t.nodeName):n||e._componentConstructor===t.nodeName}function d(e,t){return e.normalizedNodeName===t||e.nodeName.toLowerCase()===t.toLowerCase()}function u(e){var t=i({},e.attributes);t.children=e.children;var n=e.nodeName.defaultProps;if(void 0!==n)for(var r in n)void 0===t[r]&&(t[r]=n[r]);return t}function p(e,t){var n=t?document.createElementNS("http://www.w3.org/2000/svg",e):document.createElement(e);return n.normalizedNodeName=e,n}function m(e){var t=e.parentNode;t&&t.removeChild(e)}function f(e,t,n,r,o){if("className"===t&&(t="class"),"key"===t);else if("ref"===t)n&&n(null),r&&r(e);else if("class"!==t||o)if("style"===t){if(r&&"string"!=typeof r&&"string"!=typeof n||(e.style.cssText=r||""),r&&"object"===(void 0===r?"undefined":M(r))){if("string"!=typeof n)for(var i in n)i in r||(e.style[i]="");for(var i in r)e.style[i]="number"==typeof r[i]&&!1===z.test(i)?r[i]+"px":r[i]}}else if("dangerouslySetInnerHTML"===t)r&&(e.innerHTML=r.__html||"");else if("o"==t[0]&&"n"==t[1]){var a=t!==(t=t.replace(/Capture$/,""));t=t.toLowerCase().substring(2),r?n||e.addEventListener(t,g,a):e.removeEventListener(t,g,a),(e._listeners||(e._listeners={}))[t]=r}else if("list"!==t&&"type"!==t&&!o&&t in e)h(e,t,null==r?"":r),null!=r&&!1!==r||e.removeAttribute(t);else{var s=o&&t!==(t=t.replace(/^xlink\:?/,""));null==r||!1===r?s?e.removeAttributeNS("http://www.w3.org/1999/xlink",t.toLowerCase()):e.removeAttribute(t):"function"!=typeof r&&(s?e.setAttributeNS("http://www.w3.org/1999/xlink",t.toLowerCase(),r):e.setAttribute(t,r))}else e.className=r||""}function h(e,t,n){try{e[t]=n}catch(e){}}function g(e){return this._listeners[e.type](D.event&&D.event(e)||e)}function b(){for(var e;e=F.pop();)D.afterMount&&D.afterMount(e),e.componentDidMount&&e.componentDidMount()}function y(e,t,n,r,o,i){U++||(B=null!=o&&void 0!==o.ownerSVGElement,W=null!=e&&!("__preactattr_"in e));var a=v(e,t,n,r,i);return o&&a.parentNode!==o&&o.appendChild(a),--U||(W=!1,i||b()),a}function v(e,t,n,r,o){var i=e,a=B;if(null!=t&&"boolean"!=typeof t||(t=""),"string"==typeof t||"number"==typeof t)return e&&void 0!==e.splitText&&e.parentNode&&(!e._component||o)?e.nodeValue!=t&&(e.nodeValue=t):(i=document.createTextNode(t),e&&(e.parentNode&&e.parentNode.replaceChild(i,e),w(e,!0))),i.__preactattr_=!0,i;var s=t.nodeName;if("function"==typeof s)return R(e,t,n,r);if(B="svg"===s||"foreignObject"!==s&&B,s=String(s),(!e||!d(e,s))&&(i=p(s,B),e)){for(;e.firstChild;)i.appendChild(e.firstChild);e.parentNode&&e.parentNode.replaceChild(i,e),w(e,!0)}var l=i.firstChild,c=i.__preactattr_,u=t.children;if(null==c){c=i.__preactattr_={};for(var m=i.attributes,f=m.length;f--;)c[m[f].name]=m[f].value}return!W&&u&&1===u.length&&"string"==typeof u[0]&&null!=l&&void 0!==l.splitText&&null==l.nextSibling?l.nodeValue!=u[0]&&(l.nodeValue=u[0]):(u&&u.length||null!=l)&&_(i,u,n,r,W||null!=c.dangerouslySetInnerHTML),k(i,t.attributes,c),B=a,i}function _(e,t,n,r,o){var i,a,s,l,d,u=e.childNodes,p=[],f={},h=0,g=0,b=u.length,y=0,_=t?t.length:0;if(0!==b)for(var x=0;x<b;x++){var k=u[x],O=k.__preactattr_,E=_&&O?k._component?k._component.__key:O.key:null;null!=E?(h++,f[E]=k):(O||(void 0!==k.splitText?!o||k.nodeValue.trim():o))&&(p[y++]=k)}if(0!==_)for(var x=0;x<_;x++){l=t[x],d=null;var E=l.key;if(null!=E)h&&void 0!==f[E]&&(d=f[E],f[E]=void 0,h--);else if(!d&&g<y)for(i=g;i<y;i++)if(void 0!==p[i]&&c(a=p[i],l,o)){d=a,p[i]=void 0,i===y-1&&y--,i===g&&g++;break}d=v(d,l,n,r),s=u[x],d&&d!==e&&d!==s&&(null==s?e.appendChild(d):d===s.nextSibling?m(s):e.insertBefore(d,s))}if(h)for(var x in f)void 0!==f[x]&&w(f[x],!1);for(;g<=y;)void 0!==(d=p[y--])&&w(d,!1)}function w(e,t){var n=e._component;n?P(n):(null!=e.__preactattr_&&e.__preactattr_.ref&&e.__preactattr_.ref(null),!1!==t&&null!=e.__preactattr_||m(e),x(e))}function x(e){for(e=e.lastChild;e;){var t=e.previousSibling;w(e,!0),e=t}}function k(e,t,n){var r;for(r in n)t&&null!=t[r]||null==n[r]||f(e,r,n[r],n[r]=void 0,B);for(r in t)"children"===r||"innerHTML"===r||r in n&&t[r]===("value"===r||"checked"===r?e[r]:n[r])||f(e,r,n[r],n[r]=t[r],B)}function O(e){var t=e.constructor.name;(V[t]||(V[t]=[])).push(e)}function E(e,t,n){var r,o=V[e.name];if(e.prototype&&e.prototype.render?(r=new e(t,n),j.call(r,t,n)):(r=new j(t,n),r.constructor=e,r.render=T),o)for(var i=o.length;i--;)if(o[i].constructor===e){r.nextBase=o[i].nextBase,o.splice(i,1);break}return r}function T(e,t,n){return this.constructor(e,n)}function C(e,t,n,r,o){e._disable||(e._disable=!0,(e.__ref=t.ref)&&delete t.ref,(e.__key=t.key)&&delete t.key,!e.base||o?e.componentWillMount&&e.componentWillMount():e.componentWillReceiveProps&&e.componentWillReceiveProps(t,r),r&&r!==e.context&&(e.prevContext||(e.prevContext=e.context),e.context=r),e.prevProps||(e.prevProps=e.props),e.props=t,e._disable=!1,0!==n&&(1!==n&&!1===D.syncComponentUpdates&&e.base?s(e):S(e,1,o)),e.__ref&&e.__ref(e))}function S(e,t,n,r){if(!e._disable){var o,a,s,l=e.props,c=e.state,d=e.context,p=e.prevProps||l,m=e.prevState||c,f=e.prevContext||d,h=e.base,g=e.nextBase,v=h||g,_=e._component,x=!1;if(h&&(e.props=p,e.state=m,e.context=f,2!==t&&e.shouldComponentUpdate&&!1===e.shouldComponentUpdate(l,c,d)?x=!0:e.componentWillUpdate&&e.componentWillUpdate(l,c,d),e.props=l,e.state=c,e.context=d),e.prevProps=e.prevState=e.prevContext=e.nextBase=null,e._dirty=!1,!x){o=e.render(l,c,d),e.getChildContext&&(d=i(i({},d),e.getChildContext()));var k,O,T=o&&o.nodeName;if("function"==typeof T){var R=u(o);a=_,a&&a.constructor===T&&R.key==a.__key?C(a,R,1,d,!1):(k=a,e._component=a=E(T,R,d),a.nextBase=a.nextBase||g,a._parentComponent=e,C(a,R,0,d,!1),S(a,1,n,!0)),O=a.base}else s=v,k=_,k&&(s=e._component=null),(v||1===t)&&(s&&(s._component=null),O=y(s,o,d,n||!h,v&&v.parentNode,!0));if(v&&O!==v&&a!==_){var j=v.parentNode;j&&O!==j&&(j.replaceChild(O,v),k||(v._component=null,w(v,!1)))}if(k&&P(k),e.base=O,O&&!r){for(var A=e,M=e;M=M._parentComponent;)(A=M).base=O;O._component=A,O._componentConstructor=A.constructor}}if(!h||n?F.unshift(e):x||(e.componentDidUpdate&&e.componentDidUpdate(p,m,f),D.afterUpdate&&D.afterUpdate(e)),null!=e._renderCallbacks)for(;e._renderCallbacks.length;)e._renderCallbacks.pop().call(e);U||r||b()}}function R(e,t,n,r){for(var o=e&&e._component,i=o,a=e,s=o&&e._componentConstructor===t.nodeName,l=s,c=u(t);o&&!l&&(o=o._parentComponent);)l=o.constructor===t.nodeName;return o&&l&&(!r||o._component)?(C(o,c,3,n,r),e=o.base):(i&&!s&&(P(i),e=a=null),o=E(t.nodeName,c,n),e&&!o.nextBase&&(o.nextBase=e,a=null),C(o,c,1,n,r),e=o.base,a&&e!==a&&(a._component=null,w(a,!1))),e}function P(e){D.beforeUnmount&&D.beforeUnmount(e);var t=e.base;e._disable=!0,e.componentWillUnmount&&e.componentWillUnmount(),e.base=null;var n=e._component;n?P(n):t&&(t.__preactattr_&&t.__preactattr_.ref&&t.__preactattr_.ref(null),e.nextBase=t,m(t),O(e),x(t)),e.__ref&&e.__ref(null)}function j(e,t){this._dirty=!0,this.context=t,this.props=e,this.state=this.state||{}}function A(e,t,n){return y(n,e,{},!1,t,!1)}Object.defineProperty(t,"__esModule",{value:!0});var M="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},D={},L=[],I=[],N="function"==typeof Promise?Promise.resolve().then.bind(Promise.resolve()):setTimeout,z=/acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i,H=[],F=[],U=0,B=!1,W=!1,V={};i(j.prototype,{setState:function(e,t){var n=this.state;this.prevState||(this.prevState=i({},n)),i(n,"function"==typeof e?e(n,this.props):e),t&&(this._renderCallbacks=this._renderCallbacks||[]).push(t),s(this)},forceUpdate:function(e){e&&(this._renderCallbacks=this._renderCallbacks||[]).push(e),S(this,2)},render:function(){}});var X={h:o,createElement:o,cloneElement:a,Component:j,render:A,rerender:l,options:D};t.h=o,t.createElement=o,t.cloneElement=a,t.Component=j,t.render=A,t.rerender=l,t.options=D,t.default=X},function(e,t,n){"use strict";function r(e,t){var n=e[1]||"",r=e[3];if(!r)return n;if(t&&"function"==typeof btoa){var i=o(r);return[n].concat(r.sources.map(function(e){return"/*# sourceURL="+r.sourceRoot+e+" */"})).concat([i]).join("\n")}return[n].join("\n")}function o(e){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(e))))+" */"}e.exports=function(e){var t=[];return t.toString=function(){return this.map(function(t){var n=r(t,e);return t[2]?"@media "+t[2]+"{"+n+"}":n}).join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},o=0;o<this.length;o++){var i=this[o][0];"number"==typeof i&&(r[i]=!0)}for(o=0;o<e.length;o++){var a=e[o];"number"==typeof a[0]&&r[a[0]]||(n&&!a[2]?a[2]=n:n&&(a[2]="("+a[2]+") and ("+n+")"),t.push(a))}},t}},function(e,t,n){function r(e,t){for(var n=0;n<e.length;n++){var r=e[n],o=f[r.id];if(o){o.refs++;for(var i=0;i<o.parts.length;i++)o.parts[i](r.parts[i]);for(;i<r.parts.length;i++)o.parts.push(d(r.parts[i],t))}else{for(var a=[],i=0;i<r.parts.length;i++)a.push(d(r.parts[i],t));f[r.id]={id:r.id,refs:1,parts:a}}}}function o(e,t){for(var n=[],r={},o=0;o<e.length;o++){var i=e[o],a=t.base?i[0]+t.base:i[0],s=i[1],l=i[2],c=i[3],d={css:s,media:l,sourceMap:c};r[a]?r[a].parts.push(d):n.push(r[a]={id:a,parts:[d]})}return n}function i(e,t){var n=g(e.insertInto);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var r=v[v.length-1];if("top"===e.insertAt)r?r.nextSibling?n.insertBefore(t,r.nextSibling):n.appendChild(t):n.insertBefore(t,n.firstChild),v.push(t);else if("bottom"===e.insertAt)n.appendChild(t);else{if("object"!=typeof e.insertAt||!e.insertAt.before)throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");var o=g(e.insertInto+" "+e.insertAt.before);n.insertBefore(t,o)}}function a(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e);var t=v.indexOf(e);t>=0&&v.splice(t,1)}function s(e){var t=document.createElement("style");return e.attrs.type="text/css",c(t,e.attrs),i(e,t),t}function l(e){var t=document.createElement("link");return e.attrs.type="text/css",e.attrs.rel="stylesheet",c(t,e.attrs),i(e,t),t}function c(e,t){Object.keys(t).forEach(function(n){e.setAttribute(n,t[n])})}function d(e,t){var n,r,o,i;if(t.transform&&e.css){if(!(i=t.transform(e.css)))return function(){};e.css=i}if(t.singleton){var c=y++;n=b||(b=s(t)),r=u.bind(null,n,c,!1),o=u.bind(null,n,c,!0)}else e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=l(t),r=m.bind(null,n,t),o=function(){a(n),n.href&&URL.revokeObjectURL(n.href)}):(n=s(t),r=p.bind(null,n),o=function(){a(n)});return r(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;r(e=t)}else o()}}function u(e,t,n,r){var o=n?"":r.css;if(e.styleSheet)e.styleSheet.cssText=w(t,o);else{var i=document.createTextNode(o),a=e.childNodes;a[t]&&e.removeChild(a[t]),a.length?e.insertBefore(i,a[t]):e.appendChild(i)}}function p(e,t){var n=t.css,r=t.media;if(r&&e.setAttribute("media",r),e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}function m(e,t,n){var r=n.css,o=n.sourceMap,i=void 0===t.convertToAbsoluteUrls&&o;(t.convertToAbsoluteUrls||i)&&(r=_(r)),o&&(r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");var a=new Blob([r],{type:"text/css"}),s=e.href;e.href=URL.createObjectURL(a),s&&URL.revokeObjectURL(s)}var f={},h=function(e){var t;return function(){return void 0===t&&(t=e.apply(this,arguments)),t}}(function(){return window&&document&&document.all&&!window.atob}),g=function(e){var t={};return function(n){if(void 0===t[n]){var r=e.call(this,n);if(r instanceof window.HTMLIFrameElement)try{r=r.contentDocument.head}catch(e){r=null}t[n]=r}return t[n]}}(function(e){return document.querySelector(e)}),b=null,y=0,v=[],_=n(35);e.exports=function(e,t){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");t=t||{},t.attrs="object"==typeof t.attrs?t.attrs:{},t.singleton||(t.singleton=h()),t.insertInto||(t.insertInto="head"),t.insertAt||(t.insertAt="bottom");var n=o(e,t);return r(n,t),function(e){for(var i=[],a=0;a<n.length;a++){var s=n[a],l=f[s.id];l.refs--,i.push(l)}if(e){r(o(e,t),t)}for(var a=0;a<i.length;a++){var l=i[a];if(0===l.refs){for(var c=0;c<l.parts.length;c++)l.parts[c]();delete f[l.id]}}}};var w=function(){var e=[];return function(t,n){return e[t]=n,e.filter(Boolean).join("\n")}}()},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(43),d=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e._mdcProps=[],e.componentName="",e.classText="",e}return i(t,e),s(t,[{key:"attachRipple",value:function(){this.props.ripple&&this.control&&c.MDCRipple.attachTo(this.control)}},{key:"buildClassName",value:function(e){this.classText="mdc-"+this.componentName;for(var t in this.props)if(this.props.hasOwnProperty(t)){var n=this.props[t];"boolean"==typeof n&&n&&-1!==this._mdcProps.indexOf(t)&&(this.classText+=" mdc-"+this.componentName+"--"+t)}}},{key:"getClassName",value:function(e){if(!e)return"";var t=e.attributes=e.attributes||{},n=this.classText;return t.class&&(n+=" "+t.class),t.className&&t.className!==t.class&&(n+=" "+t.className),n}},{key:"materialDom",value:function(e){return(0,l.h)("div",a({},e),e.children)}},{key:"render",value:function(){this.buildClassName();var e=this.props;e.class&&delete e.class;var t=this.materialDom(e);return t.attributes=t.attributes||{},t.attributes.class=this.getClassName(t),t.attributes.className=this.getClassName(t),this._mdcProps.forEach(function(e){delete t.attributes[e]}),t}}]),t}(l.Component);t.default=d},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(0),i=n(75),a=r(i),s=n(76),l=r(s);n(77);var c={javascript:l.default};Object.keys(c).forEach(function(e){return a.default.registerLanguage(e,c[e])}),t.default=function(e){var t=e.code,n=t.replace(/(^\s+|\s+$)/g,""),r=a.default.highlightAuto(n,Object.keys(c)),i=r.language;return(0,o.h)("pre",{class:"highlight"},(0,o.h)("code",{class:"hljs lang-"+i,dangerouslySetInnerHTML:{__html:r.value}}))}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(3),d=r(c),u=n(79),p=r(u),m=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},f=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card",e._mdcProps=["theme-dark"],e}return a(t,e),t}(d.default),h=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="",e}return a(t,e),s(t,[{key:"materialDom",value:function(e){return(0,l.h)("section",e,e.children)}}]),t}(d.default),g=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__primary",e}return a(t,e),t}(h),b=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__supporting-text",e}return a(t,e),t}(h),y=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__actions",e._mdcProps=["vertical"],e}return a(t,e),t}(h),v=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__media",e}return a(t,e),t}(h),_=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__action",e}return a(t,e),s(t,[{key:"materialDom",value:function(e){var t=this;return(0,l.h)("button",m({className:"mdc-button mdc-button--compact"},e,{ref:function(e){t.control=e}}),e.children)}}]),t}(p.default),w=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__title",e._mdcProps=["large"],e}return a(t,e),s(t,[{key:"materialDom",value:function(e){return(0,l.h)("h1",e,e.children)}}]),t}(d.default),x=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__subtitle",e}return a(t,e),s(t,[{key:"materialDom",value:function(e){return(0,l.h)("h2",e,e.children)}}]),t}(d.default),k=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__horizontal-block",e}return a(t,e),t}(h),O=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="card__media-item",e._mdcProps=[],e}return a(t,e),s(t,[{key:"materialDom",value:function(e){var t="";return e.x&&(t="mdc-card__media-item--"+e.x+"x"),(0,l.h)("img",m({className:t},e))}}]),t}(d.default);f.Primary=g,f.SupportingText=b,f.Actions=y,f.Action=_,f.Media=v,f.Title=w,f.Subtitle=x,f.HorizontalBlock=k,f.MediaItem=O,t.default=f},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=(t.addLeadingSlash=function(e){return"/"===e.charAt(0)?e:"/"+e},t.stripLeadingSlash=function(e){return"/"===e.charAt(0)?e.substr(1):e},t.hasBasename=function(e,t){return new RegExp("^"+t+"(\\/|\\?|#|$)","i").test(e)});t.stripBasename=function(e,t){return r(e,t)?e.substr(t.length):e},t.stripTrailingSlash=function(e){return"/"===e.charAt(e.length-1)?e.slice(0,-1):e},t.parsePath=function(e){var t=e||"/",n="",r="",o=t.indexOf("#");-1!==o&&(r=t.substr(o),t=t.substr(0,o));var i=t.indexOf("?");return-1!==i&&(n=t.substr(i),t=t.substr(0,i)),{pathname:t,search:"?"===n?"":n,hash:"#"===r?"":r}},t.createPath=function(e){var t=e.pathname,n=e.search,r=e.hash,o=t||"/";return n&&"?"!==n&&(o+="?"===n.charAt(0)?n:"?"+n),r&&"#"!==r&&(o+="#"===r.charAt(0)?r:"#"+r),o}},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=function(){function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};r(this,e),this.adapter_=t}return o(e,null,[{key:"cssClasses",get:function(){return{}}},{key:"strings",get:function(){return{}}},{key:"numbers",get:function(){return{}}},{key:"defaultAdapter",get:function(){return{}}}]),o(e,[{key:"init",value:function(){}},{key:"destroy",value:function(){}}]),e}();t.default=i},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0}),t.locationsAreEqual=t.createLocation=void 0;var o=n(27),i=r(o),a=n(28),s=r(a),l=n(6),c=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e};t.createLocation=function(e,t,n,r){var o=void 0;"string"==typeof e?(o=(0,l.parsePath)(e),o.state=t):(o=c({},e),void 0===o.pathname&&(o.pathname=""),o.search?"?"!==o.search.charAt(0)&&(o.search="?"+o.search):o.search="",o.hash?"#"!==o.hash.charAt(0)&&(o.hash="#"+o.hash):o.hash="",void 0!==t&&void 0===o.state&&(o.state=t));try{o.pathname=decodeURI(o.pathname)}catch(e){throw e instanceof URIError?new URIError('Pathname "'+o.pathname+'" could not be decoded. This is likely caused by an invalid percent-encoding.'):e}return n&&(o.key=n),r?o.pathname?"/"!==o.pathname.charAt(0)&&(o.pathname=(0,i.default)(o.pathname,r.pathname)):o.pathname=r.pathname:o.pathname||(o.pathname="/"),o},t.locationsAreEqual=function(e,t){return e.pathname===t.pathname&&e.search===t.search&&e.hash===t.hash&&e.key===t.key&&(0,s.default)(e.state,t.state)}},function(e,t,n){"use strict";var r=function(){};e.exports=r},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0}),t.MDCComponent=t.MDCFoundation=void 0;var o=n(7),i=r(o),a=n(14),s=r(a);t.MDCFoundation=i.default,t.MDCComponent=s.default},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(53);Object.defineProperty(t,"FOCUSABLE_ELEMENTS",{enumerable:!0,get:function(){return r.FOCUSABLE_ELEMENTS}});var o=n(54);Object.defineProperty(t,"MDCSlidableDrawerFoundation",{enumerable:!0,get:function(){return o.MDCSlidableDrawerFoundation}})},function(e,t,n){"use strict";function r(e,t){for(var n in t)e[n]=t[n];return e}function o(e,t,n){void 0===n&&(n=w);var r,o=/(?:\?([^#]*))?(#.*)?$/,i=e.match(o),s={};if(i&&i[1])for(var l=i[1].split("&"),c=0;c<l.length;c++){var d=l[c].split("=");s[decodeURIComponent(d[0])]=decodeURIComponent(d.slice(1).join("="))}e=a(e.replace(o,"")),t=a(t||"");for(var u=Math.max(e.length,t.length),p=0;p<u;p++)if(t[p]&&":"===t[p].charAt(0)){var m=t[p].replace(/(^\:|[+*?]+$)/g,""),f=(t[p].match(/[+*?]+$/)||w)[0]||"",h=~f.indexOf("+"),g=~f.indexOf("*"),b=e[p]||"";if(!b&&!g&&(f.indexOf("?")<0||h)){r=!1;break}if(s[m]=decodeURIComponent(b),h||g){s[m]=e.slice(p).map(decodeURIComponent).join("/");break}}else if(t[p]!==e[p]){r=!1;break}return(!0===n.default||!1!==r)&&s}function i(e,t){var n=e.attributes||w,r=t.attributes||w;return n.default?1:r.default?-1:s(n.path)-s(r.path)||n.path.length-r.path.length}function a(e){return l(e).split("/")}function s(e){return(l(e).match(/\/+/g)||"").length}function l(e){return e.replace(/(^\/+|\/+$)/g,"")}function c(e){return null!=e.__preactattr_||"undefined"!=typeof Symbol&&null!=e[Symbol.for("preactattr")]}function d(e,t){void 0===t&&(t="push"),x&&x[t]?x[t](e):"undefined"!=typeof history&&history[t+"State"]&&history[t+"State"](null,null,e)}function u(){var e;return e=x&&x.location?x.location:x&&x.getCurrentLocation?x.getCurrentLocation():"undefined"!=typeof location?location:E,""+(e.pathname||"")+(e.search||"")}function p(e,t){return void 0===t&&(t=!1),"string"!=typeof e&&e.url&&(t=e.replace,e=e.url),m(e)&&d(e,t?"replace":"push"),f(e)}function m(e){for(var t=k.length;t--;)if(k[t].canRoute(e))return!0;return!1}function f(e){for(var t=!1,n=0;n<k.length;n++)!0===k[n].routeTo(e)&&(t=!0);for(var r=O.length;r--;)O[r](e);return t}function h(e){if(e&&e.getAttribute){var t=e.getAttribute("href"),n=e.getAttribute("target");if(t&&t.match(/^\//g)&&(!n||n.match(/^_?self$/i)))return p(t)}}function g(e){if(0==e.button)return h(e.currentTarget||e.target||this),b(e)}function b(e){return e&&(e.stopImmediatePropagation&&e.stopImmediatePropagation(),e.stopPropagation&&e.stopPropagation(),e.preventDefault()),!1}function y(e){if(!(e.ctrlKey||e.metaKey||e.altKey||e.shiftKey||0!==e.button)){var t=e.target;do{if("A"===String(t.nodeName).toUpperCase()&&t.getAttribute("href")&&c(t)){if(t.hasAttribute("native"))return;if(h(t))return b(e)}}while(t=t.parentNode)}}function v(){T||("function"==typeof addEventListener&&(x||addEventListener("popstate",function(){return f(u())}),addEventListener("click",y)),T=!0)}Object.defineProperty(t,"__esModule",{value:!0}),t.Link=t.Route=t.Router=t.route=t.getCurrentUrl=t.subscribers=void 0;var _=n(0),w={},x=null,k=[],O=[],E={},T=!1,C=function(e){function t(t){e.call(this,t),t.history&&(x=t.history),this.state={url:t.url||u()},v()}return e&&(t.__proto__=e),t.prototype=Object.create(e&&e.prototype),t.prototype.constructor=t,t.prototype.shouldComponentUpdate=function(e){return!0!==e.static||(e.url!==this.props.url||e.onChange!==this.props.onChange)},t.prototype.canRoute=function(e){return this.getMatchingChildren(this.props.children,e,!1).length>0},t.prototype.routeTo=function(e){return this._didRoute=!1,this.setState({url:e}),this.updating?this.canRoute(e):(this.forceUpdate(),this._didRoute)},t.prototype.componentWillMount=function(){k.push(this),this.updating=!0},t.prototype.componentDidMount=function(){var e=this;x&&(this.unlisten=x.listen(function(t){e.routeTo(""+(t.pathname||"")+(t.search||""))})),this.updating=!1},t.prototype.componentWillUnmount=function(){"function"==typeof this.unlisten&&this.unlisten(),k.splice(k.indexOf(this),1)},t.prototype.componentWillUpdate=function(){this.updating=!0},t.prototype.componentDidUpdate=function(){this.updating=!1},t.prototype.getMatchingChildren=function(e,t,n){return e.slice().sort(i).map(function(e){var i=e.attributes||{},a=i.path,s=o(t,a,i);if(s){if(!1!==n){var l={url:t,matches:s};return r(l,s),(0,_.cloneElement)(e,l)}return e}return!1}).filter(Boolean)},t.prototype.render=function(e,t){var n=e.children,r=e.onChange,o=t.url,i=this.getMatchingChildren(n,o,!0),a=i[0]||null;this._didRoute=!!a;var s=this.previousUrl;return o!==s&&(this.previousUrl=o,"function"==typeof r&&r({router:this,url:o,previous:s,active:i,current:a})),a},t}(_.Component),S=function(e){return(0,_.h)("a",r({onClick:g},e))},R=function(e){return(0,_.h)(e.component,e)};C.subscribers=O,C.getCurrentUrl=u,C.route=p,C.Router=C,C.Route=R,C.Link=S,t.subscribers=O,t.getCurrentUrl=u,t.route=p,t.Router=C,t.Route=R,t.Link=S,t.default=C},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(9),o=function(e){return e&&e.__esModule?e:{default:e}}(r),i=function(){var e=null,t=function(t){return(0,o.default)(null==e,"A history supports only one prompt at a time"),e=t,function(){e===t&&(e=null)}},n=function(t,n,r,i){if(null!=e){var a="function"==typeof e?e(t,n):e;"string"==typeof a?"function"==typeof r?r(a,i):((0,o.default)(!1,"A history needs a getUserConfirmation function in order to use a prompt message"),i(!0)):i(!1!==a)}else i(!0)},r=[];return{setPrompt:t,confirmTransitionTo:n,appendListener:function(e){var t=!0,n=function(){t&&e.apply(void 0,arguments)};return r.push(n),function(){t=!1,r=r.filter(function(e){return e!==n})}},notifyListeners:function(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];r.forEach(function(e){return e.apply(void 0,t)})}}};t.default=i},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(7),a=function(e){return e&&e.__esModule?e:{default:e}}(i),s=function(){function e(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:void 0;r(this,e),this.root_=t;for(var o=arguments.length,i=Array(o>2?o-2:0),a=2;a<o;a++)i[a-2]=arguments[a];this.initialize.apply(this,i),this.foundation_=void 0===n?this.getDefaultFoundation():n,this.foundation_.init(),this.initialSyncWithDOM()}return o(e,null,[{key:"attachTo",value:function(t){return new e(t,new a.default)}}]),o(e,[{key:"initialize",value:function(){}},{key:"getDefaultFoundation",value:function(){throw new Error("Subclasses must override getDefaultFoundation to return a properly configured foundation class")}},{key:"initialSyncWithDOM",value:function(){}},{key:"destroy",value:function(){this.foundation_.destroy()}},{key:"listen",value:function(e,t){this.root_.addEventListener(e,t)}},{key:"unlisten",value:function(e,t){this.root_.removeEventListener(e,t)}},{key:"emit",value:function(e,t){var n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=void 0;"function"==typeof CustomEvent?r=new CustomEvent(e,{detail:t,bubbles:n}):(r=document.createEvent("CustomEvent"),r.initCustomEvent(e,n,!1,t)),this.root_.dispatchEvent(r)}}]),e}();t.default=s},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=function e(t,n,r){null===t&&(t=Function.prototype);var o=Object.getOwnPropertyDescriptor(t,n);if(void 0===o){var i=Object.getPrototypeOf(t);return null===i?void 0:e(i,n,r)}if("value"in o)return o.value;var a=o.get;if(void 0!==a)return a.call(r)},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(3),d=function(e){return e&&e.__esModule?e:{default:e}}(c),u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},p=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="list",e._mdcProps=["dense","two-line"],e}return i(t,e),s(t,[{key:"materialDom",value:function(e){var t=this;return e.interactive?(0,l.h)("nav",u({ref:function(e){return t.control=e}},e),e.children):(0,l.h)("ul",u({},e,{ref:function(e){return t.control=e}}),e.children)}}]),t}(d.default),m=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="list-item",e}return i(t,e),s(t,[{key:"materialDom",value:function(e){var t=this;return(0,l.h)("li",u({role:"option"},e,{ref:function(e){return t.control=e}}),e.children)}}]),t}(d.default),f=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="list-item",e}return i(t,e),s(t,[{key:"componentDidMount",value:function(){a(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"attachRipple",this).call(this)}},{key:"materialDom",value:function(e){var t=this;return(0,l.h)("a",u({role:"option"},e,{ref:function(e){return t.control=e}}),e.children)}}]),t}(d.default),h=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="mdc-list-item__icon",e}return i(t,e),s(t,[{key:"getProxyClassName",value:function(e){var t=[];return e["start-detail"]=e["start-detail"]||!0,e["end-detail"]?t.push("mdc-list-item__end-detail"):e["start-detail"]&&t.push("mdc-list-item__start-detail"),t.join(" ")}},{key:"materialDom",value:function(e){var t=this,n="material-icons "+this.getProxyClassName(e);return(0,l.h)("i",u({className:n,"aria-hidden":"true"},e,{ref:function(e){return t.control=e}}),e.children)}}]),t}(d.default),g=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="mdc-list-item__avatar",e}return i(t,e),s(t,[{key:"materialDom",value:function(e){var n=this;return(0,l.h)("img",u({},e,{className:a(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"getProxyClassName",this).call(this,e)},e,{ref:function(e){return n.control=e},width:e.width||"56",height:e.height||"56",alt:e.alt||""}))}}]),t}(h),b=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="list-divider",e._mdcProps=["inset"],e}return i(t,e),s(t,[{key:"materialDom",value:function(e){var t=this;return(0,l.h)("li",u({role:"separator"},e,{ref:function(e){return t.control=e}}))}}]),t}(d.default),y=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="list-item__text",e}return i(t,e),s(t,[{key:"materialDom",value:function(e){var t=this;return(0,l.h)("span",u({},e,{ref:function(e){return t.control=e}}),e.children)}}]),t}(d.default),v=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="list-item__text__primary",e}return i(t,e),t}(y),_=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="list-item__text__secondary",e}return i(t,e),t}(y);p.Item=m,p.LinkItem=f,p.ItemIcon=h,p.ItemAvatar=g,p.Divider=b,p.TextContainer=y,p.PrimaryText=v,p.SecondaryText=_,t.default=p},function(e,t,n){"use strict";function r(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(void 0===l||t){var n=e.document.createElement("div"),r="transform"in n.style?"transform":"webkitTransform";l=r}return l}function o(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:1;return Math.min(n,Math.max(t,e))}function i(e,t,n,r,o){return a(s(e,t,r),n,o)}function a(e,t,n){if(0===e||1===e)return e;var r=e*t,o=t+e*(n-t),i=n+e*(1-n);return r+=e*(o-r),o+=e*(i-o),r+e*(o-r)}function s(e,t,n){if(e<=0)return 0;if(e>=1)return 1;for(var r=e,o=0,i=1,s=0,l=0;l<8;l++){s=a(r,t,n);var c=(a(r+1e-6,t,n)-s)/1e-6;if(Math.abs(s-e)<1e-6)return r;if(Math.abs(c)<1e-6)break;s<e?o=r:i=r,r-=(s-e)/c}for(var d=0;Math.abs(s-e)>1e-6&&d<8;d++)s<e?(o=r,r=(r+i)/2):(i=r,r=(r+o)/2),s=a(r,t,n);return r}Object.defineProperty(t,"__esModule",{value:!0});var l=void 0;t.getTransformPropertyName=r,t.clamp=o,t.bezierProgress=i},function(e,t,n){var r=n(81);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){"use strict";var r=function(e,t,n,r,o,i,a,s){if(!e){var l;if(void 0===t)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var c=[n,r,o,i,a,s],d=0;l=new Error(t.replace(/%s/g,function(){return c[d++]})),l.name="Invariant Violation"}throw l.framesToPop=1,l}};e.exports=r},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.canUseDOM=!("undefined"==typeof window||!window.document||!window.document.createElement),t.addEventListener=function(e,t,n){return e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent("on"+t,n)},t.removeEventListener=function(e,t,n){return e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent("on"+t,n)},t.getConfirmation=function(e,t){return t(window.confirm(e))},t.supportsHistory=function(){var e=window.navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone"))&&(window.history&&"pushState"in window.history)},t.supportsPopStateOnHashChange=function(){return-1===window.navigator.userAgent.indexOf("Trident")},t.supportsGoWithoutReloadUsingHash=function(){return-1===window.navigator.userAgent.indexOf("Firefox")},t.isExtraneousPopstateEvent=function(e){return void 0===e.state&&-1===navigator.userAgent.indexOf("CriOS")}},function(e,t,n){"use strict";function r(e,t){var n={};for(var r in e)t.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(e,r)&&(n[r]=e[r]);return n}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!==(void 0===t?"undefined":s(t))&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+(void 0===t?"undefined":s(t)));e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};Object.defineProperty(t,"__esModule",{value:!0}),t.Link=t.Match=void 0;var l=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},c=n(0),d=n(12),u=t.Match=function(e){function t(){var n,r,a;o(this,t);for(var s=arguments.length,l=Array(s),c=0;c<s;c++)l[c]=arguments[c];return n=r=i(this,e.call.apply(e,[this].concat(l))),r.update=function(e){r.nextUrl=e,r.setState({})},a=n,i(r,a)}return a(t,e),t.prototype.componentDidMount=function(){d.subscribers.push(this.update)},t.prototype.componentWillUnmount=function(){d.subscribers.splice(d.subscribers.indexOf(this.update)>>>0,1)},t.prototype.render=function(e){var t=this.nextUrl||(0,d.getCurrentUrl)(),n=t.replace(/\?.+$/,"");return this.nextUrl=null,e.children[0]&&e.children[0]({url:t,path:n,matches:n===e.path})},t}(c.Component),p=function(e){var t=e.activeClassName,n=e.path,o=r(e,["activeClassName","path"]);return(0,c.h)(u,{path:n||o.href},function(e){var n=e.matches;return(0,c.h)(d.Link,l({},o,{class:[o.class||o.className,n&&t].filter(Boolean).join(" ")}))})};t.Link=p,t.default=u,u.Link=p},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=function(){function e(){r(this,e)}return o(e,[{key:"browserSupportsCssVars",value:function(){}},{key:"isUnbounded",value:function(){}},{key:"isSurfaceActive",value:function(){}},{key:"isSurfaceDisabled",value:function(){}},{key:"addClass",value:function(e){}},{key:"removeClass",value:function(e){}},{key:"registerInteractionHandler",value:function(e,t){}},{key:"deregisterInteractionHandler",value:function(e,t){}},{key:"registerResizeHandler",value:function(e){}},{key:"deregisterResizeHandler",value:function(e){}},{key:"updateCssVariable",value:function(e,t){}},{key:"computeBoundingRect",value:function(){}},{key:"getWindowPageOffset",value:function(){}}]),e}();t.default=i},function(e,t,n){"use strict";function r(e){var t=e.document,n=t.createElement("div");n.className="mdc-ripple-surface--test-edge-var-bug",t.body.appendChild(n);var r=e.getComputedStyle(n),o=null!==r&&"solid"===r.borderTopStyle;return n.remove(),o}function o(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if("boolean"==typeof l&&!t)return l;if(e.CSS&&"function"==typeof e.CSS.supports){var n=e.CSS.supports("--css-vars","yes"),o=e.CSS.supports("(--css-vars: yes)")&&e.CSS.supports("color","#00000000");return l=!(!n&&!o||r(e))}}function i(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:window,t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(void 0===c||t){var n=!1;try{e.document.addEventListener("test",null,{get passive(){n=!0}})}catch(e){}c=n}return!!c&&{passive:!0}}function a(e){return["webkitMatchesSelector","msMatchesSelector","matches"].filter(function(t){return t in e}).pop()}function s(e,t,n){var r=t.x,o=t.y,i=r+n.left,a=o+n.top,s=void 0,l=void 0;return"touchstart"===e.type?(s=e.changedTouches[0].pageX-i,l=e.changedTouches[0].pageY-a):(s=e.pageX-i,l=e.pageY-a),{x:s,y:l}}Object.defineProperty(t,"__esModule",{value:!0});var l=void 0,c=void 0;t.supportsCssVariables=o,t.applyPassive=i,t.getMatchesProperty=a,t.getNormalizedEventCoords=s},function(e,t,n){"use strict";function r(e){if(!("ontouchstart"in(arguments.length>1&&void 0!==arguments[1]?arguments[1]:window).document))switch(e){case"touchstart":return"pointerdown";case"touchmove":return"pointermove";case"touchend":return"pointerup";default:return e}return e}function o(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:window,t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(void 0===u||t){var n=e.document.createElement("div"),r="transform"in n.style?"transform":"-webkit-transform";u=r}return u}function i(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:window;return"CSS"in e&&e.CSS.supports("(--color: red)")}function a(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:window,t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(void 0===p||t){var n=!1;try{e.document.addEventListener("test",null,{get passive(){n=!0}})}catch(e){}p=n}return!!p&&{passive:!0}}function s(e){e.hasAttribute("tabindex")&&e.setAttribute(c,e.getAttribute("tabindex")),e.setAttribute(d,!0)}function l(e){e.hasAttribute(d)&&(e.hasAttribute(c)?(e.setAttribute("tabindex",e.getAttribute(c)),e.removeAttribute(c)):e.removeAttribute("tabindex"),e.removeAttribute(d))}Object.defineProperty(t,"__esModule",{value:!0}),t.remapEvent=r,t.getTransformPropertyName=o,t.supportsCssCustomProperties=i,t.applyPassive=a,t.saveElementTabState=s,t.restoreElementTabState=l;var c="data-mdc-tabindex",d="data-mdc-tabindex-handled",u=void 0,p=void 0},function(e,t,n){e.exports=n(25)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(12),d=n(26),u=n(32),p=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(u);n(33),n(36),n(38),n(40);var m=n(41),f=r(m),h=n(74),g=r(h),b=n(82),y=r(b),v=n(83),_=r(v),w=n(84),x=r(w),k=n(85),O=r(k),E=n(86),T=r(E),C=n(87),S=r(C),R=function(e){function t(e){o(this,t);var n=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return p.install({onUpdating:function(){console.log("SW Event:","onUpdating")},onUpdateReady:function(){console.log("SW Event:","onUpdateReady"),p.applyUpdate()},onUpdated:function(){console.log("SW Event:","onUpdated"),window.location.reload()},onUpdateFailed:function(){console.log("SW Event:","onUpdateFailed")}}),n}return a(t,e),s(t,[{key:"logPageView",value:function(){window.dataLayer.push({event:window.location.hash})}},{key:"render",value:function(){return(0,l.h)("div",null,(0,l.h)(f.default,null),(0,l.h)("div",{class:"marginTop"},(0,l.h)(c.Router,{history:(0,d.createHashHistory)(),onChange:this.logPageView},(0,l.h)(g.default,{default:!0,path:"/"}),(0,l.h)(y.default,{path:"/about"}),(0,l.h)(_.default,{path:"/code/hello"}),(0,l.h)(x.default,{path:"/code/router"}),(0,l.h)(O.default,{path:"/code/offline"}),(0,l.h)(T.default,{path:"/code/highlight"}),(0,l.h)(S.default,{path:"/code/whereami"}))))}}]),t}(l.Component);(0,l.render)((0,l.h)(R,null),document.body)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0}),t.createPath=t.parsePath=t.locationsAreEqual=t.createLocation=t.createMemoryHistory=t.createHashHistory=t.createBrowserHistory=void 0;var o=n(8);Object.defineProperty(t,"createLocation",{enumerable:!0,get:function(){return o.createLocation}}),Object.defineProperty(t,"locationsAreEqual",{enumerable:!0,get:function(){return o.locationsAreEqual}});var i=n(6);Object.defineProperty(t,"parsePath",{enumerable:!0,get:function(){return i.parsePath}}),Object.defineProperty(t,"createPath",{enumerable:!0,get:function(){return i.createPath}});var a=n(29),s=r(a),l=n(30),c=r(l),d=n(31),u=r(d);t.createBrowserHistory=s.default,t.createHashHistory=c.default,t.createMemoryHistory=u.default},function(e,t,n){"use strict";function r(e){return"/"===e.charAt(0)}function o(e,t){for(var n=t,r=n+1,o=e.length;r<o;n+=1,r+=1)e[n]=e[r];e.pop()}function i(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",n=e&&e.split("/")||[],i=t&&t.split("/")||[],a=e&&r(e),s=t&&r(t),l=a||s;if(e&&r(e)?i=n:n.length&&(i.pop(),i=i.concat(n)),!i.length)return"/";var c=void 0;if(i.length){var d=i[i.length-1];c="."===d||".."===d||""===d}else c=!1;for(var u=0,p=i.length;p>=0;p--){var m=i[p];"."===m?o(i,p):".."===m?(o(i,p),u++):u&&(o(i,p),u--)}if(!l)for(;u--;u)i.unshift("..");!l||""===i[0]||i[0]&&r(i[0])||i.unshift("");var f=i.join("/");return c&&"/"!==f.substr(-1)&&(f+="/"),f}Object.defineProperty(t,"__esModule",{value:!0}),t.default=i},function(e,t,n){"use strict";function r(e,t){if(e===t)return!0;if(null==e||null==t)return!1;if(Array.isArray(e))return Array.isArray(t)&&e.length===t.length&&e.every(function(e,n){return r(e,t[n])});var n=void 0===e?"undefined":i(e);if(n!==(void 0===t?"undefined":i(t)))return!1;if("object"===n){var o=e.valueOf(),a=t.valueOf();if(o!==e||a!==t)return r(o,a);var s=Object.keys(e),l=Object.keys(t);return s.length===l.length&&s.every(function(n){return r(e[n],t[n])})}return!1}Object.defineProperty(t,"__esModule",{value:!0});var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},i="function"==typeof Symbol&&"symbol"===o(Symbol.iterator)?function(e){return void 0===e?"undefined":o(e)}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":void 0===e?"undefined":o(e)};t.default=r},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},i=n(9),a=r(i),s=n(18),l=r(s),c=n(8),d=n(6),u=n(13),p=r(u),m=n(19),f="function"==typeof Symbol&&"symbol"===o(Symbol.iterator)?function(e){return void 0===e?"undefined":o(e)}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":void 0===e?"undefined":o(e)},h=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},g=function(){try{return window.history.state||{}}catch(e){return{}}},b=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};(0,l.default)(m.canUseDOM,"Browser history needs a DOM");var t=window.history,n=(0,m.supportsHistory)(),r=!(0,m.supportsPopStateOnHashChange)(),o=e.forceRefresh,i=void 0!==o&&o,s=e.getUserConfirmation,u=void 0===s?m.getConfirmation:s,b=e.keyLength,y=void 0===b?6:b,v=e.basename?(0,d.stripTrailingSlash)((0,d.addLeadingSlash)(e.basename)):"",_=function(e){var t=e||{},n=t.key,r=t.state,o=window.location,i=o.pathname,s=o.search,l=o.hash,u=i+s+l;return(0,a.default)(!v||(0,d.hasBasename)(u,v),'You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path "'+u+'" to begin with "'+v+'".'),v&&(u=(0,d.stripBasename)(u,v)),(0,c.createLocation)(u,r,n)},w=function(){return Math.random().toString(36).substr(2,y)},x=(0,p.default)(),k=function(e){h(B,e),B.length=t.length,x.notifyListeners(B.location,B.action)},O=function(e){(0,m.isExtraneousPopstateEvent)(e)||C(_(e.state))},E=function(){C(_(g()))},T=!1,C=function(e){if(T)T=!1,k();else{x.confirmTransitionTo(e,"POP",u,function(t){t?k({action:"POP",location:e}):S(e)})}},S=function(e){var t=B.location,n=P.indexOf(t.key);-1===n&&(n=0);var r=P.indexOf(e.key);-1===r&&(r=0);var o=n-r;o&&(T=!0,D(o))},R=_(g()),P=[R.key],j=function(e){return v+(0,d.createPath)(e)},A=function(e,r){(0,a.default)(!("object"===(void 0===e?"undefined":f(e))&&void 0!==e.state&&void 0!==r),"You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");var o=(0,c.createLocation)(e,r,w(),B.location);x.confirmTransitionTo(o,"PUSH",u,function(e){if(e){var r=j(o),s=o.key,l=o.state;if(n)if(t.pushState({key:s,state:l},null,r),i)window.location.href=r;else{var c=P.indexOf(B.location.key),d=P.slice(0,-1===c?0:c+1);d.push(o.key),P=d,k({action:"PUSH",location:o})}else(0,a.default)(void 0===l,"Browser history cannot push state in browsers that do not support HTML5 history"),window.location.href=r}})},M=function(e,r){(0,a.default)(!("object"===(void 0===e?"undefined":f(e))&&void 0!==e.state&&void 0!==r),"You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");var o=(0,c.createLocation)(e,r,w(),B.location);x.confirmTransitionTo(o,"REPLACE",u,function(e){if(e){var r=j(o),s=o.key,l=o.state;if(n)if(t.replaceState({key:s,state:l},null,r),i)window.location.replace(r);else{var c=P.indexOf(B.location.key);-1!==c&&(P[c]=o.key),k({action:"REPLACE",location:o})}else(0,a.default)(void 0===l,"Browser history cannot replace state in browsers that do not support HTML5 history"),window.location.replace(r)}})},D=function(e){t.go(e)},L=function(){return D(-1)},I=function(){return D(1)},N=0,z=function(e){N+=e,1===N?((0,m.addEventListener)(window,"popstate",O),r&&(0,m.addEventListener)(window,"hashchange",E)):0===N&&((0,m.removeEventListener)(window,"popstate",O),r&&(0,m.removeEventListener)(window,"hashchange",E))},H=!1,F=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0],t=x.setPrompt(e);return H||(z(1),H=!0),function(){return H&&(H=!1,z(-1)),t()}},U=function(e){var t=x.appendListener(e);return z(1),function(){z(-1),t()}},B={length:t.length,action:"POP",location:R,createHref:j,push:A,replace:M,go:D,goBack:L,goForward:I,block:F,listen:U};return B};t.default=b},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(9),i=r(o),a=n(18),s=r(a),l=n(8),c=n(6),d=n(13),u=r(d),p=n(19),m=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},f={hashbang:{encodePath:function(e){return"!"===e.charAt(0)?e:"!/"+(0,c.stripLeadingSlash)(e)},decodePath:function(e){return"!"===e.charAt(0)?e.substr(1):e}},noslash:{encodePath:c.stripLeadingSlash,decodePath:c.addLeadingSlash},slash:{encodePath:c.addLeadingSlash,decodePath:c.addLeadingSlash}},h=function(){var e=window.location.href,t=e.indexOf("#");return-1===t?"":e.substring(t+1)},g=function(e){return window.location.hash=e},b=function(e){var t=window.location.href.indexOf("#");window.location.replace(window.location.href.slice(0,t>=0?t:0)+"#"+e)},y=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};(0,s.default)(p.canUseDOM,"Hash history needs a DOM");var t=window.history,n=(0,p.supportsGoWithoutReloadUsingHash)(),r=e.getUserConfirmation,o=void 0===r?p.getConfirmation:r,a=e.hashType,d=void 0===a?"slash":a,y=e.basename?(0,c.stripTrailingSlash)((0,c.addLeadingSlash)(e.basename)):"",v=f[d],_=v.encodePath,w=v.decodePath,x=function(){var e=w(h());return(0,i.default)(!y||(0,c.hasBasename)(e,y),'You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path "'+e+'" to begin with "'+y+'".'),y&&(e=(0,c.stripBasename)(e,y)),(0,l.createLocation)(e)},k=(0,u.default)(),O=function(e){m(X,e),X.length=t.length,k.notifyListeners(X.location,X.action)},E=!1,T=null,C=function(){var e=h(),t=_(e);if(e!==t)b(t);else{var n=x(),r=X.location;if(!E&&(0,l.locationsAreEqual)(r,n))return;if(T===(0,c.createPath)(n))return;T=null,S(n)}},S=function(e){if(E)E=!1,O();else{k.confirmTransitionTo(e,"POP",o,function(t){t?O({action:"POP",location:e}):R(e)})}},R=function(e){var t=X.location,n=M.lastIndexOf((0,c.createPath)(t));-1===n&&(n=0);var r=M.lastIndexOf((0,c.createPath)(e));-1===r&&(r=0);var o=n-r;o&&(E=!0,N(o))},P=h(),j=_(P);P!==j&&b(j);var A=x(),M=[(0,c.createPath)(A)],D=function(e){return"#"+_(y+(0,c.createPath)(e))},L=function(e,t){(0,i.default)(void 0===t,"Hash history cannot push state; it is ignored");var n=(0,l.createLocation)(e,void 0,void 0,X.location);k.confirmTransitionTo(n,"PUSH",o,function(e){if(e){var t=(0,c.createPath)(n),r=_(y+t);if(h()!==r){T=t,g(r);var o=M.lastIndexOf((0,c.createPath)(X.location)),a=M.slice(0,-1===o?0:o+1);a.push(t),M=a,O({action:"PUSH",location:n})}else(0,i.default)(!1,"Hash history cannot PUSH the same path; a new entry will not be added to the history stack"),O()}})},I=function(e,t){(0,i.default)(void 0===t,"Hash history cannot replace state; it is ignored");var n=(0,l.createLocation)(e,void 0,void 0,X.location);k.confirmTransitionTo(n,"REPLACE",o,function(e){if(e){var t=(0,c.createPath)(n),r=_(y+t);h()!==r&&(T=t,b(r));var o=M.indexOf((0,c.createPath)(X.location));-1!==o&&(M[o]=t),O({action:"REPLACE",location:n})}})},N=function(e){(0,i.default)(n,"Hash history go(n) causes a full page reload in this browser"),t.go(e)},z=function(){return N(-1)},H=function(){return N(1)},F=0,U=function(e){F+=e,1===F?(0,p.addEventListener)(window,"hashchange",C):0===F&&(0,p.removeEventListener)(window,"hashchange",C)},B=!1,W=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0],t=k.setPrompt(e);return B||(U(1),B=!0),function(){return B&&(B=!1,U(-1)),t()}},V=function(e){var t=k.appendListener(e);return U(1),function(){U(-1),t()}},X={length:t.length,action:"POP",location:A,createHref:D,push:L,replace:I,go:N,goBack:z,goForward:H,block:W,listen:V};return X};t.default=y},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},i=n(9),a=r(i),s=n(6),l=n(8),c=n(13),d=r(c),u="function"==typeof Symbol&&"symbol"===o(Symbol.iterator)?function(e){return void 0===e?"undefined":o(e)}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":void 0===e?"undefined":o(e)},p=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},m=function(e,t,n){return Math.min(Math.max(e,t),n)},f=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.getUserConfirmation,n=e.initialEntries,r=void 0===n?["/"]:n,o=e.initialIndex,i=void 0===o?0:o,c=e.keyLength,f=void 0===c?6:c,h=(0,d.default)(),g=function(e){p(R,e),R.length=R.entries.length,h.notifyListeners(R.location,R.action)},b=function(){return Math.random().toString(36).substr(2,f)},y=m(i,0,r.length-1),v=r.map(function(e){return"string"==typeof e?(0,l.createLocation)(e,void 0,b()):(0,l.createLocation)(e,void 0,e.key||b())}),_=s.createPath,w=function(e,n){(0,a.default)(!("object"===(void 0===e?"undefined":u(e))&&void 0!==e.state&&void 0!==n),"You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");var r=(0,l.createLocation)(e,n,b(),R.location);h.confirmTransitionTo(r,"PUSH",t,function(e){if(e){var t=R.index,n=t+1,o=R.entries.slice(0);o.length>n?o.splice(n,o.length-n,r):o.push(r),g({action:"PUSH",location:r,index:n,entries:o})}})},x=function(e,n){(0,a.default)(!("object"===(void 0===e?"undefined":u(e))&&void 0!==e.state&&void 0!==n),"You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");var r=(0,l.createLocation)(e,n,b(),R.location);h.confirmTransitionTo(r,"REPLACE",t,function(e){e&&(R.entries[R.index]=r,g({action:"REPLACE",location:r}))})},k=function(e){var n=m(R.index+e,0,R.entries.length-1),r=R.entries[n];h.confirmTransitionTo(r,"POP",t,function(e){e?g({action:"POP",location:r,index:n}):g()})},O=function(){return k(-1)},E=function(){return k(1)},T=function(e){var t=R.index+e;return t>=0&&t<R.entries.length},C=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];return h.setPrompt(e)},S=function(e){return h.appendListener(e)},R={length:v.length,action:"POP",location:v[y],index:y,entries:v,createHref:_,push:w,replace:x,go:k,goBack:O,goForward:E,canGo:T,block:C,listen:S};return R};t.default=f},function(e,t,n){"use strict";function r(){return"serviceWorker"in navigator&&(window.fetch||"imageRendering"in document.documentElement.style)&&("https:"===window.location.protocol||"localhost"===window.location.hostname||0===window.location.hostname.indexOf("127."))}function o(e){if(e||(e={}),r()){var t=navigator.serviceWorker.register("sw.js"),n=function(e){function t(){switch(a.state){case"redundant":o("onUpdateFailed"),a.onstatechange=null;break;case"installing":r||o("onUpdating");break;case"installed":i||o("onUpdateReady");break;case"activated":o("onUpdated"),a.onstatechange=null}}function n(){switch(a.state){case"redundant":a.onstatechange=null;break;case"installing":case"installed":break;case"activated":o("onInstalled"),a.onstatechange=null}}var r,i,a=e.installing||e.waiting;if(a&&!a.onstatechange){var s;e.active?(t(),s=t):(n(),s=n),r=!0,e.waiting&&(i=!0),a.onstatechange=s}},o=function(t){"function"==typeof e[t]&&e[t]({source:"ServiceWorker"})};return void t.then(function(e){e&&(n(e),e.onupdatefound=function(){n(e)})}).catch(function(e){return o("onError"),Promise.reject(e)})}if(window.applicationCache){var i=function(){var e=document.createElement("iframe");e.src="appcache/manifest.html",e.style.display="none",s=e,document.body.appendChild(e)};return void("complete"===document.readyState?setTimeout(i):window.addEventListener("load",i))}}function i(e,t){if(r())return void navigator.serviceWorker.getRegistration().then(function(n){if(!n||!n.waiting)return void(t&&t());n.waiting.postMessage({action:"skipWaiting"}),e&&e()})}function a(){if(r()&&navigator.serviceWorker.getRegistration().then(function(e){if(e)return e.update()}),s)try{s.contentWindow.applicationCache.update()}catch(e){}}var s;t.install=o,t.applyUpdate=i,t.update=a},function(e,t,n){var r=n(34);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,"/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased; }\n\n.mdc-typography--display4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 7rem;\n  font-weight: 300;\n  letter-spacing: -0.04em;\n  line-height: 7rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display4 {\n  margin: -1rem 0 3.5rem -0.085em; }\n\n.mdc-typography--display3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.5rem;\n  font-weight: 400;\n  letter-spacing: -0.02em;\n  line-height: 3.5rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display3 {\n  margin: -8px 0 64px -0.07em; }\n\n.mdc-typography--display2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.813rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 3rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display2 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--display1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2.5rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display1 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--headline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--headline {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  line-height: 2rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--title {\n  margin: -0.5rem 0 1rem -0.05em; }\n\n.mdc-typography--subheading2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading2 {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--subheading1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.938rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading1 {\n  margin: -0.313rem 0 0.813rem -0.06em; }\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body2 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body1 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  font-weight: 400;\n  letter-spacing: 0.08em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--caption {\n  margin: -0.5rem 0 1rem -0.04em; }\n\n.mdc-typography--button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 2.25rem;\n  text-decoration: none;\n  text-transform: uppercase; }\n\n.mdc-typography--adjust-margin.mdc-typography--button {\n  margin: inherit; }\n",""])},function(e,t,n){"use strict";e.exports=function(e){var t="undefined"!=typeof window&&window.location;if(!t)throw new Error("fixUrls requires window.location");if(!e||"string"!=typeof e)return e;var n=t.protocol+"//"+t.host,r=n+t.pathname.replace(/\/[^\/]*$/,"/");return e.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,function(e,t){var o=t.trim().replace(/^"(.*)"$/,function(e,t){return t}).replace(/^'(.*)'$/,function(e,t){return t});if(/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(o))return e;var i;return i=0===o.indexOf("//")?o:0===o.indexOf("/")?n+o:r+o.replace(/^\.\//,""),"url("+JSON.stringify(i)+")"})}},function(e,t,n){var r=n(37);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,"/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n:root {\n  --mdc-theme-primary: #3f51b5;\n  --mdc-theme-primary-light: #a4addf;\n  --mdc-theme-primary-dark: #6f7dcd;\n  --mdc-theme-secondary: #ff4081;\n  --mdc-theme-secondary-light: #ff87b0;\n  --mdc-theme-secondary-dark: #f80054;\n  --mdc-theme-background: #fff;\n  --mdc-theme-text-primary-on-primary: white;\n  --mdc-theme-text-secondary-on-primary: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-primary-light: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-primary-light: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-primary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-primary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-primary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-primary-dark: white;\n  --mdc-theme-text-secondary-on-primary-dark: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-primary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-primary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-primary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-secondary: white;\n  --mdc-theme-text-secondary-on-secondary: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-secondary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-secondary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-secondary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-secondary-light: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-secondary-light: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-secondary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-secondary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-secondary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-secondary-dark: white;\n  --mdc-theme-text-secondary-on-secondary-dark: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-secondary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-secondary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-secondary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-dark: white;\n  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5); }\n\n.mdc-theme--background {\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff); }\n\n.mdc-theme--primary {\n  /* @alternate */\n  color: #3f51b5 !important;\n  color: var(--mdc-theme-primary, #3f51b5) !important; }\n\n.mdc-theme--primary-light {\n  /* @alternate */\n  color: #a4addf !important;\n  color: var(--mdc-theme-primary-light, #a4addf) !important; }\n\n.mdc-theme--primary-dark {\n  /* @alternate */\n  color: #6f7dcd !important;\n  color: var(--mdc-theme-primary-dark, #6f7dcd) !important; }\n\n.mdc-theme--secondary {\n  /* @alternate */\n  color: #ff4081 !important;\n  color: var(--mdc-theme-secondary, #ff4081) !important; }\n\n.mdc-theme--secondary-light {\n  /* @alternate */\n  color: #ff87b0 !important;\n  color: var(--mdc-theme-secondary-light, #ff87b0) !important; }\n\n.mdc-theme--secondary-dark {\n  /* @alternate */\n  color: #f80054 !important;\n  color: var(--mdc-theme-secondary-dark, #f80054) !important; }\n\n.mdc-theme--text-primary-on-primary {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-primary, white) !important; }\n\n.mdc-theme--text-secondary-on-primary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-primary, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-primary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-primary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-primary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-primary-light, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-primary-light, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-primary-dark {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-primary-dark, white) !important; }\n\n.mdc-theme--text-secondary-on-primary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-primary-dark, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-primary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-primary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-primary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-secondary {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-secondary, white) !important; }\n\n.mdc-theme--text-secondary-on-secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-secondary, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-secondary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-secondary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-secondary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-secondary-light, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-secondary-light, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-secondary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-secondary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-secondary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-secondary-dark {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-secondary-dark, white) !important; }\n\n.mdc-theme--text-secondary-on-secondary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-secondary-dark, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-secondary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-secondary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-secondary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-secondary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-secondary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-secondary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-dark {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-dark, white) !important; }\n\n.mdc-theme--text-secondary-on-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--primary-bg {\n  /* @alternate */\n  background-color: #3f51b5 !important;\n  background-color: var(--mdc-theme-primary, #3f51b5) !important; }\n\n.mdc-theme--primary-light-bg {\n  /* @alternate */\n  background-color: #a4addf !important;\n  background-color: var(--mdc-theme-primary-light, #a4addf) !important; }\n\n.mdc-theme--primary-dark-bg {\n  /* @alternate */\n  background-color: #6f7dcd !important;\n  background-color: var(--mdc-theme-primary-dark, #6f7dcd) !important; }\n\n.mdc-theme--secondary-bg {\n  /* @alternate */\n  background-color: #ff4081 !important;\n  background-color: var(--mdc-theme-secondary, #ff4081) !important; }\n\n.mdc-theme--secondary-light-bg {\n  /* @alternate */\n  background-color: #ff87b0 !important;\n  background-color: var(--mdc-theme-secondary-light, #ff87b0) !important; }\n\n.mdc-theme--secondary-dark-bg {\n  /* @alternate */\n  background-color: #f80054 !important;\n  background-color: var(--mdc-theme-secondary-dark, #f80054) !important; }\n",""])},function(e,t,n){var r=n(39);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,"li {\n  line-height: 1.5em; }\n\n.marginTop {\n  margin-top: 70px; }\n\n.toolbarTitleLink {\n  color: var(--mdc-theme-text-primary-on-primary, white);\n  text-decoration: none; }\n",""])},function(e,t,n){"use strict";"function"==typeof Symbol&&Symbol.iterator},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(12),d=n(20),u=n(42),p=r(u),m=n(50),f=r(m),h=n(59),g=r(h),b=n(65),y=r(b);n(68),n(70),n(72);var v=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e._onClick=e._onClick.bind(e),e._onClickMenu=e._onClickMenu.bind(e),e.state={drawerOpened:!1},e}return a(t,e),s(t,[{key:"_routeFromLink",value:function(e){if(e&&e.getAttribute){var t=e.getAttribute("href"),n=e.getAttribute("target");if(t&&t.match(/^\//g)&&(!n||n.match(/^_?self$/i)))return(0,c.route)(t)}}},{key:"_onClick",value:function(e){this.setState({drawerOpened:!1}),this._handleLinkClick(e)}},{key:"_onClickMenu",value:function(e){this.menu.MDComponent.open=!1,this._handleLinkClick(e)}},{key:"_handleLinkClick",value:function(e){if(0==e.button)return this._routeFromLink(e.currentTarget||e.target||this),this._prevent(e)}},{key:"_prevent",value:function(e){return e&&(e.stopImmediatePropagation&&e.stopImmediatePropagation(),e.stopPropagation&&e.stopPropagation(),e.preventDefault()),!1}},{key:"render",value:function(){var e=this;return(0,l.h)(p.default,{fixed:!0},(0,l.h)(p.default.Row,null,(0,l.h)(p.default.Section,{"align-start":!0},(0,l.h)(p.default.Icon,{onClick:function(){e.setState({drawerOpened:!e.state.drawerOpened})}},"menu"),(0,l.h)(f.default.TemporaryDrawer,{open:this.state.drawerOpened,onClose:function(){e.setState({drawerOpened:!1})}},(0,l.h)(f.default.TemporaryDrawerContent,null,(0,l.h)(y.default,{onClick:this._onClick}))),(0,l.h)(p.default.Title,null,(0,l.h)(d.Link,{href:"/#",class:"toolbarTitleLink"},"keemor.github.io"))),(0,l.h)(p.default.Section,{"align-end":!0},(0,l.h)(g.default.Anchor,null,(0,l.h)(p.default.Icon,{menu:!0,onClick:function(t){e.menu.MDComponent.open=!0}},"more_vert"),(0,l.h)(g.default,{ref:function(t){e.menu=t}},(0,l.h)(d.Link,{href:"/about",class:"mdc-list-item",onClick:this._onClickMenu},(0,l.h)(g.default.Item,null,"About")))))))}}]),t}(l.Component);t.default=v},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(0),l=n(3),c=function(e){return e&&e.__esModule?e:{default:e}}(l),d=n(46),u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},p=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="toolbar",e._mdcProps=["fixed","fixed-lastrow-only","waterfall","flexible","flexible-default-behavior"],e._onChange=e._onChange.bind(e),e}return i(t,e),a(t,[{key:"_onChange",value:function(e){this.props.onChange&&this.props.onChange(e)}},{key:"componentDidMount",value:function(){this.MDComponent=new d.MDCToolbar(this.control),this.MDComponent.listen("MDCToolbar:change",this._onChange)}},{key:"componentWillUnmount",value:function(){this.MDComponent.unlisten("MDCToolbar:change",this._onChange),this.MDComponent.destroy&&this.MDComponent.destroy()}},{key:"materialDom",value:function(e){var t=this;return(0,s.h)("header",u({ref:function(e){t.control=e}},e),e.children)}}]),t}(c.default),m=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="toolbar__row",e}return i(t,e),t}(c.default),f=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="toolbar__section",e._mdcProps=["align-start","align-end","shrink-to-fit"],e}return i(t,e),a(t,[{key:"materialDom",value:function(e){return(0,s.h)("section",e,e.children)}}]),t}(c.default),h=function(e){function t(e){r(this,t);var n=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return n.componentName="toolbar__icon",e.menu&&(n.componentName="toolbar__menu-icon"),n}return i(t,e),a(t,[{key:"materialDom",value:function(e){return(0,s.h)("a",u({className:"material-icons"},e),e.children||"menu")}}]),t}(c.default),g=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="toolbar__title",e}return i(t,e),a(t,[{key:"materialDom",value:function(e){return(0,s.h)("span",e,e.children)}}]),t}(c.default);p.Section=f,p.Icon=h,p.Title=g,p.Row=m,t.default=p},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t.util=t.MDCRippleFoundation=t.MDCRipple=void 0;var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(14),c=r(l),d=n(21),u=(r(d),n(44)),p=r(u),m=n(22),f=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(m),h=function(e){function t(){var e;o(this,t);for(var n=arguments.length,r=Array(n),a=0;a<n;a++)r[a]=arguments[a];var s=i(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(r)));return s.disabled=!1,s.unbounded_,s}return a(t,e),s(t,[{key:"activate",value:function(){this.foundation_.activate()}},{key:"deactivate",value:function(){this.foundation_.deactivate()}},{key:"layout",value:function(){this.foundation_.layout()}},{key:"getDefaultFoundation",value:function(){return new p.default(t.createAdapter(this))}},{key:"initialSyncWithDOM",value:function(){this.unbounded="mdcRippleIsUnbounded"in this.root_.dataset}},{key:"unbounded",get:function(){return this.unbounded_},set:function(e){var t=p.default.cssClasses.UNBOUNDED;this.unbounded_=Boolean(e),this.unbounded_?this.root_.classList.add(t):this.root_.classList.remove(t)}}],[{key:"attachTo",value:function(e){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},r=n.isUnbounded,o=void 0===r?void 0:r,i=new t(e);return void 0!==o&&(i.unbounded=o),i}},{key:"createAdapter",value:function(e){var t=f.getMatchesProperty(HTMLElement.prototype);return{browserSupportsCssVars:function(){return f.supportsCssVariables(window)},isUnbounded:function(){return e.unbounded},isSurfaceActive:function(){return e.root_[t](":active")},isSurfaceDisabled:function(){return e.disabled},addClass:function(t){return e.root_.classList.add(t)},removeClass:function(t){return e.root_.classList.remove(t)},registerInteractionHandler:function(t,n){return e.root_.addEventListener(t,n,f.applyPassive())},deregisterInteractionHandler:function(t,n){return e.root_.removeEventListener(t,n,f.applyPassive())},registerResizeHandler:function(e){return window.addEventListener("resize",e)},deregisterResizeHandler:function(e){return window.removeEventListener("resize",e)},updateCssVariable:function(t,n){return e.root_.style.setProperty(t,n)},computeBoundingRect:function(){return e.root_.getBoundingClientRect()},getWindowPageOffset:function(){return{x:window.pageXOffset,y:window.pageYOffset}}}}}]),t}(c.default),g=function e(){o(this,e)};g.prototype.root_,g.prototype.unbounded,g.prototype.disabled,t.MDCRipple=h,t.MDCRippleFoundation=p.default,t.util=f},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),c=n(7),d=r(c),u=n(21),p=(r(u),n(45)),m=n(22),f={mouseup:"mousedown",pointerup:"pointerdown",touchend:"touchstart",keyup:"keydown",blur:"focus"},h=function(e){function t(e){o(this,t);var n=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,s(t.defaultAdapter,e)));return n.layoutFrame_=0,n.frame_={width:0,height:0},n.activationState_=n.defaultActivationState_(),n.xfDuration_=0,n.initialSize_=0,n.maxRadius_=0,n.listenerInfos_=[{activate:"touchstart",deactivate:"touchend"},{activate:"pointerdown",deactivate:"pointerup"},{activate:"mousedown",deactivate:"mouseup"},{activate:"keydown",deactivate:"keyup"},{focus:"focus",blur:"blur"}],n.listeners_={activate:function(e){return n.activate_(e)},deactivate:function(e){return n.deactivate_(e)},focus:function(){return requestAnimationFrame(function(){return n.adapter_.addClass(t.cssClasses.BG_FOCUSED)})},blur:function(){return requestAnimationFrame(function(){return n.adapter_.removeClass(t.cssClasses.BG_FOCUSED)})}},n.resizeHandler_=function(){return n.layout()},n.unboundedCoords_={left:0,top:0},n.fgScale_=0,n.activationTimer_=0,n.fgDeactivationRemovalTimer_=0,n.activationAnimationHasEnded_=!1,n.activationTimerCallback_=function(){n.activationAnimationHasEnded_=!0,n.runDeactivationUXLogicIfReady_()},n}return a(t,e),l(t,null,[{key:"cssClasses",get:function(){return p.cssClasses}},{key:"strings",get:function(){return p.strings}},{key:"numbers",get:function(){return p.numbers}},{key:"defaultAdapter",get:function(){return{browserSupportsCssVars:function(){},isUnbounded:function(){},isSurfaceActive:function(){},isSurfaceDisabled:function(){},addClass:function(){},removeClass:function(){},registerInteractionHandler:function(){},deregisterInteractionHandler:function(){},registerResizeHandler:function(){},deregisterResizeHandler:function(){},updateCssVariable:function(){},computeBoundingRect:function(){},getWindowPageOffset:function(){}}}}]),l(t,[{key:"isSupported_",value:function(){return this.adapter_.browserSupportsCssVars()}},{key:"defaultActivationState_",value:function(){return{isActivated:!1,hasDeactivationUXRun:!1,wasActivatedByPointer:!1,wasElementMadeActive:!1,activationStartTime:0,activationEvent:null,isProgrammatic:!1}}},{key:"init",value:function(){var e=this;if(this.isSupported_()){this.addEventListeners_();var n=t.cssClasses,r=n.ROOT,o=n.UNBOUNDED;requestAnimationFrame(function(){e.adapter_.addClass(r),e.adapter_.isUnbounded()&&e.adapter_.addClass(o),e.layoutInternal_()})}}},{key:"addEventListeners_",value:function(){var e=this;this.listenerInfos_.forEach(function(t){Object.keys(t).forEach(function(n){e.adapter_.registerInteractionHandler(t[n],e.listeners_[n])})}),this.adapter_.registerResizeHandler(this.resizeHandler_)}},{key:"activate_",value:function(e){var t=this;if(!this.adapter_.isSurfaceDisabled()){var n=this.activationState_;n.isActivated||(n.isActivated=!0,n.isProgrammatic=null===e,n.activationEvent=e,n.wasActivatedByPointer=!n.isProgrammatic&&("mousedown"===e.type||"touchstart"===e.type||"pointerdown"===e.type),n.activationStartTime=Date.now(),requestAnimationFrame(function(){n.wasElementMadeActive=!e||"keydown"!==e.type||t.adapter_.isSurfaceActive(),n.wasElementMadeActive?t.animateActivation_():t.activationState_=t.defaultActivationState_()}))}}},{key:"activate",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;this.activate_(e)}},{key:"animateActivation_",value:function(){var e=this,n=t.strings,r=n.VAR_FG_TRANSLATE_START,o=n.VAR_FG_TRANSLATE_END,i=t.cssClasses,a=i.BG_ACTIVE_FILL,s=i.FG_DEACTIVATION,l=i.FG_ACTIVATION,c=t.numbers.DEACTIVATION_TIMEOUT_MS,d="",u="";if(!this.adapter_.isUnbounded()){var p=this.getFgTranslationCoordinates_(),m=p.startPoint,f=p.endPoint;d=m.x+"px, "+m.y+"px",u=f.x+"px, "+f.y+"px"}this.adapter_.updateCssVariable(r,d),this.adapter_.updateCssVariable(o,u),clearTimeout(this.activationTimer_),clearTimeout(this.fgDeactivationRemovalTimer_),this.rmBoundedActivationClasses_(),this.adapter_.removeClass(s),this.adapter_.computeBoundingRect(),this.adapter_.addClass(a),this.adapter_.addClass(l),this.activationTimer_=setTimeout(function(){return e.activationTimerCallback_()},c)}},{key:"getFgTranslationCoordinates_",value:function(){var e=this.activationState_,t=e.activationEvent,n=e.wasActivatedByPointer,r=void 0;return r=n?(0,m.getNormalizedEventCoords)(t,this.adapter_.getWindowPageOffset(),this.adapter_.computeBoundingRect()):{x:this.frame_.width/2,y:this.frame_.height/2},r={x:r.x-this.initialSize_/2,y:r.y-this.initialSize_/2},{startPoint:r,endPoint:{x:this.frame_.width/2-this.initialSize_/2,y:this.frame_.height/2-this.initialSize_/2}}}},{key:"runDeactivationUXLogicIfReady_",value:function(){var e=this,n=t.cssClasses.FG_DEACTIVATION,r=this.activationState_,o=r.hasDeactivationUXRun,i=r.isActivated;(o||!i)&&this.activationAnimationHasEnded_&&(this.rmBoundedActivationClasses_(),this.adapter_.addClass(n),this.fgDeactivationRemovalTimer_=setTimeout(function(){e.adapter_.removeClass(n)},p.numbers.FG_DEACTIVATION_MS))}},{key:"rmBoundedActivationClasses_",value:function(){var e=t.cssClasses,n=e.BG_ACTIVE_FILL,r=e.FG_ACTIVATION;this.adapter_.removeClass(n),this.adapter_.removeClass(r),this.activationAnimationHasEnded_=!1,this.adapter_.computeBoundingRect()}},{key:"deactivate_",value:function(e){var t=this,n=this.activationState_;if(n.isActivated){if(n.isProgrammatic){var r=s({},n);return requestAnimationFrame(function(){return t.animateDeactivation_(null,r)}),void(this.activationState_=this.defaultActivationState_())}var o=f[e.type],i=n.activationEvent.type,a=o===i,l=a;n.wasActivatedByPointer&&(l="mouseup"===e.type);var c=s({},n);requestAnimationFrame(function(){a&&(t.activationState_.hasDeactivationUXRun=!0,t.animateDeactivation_(e,c)),l&&(t.activationState_=t.defaultActivationState_())})}}},{key:"deactivate",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;this.deactivate_(e)}},{key:"animateDeactivation_",value:function(e,n){var r=n.wasActivatedByPointer,o=n.wasElementMadeActive,i=t.cssClasses.BG_FOCUSED;(r||o)&&(this.adapter_.removeClass(i),this.runDeactivationUXLogicIfReady_())}},{key:"destroy",value:function(){var e=this;if(this.isSupported_()){this.removeEventListeners_();var n=t.cssClasses,r=n.ROOT,o=n.UNBOUNDED;requestAnimationFrame(function(){e.adapter_.removeClass(r),e.adapter_.removeClass(o),e.removeCssVars_()})}}},{key:"removeEventListeners_",value:function(){var e=this;this.listenerInfos_.forEach(function(t){Object.keys(t).forEach(function(n){e.adapter_.deregisterInteractionHandler(t[n],e.listeners_[n])})}),this.adapter_.deregisterResizeHandler(this.resizeHandler_)}},{key:"removeCssVars_",value:function(){var e=this,n=t.strings;Object.keys(n).forEach(function(t){0===t.indexOf("VAR_")&&e.adapter_.updateCssVariable(n[t],null)})}},{key:"layout",value:function(){var e=this;this.layoutFrame_&&cancelAnimationFrame(this.layoutFrame_),this.layoutFrame_=requestAnimationFrame(function(){e.layoutInternal_(),e.layoutFrame_=0})}},{key:"layoutInternal_",value:function(){this.frame_=this.adapter_.computeBoundingRect();var e=Math.max(this.frame_.height,this.frame_.width),n=Math.sqrt(Math.pow(this.frame_.width,2)+Math.pow(this.frame_.height,2));this.initialSize_=e*t.numbers.INITIAL_ORIGIN_SCALE,this.maxRadius_=n+t.numbers.PADDING,this.fgScale_=this.maxRadius_/this.initialSize_,this.xfDuration_=1e3*Math.sqrt(this.maxRadius_/1024),this.updateLayoutCssVars_()}},{key:"updateLayoutCssVars_",value:function(){var e=t.strings,n=e.VAR_SURFACE_WIDTH,r=e.VAR_SURFACE_HEIGHT,o=e.VAR_FG_SIZE,i=e.VAR_LEFT,a=e.VAR_TOP,s=e.VAR_FG_SCALE;this.adapter_.updateCssVariable(n,this.frame_.width+"px"),this.adapter_.updateCssVariable(r,this.frame_.height+"px"),this.adapter_.updateCssVariable(o,this.initialSize_+"px"),this.adapter_.updateCssVariable(s,this.fgScale_),this.adapter_.isUnbounded()&&(this.unboundedCoords_={left:Math.round(this.frame_.width/2-this.initialSize_/2),top:Math.round(this.frame_.height/2-this.initialSize_/2)},this.adapter_.updateCssVariable(i,this.unboundedCoords_.left+"px"),this.adapter_.updateCssVariable(a,this.unboundedCoords_.top+"px"))}}]),t}(d.default);t.default=h},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={ROOT:"mdc-ripple-upgraded",UNBOUNDED:"mdc-ripple-upgraded--unbounded",BG_FOCUSED:"mdc-ripple-upgraded--background-focused",BG_ACTIVE_FILL:"mdc-ripple-upgraded--background-active-fill",FG_ACTIVATION:"mdc-ripple-upgraded--foreground-activation",FG_DEACTIVATION:"mdc-ripple-upgraded--foreground-deactivation"},o={VAR_SURFACE_WIDTH:"--mdc-ripple-surface-width",VAR_SURFACE_HEIGHT:"--mdc-ripple-surface-height",VAR_FG_SIZE:"--mdc-ripple-fg-size",VAR_LEFT:"--mdc-ripple-left",VAR_TOP:"--mdc-ripple-top",VAR_FG_SCALE:"--mdc-ripple-fg-scale",VAR_FG_TRANSLATE_START:"--mdc-ripple-fg-translate-start",VAR_FG_TRANSLATE_END:"--mdc-ripple-fg-translate-end"},i={PADDING:10,INITIAL_ORIGIN_SCALE:.6,DEACTIVATION_TIMEOUT_MS:300,FG_DEACTIVATION_MS:83};t.cssClasses=r,t.strings=o,t.numbers=i},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t.MDCToolbar=t.util=t.MDCToolbarFoundation=void 0;var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(10),l=n(47),c=function(e){return e&&e.__esModule?e:{default:e}}(l),d=n(49),u=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(d);t.MDCToolbarFoundation=c.default,t.util=u;t.MDCToolbar=function(e){function t(){return r(this,t),o(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return i(t,e),a(t,[{key:"getDefaultFoundation",value:function(){var e=this;return new c.default({hasClass:function(t){return e.root_.classList.contains(t)},addClass:function(t){return e.root_.classList.add(t)},removeClass:function(t){return e.root_.classList.remove(t)},registerScrollHandler:function(e){return window.addEventListener("scroll",e,u.applyPassive())},deregisterScrollHandler:function(e){return window.removeEventListener("scroll",e,u.applyPassive())},registerResizeHandler:function(e){return window.addEventListener("resize",e)},deregisterResizeHandler:function(e){return window.removeEventListener("resize",e)},getViewportWidth:function(){return window.innerWidth},getViewportScrollY:function(){return window.pageYOffset},getOffsetHeight:function(){return e.root_.offsetHeight},getFirstRowElementOffsetHeight:function(){return e.firstRowElement_.offsetHeight},notifyChange:function(t){return e.emit(c.default.strings.CHANGE_EVENT,t)},setStyle:function(t,n){return e.root_.style.setProperty(t,n)},setStyleForTitleElement:function(t,n){return e.titleElement_.style.setProperty(t,n)},setStyleForFlexibleRowElement:function(t,n){return e.firstRowElement_.style.setProperty(t,n)},setStyleForFixedAdjustElement:function(t,n){e.fixedAdjustElement&&e.fixedAdjustElement.style.setProperty(t,n)}})}},{key:"firstRowElement_",get:function(){return this.root_.querySelector(c.default.strings.FIRST_ROW_SELECTOR)}},{key:"titleElement_",get:function(){return this.root_.querySelector(c.default.strings.TITLE_SELECTOR)}},{key:"fixedAdjustElement",set:function(e){this.fixedAdjustElement_=e,this.foundation_.updateAdjustElementStyles()},get:function(){return this.fixedAdjustElement_}}],[{key:"attachTo",value:function(e){return new t(e)}}]),t}(s.MDCComponent)},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(7),c=function(e){return e&&e.__esModule?e:{default:e}}(l),d=n(48),u=function(e){function t(e){r(this,t);var n=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,a(t.defaultAdapter,e)));return n.resizeHandler_=function(){return n.checkRowHeight_()},n.scrollHandler_=function(){return n.updateToolbarStyles_()},n.checkRowHeightFrame_=0,n.scrollFrame_=0,n.executedLastChange_=!1,n.calculations_={toolbarRowHeight:0,toolbarRatio:0,flexibleExpansionRatio:0,maxTranslateYRatio:0,scrollThresholdRatio:0,toolbarHeight:0,flexibleExpansionHeight:0,maxTranslateYDistance:0,scrollThreshold:0},n.fixed_=!1,n.fixedLastrow_=!1,n.hasFlexibleRow_=!1,n.useFlexDefaultBehavior_=!1,n}return i(t,e),s(t,null,[{key:"cssClasses",get:function(){return d.cssClasses}},{key:"strings",get:function(){return d.strings}},{key:"numbers",get:function(){return d.numbers}},{key:"defaultAdapter",get:function(){return{hasClass:function(){return!1},addClass:function(){},removeClass:function(){},registerScrollHandler:function(){},deregisterScrollHandler:function(){},registerResizeHandler:function(){},deregisterResizeHandler:function(){},getViewportWidth:function(){return 0},getViewportScrollY:function(){return 0},getOffsetHeight:function(){return 0},getFirstRowElementOffsetHeight:function(){return 0},notifyChange:function(){},setStyle:function(){},setStyleForTitleElement:function(){},setStyleForFlexibleRowElement:function(){},setStyleForFixedAdjustElement:function(){}}}}]),s(t,[{key:"init",value:function(){this.fixed_=this.adapter_.hasClass(t.cssClasses.FIXED),this.fixedLastrow_=this.adapter_.hasClass(t.cssClasses.FIXED_LASTROW)&this.fixed_,this.hasFlexibleRow_=this.adapter_.hasClass(t.cssClasses.TOOLBAR_ROW_FLEXIBLE),this.hasFlexibleRow_&&(this.useFlexDefaultBehavior_=this.adapter_.hasClass(t.cssClasses.FLEXIBLE_DEFAULT_BEHAVIOR)),this.initKeyRatio_(),this.setKeyHeights_(),this.adapter_.registerResizeHandler(this.resizeHandler_),this.adapter_.registerScrollHandler(this.scrollHandler_)}},{key:"destroy",value:function(){this.adapter_.deregisterResizeHandler(this.resizeHandler_),this.adapter_.deregisterScrollHandler(this.scrollHandler_)}},{key:"updateAdjustElementStyles",value:function(){this.fixed_&&this.adapter_.setStyleForFixedAdjustElement("margin-top",this.calculations_.toolbarHeight+"px")}},{key:"getFlexibleExpansionRatio_",value:function(e){return Math.max(0,1-e/(this.calculations_.flexibleExpansionHeight+1e-4))}},{key:"checkRowHeight_",value:function(){var e=this;cancelAnimationFrame(this.checkRowHeightFrame_),this.checkRowHeightFrame_=requestAnimationFrame(function(){return e.setKeyHeights_()})}},{key:"setKeyHeights_",value:function(){var e=this.getRowHeight_();e!==this.calculations_.toolbarRowHeight&&(this.calculations_.toolbarRowHeight=e,this.calculations_.toolbarHeight=this.calculations_.toolbarRatio*this.calculations_.toolbarRowHeight,this.calculations_.flexibleExpansionHeight=this.calculations_.flexibleExpansionRatio*this.calculations_.toolbarRowHeight,this.calculations_.maxTranslateYDistance=this.calculations_.maxTranslateYRatio*this.calculations_.toolbarRowHeight,this.calculations_.scrollThreshold=this.calculations_.scrollThresholdRatio*this.calculations_.toolbarRowHeight,this.updateAdjustElementStyles(),this.updateToolbarStyles_())}},{key:"updateToolbarStyles_",value:function(){var e=this;cancelAnimationFrame(this.scrollFrame_),this.scrollFrame_=requestAnimationFrame(function(){var t=e.adapter_.getViewportScrollY(),n=e.scrolledOutOfThreshold_(t);if(!n||!e.executedLastChange_){var r=e.getFlexibleExpansionRatio_(t);e.updateToolbarFlexibleState_(r),e.fixedLastrow_&&e.updateToolbarFixedState_(t),e.hasFlexibleRow_&&e.updateFlexibleRowElementStyles_(r),e.executedLastChange_=n,e.adapter_.notifyChange({flexibleExpansionRatio:r})}})}},{key:"scrolledOutOfThreshold_",value:function(e){return e>this.calculations_.scrollThreshold}},{key:"initKeyRatio_",value:function(){var e=this.getRowHeight_(),t=this.adapter_.getFirstRowElementOffsetHeight()/e;this.calculations_.toolbarRatio=this.adapter_.getOffsetHeight()/e,this.calculations_.flexibleExpansionRatio=t-1,this.calculations_.maxTranslateYRatio=this.fixedLastrow_?this.calculations_.toolbarRatio-t:0,this.calculations_.scrollThresholdRatio=(this.fixedLastrow_?this.calculations_.toolbarRatio:t)-1}},{key:"getRowHeight_",value:function(){var e=t.numbers.TOOLBAR_MOBILE_BREAKPOINT;return this.adapter_.getViewportWidth()<e?t.numbers.TOOLBAR_ROW_MOBILE_HEIGHT:t.numbers.TOOLBAR_ROW_HEIGHT}},{key:"updateToolbarFlexibleState_",value:function(e){this.adapter_.removeClass(t.cssClasses.FLEXIBLE_MAX),this.adapter_.removeClass(t.cssClasses.FLEXIBLE_MIN),1===e?this.adapter_.addClass(t.cssClasses.FLEXIBLE_MAX):0===e&&this.adapter_.addClass(t.cssClasses.FLEXIBLE_MIN)}},{key:"updateToolbarFixedState_",value:function(e){var n=Math.max(0,Math.min(e-this.calculations_.flexibleExpansionHeight,this.calculations_.maxTranslateYDistance));this.adapter_.setStyle("transform","translateY("+-n+"px)"),n===this.calculations_.maxTranslateYDistance?this.adapter_.addClass(t.cssClasses.FIXED_AT_LAST_ROW):this.adapter_.removeClass(t.cssClasses.FIXED_AT_LAST_ROW)}},{key:"updateFlexibleRowElementStyles_",value:function(e){if(this.fixed_){var t=this.calculations_.flexibleExpansionHeight*e;this.adapter_.setStyleForFlexibleRowElement("height",t+this.calculations_.toolbarRowHeight+"px")}this.useFlexDefaultBehavior_&&this.updateElementStylesDefaultBehavior_(e)}},{key:"updateElementStylesDefaultBehavior_",value:function(e){var n=t.numbers.MAX_TITLE_SIZE,r=t.numbers.MIN_TITLE_SIZE,o=(n-r)*e+r;this.adapter_.setStyleForTitleElement("font-size",o+"rem")}}]),t}(c.default);t.default=u},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.cssClasses={FIXED:"mdc-toolbar--fixed",FIXED_LASTROW:"mdc-toolbar--fixed-lastrow-only",FIXED_AT_LAST_ROW:"mdc-toolbar--fixed-at-last-row",TOOLBAR_ROW_FLEXIBLE:"mdc-toolbar--flexible",FLEXIBLE_DEFAULT_BEHAVIOR:"mdc-toolbar--flexible-default-behavior",FLEXIBLE_MAX:"mdc-toolbar--flexible-space-maximized",FLEXIBLE_MIN:"mdc-toolbar--flexible-space-minimized"},t.strings={TITLE_SELECTOR:".mdc-toolbar__title",FIRST_ROW_SELECTOR:".mdc-toolbar__row:first-child",CHANGE_EVENT:"MDCToolbar:change"},t.numbers={MAX_TITLE_SIZE:2.125,MIN_TITLE_SIZE:1.25,TOOLBAR_ROW_HEIGHT:64,TOOLBAR_ROW_MOBILE_HEIGHT:56,TOOLBAR_MOBILE_BREAKPOINT:600}},function(e,t,n){"use strict";function r(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:window,t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(void 0===o||t){var n=!1;try{e.document.addEventListener("test",null,{get passive(){n=!0}})}catch(e){}o=n}return!!o&&{passive:!0}}Object.defineProperty(t,"__esModule",{value:!0}),t.applyPassive=r;var o=void 0},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}function s(e,t,n){"open"in e&&"open"in t&&e.open!==t.open&&(n.open=t.open)}Object.defineProperty(t,"__esModule",{value:!0});var l=function e(t,n,r){null===t&&(t=Function.prototype);var o=Object.getOwnPropertyDescriptor(t,n);if(void 0===o){var i=Object.getPrototypeOf(t);return null===i?void 0:e(i,n,r)}if("value"in o)return o.value;var a=o.get;if(void 0!==a)return a.call(r)},c=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),d=n(0),u=n(3),p=r(u),m=n(51),f=n(56),h=n(15),g=r(h),b=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},y={open:!1},v=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="temporary-drawer",e._open=e._open.bind(e),e._close=e._close.bind(e),e}return a(t,e),c(t,[{key:"_open",value:function(){this.props.onOpen&&this.props.onOpen()}},{key:"_close",value:function(){this.props.onClose&&this.props.onClose()}},{key:"componentDidMount",value:function(){this.MDComponent=m.MDCTemporaryDrawer.attachTo(this.control),this.MDComponent.listen("MDCTemporaryDrawer:open",this._open),this.MDComponent.listen("MDCTemporaryDrawer:close",this._close),s(y,this.props,this.MDComponent)}},{key:"componentWillUnmount",value:function(){this.MDComponent.unlisten("MDCTemporaryDrawer:close",this._close),this.MDComponent.unlisten("MDCTemporaryDrawer:open",this._open),this.MDComponent.destroy&&this.MDComponent.destroy()}},{key:"componentWillUpdate",value:function(e){s(this.props,e,this.MDComponent)}},{key:"materialDom",value:function(e){var t=this;return(0,d.h)("aside",b({className:"mdc-typography",ref:function(e){t.control=e}},e),(0,d.h)("nav",{className:"mdc-temporary-drawer__drawer"},e.children))}}]),t}(p.default),_=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="temporary-drawer__header",e}return a(t,e),c(t,[{key:"materialDom",value:function(e){var t=this;return(0,d.h)("header",b({ref:function(e){t.control=e}},e),(0,d.h)("div",{className:"mdc-temporary-drawer__header-content"},e.children))}}]),t}(p.default),w=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="temporary-drawer__content",e}return a(t,e),c(t,[{key:"materialDom",value:function(e){var t=this;return(0,d.h)("nav",b({className:"mdc-list",ref:function(e){t.control=e}},e),e.children)}}]),t}(p.default),x=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="permanent-drawer",e}return a(t,e),c(t,[{key:"materialDom",value:function(e){return(0,d.h)("nav",b({className:"mdc-typography"},e),e.spacer&&(0,d.h)("div",{className:"mdc-permanent-drawer__toolbar-spacer"}),(0,d.h)("div",{className:"mdc-permanent-drawer__content"},(0,d.h)("nav",{className:"mdc-list"},e.children)))}}]),t}(p.default),k=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="permanent-drawer__header",e}return a(t,e),c(t,[{key:"materialDom",value:function(e){var t=this;return(0,d.h)("header",b({ref:function(e){t.control=e}},e),(0,d.h)("div",{className:"mdc-permanent-drawer__header-content"},e.children))}}]),t}(p.default),O=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="permanent-drawer__content",e}return a(t,e),t}(w),E=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="persistent-drawer",e._open=e._open.bind(e),e._close=e._close.bind(e),e}return a(t,e),c(t,[{key:"_open",value:function(){this.props.onOpen&&this.props.onOpen()}},{key:"_close",value:function(){this.props.onClose&&this.props.onClose()}},{key:"componentDidMount",value:function(){this.MDComponent=f.MDCPersistentDrawer.attachTo(this.control),this.MDComponent.listen("MDCPersistentDrawer:open",this._open),this.MDComponent.listen("MDCPersistentDrawer:close",this._close),s(y,this.props,this.MDComponent)}},{key:"componentWillUnmount",value:function(){this.MDComponent.unlisten("MDCPersistentDrawer:close",this._close),this.MDComponent.unlisten("MDCPersistentDrawer:open",this._open),this.MDComponent.destroy&&this.MDComponent.destroy()}},{key:"componentWillUpdate",value:function(e){s(this.props,e,this.MDComponent)}},{key:"materialDom",value:function(e){var t=this;return(0,d.h)("aside",b({className:"mdc-typography",ref:function(e){t.control=e}},e),(0,d.h)("nav",{className:"mdc-persistent-drawer__drawer"}))}}]),t}(p.default),T=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="persistent-drawer__header",e}return a(t,e),c(t,[{key:"materialDom",value:function(e){var t=this;return(0,d.h)("header",b({ref:function(e){t.control=e}},e),(0,d.h)("div",{className:"mdc-persistent-drawer__header-content"},e.children))}}]),t}(p.default),C=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="persistent-drawer__content",e}return a(t,e),t}(w),S=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this))}return a(t,e),c(t,[{key:"materialDom",value:function(e){var n=l(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"materialDom",this).call(this,e);return e.selected&&(n.attributes.className="mdc-temporary-drawer--selected mdc-permanent-drawer--selected"),n}}]),t}(g.default.LinkItem),R={};R.DrawerItem=S,R.TemporaryDrawer=v,R.TemporaryDrawerHeader=_,R.TemporaryDrawerContent=w,R.PermanentDrawer=x,R.PermanentDrawerHeader=k,R.PermanentDrawerContent=O,R.PersistentDrawer=E,R.PersistentDrawerHeader=T,R.PersistentDrawerContent=C,t.default=R},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t.MDCTemporaryDrawer=t.util=t.MDCTemporaryDrawerFoundation=void 0;var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(10),l=n(52),c=function(e){return e&&e.__esModule?e:{default:e}}(l),d=n(23),u=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(d);t.MDCTemporaryDrawerFoundation=c.default,t.util=u;t.MDCTemporaryDrawer=function(e){function t(){return r(this,t),o(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return i(t,e),a(t,[{key:"getDefaultFoundation",value:function(){var e=this,t=c.default.strings,n=t.FOCUSABLE_ELEMENTS,r=t.OPACITY_VAR_NAME;return new c.default({addClass:function(t){return e.root_.classList.add(t)},removeClass:function(t){return e.root_.classList.remove(t)},hasClass:function(t){return e.root_.classList.contains(t)},addBodyClass:function(e){return document.body.classList.add(e)},removeBodyClass:function(e){return document.body.classList.remove(e)},hasNecessaryDom:function(){return Boolean(e.drawer)},registerInteractionHandler:function(t,n){return e.root_.addEventListener(u.remapEvent(t),n,u.applyPassive())},deregisterInteractionHandler:function(t,n){return e.root_.removeEventListener(u.remapEvent(t),n,u.applyPassive())},registerDrawerInteractionHandler:function(t,n){return e.drawer.addEventListener(u.remapEvent(t),n)},deregisterDrawerInteractionHandler:function(t,n){return e.drawer.removeEventListener(u.remapEvent(t),n)},registerTransitionEndHandler:function(t){return e.drawer.addEventListener("transitionend",t)},deregisterTransitionEndHandler:function(t){return e.drawer.removeEventListener("transitionend",t)},registerDocumentKeydownHandler:function(e){return document.addEventListener("keydown",e)},deregisterDocumentKeydownHandler:function(e){return document.removeEventListener("keydown",e)},getDrawerWidth:function(){return e.drawer.offsetWidth},setTranslateX:function(t){return e.drawer.style.setProperty(u.getTransformPropertyName(),null===t?null:"translateX("+t+"px)")},updateCssVariable:function(t){u.supportsCssCustomProperties()&&e.root_.style.setProperty(r,t)},getFocusableElements:function(){return e.drawer.querySelectorAll(n)},saveElementTabState:function(e){return u.saveElementTabState(e)},restoreElementTabState:function(e){return u.restoreElementTabState(e)},makeElementUntabbable:function(e){return e.setAttribute("tabindex",-1)},notifyOpen:function(){return e.emit(c.default.strings.OPEN_EVENT)},notifyClose:function(){return e.emit(c.default.strings.CLOSE_EVENT)},isRtl:function(){return"rtl"===getComputedStyle(e.root_).getPropertyValue("direction")},isDrawer:function(t){return t===e.drawer}})}},{key:"open",get:function(){return this.foundation_.isOpen()},set:function(e){e?this.foundation_.open():this.foundation_.close()}},{key:"drawer",get:function(){return this.root_.querySelector(c.default.strings.DRAWER_SELECTOR)}}],[{key:"attachTo",value:function(e){return new t(e)}}]),t}(s.MDCComponent)},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function e(t,n,r){null===t&&(t=Function.prototype);var o=Object.getOwnPropertyDescriptor(t,n);if(void 0===o){var i=Object.getPrototypeOf(t);return null===i?void 0:e(i,n,r)}if("value"in o)return o.value;var a=o.get;if(void 0!==a)return a.call(r)},l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),c=n(11),d=n(55),u=function(e){function t(e){r(this,t);var n=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,a(t.defaultAdapter,e),t.cssClasses.ROOT,t.cssClasses.ANIMATING,t.cssClasses.OPEN));return n.componentClickHandler_=function(){return n.close()},n}return i(t,e),l(t,null,[{key:"cssClasses",get:function(){return d.cssClasses}},{key:"strings",get:function(){return d.strings}},{key:"defaultAdapter",get:function(){return a(c.MDCSlidableDrawerFoundation.defaultAdapter,{addBodyClass:function(){},removeBodyClass:function(){},isDrawer:function(){return!1},updateCssVariable:function(){}})}}]),l(t,[{key:"init",value:function(){s(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"init",this).call(this),this.adapter_.updateCssVariable(0),this.adapter_.registerInteractionHandler("click",this.componentClickHandler_)}},{key:"destroy",value:function(){s(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"destroy",this).call(this),this.adapter_.deregisterInteractionHandler("click",this.componentClickHandler_),this.enableScroll_()}},{key:"open",value:function(){this.disableScroll_(),this.adapter_.updateCssVariable(""),s(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"open",this).call(this)}},{key:"close",value:function(){this.adapter_.updateCssVariable(""),s(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"close",this).call(this)}},{key:"prepareForTouchEnd_",value:function(){s(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"prepareForTouchEnd_",this).call(this),this.adapter_.updateCssVariable("")}},{key:"updateDrawer_",value:function(){s(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"updateDrawer_",this).call(this);var e=Math.max(0,1+this.direction_*(this.newPosition_/this.drawerWidth_));this.adapter_.updateCssVariable(e)}},{key:"isRootTransitioningEventTarget_",value:function(e){return this.adapter_.isDrawer(e)}},{key:"handleTransitionEnd_",value:function(e){s(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"handleTransitionEnd_",this).call(this,e),this.isOpen_||this.enableScroll_()}},{key:"disableScroll_",value:function(){this.adapter_.addBodyClass(d.cssClasses.SCROLL_LOCK)}},{key:"enableScroll_",value:function(){this.adapter_.removeBodyClass(d.cssClasses.SCROLL_LOCK)}}]),t}(c.MDCSlidableDrawerFoundation);t.default=u},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.FOCUSABLE_ELEMENTS="a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex], [contenteditable]"},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t.MDCSlidableDrawerFoundation=void 0;var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(10);t.MDCSlidableDrawerFoundation=function(e){function t(e,n,i,s){r(this,t);var l=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,a(t.defaultAdapter,e)));return l.rootCssClass_=n,l.animatingCssClass_=i,l.openCssClass_=s,l.transitionEndHandler_=function(e){return l.handleTransitionEnd_(e)},l.inert_=!1,l.drawerClickHandler_=function(e){return e.stopPropagation()},l.componentTouchStartHandler_=function(e){return l.handleTouchStart_(e)},l.componentTouchMoveHandler_=function(e){return l.handleTouchMove_(e)},l.componentTouchEndHandler_=function(e){return l.handleTouchEnd_(e)},l.documentKeydownHandler_=function(e){(e.key&&"Escape"===e.key||27===e.keyCode)&&l.close()},l}return i(t,e),s(t,null,[{key:"defaultAdapter",get:function(){return{addClass:function(){},removeClass:function(){},hasClass:function(){},hasNecessaryDom:function(){return!1},registerInteractionHandler:function(){},deregisterInteractionHandler:function(){},registerDrawerInteractionHandler:function(){},deregisterDrawerInteractionHandler:function(){},registerTransitionEndHandler:function(){},deregisterTransitionEndHandler:function(){},registerDocumentKeydownHandler:function(){},deregisterDocumentKeydownHandler:function(){},setTranslateX:function(){},getFocusableElements:function(){},saveElementTabState:function(){},restoreElementTabState:function(){},makeElementUntabbable:function(){},notifyOpen:function(){},notifyClose:function(){},isRtl:function(){return!1},getDrawerWidth:function(){return 0}}}}]),s(t,[{key:"init",value:function(){var e=this.rootCssClass_,t=this.openCssClass_;if(!this.adapter_.hasClass(e))throw new Error(e+" class required in root element.");if(!this.adapter_.hasNecessaryDom())throw new Error("Required DOM nodes missing in "+e+" component.");this.adapter_.hasClass(t)?this.isOpen_=!0:(this.detabinate_(),this.isOpen_=!1),this.adapter_.registerDrawerInteractionHandler("click",this.drawerClickHandler_),this.adapter_.registerDrawerInteractionHandler("touchstart",this.componentTouchStartHandler_),this.adapter_.registerInteractionHandler("touchmove",this.componentTouchMoveHandler_),this.adapter_.registerInteractionHandler("touchend",this.componentTouchEndHandler_)}},{key:"destroy",value:function(){this.adapter_.deregisterDrawerInteractionHandler("click",this.drawerClickHandler_),this.adapter_.deregisterDrawerInteractionHandler("touchstart",this.componentTouchStartHandler_),this.adapter_.deregisterInteractionHandler("touchmove",this.componentTouchMoveHandler_),this.adapter_.deregisterInteractionHandler("touchend",this.componentTouchEndHandler_),this.adapter_.deregisterDocumentKeydownHandler(this.documentKeydownHandler_)}},{key:"open",value:function(){this.adapter_.registerTransitionEndHandler(this.transitionEndHandler_),this.adapter_.registerDocumentKeydownHandler(this.documentKeydownHandler_),this.adapter_.addClass(this.animatingCssClass_),this.adapter_.addClass(this.openCssClass_),this.retabinate_(),this.isOpen_||this.adapter_.notifyOpen(),this.isOpen_=!0}},{key:"close",value:function(){this.adapter_.deregisterDocumentKeydownHandler(this.documentKeydownHandler_),this.adapter_.registerTransitionEndHandler(this.transitionEndHandler_),this.adapter_.addClass(this.animatingCssClass_),this.adapter_.removeClass(this.openCssClass_),this.detabinate_(),this.isOpen_&&this.adapter_.notifyClose(),this.isOpen_=!1}},{key:"isOpen",value:function(){return this.isOpen_}},{key:"detabinate_",value:function(){if(!this.inert_){var e=this.adapter_.getFocusableElements();if(e)for(var t=0;t<e.length;t++)this.adapter_.saveElementTabState(e[t]),this.adapter_.makeElementUntabbable(e[t]);this.inert_=!0}}},{key:"retabinate_",value:function(){if(this.inert_){var e=this.adapter_.getFocusableElements();if(e)for(var t=0;t<e.length;t++)this.adapter_.restoreElementTabState(e[t]);this.inert_=!1}}},{key:"handleTouchStart_",value:function(e){this.adapter_.hasClass(this.openCssClass_)&&(e.pointerType&&"touch"!==e.pointerType||(this.direction_=this.adapter_.isRtl()?-1:1,this.drawerWidth_=this.adapter_.getDrawerWidth(),this.startX_=e.touches?e.touches[0].pageX:e.pageX,this.currentX_=this.startX_,this.updateRaf_=requestAnimationFrame(this.updateDrawer_.bind(this))))}},{key:"handleTouchMove_",value:function(e){e.pointerType&&"touch"!==e.pointerType||(this.currentX_=e.touches?e.touches[0].pageX:e.pageX)}},{key:"handleTouchEnd_",value:function(e){e.pointerType&&"touch"!==e.pointerType||(this.prepareForTouchEnd_(),Math.abs(this.newPosition_/this.drawerWidth_)>=.5?this.close():this.open())}},{key:"prepareForTouchEnd_",value:function(){cancelAnimationFrame(this.updateRaf_),this.adapter_.setTranslateX(null)}},{key:"updateDrawer_",value:function(){this.updateRaf_=requestAnimationFrame(this.updateDrawer_.bind(this)),this.adapter_.setTranslateX(this.newPosition_)}},{key:"isRootTransitioningEventTarget_",value:function(){return!1}},{key:"handleTransitionEnd_",value:function(e){this.isRootTransitioningEventTarget_(e.target)&&(this.adapter_.removeClass(this.animatingCssClass_),this.adapter_.deregisterTransitionEndHandler(this.transitionEndHandler_))}},{key:"newPosition_",get:function(){return 1===this.direction_?Math.min(0,this.currentX_-this.startX_):Math.max(0,this.currentX_-this.startX_)}}]),t}(l.MDCFoundation)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.strings=t.cssClasses=void 0;var r=n(11);t.cssClasses={ROOT:"mdc-temporary-drawer",OPEN:"mdc-temporary-drawer--open",ANIMATING:"mdc-temporary-drawer--animating",SCROLL_LOCK:"mdc-drawer-scroll-lock"},t.strings={DRAWER_SELECTOR:".mdc-temporary-drawer__drawer",OPACITY_VAR_NAME:"--mdc-temporary-drawer-opacity",FOCUSABLE_ELEMENTS:r.FOCUSABLE_ELEMENTS,OPEN_EVENT:"MDCTemporaryDrawer:open",CLOSE_EVENT:"MDCTemporaryDrawer:close"}},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t.MDCPersistentDrawer=t.util=t.MDCPersistentDrawerFoundation=void 0;var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(10),l=n(57),c=function(e){return e&&e.__esModule?e:{default:e}}(l),d=n(23),u=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(d);t.MDCPersistentDrawerFoundation=c.default,t.util=u;t.MDCPersistentDrawer=function(e){function t(){return r(this,t),o(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return i(t,e),a(t,[{key:"getDefaultFoundation",value:function(){var e=this,t=c.default.strings.FOCUSABLE_ELEMENTS;return new c.default({addClass:function(t){return e.root_.classList.add(t)},removeClass:function(t){return e.root_.classList.remove(t)},hasClass:function(t){return e.root_.classList.contains(t)},hasNecessaryDom:function(){return Boolean(e.drawer)},registerInteractionHandler:function(t,n){return e.root_.addEventListener(u.remapEvent(t),n,u.applyPassive())},deregisterInteractionHandler:function(t,n){return e.root_.removeEventListener(u.remapEvent(t),n,u.applyPassive())},registerDrawerInteractionHandler:function(t,n){return e.drawer.addEventListener(u.remapEvent(t),n)},deregisterDrawerInteractionHandler:function(t,n){return e.drawer.removeEventListener(u.remapEvent(t),n)},registerTransitionEndHandler:function(t){return e.root_.addEventListener("transitionend",t)},deregisterTransitionEndHandler:function(t){return e.root_.removeEventListener("transitionend",t)},registerDocumentKeydownHandler:function(e){return document.addEventListener("keydown",e)},deregisterDocumentKeydownHandler:function(e){return document.removeEventListener("keydown",e)},getDrawerWidth:function(){return e.drawer.offsetWidth},setTranslateX:function(t){return e.drawer.style.setProperty(u.getTransformPropertyName(),null===t?null:"translateX("+t+"px)")},getFocusableElements:function(){return e.drawer.querySelectorAll(t)},saveElementTabState:function(e){return u.saveElementTabState(e)},restoreElementTabState:function(e){return u.restoreElementTabState(e)},makeElementUntabbable:function(e){return e.setAttribute("tabindex",-1)},notifyOpen:function(){return e.emit(c.default.strings.OPEN_EVENT)},notifyClose:function(){return e.emit(c.default.strings.CLOSE_EVENT)},isRtl:function(){return"rtl"===getComputedStyle(e.root_).getPropertyValue("direction")},isDrawer:function(t){return t===e.drawer}})}},{key:"open",get:function(){return this.foundation_.isOpen()},set:function(e){e?this.foundation_.open():this.foundation_.close()}},{key:"drawer",get:function(){return this.root_.querySelector(c.default.strings.DRAWER_SELECTOR)}}],[{key:"attachTo",value:function(e){return new t(e)}}]),t}(s.MDCComponent)},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(11),c=n(58),d=function(e){function t(e){return r(this,t),o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,a(t.defaultAdapter,e),t.cssClasses.ROOT,t.cssClasses.ANIMATING,t.cssClasses.OPEN))}return i(t,e),s(t,null,[{key:"cssClasses",get:function(){return c.cssClasses}},{key:"strings",get:function(){return c.strings}},{key:"defaultAdapter",get:function(){return a(l.MDCSlidableDrawerFoundation.defaultAdapter,{isDrawer:function(){return!1}})}}]),s(t,[{key:"isRootTransitioningEventTarget_",value:function(e){return this.adapter_.isDrawer(e)}}]),t}(l.MDCSlidableDrawerFoundation);t.default=d},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.strings=t.cssClasses=void 0;var r=n(11);t.cssClasses={ROOT:"mdc-persistent-drawer",OPEN:"mdc-persistent-drawer--open",ANIMATING:"mdc-persistent-drawer--animating"},t.strings={DRAWER_SELECTOR:".mdc-persistent-drawer__drawer",FOCUSABLE_ELEMENTS:r.FOCUSABLE_ELEMENTS,OPEN_EVENT:"MDCPersistentDrawer:open",CLOSE_EVENT:"MDCPersistentDrawer:close"}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}function s(e,t,n){"open"in e&&"open"in t&&e.open!==t.open&&(n.open=t.open)}Object.defineProperty(t,"__esModule",{value:!0});var l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),c=n(0),d=n(3),u=r(d),p=n(60),m=n(15),f=r(m),h=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},g={open:!1},b=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="simple-menu",e._mdcProps=["open","open-from-top-left","open-from-top-right","open-from-bottom-left","open-from-bottom-right"],e._select=e._select.bind(e),e._cancel=e._cancel.bind(e),e}return a(t,e),l(t,[{key:"componentDidMount",value:function(){this.MDComponent=new p.MDCSimpleMenu(this.control),this.MDComponent.listen("MDCSimpleMenu:selected",this._select),this.MDComponent.listen("MDCSimpleMenu:cancel",this._cancel),s(g,this.props,this.MDComponent)}},{key:"componentWillUnmount",value:function(){this.MDComponent.unlisten("MDCSimpleMenu:selected",this._select),this.MDComponent.unlisten("MDCSimpleMenu:cancel",this._cancel),this.MDComponent.destroy&&this.MDComponent.destroy()}},{key:"_select",value:function(){this.props.onSelect&&this.props.onSelect(),this._menuClosed()}},{key:"_cancel",value:function(){this.props.onCancel&&this.props.onCancel(),this._menuClosed()}},{key:"_menuClosed",value:function(){this.props.onMenuClosed&&this.props.onMenuClosed()}},{key:"componentWillUpdate",value:function(e){s(this.props,e,this.MDComponent)}},{key:"materialDom",value:function(e){var t=this;return(0,c.h)("div",h({tabindex:"-1"},e,{ref:function(e){return t.control=e}}),(0,c.h)("ul",{class:"mdc-simple-menu__items mdc-list",role:"menu","aria-hidden":"true"},e.children))}}]),t}(u.default),y=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="menu-anchor",e}return a(t,e),t}(u.default);b.Anchor=y,b.Item=f.default.Item,t.default=b},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.util=t.MDCSimpleMenuFoundation=t.MDCSimpleMenu=void 0;var r=n(16),o=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(r),i=n(61);t.MDCSimpleMenu=i.MDCSimpleMenu,t.MDCSimpleMenuFoundation=i.MDCSimpleMenuFoundation,t.util=o},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0}),t.MDCSimpleMenu=t.MDCSimpleMenuFoundation=void 0;var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(14),c=r(l),d=n(62),u=r(d),p=n(16),m=function(e){function t(){var e;o(this,t);for(var n=arguments.length,r=Array(n),a=0;a<n;a++)r[a]=arguments[a];var s=i(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(r)));return s.previousFocus_,s}return a(t,e),s(t,[{key:"show",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.focusIndex,n=void 0===t?null:t;this.foundation_.open({focusIndex:n})}},{key:"hide",value:function(){this.foundation_.close()}},{key:"getDefaultFoundation",value:function(){var e=this;return new u.default({addClass:function(t){return e.root_.classList.add(t)},removeClass:function(t){return e.root_.classList.remove(t)},hasClass:function(t){return e.root_.classList.contains(t)},hasNecessaryDom:function(){return Boolean(e.itemsContainer_)},getAttributeForEventTarget:function(e,t){return e.getAttribute(t)},getInnerDimensions:function(){var t=e.itemsContainer_;return{width:t.offsetWidth,height:t.offsetHeight}},hasAnchor:function(){return e.root_.parentElement&&e.root_.parentElement.classList.contains("mdc-menu-anchor")},getAnchorDimensions:function(){return e.root_.parentElement.getBoundingClientRect()},getWindowDimensions:function(){return{width:window.innerWidth,height:window.innerHeight}},setScale:function(t,n){e.root_.style[(0,p.getTransformPropertyName)(window)]="scale("+t+", "+n+")"},setInnerScale:function(t,n){e.itemsContainer_.style[(0,p.getTransformPropertyName)(window)]="scale("+t+", "+n+")"},getNumberOfItems:function(){return e.items.length},registerInteractionHandler:function(t,n){return e.root_.addEventListener(t,n)},deregisterInteractionHandler:function(t,n){return e.root_.removeEventListener(t,n)},registerBodyClickHandler:function(e){return document.body.addEventListener("click",e)},deregisterBodyClickHandler:function(e){return document.body.removeEventListener("click",e)},getYParamsForItemAtIndex:function(t){var n=e.items[t];return{top:n.offsetTop,height:n.offsetHeight}},setTransitionDelayForItemAtIndex:function(t,n){return e.items[t].style.setProperty("transition-delay",n)},getIndexForEventTarget:function(t){return e.items.indexOf(t)},notifySelected:function(t){return e.emit(u.default.strings.SELECTED_EVENT,{index:t.index,item:e.items[t.index]})},notifyCancel:function(){return e.emit(u.default.strings.CANCEL_EVENT,{})},saveFocus:function(){e.previousFocus_=document.activeElement},restoreFocus:function(){e.previousFocus_&&e.previousFocus_.focus()},isFocused:function(){return document.activeElement===e.root_},focus:function(){return e.root_.focus()},getFocusedItemIndex:function(){return e.items.indexOf(document.activeElement)},focusItemAtIndex:function(t){return e.items[t].focus()},isRtl:function(){return"rtl"===getComputedStyle(e.root_).getPropertyValue("direction")},setTransformOrigin:function(t){e.root_.style[(0,p.getTransformPropertyName)(window)+"-origin"]=t},setPosition:function(t){e.root_.style.left="left"in t?t.left:null,e.root_.style.right="right"in t?t.right:null,e.root_.style.top="top"in t?t.top:null,e.root_.style.bottom="bottom"in t?t.bottom:null},getAccurateTime:function(){return window.performance.now()}})}},{key:"open",get:function(){return this.foundation_.isOpen()},set:function(e){e?this.foundation_.open():this.foundation_.close()}},{key:"itemsContainer_",get:function(){return this.root_.querySelector(u.default.strings.ITEMS_SELECTOR)}},{key:"items",get:function(){var e=this.itemsContainer_;return[].slice.call(e.querySelectorAll(".mdc-list-item[role]"))}}],[{key:"attachTo",value:function(e){return new t(e)}}]),t}(c.default);t.MDCSimpleMenuFoundation=u.default,t.MDCSimpleMenu=m},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var l=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},c=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),d=n(7),u=r(d),p=n(63),m=(r(p),n(64)),f=n(16),h=function(e){function t(e){i(this,t);var n=a(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,l(t.defaultAdapter,e)));return n.clickHandler_=function(e){return n.handlePossibleSelected_(e)},n.keydownHandler_=function(e){return n.handleKeyboardDown_(e)},n.keyupHandler_=function(e){return n.handleKeyboardUp_(e)},n.documentClickHandler_=function(e){n.adapter_.notifyCancel(),n.close(e)},n.isOpen_=!1,n.startScaleX_=0,n.startScaleY_=0,n.targetScale_=1,n.scaleX_=0,n.scaleY_=0,n.running_=!1,n.selectedTriggerTimerId_=0,n.animationRequestId_=0,n.dimensions_,n.startTime_,n.itemHeight_,n}return s(t,e),c(t,null,[{key:"cssClasses",get:function(){return m.cssClasses}},{key:"strings",get:function(){return m.strings}},{key:"numbers",get:function(){return m.numbers}},{key:"defaultAdapter",get:function(){return{addClass:function(){},removeClass:function(){},hasClass:function(){return!1},hasNecessaryDom:function(){return!1},getAttributeForEventTarget:function(){},getInnerDimensions:function(){return{}},hasAnchor:function(){return!1},getAnchorDimensions:function(){return{}},getWindowDimensions:function(){return{}},setScale:function(){},setInnerScale:function(){},getNumberOfItems:function(){return 0},registerInteractionHandler:function(){},deregisterInteractionHandler:function(){},registerBodyClickHandler:function(){},deregisterBodyClickHandler:function(){},getYParamsForItemAtIndex:function(){return{}},setTransitionDelayForItemAtIndex:function(){},getIndexForEventTarget:function(){return 0},notifySelected:function(){},notifyCancel:function(){},saveFocus:function(){},restoreFocus:function(){},isFocused:function(){return!1},focus:function(){},getFocusedItemIndex:function(){return-1},focusItemAtIndex:function(){},isRtl:function(){return!1},setTransformOrigin:function(){},setPosition:function(){},getAccurateTime:function(){return 0}}}}]),c(t,[{key:"init",value:function(){var e=t.cssClasses,n=e.ROOT,r=e.OPEN;if(!this.adapter_.hasClass(n))throw new Error(n+" class required in root element.");if(!this.adapter_.hasNecessaryDom())throw new Error("Required DOM nodes missing in "+n+" component.");this.adapter_.hasClass(r)&&(this.isOpen_=!0),this.adapter_.registerInteractionHandler("click",this.clickHandler_),this.adapter_.registerInteractionHandler("keyup",this.keyupHandler_),this.adapter_.registerInteractionHandler("keydown",this.keydownHandler_)}},{key:"destroy",value:function(){clearTimeout(this.selectedTriggerTimerId_),cancelAnimationFrame(this.animationRequestId_),this.adapter_.deregisterInteractionHandler("click",this.clickHandler_),this.adapter_.deregisterInteractionHandler("keyup",this.keyupHandler_),this.adapter_.deregisterInteractionHandler("keydown",this.keydownHandler_),this.adapter_.deregisterBodyClickHandler(this.documentClickHandler_)}},{key:"applyTransitionDelays_",value:function(){for(var e=t.cssClasses,n=e.BOTTOM_LEFT,r=e.BOTTOM_RIGHT,o=this.adapter_.getNumberOfItems(),i=this.dimensions_.height,a=t.numbers.TRANSITION_DURATION_MS/1e3,s=t.numbers.TRANSITION_SCALE_ADJUSTMENT_Y,l=0;l<o;l++){var c=this.adapter_.getYParamsForItemAtIndex(l),d=c.top,u=c.height;this.itemHeight_=u;var p=d/i;(this.adapter_.hasClass(n)||this.adapter_.hasClass(r))&&(p=(i-d-u)/i);var m=(s+p*(1-s))*a;this.adapter_.setTransitionDelayForItemAtIndex(l,m.toFixed(3)+"s")}}},{key:"removeTransitionDelays_",value:function(){for(var e=this.adapter_.getNumberOfItems(),t=0;t<e;t++)this.adapter_.setTransitionDelayForItemAtIndex(t,null)}},{key:"animationLoop_",value:function(){var e=this,n=this.adapter_.getAccurateTime(),r=t.numbers,o=r.TRANSITION_DURATION_MS,i=r.TRANSITION_X1,a=r.TRANSITION_Y1,s=r.TRANSITION_X2,l=r.TRANSITION_Y2,c=r.TRANSITION_SCALE_ADJUSTMENT_X,d=r.TRANSITION_SCALE_ADJUSTMENT_Y,u=(0,f.clamp)((n-this.startTime_)/o),p=(0,f.clamp)((u-c)/(1-c)),m=u,h=this.startScaleY_;1===this.targetScale_&&(this.itemHeight_&&(h=Math.max(this.itemHeight_/this.dimensions_.height,h)),p=(0,f.clamp)(u+c),m=(0,f.clamp)((u-d)/(1-d)));var g=(0,f.bezierProgress)(p,i,a,s,l),b=(0,f.bezierProgress)(m,i,a,s,l);this.scaleX_=this.startScaleX_+(this.targetScale_-this.startScaleX_)*g;var y=1/(0===this.scaleX_?1:this.scaleX_);this.scaleY_=h+(this.targetScale_-h)*b;var v=1/(0===this.scaleY_?1:this.scaleY_);this.adapter_.setScale(this.scaleX_,this.scaleY_),this.adapter_.setInnerScale(y,v),u<1?this.animationRequestId_=requestAnimationFrame(function(){return e.animationLoop_()}):(this.animationRequestId_=0,this.running_=!1,this.adapter_.removeClass(t.cssClasses.ANIMATING))}},{key:"animateMenu_",value:function(){var e=this;this.startTime_=this.adapter_.getAccurateTime(),this.startScaleX_=this.scaleX_,this.startScaleY_=this.scaleY_,this.targetScale_=this.isOpen_?1:0,this.running_||(this.running_=!0,this.animationRequestId_=requestAnimationFrame(function(){return e.animationLoop_()}))}},{key:"focusOnOpen_",value:function(e){null===e?(this.adapter_.focus(),this.adapter_.isFocused()||this.adapter_.focusItemAtIndex(0)):this.adapter_.focusItemAtIndex(e)}},{key:"handleKeyboardDown_",value:function(e){if(e.altKey||e.ctrlKey||e.metaKey)return!0;var t=e.keyCode,n=e.key,r=e.shiftKey,o="Tab"===n||9===t,i="ArrowUp"===n||38===t,a="ArrowDown"===n||40===t,s="Space"===n||32===t,l=this.adapter_.getFocusedItemIndex(),c=this.adapter_.getNumberOfItems()-1;return r&&o&&0===l?(this.adapter_.focusItemAtIndex(c),e.preventDefault(),!1):!r&&o&&l===c?(this.adapter_.focusItemAtIndex(0),e.preventDefault(),!1):((i||a||s)&&e.preventDefault(),i?0===l||this.adapter_.isFocused()?this.adapter_.focusItemAtIndex(c):this.adapter_.focusItemAtIndex(l-1):a&&(l===c||this.adapter_.isFocused()?this.adapter_.focusItemAtIndex(0):this.adapter_.focusItemAtIndex(l+1)),!0)}},{key:"handleKeyboardUp_",value:function(e){if(e.altKey||e.ctrlKey||e.metaKey)return!0;var t=e.keyCode,n=e.key,r="Enter"===n||13===t,o="Space"===n||32===t,i="Escape"===n||27===t;return(r||o)&&this.handlePossibleSelected_(e),i&&(this.adapter_.notifyCancel(),this.close()),!0}},{key:"handlePossibleSelected_",value:function(e){var t=this;if("true"!==this.adapter_.getAttributeForEventTarget(e.target,m.strings.ARIA_DISABLED_ATTR)){var n=this.adapter_.getIndexForEventTarget(e.target);n<0||this.selectedTriggerTimerId_||(this.selectedTriggerTimerId_=setTimeout(function(){t.selectedTriggerTimerId_=0,t.close(),t.adapter_.notifySelected({index:n})},m.numbers.SELECTED_TRIGGER_DELAY))}}},{key:"autoPosition_",value:function(){var e;if(this.adapter_.hasAnchor()){var t="top",n="left",r=this.adapter_.getAnchorDimensions(),i=this.adapter_.getWindowDimensions(),a=r.top+this.dimensions_.height-i.height,s=this.dimensions_.height-r.bottom;a>0&&s<a&&(t="bottom");var l=r.left+this.dimensions_.width-i.width,c=this.dimensions_.width-r.right,d=l>0,u=c>0;this.adapter_.isRtl()?(n="right",u&&l<c&&(n="left")):d&&c<l&&(n="right");var p=(e={},o(e,n,"0"),o(e,t,"0"),e);this.adapter_.setTransformOrigin(t+" "+n),this.adapter_.setPosition(p)}}},{key:"open",value:function(){var e=this,n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r=n.focusIndex,o=void 0===r?null:r;this.adapter_.saveFocus(),this.adapter_.addClass(t.cssClasses.ANIMATING),this.animationRequestId_=requestAnimationFrame(function(){e.dimensions_=e.adapter_.getInnerDimensions(),e.applyTransitionDelays_(),e.autoPosition_(),e.animateMenu_(),e.adapter_.addClass(t.cssClasses.OPEN),e.focusOnOpen_(o),e.adapter_.registerBodyClickHandler(e.documentClickHandler_)}),this.isOpen_=!0}},{key:"close",value:function(){var e=this,n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;!!n&&"true"===this.adapter_.getAttributeForEventTarget(n.target,m.strings.ARIA_DISABLED_ATTR)||(this.adapter_.deregisterBodyClickHandler(this.documentClickHandler_),this.adapter_.addClass(t.cssClasses.ANIMATING),requestAnimationFrame(function(){e.removeTransitionDelays_(),e.animateMenu_(),e.adapter_.removeClass(t.cssClasses.OPEN)}),this.isOpen_=!1,this.adapter_.restoreFocus())}},{key:"isOpen",value:function(){return this.isOpen_}}]),t}(u.default);t.default=h},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=function(){function e(){r(this,e)}return o(e,[{key:"addClass",value:function(e){}},{key:"removeClass",value:function(e){}},{key:"hasClass",value:function(e){}},{key:"hasNecessaryDom",value:function(){}},{key:"getAttributeForEventTarget",value:function(e,t){}},{key:"getInnerDimensions",value:function(){}},{key:"hasAnchor",value:function(){}},{key:"getAnchorDimensions",value:function(){}},{key:"getWindowDimensions",value:function(){}},{key:"setScale",value:function(e,t){}},{key:"setInnerScale",value:function(e,t){}},{key:"getNumberOfItems",value:function(){}},{key:"registerInteractionHandler",value:function(e,t){}},{key:"deregisterInteractionHandler",value:function(e,t){}},{key:"registerBodyClickHandler",value:function(e){}},{key:"deregisterBodyClickHandler",value:function(e){}},{key:"getYParamsForItemAtIndex",value:function(e){}},{key:"setTransitionDelayForItemAtIndex",value:function(e,t){}},{key:"getIndexForEventTarget",value:function(e){}},{key:"notifySelected",value:function(e){}},{key:"notifyCancel",value:function(){}},{key:"saveFocus",value:function(){}},{key:"restoreFocus",value:function(){}},{key:"isFocused",value:function(){}},{key:"focus",value:function(){}},{key:"getFocusedItemIndex",value:function(){}},{key:"focusItemAtIndex",value:function(e){}},{key:"isRtl",value:function(){}},{key:"setTransformOrigin",value:function(e){}},{key:"setPosition",value:function(e){}},{key:"getAccurateTime",value:function(){}}]),e}();t.default=i},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={ROOT:"mdc-simple-menu",OPEN:"mdc-simple-menu--open",ANIMATING:"mdc-simple-menu--animating",TOP_RIGHT:"mdc-simple-menu--open-from-top-right",BOTTOM_LEFT:"mdc-simple-menu--open-from-bottom-left",BOTTOM_RIGHT:"mdc-simple-menu--open-from-bottom-right"},o={ITEMS_SELECTOR:".mdc-simple-menu__items",SELECTED_EVENT:"MDCSimpleMenu:selected",CANCEL_EVENT:"MDCSimpleMenu:cancel",ARIA_DISABLED_ATTR:"aria-disabled"},i={SELECTED_TRIGGER_DELAY:50,TRANSITION_DURATION_MS:300,TRANSITION_SCALE_ADJUSTMENT_X:.5,TRANSITION_SCALE_ADJUSTMENT_Y:.2,TRANSITION_X1:0,TRANSITION_Y1:0,TRANSITION_X2:.2,TRANSITION_Y2:1};t.cssClasses=r,t.strings=o,t.numbers=i},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(0),l=n(20),c=n(15),d=function(e){return e&&e.__esModule?e:{default:e}}(c);n(66);var u=function(e){function t(){return r(this,t),o(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return i(t,e),a(t,[{key:"render",value:function(e){var t=e.onClick,n=[{href:"/",icon:"home",name:"Home"},{href:"/hello",icon:"code",name:"Hello"},{href:"/code/router",icon:"code",name:"Router"},{href:"/code/offline",icon:"code",name:"Offline"},{href:"/code/highlight",icon:"code",name:"Highlight.js"},{href:"/code/whereami",icon:"code",name:"Where am I?"}];return(0,s.h)(d.default,null,n.map(function(e){return(0,s.h)(l.Link,{href:e.href,class:"mdc-list-item",onClick:t},(0,s.h)(d.default.LinkItem,null,(0,s.h)(d.default.ItemIcon,null,e.icon),e.name))}))}}]),t}(s.Component);t.default=u},function(e,t,n){var r=n(67);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,'/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/** MDC Ripple keyframes are split into their own file so that _mixins.scss can rely on them. */\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   \x3c!-- ... --\x3e\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 16px 0;\n  line-height: 1.5rem;\n  list-style-type: none; }\n\n.mdc-list--theme-dark,\n.mdc-theme--dark .mdc-list {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-list--dense {\n  padding-top: 4px;\n  font-size: .812rem; }\n\n.mdc-list-item {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-pack: start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  height: 48px; }\n\n.mdc-list-item__start-detail {\n  width: 24px;\n  height: 24px;\n  margin-left: 0;\n  margin-right: 32px; }\n\n[dir="rtl"] .mdc-list-item .mdc-list-item__start-detail,\n.mdc-list-item[dir="rtl"] .mdc-list-item__start-detail {\n  margin-left: 32px;\n  margin-right: 0; }\n\n.mdc-list-item__end-detail {\n  width: 24px;\n  height: 24px;\n  margin-left: auto;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-list-item .mdc-list-item__end-detail,\n.mdc-list-item[dir="rtl"] .mdc-list-item__end-detail {\n  margin-left: 0;\n  margin-right: auto; }\n\n.mdc-list-item__text {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column; }\n\n.mdc-list-item__text__secondary {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-list-item__text__secondary--theme-dark,\n.mdc-theme--dark .mdc-list-item__text__secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7);\n  color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n\n.mdc-list--dense .mdc-list-item__text__secondary {\n  font-size: inherit; }\n\n.mdc-list--dense .mdc-list-item {\n  height: 40px; }\n\n.mdc-list--dense .mdc-list-item__start-detail {\n  width: 20px;\n  height: 20px;\n  margin-left: 0;\n  margin-right: 36px; }\n\n[dir="rtl"] .mdc-list-item .mdc-list--dense .mdc-list-item__start-detail,\n.mdc-list-item[dir="rtl"] .mdc-list--dense .mdc-list-item__start-detail {\n  margin-left: 36px;\n  margin-right: 0; }\n\n.mdc-list--dense .mdc-list-item__end-detail {\n  width: 20px;\n  height: 20px; }\n\n.mdc-list--avatar-list .mdc-list-item {\n  height: 56px; }\n\n.mdc-list--avatar-list .mdc-list-item__start-detail {\n  width: 40px;\n  height: 40px;\n  margin-left: 0;\n  margin-right: 16px;\n  border-radius: 50%; }\n\n[dir="rtl"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__start-detail,\n.mdc-list-item[dir="rtl"] .mdc-list--avatar-list .mdc-list-item__start-detail {\n  margin-left: 16px;\n  margin-right: 0; }\n\n.mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item {\n  height: 48px; }\n\n.mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {\n  width: 36px;\n  height: 36px;\n  margin-left: 0;\n  margin-right: 20px; }\n\n[dir="rtl"] .mdc-list-item .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail,\n.mdc-list-item[dir="rtl"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {\n  margin-left: 20px;\n  margin-right: 0; }\n\n.mdc-list--two-line .mdc-list-item {\n  height: 72px; }\n\n.mdc-list--two-line.mdc-list--dense .mdc-list-item {\n  height: 60px; }\n\na.mdc-list-item {\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-list-item.mdc-ripple-upgraded {\n  --mdc-ripple-surface-width: 0;\n  --mdc-ripple-surface-height: 0;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  will-change: transform, opacity;\n  -webkit-tap-highlight-color: transparent;\n  left: -16px;\n  right: initial;\n  position: relative;\n  width: 100%;\n  padding: 0 16px;\n  overflow: hidden; }\n\n.mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):hover::before, .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):focus::before, .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):active::after {\n  -webkit-transition-duration: 85ms;\n  transition-duration: 85ms;\n  opacity: .6; }\n\n.mdc-list-item.mdc-ripple-upgraded::before {\n  background-color: rgba(0, 0, 0, 0.06);\n  position: absolute;\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  -webkit-transition: opacity 250ms linear;\n  transition: opacity 250ms linear;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  /* @alternate */\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));\n  transform: scale(var(--mdc-ripple-fg-scale, 0)); }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before {\n  opacity: .99999; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before {\n  -webkit-transition-duration: 120ms;\n  transition-duration: 120ms;\n  opacity: 1; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n  /* @alternate */\n  top: calc(50% - 50%);\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  /* @alternate */\n  left: calc(50% - 50%);\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));\n  transform: scale(var(--mdc-ripple-fg-scale, 0)); }\n\n.mdc-list-item.mdc-ripple-upgraded::after {\n  background-color: rgba(0, 0, 0, 0.06);\n  position: absolute;\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  -webkit-transition: opacity 250ms linear;\n  transition: opacity 250ms linear;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center;\n  opacity: 0; }\n\n.mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n  /* @alternate */\n  top: 0;\n  top: var(--mdc-ripple-top, 0);\n  /* @alternate */\n  left: 0;\n  left: var(--mdc-ripple-left, 0);\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;\n  animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 83ms mdc-ripple-fg-opacity-out;\n  animation: 83ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n[dir="rtl"] .mdc-list-item.mdc-ripple-upgraded, .mdc-list-item.mdc-ripple-upgraded[dir="rtl"] {\n  left: initial;\n  right: -16px; }\n\n.mdc-list-item.mdc-ripple-upgraded:focus {\n  outline: none; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::before {\n  background-color: rgba(255, 255, 255, 0.12);\n  position: absolute;\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  -webkit-transition: opacity 250ms linear;\n  transition: opacity 250ms linear;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  /* @alternate */\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));\n  transform: scale(var(--mdc-ripple-fg-scale, 0)); }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before {\n  opacity: .99999; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before {\n  -webkit-transition-duration: 120ms;\n  transition-duration: 120ms;\n  opacity: 1; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n  /* @alternate */\n  top: calc(50% - 50%);\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  /* @alternate */\n  left: calc(50% - 50%);\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));\n  transform: scale(var(--mdc-ripple-fg-scale, 0)); }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::after {\n  background-color: rgba(255, 255, 255, 0.12);\n  position: absolute;\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  -webkit-transition: opacity 250ms linear;\n  transition: opacity 250ms linear;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: ""; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center;\n  opacity: 0; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n  /* @alternate */\n  top: 0;\n  top: var(--mdc-ripple-top, 0);\n  /* @alternate */\n  left: 0;\n  left: var(--mdc-ripple-left, 0);\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;\n  animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 83ms mdc-ripple-fg-opacity-out;\n  animation: 83ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }\n\n.mdc-list--theme-dark .mdc-list-divider,\n.mdc-theme--dark .mdc-list-divider {\n  border-bottom-color: rgba(255, 255, 255, 0.2); }\n\n.mdc-list-divider--inset {\n  margin-left: 56px;\n  margin-right: 0;\n  width: calc(100% - 56px); }\n\n[dir="rtl"] .mdc-list-group .mdc-list-divider--inset,\n.mdc-list-group[dir="rtl"] .mdc-list-divider--inset {\n  margin-left: 0;\n  margin-right: 56px; }\n\n.mdc-list-group {\n  padding: 0 16px; }\n\n.mdc-list-group__subheader {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0.75rem 0; }\n\n.mdc-list-group__subheader--theme-dark,\n.mdc-theme--dark .mdc-list-group__subheader {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-list-group .mdc-list {\n  padding: 0; }\n',""])},function(e,t,n){var r=n(69);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,'/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   \x3c!-- ... --\x3e\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Applies styles to the different types of icons that can exist in toolbars.\n * Both .mdc-toolbar__icon and .mdc-toolbar__menu-icon share all styles except for\n * horizontal padding.\n */\n.mdc-toolbar {\n  /* @alternate */\n  background-color: #3f51b5;\n  background-color: var(--mdc-theme-primary, #3f51b5);\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%; }\n\n.mdc-toolbar__row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: auto;\n  min-height: 64px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__row {\n    min-height: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__row {\n    min-height: 56px; } }\n\n.mdc-toolbar__section {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  -webkit-box-align: start;\n  -ms-flex-align: start;\n  align-items: flex-start;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  min-width: 0;\n  height: 100%;\n  z-index: 1; }\n\n.mdc-toolbar__section--align-start {\n  -webkit-box-pack: start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-box-ordinal-group: 0;\n  -ms-flex-order: -1;\n  order: -1; }\n\n.mdc-toolbar__section--align-end {\n  -webkit-box-pack: end;\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n  -webkit-box-ordinal-group: 2;\n  -ms-flex-order: 1;\n  order: 1; }\n\n.mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  line-height: 2rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  margin-left: 24px;\n  margin-right: 0;\n  -ms-flex-item-align: center;\n  align-self: center;\n  padding: 16px 0;\n  line-height: 1.5rem;\n  z-index: 1; }\n\n[dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 24px; }\n\n.mdc-toolbar__icon {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  padding: 16px;\n  border: none;\n  background-color: inherit;\n  color: inherit;\n  text-decoration: none;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white);\n  padding-right: 12px;\n  padding-left: 12px;\n  cursor: pointer; }\n\n.mdc-toolbar__icon:last-of-type {\n  padding-left: 12px;\n  padding-right: 24px; }\n\n[dir="rtl"] .mdc-toolbar__icon:last-of-type, .mdc-toolbar__icon:last-of-type[dir="rtl"] {\n  padding-left: 24px;\n  padding-right: 12px; }\n\n.mdc-toolbar__menu-icon {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  padding: 16px;\n  border: none;\n  background-color: inherit;\n  color: inherit;\n  text-decoration: none;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white);\n  padding-right: 24px;\n  padding-left: 24px;\n  cursor: pointer; }\n\n.mdc-toolbar__menu-icon + .mdc-toolbar__title {\n  margin-left: 8px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 8px; }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__title {\n    margin-left: 16px;\n    margin-right: 0; }\n  [dir="rtl"] .mdc-toolbar__title, .mdc-toolbar__title[dir="rtl"] {\n    margin-left: 0;\n    margin-right: 16px; }\n  .mdc-toolbar__icon {\n    padding-right: 8px;\n    padding-left: 8px; }\n  .mdc-toolbar__icon:last-of-type {\n    padding-left: 8px;\n    padding-right: 16px; }\n  [dir="rtl"] .mdc-toolbar__icon:last-of-type, .mdc-toolbar__icon:last-of-type[dir="rtl"] {\n    padding-left: 16px;\n    padding-right: 8px; }\n  .mdc-toolbar__menu-icon {\n    padding-right: 16px;\n    padding-left: 16px; }\n  .mdc-toolbar__menu-icon + .mdc-toolbar__title {\n    margin-left: 16px;\n    margin-right: 0; }\n  [dir="rtl"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir="rtl"] {\n    margin-left: 0;\n    margin-right: 16px; } }\n\n.mdc-toolbar--fixed {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 4; }\n\n.mdc-toolbar--flexible {\n  --mdc-toolbar-ratio-to-extend-flexible: 4; }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n  height: 256px;\n  height: calc(64px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); }\n\n@media (max-width: 599px) {\n  .mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n    height: 224px;\n    height: calc(56px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); } }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child::after {\n  position: absolute;\n  content: ""; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  -ms-flex-item-align: end;\n  align-self: flex-end;\n  line-height: 1.5rem; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__row:first-child::after {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity .2s ease;\n  transition: opacity .2s ease;\n  opacity: 1; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__row:first-child::after {\n  opacity: 0; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__title {\n  font-weight: 500; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed {\n  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  -webkit-transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--flexible-space-minimized {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--flexible-space-minimized {\n  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--fixed-at-last-row {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar-fixed-adjust {\n  margin-top: 64px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 56px; } }\n\n.mdc-toolbar__section--shrink-to-fit {\n  -webkit-box-flex: 0;\n  -ms-flex: none;\n  flex: none; }\n',""])},function(e,t,n){var r=n(71);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,'/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* postcss-bem-linter: define simple-menu */\n.mdc-simple-menu {\n  display: none;\n  position: absolute;\n  min-width: 170px;\n  max-width: calc(100vw - 32px);\n  max-height: calc(100vh - 32px);\n  margin: 0;\n  padding: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  border-radius: 2px;\n  background-color: white;\n  white-space: nowrap;\n  opacity: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  will-change: transform, opacity;\n  z-index: 4;\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n\n.mdc-simple-menu--theme-dark,\n.mdc-theme--dark .mdc-simple-menu {\n  background-color: #424242; }\n\n.mdc-simple-menu:focus {\n  outline: none; }\n\n.mdc-simple-menu--open {\n  display: inline-block;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1; }\n\n.mdc-simple-menu--animating {\n  display: inline-block;\n  -webkit-transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-simple-menu__items {\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  will-change: transform;\n  /* stylelint-disable plugin/selector-bem-pattern, selector-no-universal */\n  /* stylelint-enable plugin/selector-bem-pattern, selector-no-universal */ }\n\n.mdc-simple-menu__items > * {\n  opacity: 0; }\n\n.mdc-simple-menu__items > .mdc-list-item {\n  cursor: pointer; }\n\n.mdc-simple-menu--animating .mdc-simple-menu__items {\n  overflow-y: hidden; }\n\n.mdc-simple-menu--animating .mdc-simple-menu__items > * {\n  -webkit-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);\n  transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-simple-menu--open .mdc-simple-menu__items > * {\n  opacity: 1;\n  will-change: opacity; }\n\n[dir="rtl"] .mdc-simple-menu {\n  -webkit-transform-origin: top right;\n  transform-origin: top right; }\n\n.mdc-simple-menu--open-from-top-left {\n  -webkit-transform-origin: top left !important;\n  transform-origin: top left !important; }\n\n.mdc-simple-menu--open-from-top-right {\n  -webkit-transform-origin: top right !important;\n  transform-origin: top right !important; }\n\n.mdc-simple-menu--open-from-bottom-left {\n  -webkit-transform-origin: bottom left !important;\n  transform-origin: bottom left !important; }\n\n.mdc-simple-menu--open-from-bottom-right {\n  -webkit-transform-origin: bottom right !important;\n  transform-origin: bottom right !important; }\n\n.mdc-simple-menu .mdc-list-group,\n.mdc-simple-menu .mdc-list {\n  padding: 8px 0; }\n\n.mdc-simple-menu .mdc-list-item {\n  position: relative;\n  padding: 0 16px;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-item,\n.mdc-theme--dark .mdc-simple-menu .mdc-list-item {\n  color: white; }\n\n.mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-divider,\n.mdc-theme--dark .mdc-simple-menu .mdc-list-divider {\n  border-color: rgba(255, 255, 255, 0.12); }\n\n.mdc-simple-menu .mdc-list-item__start-detail {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-item__start-detail,\n.mdc-theme--dark .mdc-simple-menu .mdc-list-item__start-detail {\n  color: rgba(255, 255, 255, 0.54); }\n\n.mdc-simple-menu--selected.mdc-list-item,\n.mdc-simple-menu--selected.mdc-list-item .mdc-list-item__start-detail {\n  /* @alternate */\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-simple-menu .mdc-list-item::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity 120ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms cubic-bezier(0, 0, 0.2, 1);\n  border-radius: inherit;\n  background: currentColor;\n  content: "";\n  opacity: 0;\n  pointer-events: none; }\n\n.mdc-simple-menu .mdc-list-item:focus::before {\n  opacity: .12; }\n\n.mdc-simple-menu .mdc-list-item:active::before {\n  /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n  opacity: .18; }\n\n.mdc-simple-menu .mdc-list-item[aria-disabled="true"] {\n  cursor: default;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-select--theme-dark .mdc-simple-menu .mdc-list-item[aria-disabled="true"],\n.mdc-theme--dark .mdc-simple-menu .mdc-list-item[aria-disabled="true"] {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5);\n  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)); }\n\n.mdc-simple-menu .mdc-list-item[aria-disabled="true"]:focus::before, .mdc-simple-menu .mdc-list-item[aria-disabled="true"]:active::before {\n  opacity: 0; }\n\n/* postcss-bem-linter: end */\n.mdc-menu-anchor {\n  position: relative;\n  overflow: visible; }\n',""])},function(e,t,n){var r=n(73);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,'/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   \x3c!-- ... --\x3e\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   \x3c!-- ... --\x3e\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n:root {\n  --mdc-persistent-drawer-dark-theme-bg-color: #212121; }\n\n.mdc-persistent-drawer {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  width: 0; }\n\n.mdc-persistent-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: flex-center;\n  -ms-flex-align: flex-center;\n  align-items: flex-center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n.mdc-persistent-drawer__toolbar-spacer--theme-dark .mdc-persistent-drawer__toolbar-spacer,\n.mdc-theme--dark .mdc-persistent-drawer__toolbar-spacer {\n  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n\n@media (min-width: 600px) {\n  .mdc-persistent-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-persistent-drawer__header {\n  position: relative; }\n\n.mdc-persistent-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-persistent-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-persistent-drawer .mdc-list-group,\n.mdc-persistent-drawer .mdc-list {\n  padding-right: 0;\n  padding-left: 0; }\n\n.mdc-persistent-drawer .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  padding: 0 16px;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-persistent-drawer .mdc-list-item.mdc-ripple-upgraded {\n  left: 0; }\n\n.mdc-persistent-drawer .mdc-list-item__start-detail {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-persistent-drawer .mdc-list-item__start-detail--theme-dark .mdc-persistent-drawer .mdc-list-item__start-detail,\n.mdc-theme--dark .mdc-persistent-drawer .mdc-list-item__start-detail {\n  color: rgba(255, 255, 255, 0.54); }\n\n.mdc-persistent-drawer--selected.mdc-list-item,\n.mdc-persistent-drawer--selected.mdc-list-item .mdc-list-item__start-detail {\n  /* @alternate */\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-persistent-drawer .mdc-list-item::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: inherit;\n  background: currentColor;\n  opacity: 0;\n  content: ""; }\n\n.mdc-persistent-drawer .mdc-list-item:focus::before {\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .12; }\n\n.mdc-persistent-drawer .mdc-list-item:active::before {\n  /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .18; }\n\n.mdc-persistent-drawer .mdc-list-item:active:focus::before {\n  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-persistent-drawer__drawer {\n  /* @alternate */\n  background: #fff;\n  background: var(--mdc-theme-background, #fff);\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none; }\n\n[dir="rtl"] .mdc-persistent-drawer__drawer, .mdc-persistent-drawer__drawer[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-persistent-drawer__drawer, .mdc-persistent-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-persistent-drawer__drawer--theme-dark,\n.mdc-theme--dark .mdc-persistent-drawer__drawer {\n  background-color: #212121;\n  background-color: var(--mdc-persistent-drawer-dark-theme-bg-color, #212121);\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white);\n  border-left: 0;\n  border-right: 1px solid rgba(255, 255, 255, 0.12); }\n\n[dir="rtl"] .mdc-persistent-drawer__drawer--theme-dark, .mdc-persistent-drawer__drawer--theme-dark[dir="rtl"], [dir="rtl"]\n.mdc-theme--dark .mdc-persistent-drawer__drawer,\n.mdc-theme--dark .mdc-persistent-drawer__drawer[dir="rtl"] {\n  border-left: 1px solid rgba(255, 255, 255, 0.12);\n  border-right: 0; }\n\n[dir="rtl"] .mdc-persistent-drawer .mdc-persistent-drawer__drawer,\n.mdc-persistent-drawer[dir="rtl"] .mdc-persistent-drawer__drawer {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n.mdc-persistent-drawer--animating .mdc-persistent-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-persistent-drawer--animating.mdc-persistent-drawer--open .mdc-persistent-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-persistent-drawer--open {\n  width: 240px;\n  pointer-events: auto; }\n\n.mdc-persistent-drawer--open .mdc-persistent-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-persistent-drawer--open .mdc-persistent-drawer__drawer, .mdc-persistent-drawer--open[dir="rtl"] .mdc-persistent-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   \x3c!-- ... --\x3e\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n:root {\n  --mdc-permanent-drawer-dark-theme-bg-color: #212121; }\n\n.mdc-permanent-drawer {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  /* @alternate */\n  background: #fff;\n  background: var(--mdc-theme-background, #fff);\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-flex: 0;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  width: 240px;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  overflow: hidden; }\n\n.mdc-permanent-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: flex-center;\n  -ms-flex-align: flex-center;\n  align-items: flex-center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n.mdc-permanent-drawer__toolbar-spacer--theme-dark .mdc-permanent-drawer__toolbar-spacer,\n.mdc-theme--dark .mdc-permanent-drawer__toolbar-spacer {\n  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n\n@media (min-width: 600px) {\n  .mdc-permanent-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-permanent-drawer__header {\n  position: relative; }\n\n.mdc-permanent-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-permanent-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-permanent-drawer .mdc-list-group,\n.mdc-permanent-drawer .mdc-list {\n  padding-right: 0;\n  padding-left: 0; }\n\n.mdc-permanent-drawer .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  padding: 0 16px;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-permanent-drawer .mdc-list-item.mdc-ripple-upgraded {\n  left: 0; }\n\n.mdc-permanent-drawer .mdc-list-item__start-detail {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-permanent-drawer .mdc-list-item__start-detail--theme-dark .mdc-permanent-drawer .mdc-list-item__start-detail,\n.mdc-theme--dark .mdc-permanent-drawer .mdc-list-item__start-detail {\n  color: rgba(255, 255, 255, 0.54); }\n\n.mdc-permanent-drawer--selected.mdc-list-item,\n.mdc-permanent-drawer--selected.mdc-list-item .mdc-list-item__start-detail {\n  /* @alternate */\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-permanent-drawer .mdc-list-item::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: inherit;\n  background: currentColor;\n  opacity: 0;\n  content: ""; }\n\n.mdc-permanent-drawer .mdc-list-item:focus::before {\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .12; }\n\n.mdc-permanent-drawer .mdc-list-item:active::before {\n  /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .18; }\n\n.mdc-permanent-drawer .mdc-list-item:active:focus::before {\n  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n\n[dir="rtl"] .mdc-permanent-drawer, .mdc-permanent-drawer[dir="rtl"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir="rtl"] .mdc-permanent-drawer, .mdc-permanent-drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-permanent-drawer--theme-dark,\n.mdc-theme--dark .mdc-permanent-drawer {\n  background-color: #212121;\n  background-color: var(--mdc-permanent-drawer-dark-theme-bg-color, #212121);\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white);\n  border-left: 0;\n  border-right: 1px solid rgba(255, 255, 255, 0.12); }\n\n[dir="rtl"] .mdc-permanent-drawer--theme-dark, .mdc-permanent-drawer--theme-dark[dir="rtl"], [dir="rtl"]\n.mdc-theme--dark .mdc-permanent-drawer,\n.mdc-theme--dark .mdc-permanent-drawer[dir="rtl"] {\n  border-left: 1px solid rgba(255, 255, 255, 0.12);\n  border-right: 0; }\n\n.mdc-permanent-drawer--floating {\n  background: none;\n  border-left: 0;\n  border-right: none; }\n\n[dir="rtl"] .mdc-permanent-drawer--floating, .mdc-permanent-drawer--floating[dir="rtl"] {\n  border-left: none;\n  border-right: 0; }\n\n.mdc-permanent-drawer--floating--theme-dark,\n.mdc-theme--dark .mdc-permanent-drawer--floating {\n  background: none;\n  border-left: 0;\n  border-right: none; }\n\n[dir="rtl"] .mdc-permanent-drawer--floating--theme-dark, .mdc-permanent-drawer--floating--theme-dark[dir="rtl"], [dir="rtl"]\n.mdc-theme--dark .mdc-permanent-drawer--floating,\n.mdc-theme--dark .mdc-permanent-drawer--floating[dir="rtl"] {\n  border-left: none;\n  border-right: 0; }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   \x3c!-- ... --\x3e\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   \x3c!-- ... --\x3e\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-temporary-drawer {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  pointer-events: none;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  contain: strict;\n  z-index: 5;\n  /* Shaded background */ }\n\n.mdc-temporary-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: flex-center;\n  -ms-flex-align: flex-center;\n  align-items: flex-center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n.mdc-temporary-drawer__toolbar-spacer--theme-dark .mdc-temporary-drawer__toolbar-spacer,\n.mdc-theme--dark .mdc-temporary-drawer__toolbar-spacer {\n  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n\n@media (min-width: 600px) {\n  .mdc-temporary-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-temporary-drawer__header {\n  position: relative; }\n\n.mdc-temporary-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: ""; }\n\n.mdc-temporary-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-temporary-drawer .mdc-list-group,\n.mdc-temporary-drawer .mdc-list {\n  padding-right: 0;\n  padding-left: 0; }\n\n.mdc-temporary-drawer .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  padding: 0 16px;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-temporary-drawer .mdc-list-item.mdc-ripple-upgraded {\n  left: 0; }\n\n.mdc-temporary-drawer .mdc-list-item__start-detail {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-temporary-drawer .mdc-list-item__start-detail--theme-dark .mdc-temporary-drawer .mdc-list-item__start-detail,\n.mdc-theme--dark .mdc-temporary-drawer .mdc-list-item__start-detail {\n  color: rgba(255, 255, 255, 0.54); }\n\n.mdc-temporary-drawer--selected.mdc-list-item,\n.mdc-temporary-drawer--selected.mdc-list-item .mdc-list-item__start-detail {\n  /* @alternate */\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-temporary-drawer .mdc-list-item::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: inherit;\n  background: currentColor;\n  opacity: 0;\n  content: ""; }\n\n.mdc-temporary-drawer .mdc-list-item:focus::before {\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .12; }\n\n.mdc-temporary-drawer .mdc-list-item:active::before {\n  /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .18; }\n\n.mdc-temporary-drawer .mdc-list-item:active:focus::before {\n  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-temporary-drawer::before {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.6);\n  content: "";\n  opacity: 0;\n  opacity: var(--mdc-temporary-drawer-opacity, 0);\n  will-change: opacity;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.mdc-temporary-drawer__drawer {\n  /* @alternate */\n  background: #fff;\n  background: var(--mdc-theme-background, #fff);\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  width: calc(100% - 56px);\n  max-width: 280px;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none;\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n[dir="rtl"] .mdc-temporary-drawer__drawer, .mdc-temporary-drawer__drawer[dir="rtl"] {\n  left: initial;\n  right: 0; }\n\n.mdc-temporary-drawer--theme-dark .mdc-temporary-drawer__drawer,\n.mdc-theme--dark .mdc-temporary-drawer__drawer {\n  background: #303030;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n[dir="rtl"] .mdc-temporary-drawer .mdc-temporary-drawer__drawer,\n.mdc-temporary-drawer[dir="rtl"] .mdc-temporary-drawer__drawer {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n@media (min-width: 600px) {\n  .mdc-temporary-drawer__drawer {\n    width: calc(100% - 64px);\n    max-width: 320px; } }\n\n.mdc-temporary-drawer__content {\n  -webkit-box-flex: 1;\n  -ms-flex-positive: 1;\n  flex-grow: 1;\n  margin: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-overflow-scrolling: touch;\n  -ms-touch-action: pan-y;\n  touch-action: pan-y; }\n\n.mdc-temporary-drawer__footer {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  -ms-flex-negative: 0;\n  flex-shrink: 0; }\n\n.mdc-temporary-drawer--animating::before {\n  -webkit-transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-temporary-drawer--animating.mdc-temporary-drawer--open .mdc-temporary-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-temporary-drawer--animating .mdc-temporary-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-temporary-drawer--open {\n  pointer-events: auto; }\n\n.mdc-temporary-drawer--open::before {\n  opacity: 1;\n  opacity: var(--mdc-temporary-drawer-opacity, 1); }\n\n.mdc-temporary-drawer--open .mdc-temporary-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir="rtl"] .mdc-temporary-drawer--open .mdc-temporary-drawer__drawer, .mdc-temporary-drawer--open[dir="rtl"] .mdc-temporary-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n.mdc-drawer-scroll-lock {\n  height: 100vh;\n  overflow: hidden; }\n',""])},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(4),d=r(c),u=n(5),p=r(u);n(17);var m=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(e,t){t.text;return(0,l.h)(p.default,null,(0,l.h)(p.default.Primary,null,(0,l.h)(p.default.Title,{large:!0},"Preact Progressive Web App Boilerplate 2017")),(0,l.h)(p.default.Media,null,"Code snippets:",(0,l.h)("ul",null,(0,l.h)("li",null,(0,l.h)("a",{href:"#/code/hello"},"Hello")),(0,l.h)("li",null,(0,l.h)("a",{href:"#/code/router"},"Router")),(0,l.h)("li",null,(0,l.h)("a",{href:"#/code/offline"},"Offline")),(0,l.h)("li",null,(0,l.h)("a",{href:"#/code/highlight"},"Highlight.js"))),"The smallest Preact Progressive Web App stack with:",(0,l.h)("ul",null,(0,l.h)("li",null,(0,l.h)("a",{href:"https://github.com/developit/preact-router"},"preact router")," ","with"," ",(0,l.h)("a",{href:"https://github.com/ReactTraining/history"},"history")),(0,l.h)("li",null,(0,l.h)("a",{href:"https://github.com/prateekbh/preact-material-components"},"preact material components")),(0,l.h)("li",null,(0,l.h)("a",{href:"https://github.com/babel/babel-preset-env"},"babel-preset-env")," ","for ES6 & JSX support"),(0,l.h)("li",null,(0,l.h)("a",{href:"https://github.com/kentcdodds/webpack-config-utils"},"webpack-config-utils")," ","in single ",(0,l.h)("i",null,"webpack.config.babel.js")," for production and development"),(0,l.h)("li",null,(0,l.h)("a",{href:"https://github.com/NekR/offline-plugin"},"offline-plugin")," ","for serving files when offline"),(0,l.h)("li",null,(0,l.h)("a",{href:"https://github.com/webpack/webpack-dev-server"},"webpack dev server")," ","included for local development"),(0,l.h)("li",null,"SASS support"),(0,l.h)("li",null,"Compatible with IE11 and higher"),(0,l.h)("li",null,"100% in"," ",(0,l.h)("a",{href:"https://developers.google.com/web/tools/lighthouse/"},"Lighthouse Audit"))),(0,l.h)("p",null,"Source code"," ",(0,l.h)("a",{href:"https://github.com/keemor/keemor.github.io"},"https://github.com/keemor/keemor.github.io")),"Local development",(0,l.h)(d.default,{code:"npm install \nnpm start"}),"Production version",(0,l.h)(d.default,{code:"npm run build"})))}}]),t}(l.Component);t.default=m},function(e,t,n){"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(e){"object"===("undefined"==typeof window?"undefined":r(window))&&window||"object"===("undefined"==typeof self?"undefined":r(self))&&self;e(t)}(function(e){function t(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function n(e){return e.nodeName.toLowerCase()}function r(e,t){var n=e&&e.exec(t);return n&&0===n.index}function o(e){return T.test(e)}function i(e){var t,n,r,i,a=e.className+" ";if(a+=e.parentNode?e.parentNode.className:"",n=C.exec(a))return w(n[1])?n[1]:"no-highlight";for(a=a.split(/\s+/),t=0,r=a.length;t<r;t++)if(i=a[t],o(i)||w(i))return i}function a(e){var t,n={},r=Array.prototype.slice.call(arguments,1);for(t in e)n[t]=e[t];return r.forEach(function(e){for(t in e)n[t]=e[t]}),n}function s(e){var t=[];return function e(r,o){for(var i=r.firstChild;i;i=i.nextSibling)3===i.nodeType?o+=i.nodeValue.length:1===i.nodeType&&(t.push({event:"start",offset:o,node:i}),o=e(i,o),n(i).match(/br|hr|img|input/)||t.push({event:"stop",offset:o,node:i}));return o}(e,0),t}function l(e,r,o){function i(){return e.length&&r.length?e[0].offset!==r[0].offset?e[0].offset<r[0].offset?e:r:"start"===r[0].event?e:r:e.length?e:r}function a(e){function r(e){return" "+e.nodeName+'="'+t(e.value).replace('"',"&quot;")+'"'}d+="<"+n(e)+x.map.call(e.attributes,r).join("")+">"}function s(e){d+="</"+n(e)+">"}function l(e){("start"===e.event?a:s)(e.node)}for(var c=0,d="",u=[];e.length||r.length;){var p=i();if(d+=t(o.substring(c,p[0].offset)),c=p[0].offset,p===e){u.reverse().forEach(s);do{l(p.splice(0,1)[0]),p=i()}while(p===e&&p.length&&p[0].offset===c);u.reverse().forEach(a)}else"start"===p[0].event?u.push(p[0].node):u.pop(),l(p.splice(0,1)[0])}return d+t(o.substr(c))}function c(e){return e.variants&&!e.cached_variants&&(e.cached_variants=e.variants.map(function(t){return a(e,{variants:null},t)})),e.cached_variants||e.endsWithParent&&[a(e)]||[e]}function d(e){function t(e){return e&&e.source||e}function n(n,r){return new RegExp(t(n),"m"+(e.case_insensitive?"i":"")+(r?"g":""))}function r(o,i){if(!o.compiled){if(o.compiled=!0,o.keywords=o.keywords||o.beginKeywords,o.keywords){var a={},s=function(t,n){e.case_insensitive&&(n=n.toLowerCase()),n.split(" ").forEach(function(e){var n=e.split("|");a[n[0]]=[t,n[1]?Number(n[1]):1]})};"string"==typeof o.keywords?s("keyword",o.keywords):k(o.keywords).forEach(function(e){s(e,o.keywords[e])}),o.keywords=a}o.lexemesRe=n(o.lexemes||/\w+/,!0),i&&(o.beginKeywords&&(o.begin="\\b("+o.beginKeywords.split(" ").join("|")+")\\b"),o.begin||(o.begin=/\B|\b/),o.beginRe=n(o.begin),o.end||o.endsWithParent||(o.end=/\B|\b/),o.end&&(o.endRe=n(o.end)),o.terminator_end=t(o.end)||"",o.endsWithParent&&i.terminator_end&&(o.terminator_end+=(o.end?"|":"")+i.terminator_end)),o.illegal&&(o.illegalRe=n(o.illegal)),null==o.relevance&&(o.relevance=1),o.contains||(o.contains=[]),o.contains=Array.prototype.concat.apply([],o.contains.map(function(e){return c("self"===e?o:e)})),o.contains.forEach(function(e){r(e,o)}),o.starts&&r(o.starts,i);var l=o.contains.map(function(e){return e.beginKeywords?"\\.?("+e.begin+")\\.?":e.begin}).concat([o.terminator_end,o.illegal]).map(t).filter(Boolean);o.terminators=l.length?n(l.join("|"),!0):{exec:function(){return null}}}}r(e)}function u(e,n,o,i){function a(e,t){var n,o;for(n=0,o=t.contains.length;n<o;n++)if(r(t.contains[n].beginRe,e))return t.contains[n]}function s(e,t){if(r(e.endRe,t)){for(;e.endsParent&&e.parent;)e=e.parent;return e}if(e.endsWithParent)return s(e.parent,t)}function l(e,t){return!o&&r(t.illegalRe,e)}function c(e,t){var n=v.case_insensitive?t[0].toLowerCase():t[0];return e.keywords.hasOwnProperty(n)&&e.keywords[n]}function m(e,t,n,r){var o=r?"":P.classPrefix,i='<span class="'+o,a=n?"":R;return(i+=e+'">')+t+a}function f(){var e,n,r,o;if(!x.keywords)return t(T);for(o="",n=0,x.lexemesRe.lastIndex=0,r=x.lexemesRe.exec(T);r;)o+=t(T.substring(n,r.index)),e=c(x,r),e?(C+=e[1],o+=m(e[0],t(r[0]))):o+=t(r[0]),n=x.lexemesRe.lastIndex,r=x.lexemesRe.exec(T);return o+t(T.substr(n))}function h(){var e="string"==typeof x.subLanguage;if(e&&!O[x.subLanguage])return t(T);var n=e?u(x.subLanguage,T,!0,k[x.subLanguage]):p(T,x.subLanguage.length?x.subLanguage:void 0);return x.relevance>0&&(C+=n.relevance),e&&(k[x.subLanguage]=n.top),m(n.language,n.value,!1,!0)}function g(){E+=null!=x.subLanguage?h():f(),T=""}function b(e){E+=e.className?m(e.className,"",!0):"",x=Object.create(e,{parent:{value:x}})}function y(e,t){if(T+=e,null==t)return g(),0;var n=a(t,x);if(n)return n.skip?T+=t:(n.excludeBegin&&(T+=t),g(),n.returnBegin||n.excludeBegin||(T=t)),b(n,t),n.returnBegin?0:t.length;var r=s(x,t);if(r){var o=x;o.skip?T+=t:(o.returnEnd||o.excludeEnd||(T+=t),g(),o.excludeEnd&&(T=t));do{x.className&&(E+=R),x.skip||(C+=x.relevance),x=x.parent}while(x!==r.parent);return r.starts&&b(r.starts,""),o.returnEnd?0:t.length}if(l(t,x))throw new Error('Illegal lexeme "'+t+'" for mode "'+(x.className||"<unnamed>")+'"');return T+=t,t.length||1}var v=w(e);if(!v)throw new Error('Unknown language: "'+e+'"');d(v);var _,x=i||v,k={},E="";for(_=x;_!==v;_=_.parent)_.className&&(E=m(_.className,"",!0)+E);var T="",C=0;try{for(var S,j,A=0;;){if(x.terminators.lastIndex=A,!(S=x.terminators.exec(n)))break;j=y(n.substring(A,S.index),S[0]),A=S.index+j}for(y(n.substr(A)),_=x;_.parent;_=_.parent)_.className&&(E+=R);return{relevance:C,value:E,language:e,top:x}}catch(e){if(e.message&&-1!==e.message.indexOf("Illegal"))return{relevance:0,value:t(n)};throw e}}function p(e,n){n=n||P.languages||k(O);var r={relevance:0,value:t(e)},o=r;return n.filter(w).forEach(function(t){var n=u(t,e,!1);n.language=t,n.relevance>o.relevance&&(o=n),n.relevance>r.relevance&&(o=r,r=n)}),o.language&&(r.second_best=o),r}function m(e){return P.tabReplace||P.useBR?e.replace(S,function(e,t){return P.useBR&&"\n"===e?"<br>":P.tabReplace?t.replace(/\t/g,P.tabReplace):""}):e}function f(e,t,n){var r=t?E[t]:n,o=[e.trim()];return e.match(/\bhljs\b/)||o.push("hljs"),-1===e.indexOf(r)&&o.push(r),o.join(" ").trim()}function h(e){var t,n,r,a,c,d=i(e);o(d)||(P.useBR?(t=document.createElementNS("http://www.w3.org/1999/xhtml","div"),t.innerHTML=e.innerHTML.replace(/\n/g,"").replace(/<br[ \/]*>/g,"\n")):t=e,c=t.textContent,r=d?u(d,c,!0):p(c),n=s(t),n.length&&(a=document.createElementNS("http://www.w3.org/1999/xhtml","div"),a.innerHTML=r.value,r.value=l(n,s(a),c)),r.value=m(r.value),e.innerHTML=r.value,e.className=f(e.className,d,r.language),e.result={language:r.language,re:r.relevance},r.second_best&&(e.second_best={language:r.second_best.language,re:r.second_best.relevance}))}function g(e){P=a(P,e)}function b(){if(!b.called){b.called=!0;var e=document.querySelectorAll("pre code");x.forEach.call(e,h)}}function y(){addEventListener("DOMContentLoaded",b,!1),addEventListener("load",b,!1)}function v(t,n){var r=O[t]=n(e);r.aliases&&r.aliases.forEach(function(e){E[e]=t})}function _(){return k(O)}function w(e){return e=(e||"").toLowerCase(),O[e]||O[E[e]]}var x=[],k=Object.keys,O={},E={},T=/^(no-?highlight|plain|text)$/i,C=/\blang(?:uage)?-([\w-]+)\b/i,S=/((^(<[^>]+>|\t|)+|(?:\n)))/gm,R="</span>",P={classPrefix:"hljs-",tabReplace:null,useBR:!1,languages:void 0};return e.highlight=u,e.highlightAuto=p,e.fixMarkup=m,e.highlightBlock=h,e.configure=g,e.initHighlighting=b,e.initHighlightingOnLoad=y,e.registerLanguage=v,e.listLanguages=_,e.getLanguage=w,e.inherit=a,e.IDENT_RE="[a-zA-Z]\\w*",e.UNDERSCORE_IDENT_RE="[a-zA-Z_]\\w*",e.NUMBER_RE="\\b\\d+(\\.\\d+)?",e.C_NUMBER_RE="(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",e.BINARY_NUMBER_RE="\\b(0b[01]+)",e.RE_STARTERS_RE="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~",e.BACKSLASH_ESCAPE={begin:"\\\\[\\s\\S]",relevance:0},e.APOS_STRING_MODE={className:"string",begin:"'",end:"'",illegal:"\\n",contains:[e.BACKSLASH_ESCAPE]},e.QUOTE_STRING_MODE={className:"string",begin:'"',end:'"',illegal:"\\n",contains:[e.BACKSLASH_ESCAPE]},e.PHRASAL_WORDS_MODE={begin:/\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/},e.COMMENT=function(t,n,r){var o=e.inherit({className:"comment",begin:t,end:n,contains:[]},r||{});return o.contains.push(e.PHRASAL_WORDS_MODE),o.contains.push({className:"doctag",begin:"(?:TODO|FIXME|NOTE|BUG|XXX):",relevance:0}),o},e.C_LINE_COMMENT_MODE=e.COMMENT("//","$"),e.C_BLOCK_COMMENT_MODE=e.COMMENT("/\\*","\\*/"),e.HASH_COMMENT_MODE=e.COMMENT("#","$"),e.NUMBER_MODE={className:"number",begin:e.NUMBER_RE,relevance:0},e.C_NUMBER_MODE={className:"number",begin:e.C_NUMBER_RE,relevance:0},e.BINARY_NUMBER_MODE={className:"number",begin:e.BINARY_NUMBER_RE,relevance:0},e.CSS_NUMBER_MODE={className:"number",begin:e.NUMBER_RE+"(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",relevance:0},e.REGEXP_MODE={className:"regexp",begin:/\//,end:/\/[gimuy]*/,illegal:/\n/,contains:[e.BACKSLASH_ESCAPE,{begin:/\[/,end:/\]/,relevance:0,contains:[e.BACKSLASH_ESCAPE]}]},e.TITLE_MODE={className:"title",begin:e.IDENT_RE,relevance:0},e.UNDERSCORE_TITLE_MODE={className:"title",begin:e.UNDERSCORE_IDENT_RE,relevance:0},e.METHOD_GUARD={begin:"\\.\\s*"+e.UNDERSCORE_IDENT_RE,relevance:0},e})},function(e,t,n){"use strict";e.exports=function(e){var t="[A-Za-z$_][0-9A-Za-z$_]*",n={keyword:"in of if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const export super debugger as async await static import from as",literal:"true false null undefined NaN Infinity",built_in:"eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect Promise"},r={className:"number",variants:[{begin:"\\b(0[bB][01]+)"},{begin:"\\b(0[oO][0-7]+)"},{begin:e.C_NUMBER_RE}],relevance:0},o={className:"subst",begin:"\\$\\{",end:"\\}",keywords:n,contains:[]},i={className:"string",begin:"`",end:"`",contains:[e.BACKSLASH_ESCAPE,o]};o.contains=[e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,i,r,e.REGEXP_MODE];var a=o.contains.concat([e.C_BLOCK_COMMENT_MODE,e.C_LINE_COMMENT_MODE]);return{aliases:["js","jsx"],keywords:n,contains:[{className:"meta",relevance:10,begin:/^\s*['"]use (strict|asm)['"]/},{className:"meta",begin:/^#!/,end:/$/},e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,i,e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,r,{begin:/[{,]\s*/,relevance:0,contains:[{begin:t+"\\s*:",returnBegin:!0,relevance:0,contains:[{className:"attr",begin:t,relevance:0}]}]},{begin:"("+e.RE_STARTERS_RE+"|\\b(case|return|throw)\\b)\\s*",keywords:"return throw case",contains:[e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,e.REGEXP_MODE,{className:"function",begin:"(\\(.*?\\)|"+t+")\\s*=>",returnBegin:!0,end:"\\s*=>",contains:[{className:"params",variants:[{begin:t},{begin:/\(\s*\)/},{begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,keywords:n,contains:a}]}]},{begin:/</,end:/(\/\w+|\w+\/)>/,subLanguage:"xml",contains:[{begin:/<\w+\s*\/>/,skip:!0},{begin:/<\w+/,end:/(\/\w+|\w+\/)>/,skip:!0,contains:[{begin:/<\w+\s*\/>/,skip:!0},"self"]}]}],relevance:0},{className:"function",beginKeywords:"function",end:/\{/,excludeEnd:!0,contains:[e.inherit(e.TITLE_MODE,{begin:t}),{className:"params",begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,contains:a}],illegal:/\[|%/},{begin:/\$[(.]/},e.METHOD_GUARD,{className:"class",beginKeywords:"class",end:/[{;=]/,excludeEnd:!0,illegal:/[:"\[\]]/,contains:[{beginKeywords:"extends"},e.UNDERSCORE_TITLE_MODE]},{beginKeywords:"constructor",end:/\{/,excludeEnd:!0}],illegal:/#(?!!)/}}},function(e,t,n){var r=n(78);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0};o.transform=void 0;n(2)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,"/*\n\nMonokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/\n\n*/\n.hljs {\n  display: block;\n  overflow-x: auto;\n  padding: 0.5em;\n  background: #23241f; }\n\n.hljs,\n.hljs-tag,\n.hljs-subst {\n  color: #f8f8f2; }\n\n.hljs-strong,\n.hljs-emphasis {\n  color: #a8a8a2; }\n\n.hljs-bullet,\n.hljs-quote,\n.hljs-number,\n.hljs-regexp,\n.hljs-literal,\n.hljs-link {\n  color: #ae81ff; }\n\n.hljs-code,\n.hljs-title,\n.hljs-section,\n.hljs-selector-class {\n  color: #a6e22e; }\n\n.hljs-strong {\n  font-weight: bold; }\n\n.hljs-emphasis {\n  font-style: italic; }\n\n.hljs-keyword,\n.hljs-selector-tag,\n.hljs-name,\n.hljs-attr {\n  color: #f92672; }\n\n.hljs-symbol,\n.hljs-attribute {\n  color: #66d9ef; }\n\n.hljs-params,\n.hljs-class .hljs-title {\n  color: #f8f8f2; }\n\n.hljs-string,\n.hljs-type,\n.hljs-built_in,\n.hljs-builtin-name,\n.hljs-selector-id,\n.hljs-selector-attr,\n.hljs-selector-pseudo,\n.hljs-addition,\n.hljs-variable,\n.hljs-template-variable {\n  color: #e6db74; }\n\n.hljs-comment,\n.hljs-deletion,\n.hljs-meta {\n  color: #75715e; }\n",""])},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=function e(t,n,r){null===t&&(t=Function.prototype);var o=Object.getOwnPropertyDescriptor(t,n);if(void 0===o){var i=Object.getPrototypeOf(t);return null===i?void 0:e(i,n,r)}if("value"in o)return o.value;var a=o.get;if(void 0!==a)return a.call(r)},c=n(0),d=n(3),u=r(d),p=n(80),m=r(p),f=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},h=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="button",e._mdcProps=["dense","raised","compact","unelevated","stroked"],e}return a(t,e),s(t,[{key:"componentDidMount",value:function(){l(t.prototype.__proto__||Object.getPrototypeOf(t.prototype),"attachRipple",this).call(this)}},{key:"materialDom",value:function(e){var t=this,n=e.href?"a":"button";return(0,c.h)(n,f({ref:function(e){t.control=e}},e),this.props.children)}}]),t}(u.default),g=function(e){function t(){o(this,t);var e=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="button__icon",e}return a(t,e),t}(m.default);h.Icon=g,t.default=h},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(0),l=n(3),c=function(e){return e&&e.__esModule?e:{default:e}}(l),d=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},u=function(e){function t(){r(this,t);var e=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return e.componentName="icon",e}return i(t,e),a(t,[{key:"materialDom",value:function(e){return(0,s.h)("i",d({},e,{className:"material-icons"}),e.children)}}]),t}(c.default);t.default=u},function(e,t,n){t=e.exports=n(1)(void 0),t.push([e.i,'/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(".mdc-foo") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir="rtl"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir="rtl">\n *   \x3c!-- ... --\x3e\n *   <div dir="ltr">\n *     <div class="mdc-foo">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * "<base-property>-<default-direction>" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, ".mdc-component")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you\'re\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either "left" or "right") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-card {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: end;\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0;\n  border-radius: 2px;\n  overflow: hidden; }\n\n.mdc-card__primary {\n  padding: 16px; }\n\n.mdc-card__primary .mdc-card__title--large {\n  padding-top: 8px; }\n\n.mdc-card__primary:last-child {\n  padding-bottom: 24px; }\n\n.mdc-card__supporting-text {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 8px 16px; }\n\n.mdc-card--theme-dark .mdc-card__supporting-text,\n.mdc-theme--dark .mdc-card__supporting-text {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-card__primary + .mdc-card__supporting-text {\n  margin-top: -8px;\n  padding-top: 0; }\n\n.mdc-card__supporting-text:last-child {\n  padding-bottom: 24px; }\n\n.mdc-card__actions {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 8px; }\n\n.mdc-card--theme-dark .mdc-card__actions,\n.mdc-theme--dark .mdc-card__actions {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-card__actions .mdc-card__action {\n  margin: 0 8px 0 0; }\n\n[dir="rtl"] .mdc-card__actions .mdc-card__action, .mdc-card__actions .mdc-card__action[dir="rtl"] {\n  margin: 0 0 0 8px; }\n\n.mdc-card__actions .mdc-card__action:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__actions .mdc-card__action:last-child, .mdc-card__actions .mdc-card__action:last-child[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-card__actions--vertical {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-flow: column;\n  flex-flow: column;\n  -webkit-box-align: start;\n  -ms-flex-align: start;\n  align-items: flex-start; }\n\n.mdc-card__actions--vertical .mdc-card__action {\n  margin: 0 0 4px; }\n\n.mdc-card__actions--vertical .mdc-card__action:last-child {\n  margin-bottom: 0; }\n\n.mdc-card__media {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: end;\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-card__media-item {\n  display: inline-block;\n  width: auto;\n  height: 80px;\n  margin: 16px 0 0;\n  padding: 0; }\n\n.mdc-card__media-item--1dot5x {\n  width: auto;\n  height: 120px; }\n\n.mdc-card__media-item--2x {\n  width: auto;\n  height: 160px; }\n\n.mdc-card__media-item--3x {\n  width: auto;\n  height: 240px; }\n\n.mdc-card__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  margin: -.063rem 0; }\n\n.mdc-card--theme-dark .mdc-card__title,\n.mdc-theme--dark .mdc-card__title {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-card__title--large {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin: 0; }\n\n.mdc-card__subtitle {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  margin: -.063rem 0; }\n\n.mdc-card--theme-dark .mdc-card__subtitle,\n.mdc-theme--dark .mdc-card__subtitle {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-card__horizontal-block {\n  padding-left: 0;\n  padding-right: 16px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-box-align: start;\n  -ms-flex-align: start;\n  align-items: flex-start;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n[dir="rtl"] .mdc-card__horizontal-block, .mdc-card__horizontal-block[dir="rtl"] {\n  padding-left: 16px;\n  padding-right: 0; }\n\n.mdc-card__horizontal-block .mdc-card__actions--vertical {\n  margin: 16px; }\n\n.mdc-card__horizontal-block .mdc-card__media-item {\n  margin-left: 16px;\n  margin-right: 0; }\n\n[dir="rtl"] .mdc-card__horizontal-block .mdc-card__media-item, .mdc-card__horizontal-block .mdc-card__media-item[dir="rtl"] {\n  margin-left: 0;\n  margin-right: 16px; }\n\n.mdc-card__horizontal-block .mdc-card__media-item--3x {\n  margin-bottom: 16px; }\n',""])},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(0),l=function(e){function t(){return r(this,t),o(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return i(t,e),a(t,[{key:"render",value:function(e,t){t.text;return(0,s.h)("div",null,(0,s.h)("h2",null,"Source code"),(0,s.h)("a",{href:"https://github.com/keemor/keemor.github.io"},"https://github.com/keemor/keemor.github.io"))}}]),t}(s.Component);t.default=l},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(5),d=r(c),u=n(4),p=r(u);n(17);var m=function(e){function t(e){o(this,t);var n=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.state={text:""},n.onInput=n.onInput.bind(n),n}return a(t,e),s(t,[{key:"componentDidMount",value:function(){this.element.focus()}},{key:"onInput",value:function(e){this.setState({text:e.target.value})}},{key:"render",value:function(e,t){var n=this,r=t.text,o=void 0===r?"":r;return(0,l.h)(d.default,null,(0,l.h)(d.default.Media,null,(0,l.h)("h4",null,(0,l.h)("label",{for:"hello"},"Your name"),":"," ",(0,l.h)("input",{ref:function(e){n.element=e},id:"hello",value:o,onInput:this.onInput})),(0,l.h)("h4",null,"Hello: ",(0,l.h)("span",null,o," ")),(0,l.h)(p.default,{code:'\nimport { h, render, Component } from "preact";\nimport Card from "preact-material-components/Card";\nimport "preact-material-components/Card/style.css";\n\nexport default class Hello extends Component {\n  constructor(props) {\n    super(props);\n    this.state = { text: "" };\n    this.onInput = this.onInput.bind(this);\n  }\n\n  componentDidMount() {\n    this.element.focus();\n  }\n\n  onInput(e) {\n    this.setState({ text: e.target.value });\n  }\n\n  render(props, { text = "" }) {\n    return (\n      <Card>\n        <Card.Media>\n          <h4>\n            <label for="hello">Your name</label>:{" "}\n            <input\n              ref={ref => {\n                this.element = ref;\n              }}\n              id="hello"\n              value={text}\n              onInput={this.onInput}\n            />\n          </h4>\n          <h4>\n            Hello: <span>{text} </span>\n          </h4>\n          \n        </Card.Media>\n      </Card>\n    );\n  }\n}'})))}}]),t}(l.Component);t.default=m},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(5),d=r(c),u=n(4),p=r(u),m=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(e,t){t.text;return(0,l.h)(d.default,null,(0,l.h)(d.default.Primary,null,(0,l.h)(d.default.Title,null,"Example of"," ",(0,l.h)("a",{href:"https://github.com/developit/preact-router"},"preact router")," ","with hash"," ",(0,l.h)("a",{href:"https://github.com/ReactTraining/history"},"history")," ","support")),(0,l.h)(d.default.Media,null,(0,l.h)(p.default,{code:'\nimport { h, render, Component } from "preact";\nimport { Router } from "preact-router";\nimport { createHashHistory } from "history";\n\nimport Header from "./components/header";\nimport Hello from "./route/hello";\nimport Home from "./route/home";\nimport About from "./route/about";\n\nclass Index extends Component {\n  logPageView() {\n    \n  }\n\n  render() {\n    return (\n      <div>\n        <Header />\n        <div class="marginTop">\n          <Router history={createHashHistory()} onChange={this.logPageView}>\n            <Home default path="/" />\n            <Hello path="/hello" />\n            <About path="/about" />\n          </Router>\n        </div>\n      </div>\n    );\n  }\n}\n\nrender(<Index />, document.body);'})))}}]),t}(l.Component);t.default=m},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(5),d=r(c),u=n(4),p=r(u),m=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(e,t){t.text;return(0,l.h)(d.default,null,(0,l.h)(d.default.Primary,null,(0,l.h)(d.default.Title,null,"Example of using"," ",(0,l.h)("a",{href:"https://github.com/NekR/offline-plugin"},"offline-plugin"))),(0,l.h)(d.default.Media,null,(0,l.h)(p.default,{code:'\nimport { h, render, Component } from "preact";\nimport * as runtime from "offline-plugin/runtime";\n\nimport Header from "./components/header";\n\nclass Index extends Component {\n  constructor(props) {\n    super(props);\n    runtime.install({\n      onUpdating: () => {\n        console.log("SW Event:", "onUpdating");\n      },\n      onUpdateReady: () => {\n        console.log("SW Event:", "onUpdateReady");\n        // Tells to new SW to take control immediately\n        runtime.applyUpdate();\n      },\n      onUpdated: () => {\n        console.log("SW Event:", "onUpdated");\n        // Reload the webpage to load into the new version\n        window.location.reload();\n      },\n\n      onUpdateFailed: () => {\n        console.log("SW Event:", "onUpdateFailed");\n      }\n    });\n  }\n  render() {\n    return (\n      <div>\n        <Header />\n      </div>\n    );\n  }\n}\n\nrender(<Index />, document.body);'})))}}]),t}(l.Component);t.default=m},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(5),d=r(c),u=n(4),p=r(u),m=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(e,t){t.text;return(0,l.h)(d.default,null,(0,l.h)(d.default.Primary,null,(0,l.h)(d.default.Title,null,"Example of using"," ",(0,l.h)("a",{href:"https://github.com/isagalaev/highlight.js/"},"highlight.js")," ","based on preact-material-components"," ",(0,l.h)("a",{href:"https://github.com/prateekbh/preact-material-components/blob/master/docs/src/components/code-block/index.js"},"code-block"))),(0,l.h)(d.default.Media,null,(0,l.h)(p.default,{code:'\nimport { h } from "preact";\nimport hljs from "highlight.js/lib/highlight";\nimport javascript from "highlight.js/lib/languages/javascript";\nimport "highlight.js/styles/monokai-sublime.css";\n\nconst LANGUAGES = { javascript };\nObject.keys(LANGUAGES).forEach(key =>\n  hljs.registerLanguage(key, LANGUAGES[key])\n);\n\nexport default ({ code }) => {\n  let text = code.replace(/(^s+|s+$)/g, ""),\n    highlighted = hljs.highlightAuto(text, Object.keys(LANGUAGES)),\n    hLang = highlighted.language;\n  return (\n    <pre class="highlight">\n      <code\n        class={`hljs lang-${hLang}`}\n        dangerouslySetInnerHTML={{ __html: highlighted.value }}\n      />\n    </pre>\n  );\n};'})))}}]),t}(l.Component);t.default=m},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),c=n(5),d=r(c),u=n(4);r(u);n(17);var p=function(e){function t(e){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return a(t,e),s(t,[{key:"componentDidMount",value:function(){function e(e){var t=e.coords.latitude,r=e.coords.longitude;n.innerHTML="<p>Latitude is "+t+"° <br>Longitude is "+r+"°</p>";var o=new Image;o.src="https://maps.googleapis.com/maps/api/staticmap?center="+t+","+r+"&zoom=13&size=300x300&sensor=false",n.appendChild(o)}function t(){n.innerHTML="Unable to retrieve your location"}var n=document.getElementById("out");if(!navigator.geolocation)return void(n.innerHTML="<p>Geolocation is not supported by your browser</p>");n.innerHTML="<p>Locating…</p>",navigator.geolocation.getCurrentPosition(e,t)}},{key:"render",value:function(){return(0,l.h)(d.default,null,(0,l.h)(d.default.Media,null,(0,l.h)("div",{id:"out"})))}}]),t}(l.Component);t.default=p}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 24);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+/** Virtual DOM Node */
+function VNode() {}
+
+/** Global options
+ *	@public
+ *	@namespace options {Object}
+ */
+var options = {
+
+	/** If `true`, `prop` changes trigger synchronous component updates.
+  *	@name syncComponentUpdates
+  *	@type Boolean
+  *	@default true
+  */
+	//syncComponentUpdates: true,
+
+	/** Processes all created VNodes.
+  *	@param {VNode} vnode	A newly-created VNode to normalize/process
+  */
+	//vnode(vnode) { }
+
+	/** Hook invoked after a component is mounted. */
+	// afterMount(component) { }
+
+	/** Hook invoked after the DOM is updated with a component's latest render. */
+	// afterUpdate(component) { }
+
+	/** Hook invoked immediately before a component is unmounted. */
+	// beforeUnmount(component) { }
+};
+
+var stack = [];
+
+var EMPTY_CHILDREN = [];
+
+/** JSX/hyperscript reviver
+*	Benchmarks: https://esbench.com/bench/57ee8f8e330ab09900a1a1a0
+ *	@see http://jasonformat.com/wtf-is-jsx
+ *	@public
+ */
+function h(nodeName, attributes) {
+	var children = EMPTY_CHILDREN,
+	    lastSimple,
+	    child,
+	    simple,
+	    i;
+	for (i = arguments.length; i-- > 2;) {
+		stack.push(arguments[i]);
+	}
+	if (attributes && attributes.children != null) {
+		if (!stack.length) stack.push(attributes.children);
+		delete attributes.children;
+	}
+	while (stack.length) {
+		if ((child = stack.pop()) && child.pop !== undefined) {
+			for (i = child.length; i--;) {
+				stack.push(child[i]);
+			}
+		} else {
+			if (typeof child === 'boolean') child = null;
+
+			if (simple = typeof nodeName !== 'function') {
+				if (child == null) child = '';else if (typeof child === 'number') child = String(child);else if (typeof child !== 'string') simple = false;
+			}
+
+			if (simple && lastSimple) {
+				children[children.length - 1] += child;
+			} else if (children === EMPTY_CHILDREN) {
+				children = [child];
+			} else {
+				children.push(child);
+			}
+
+			lastSimple = simple;
+		}
+	}
+
+	var p = new VNode();
+	p.nodeName = nodeName;
+	p.children = children;
+	p.attributes = attributes == null ? undefined : attributes;
+	p.key = attributes == null ? undefined : attributes.key;
+
+	// if a "vnode hook" is defined, pass every created VNode to it
+	if (options.vnode !== undefined) options.vnode(p);
+
+	return p;
+}
+
+/** Copy own-properties from `props` onto `obj`.
+ *	@returns obj
+ *	@private
+ */
+function extend(obj, props) {
+	for (var i in props) {
+		obj[i] = props[i];
+	}return obj;
+}
+
+/** Call a function asynchronously, as soon as possible.
+ *	@param {Function} callback
+ */
+var defer = typeof Promise == 'function' ? Promise.resolve().then.bind(Promise.resolve()) : setTimeout;
+
+function cloneElement(vnode, props) {
+	return h(vnode.nodeName, extend(extend({}, vnode.attributes), props), arguments.length > 2 ? [].slice.call(arguments, 2) : vnode.children);
+}
+
+// DOM properties that should NOT have "px" added when numeric
+var IS_NON_DIMENSIONAL = /acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i;
+
+/** Managed queue of dirty components to be re-rendered */
+
+var items = [];
+
+function enqueueRender(component) {
+	if (!component._dirty && (component._dirty = true) && items.push(component) == 1) {
+		(options.debounceRendering || defer)(rerender);
+	}
+}
+
+function rerender() {
+	var p,
+	    list = items;
+	items = [];
+	while (p = list.pop()) {
+		if (p._dirty) renderComponent(p);
+	}
+}
+
+/** Check if two nodes are equivalent.
+ *	@param {Element} node
+ *	@param {VNode} vnode
+ *	@private
+ */
+function isSameNodeType(node, vnode, hydrating) {
+	if (typeof vnode === 'string' || typeof vnode === 'number') {
+		return node.splitText !== undefined;
+	}
+	if (typeof vnode.nodeName === 'string') {
+		return !node._componentConstructor && isNamedNode(node, vnode.nodeName);
+	}
+	return hydrating || node._componentConstructor === vnode.nodeName;
+}
+
+/** Check if an Element has a given normalized name.
+*	@param {Element} node
+*	@param {String} nodeName
+ */
+function isNamedNode(node, nodeName) {
+	return node.normalizedNodeName === nodeName || node.nodeName.toLowerCase() === nodeName.toLowerCase();
+}
+
+/**
+ * Reconstruct Component-style `props` from a VNode.
+ * Ensures default/fallback values from `defaultProps`:
+ * Own-properties of `defaultProps` not present in `vnode.attributes` are added.
+ * @param {VNode} vnode
+ * @returns {Object} props
+ */
+function getNodeProps(vnode) {
+	var props = extend({}, vnode.attributes);
+	props.children = vnode.children;
+
+	var defaultProps = vnode.nodeName.defaultProps;
+	if (defaultProps !== undefined) {
+		for (var i in defaultProps) {
+			if (props[i] === undefined) {
+				props[i] = defaultProps[i];
+			}
+		}
+	}
+
+	return props;
+}
+
+/** Create an element with the given nodeName.
+ *	@param {String} nodeName
+ *	@param {Boolean} [isSvg=false]	If `true`, creates an element within the SVG namespace.
+ *	@returns {Element} node
+ */
+function createNode(nodeName, isSvg) {
+	var node = isSvg ? document.createElementNS('http://www.w3.org/2000/svg', nodeName) : document.createElement(nodeName);
+	node.normalizedNodeName = nodeName;
+	return node;
+}
+
+/** Remove a child node from its parent if attached.
+ *	@param {Element} node		The node to remove
+ */
+function removeNode(node) {
+	var parentNode = node.parentNode;
+	if (parentNode) parentNode.removeChild(node);
+}
+
+/** Set a named attribute on the given Node, with special behavior for some names and event handlers.
+ *	If `value` is `null`, the attribute/handler will be removed.
+ *	@param {Element} node	An element to mutate
+ *	@param {string} name	The name/key to set, such as an event or attribute name
+ *	@param {any} old	The last value that was set for this name/node pair
+ *	@param {any} value	An attribute value, such as a function to be used as an event handler
+ *	@param {Boolean} isSvg	Are we currently diffing inside an svg?
+ *	@private
+ */
+function setAccessor(node, name, old, value, isSvg) {
+	if (name === 'className') name = 'class';
+
+	if (name === 'key') {
+		// ignore
+	} else if (name === 'ref') {
+		if (old) old(null);
+		if (value) value(node);
+	} else if (name === 'class' && !isSvg) {
+		node.className = value || '';
+	} else if (name === 'style') {
+		if (!value || typeof value === 'string' || typeof old === 'string') {
+			node.style.cssText = value || '';
+		}
+		if (value && typeof value === 'object') {
+			if (typeof old !== 'string') {
+				for (var i in old) {
+					if (!(i in value)) node.style[i] = '';
+				}
+			}
+			for (var i in value) {
+				node.style[i] = typeof value[i] === 'number' && IS_NON_DIMENSIONAL.test(i) === false ? value[i] + 'px' : value[i];
+			}
+		}
+	} else if (name === 'dangerouslySetInnerHTML') {
+		if (value) node.innerHTML = value.__html || '';
+	} else if (name[0] == 'o' && name[1] == 'n') {
+		var useCapture = name !== (name = name.replace(/Capture$/, ''));
+		name = name.toLowerCase().substring(2);
+		if (value) {
+			if (!old) node.addEventListener(name, eventProxy, useCapture);
+		} else {
+			node.removeEventListener(name, eventProxy, useCapture);
+		}
+		(node._listeners || (node._listeners = {}))[name] = value;
+	} else if (name !== 'list' && name !== 'type' && !isSvg && name in node) {
+		setProperty(node, name, value == null ? '' : value);
+		if (value == null || value === false) node.removeAttribute(name);
+	} else {
+		var ns = isSvg && name !== (name = name.replace(/^xlink\:?/, ''));
+		if (value == null || value === false) {
+			if (ns) node.removeAttributeNS('http://www.w3.org/1999/xlink', name.toLowerCase());else node.removeAttribute(name);
+		} else if (typeof value !== 'function') {
+			if (ns) node.setAttributeNS('http://www.w3.org/1999/xlink', name.toLowerCase(), value);else node.setAttribute(name, value);
+		}
+	}
+}
+
+/** Attempt to set a DOM property to the given value.
+ *	IE & FF throw for certain property-value combinations.
+ */
+function setProperty(node, name, value) {
+	try {
+		node[name] = value;
+	} catch (e) {}
+}
+
+/** Proxy an event to hooked event handlers
+ *	@private
+ */
+function eventProxy(e) {
+	return this._listeners[e.type](options.event && options.event(e) || e);
+}
+
+/** Queue of components that have been mounted and are awaiting componentDidMount */
+var mounts = [];
+
+/** Diff recursion count, used to track the end of the diff cycle. */
+var diffLevel = 0;
+
+/** Global flag indicating if the diff is currently within an SVG */
+var isSvgMode = false;
+
+/** Global flag indicating if the diff is performing hydration */
+var hydrating = false;
+
+/** Invoke queued componentDidMount lifecycle methods */
+function flushMounts() {
+	var c;
+	while (c = mounts.pop()) {
+		if (options.afterMount) options.afterMount(c);
+		if (c.componentDidMount) c.componentDidMount();
+	}
+}
+
+/** Apply differences in a given vnode (and it's deep children) to a real DOM Node.
+ *	@param {Element} [dom=null]		A DOM node to mutate into the shape of the `vnode`
+ *	@param {VNode} vnode			A VNode (with descendants forming a tree) representing the desired DOM structure
+ *	@returns {Element} dom			The created/mutated element
+ *	@private
+ */
+function diff(dom, vnode, context, mountAll, parent, componentRoot) {
+	// diffLevel having been 0 here indicates initial entry into the diff (not a subdiff)
+	if (!diffLevel++) {
+		// when first starting the diff, check if we're diffing an SVG or within an SVG
+		isSvgMode = parent != null && parent.ownerSVGElement !== undefined;
+
+		// hydration is indicated by the existing element to be diffed not having a prop cache
+		hydrating = dom != null && !('__preactattr_' in dom);
+	}
+
+	var ret = idiff(dom, vnode, context, mountAll, componentRoot);
+
+	// append the element if its a new parent
+	if (parent && ret.parentNode !== parent) parent.appendChild(ret);
+
+	// diffLevel being reduced to 0 means we're exiting the diff
+	if (! --diffLevel) {
+		hydrating = false;
+		// invoke queued componentDidMount lifecycle methods
+		if (!componentRoot) flushMounts();
+	}
+
+	return ret;
+}
+
+/** Internals of `diff()`, separated to allow bypassing diffLevel / mount flushing. */
+function idiff(dom, vnode, context, mountAll, componentRoot) {
+	var out = dom,
+	    prevSvgMode = isSvgMode;
+
+	// empty values (null, undefined, booleans) render as empty Text nodes
+	if (vnode == null || typeof vnode === 'boolean') vnode = '';
+
+	// Fast case: Strings & Numbers create/update Text nodes.
+	if (typeof vnode === 'string' || typeof vnode === 'number') {
+
+		// update if it's already a Text node:
+		if (dom && dom.splitText !== undefined && dom.parentNode && (!dom._component || componentRoot)) {
+			/* istanbul ignore if */ /* Browser quirk that can't be covered: https://github.com/developit/preact/commit/fd4f21f5c45dfd75151bd27b4c217d8003aa5eb9 */
+			if (dom.nodeValue != vnode) {
+				dom.nodeValue = vnode;
+			}
+		} else {
+			// it wasn't a Text node: replace it with one and recycle the old Element
+			out = document.createTextNode(vnode);
+			if (dom) {
+				if (dom.parentNode) dom.parentNode.replaceChild(out, dom);
+				recollectNodeTree(dom, true);
+			}
+		}
+
+		out['__preactattr_'] = true;
+
+		return out;
+	}
+
+	// If the VNode represents a Component, perform a component diff:
+	var vnodeName = vnode.nodeName;
+	if (typeof vnodeName === 'function') {
+		return buildComponentFromVNode(dom, vnode, context, mountAll);
+	}
+
+	// Tracks entering and exiting SVG namespace when descending through the tree.
+	isSvgMode = vnodeName === 'svg' ? true : vnodeName === 'foreignObject' ? false : isSvgMode;
+
+	// If there's no existing element or it's the wrong type, create a new one:
+	vnodeName = String(vnodeName);
+	if (!dom || !isNamedNode(dom, vnodeName)) {
+		out = createNode(vnodeName, isSvgMode);
+
+		if (dom) {
+			// move children into the replacement node
+			while (dom.firstChild) {
+				out.appendChild(dom.firstChild);
+			} // if the previous Element was mounted into the DOM, replace it inline
+			if (dom.parentNode) dom.parentNode.replaceChild(out, dom);
+
+			// recycle the old element (skips non-Element node types)
+			recollectNodeTree(dom, true);
+		}
+	}
+
+	var fc = out.firstChild,
+	    props = out['__preactattr_'],
+	    vchildren = vnode.children;
+
+	if (props == null) {
+		props = out['__preactattr_'] = {};
+		for (var a = out.attributes, i = a.length; i--;) {
+			props[a[i].name] = a[i].value;
+		}
+	}
+
+	// Optimization: fast-path for elements containing a single TextNode:
+	if (!hydrating && vchildren && vchildren.length === 1 && typeof vchildren[0] === 'string' && fc != null && fc.splitText !== undefined && fc.nextSibling == null) {
+		if (fc.nodeValue != vchildren[0]) {
+			fc.nodeValue = vchildren[0];
+		}
+	}
+	// otherwise, if there are existing or new children, diff them:
+	else if (vchildren && vchildren.length || fc != null) {
+			innerDiffNode(out, vchildren, context, mountAll, hydrating || props.dangerouslySetInnerHTML != null);
+		}
+
+	// Apply attributes/props from VNode to the DOM Element:
+	diffAttributes(out, vnode.attributes, props);
+
+	// restore previous SVG mode: (in case we're exiting an SVG namespace)
+	isSvgMode = prevSvgMode;
+
+	return out;
+}
+
+/** Apply child and attribute changes between a VNode and a DOM Node to the DOM.
+ *	@param {Element} dom			Element whose children should be compared & mutated
+ *	@param {Array} vchildren		Array of VNodes to compare to `dom.childNodes`
+ *	@param {Object} context			Implicitly descendant context object (from most recent `getChildContext()`)
+ *	@param {Boolean} mountAll
+ *	@param {Boolean} isHydrating	If `true`, consumes externally created elements similar to hydration
+ */
+function innerDiffNode(dom, vchildren, context, mountAll, isHydrating) {
+	var originalChildren = dom.childNodes,
+	    children = [],
+	    keyed = {},
+	    keyedLen = 0,
+	    min = 0,
+	    len = originalChildren.length,
+	    childrenLen = 0,
+	    vlen = vchildren ? vchildren.length : 0,
+	    j,
+	    c,
+	    f,
+	    vchild,
+	    child;
+
+	// Build up a map of keyed children and an Array of unkeyed children:
+	if (len !== 0) {
+		for (var i = 0; i < len; i++) {
+			var _child = originalChildren[i],
+			    props = _child['__preactattr_'],
+			    key = vlen && props ? _child._component ? _child._component.__key : props.key : null;
+			if (key != null) {
+				keyedLen++;
+				keyed[key] = _child;
+			} else if (props || (_child.splitText !== undefined ? isHydrating ? _child.nodeValue.trim() : true : isHydrating)) {
+				children[childrenLen++] = _child;
+			}
+		}
+	}
+
+	if (vlen !== 0) {
+		for (var i = 0; i < vlen; i++) {
+			vchild = vchildren[i];
+			child = null;
+
+			// attempt to find a node based on key matching
+			var key = vchild.key;
+			if (key != null) {
+				if (keyedLen && keyed[key] !== undefined) {
+					child = keyed[key];
+					keyed[key] = undefined;
+					keyedLen--;
+				}
+			}
+			// attempt to pluck a node of the same type from the existing children
+			else if (!child && min < childrenLen) {
+					for (j = min; j < childrenLen; j++) {
+						if (children[j] !== undefined && isSameNodeType(c = children[j], vchild, isHydrating)) {
+							child = c;
+							children[j] = undefined;
+							if (j === childrenLen - 1) childrenLen--;
+							if (j === min) min++;
+							break;
+						}
+					}
+				}
+
+			// morph the matched/found/created DOM child to match vchild (deep)
+			child = idiff(child, vchild, context, mountAll);
+
+			f = originalChildren[i];
+			if (child && child !== dom && child !== f) {
+				if (f == null) {
+					dom.appendChild(child);
+				} else if (child === f.nextSibling) {
+					removeNode(f);
+				} else {
+					dom.insertBefore(child, f);
+				}
+			}
+		}
+	}
+
+	// remove unused keyed children:
+	if (keyedLen) {
+		for (var i in keyed) {
+			if (keyed[i] !== undefined) recollectNodeTree(keyed[i], false);
+		}
+	}
+
+	// remove orphaned unkeyed children:
+	while (min <= childrenLen) {
+		if ((child = children[childrenLen--]) !== undefined) recollectNodeTree(child, false);
+	}
+}
+
+/** Recursively recycle (or just unmount) a node and its descendants.
+ *	@param {Node} node						DOM node to start unmount/removal from
+ *	@param {Boolean} [unmountOnly=false]	If `true`, only triggers unmount lifecycle, skips removal
+ */
+function recollectNodeTree(node, unmountOnly) {
+	var component = node._component;
+	if (component) {
+		// if node is owned by a Component, unmount that component (ends up recursing back here)
+		unmountComponent(component);
+	} else {
+		// If the node's VNode had a ref function, invoke it with null here.
+		// (this is part of the React spec, and smart for unsetting references)
+		if (node['__preactattr_'] != null && node['__preactattr_'].ref) node['__preactattr_'].ref(null);
+
+		if (unmountOnly === false || node['__preactattr_'] == null) {
+			removeNode(node);
+		}
+
+		removeChildren(node);
+	}
+}
+
+/** Recollect/unmount all children.
+ *	- we use .lastChild here because it causes less reflow than .firstChild
+ *	- it's also cheaper than accessing the .childNodes Live NodeList
+ */
+function removeChildren(node) {
+	node = node.lastChild;
+	while (node) {
+		var next = node.previousSibling;
+		recollectNodeTree(node, true);
+		node = next;
+	}
+}
+
+/** Apply differences in attributes from a VNode to the given DOM Element.
+ *	@param {Element} dom		Element with attributes to diff `attrs` against
+ *	@param {Object} attrs		The desired end-state key-value attribute pairs
+ *	@param {Object} old			Current/previous attributes (from previous VNode or element's prop cache)
+ */
+function diffAttributes(dom, attrs, old) {
+	var name;
+
+	// remove attributes no longer present on the vnode by setting them to undefined
+	for (name in old) {
+		if (!(attrs && attrs[name] != null) && old[name] != null) {
+			setAccessor(dom, name, old[name], old[name] = undefined, isSvgMode);
+		}
+	}
+
+	// add new & update changed attributes
+	for (name in attrs) {
+		if (name !== 'children' && name !== 'innerHTML' && (!(name in old) || attrs[name] !== (name === 'value' || name === 'checked' ? dom[name] : old[name]))) {
+			setAccessor(dom, name, old[name], old[name] = attrs[name], isSvgMode);
+		}
+	}
+}
+
+/** Retains a pool of Components for re-use, keyed on component name.
+ *	Note: since component names are not unique or even necessarily available, these are primarily a form of sharding.
+ *	@private
+ */
+var components = {};
+
+/** Reclaim a component for later re-use by the recycler. */
+function collectComponent(component) {
+	var name = component.constructor.name;
+	(components[name] || (components[name] = [])).push(component);
+}
+
+/** Create a component. Normalizes differences between PFC's and classful Components. */
+function createComponent(Ctor, props, context) {
+	var list = components[Ctor.name],
+	    inst;
+
+	if (Ctor.prototype && Ctor.prototype.render) {
+		inst = new Ctor(props, context);
+		Component.call(inst, props, context);
+	} else {
+		inst = new Component(props, context);
+		inst.constructor = Ctor;
+		inst.render = doRender;
+	}
+
+	if (list) {
+		for (var i = list.length; i--;) {
+			if (list[i].constructor === Ctor) {
+				inst.nextBase = list[i].nextBase;
+				list.splice(i, 1);
+				break;
+			}
+		}
+	}
+	return inst;
+}
+
+/** The `.render()` method for a PFC backing instance. */
+function doRender(props, state, context) {
+	return this.constructor(props, context);
+}
+
+/** Set a component's `props` (generally derived from JSX attributes).
+ *	@param {Object} props
+ *	@param {Object} [opts]
+ *	@param {boolean} [opts.renderSync=false]	If `true` and {@link options.syncComponentUpdates} is `true`, triggers synchronous rendering.
+ *	@param {boolean} [opts.render=true]			If `false`, no render will be triggered.
+ */
+function setComponentProps(component, props, opts, context, mountAll) {
+	if (component._disable) return;
+	component._disable = true;
+
+	if (component.__ref = props.ref) delete props.ref;
+	if (component.__key = props.key) delete props.key;
+
+	if (!component.base || mountAll) {
+		if (component.componentWillMount) component.componentWillMount();
+	} else if (component.componentWillReceiveProps) {
+		component.componentWillReceiveProps(props, context);
+	}
+
+	if (context && context !== component.context) {
+		if (!component.prevContext) component.prevContext = component.context;
+		component.context = context;
+	}
+
+	if (!component.prevProps) component.prevProps = component.props;
+	component.props = props;
+
+	component._disable = false;
+
+	if (opts !== 0) {
+		if (opts === 1 || options.syncComponentUpdates !== false || !component.base) {
+			renderComponent(component, 1, mountAll);
+		} else {
+			enqueueRender(component);
+		}
+	}
+
+	if (component.__ref) component.__ref(component);
+}
+
+/** Render a Component, triggering necessary lifecycle events and taking High-Order Components into account.
+ *	@param {Component} component
+ *	@param {Object} [opts]
+ *	@param {boolean} [opts.build=false]		If `true`, component will build and store a DOM node if not already associated with one.
+ *	@private
+ */
+function renderComponent(component, opts, mountAll, isChild) {
+	if (component._disable) return;
+
+	var props = component.props,
+	    state = component.state,
+	    context = component.context,
+	    previousProps = component.prevProps || props,
+	    previousState = component.prevState || state,
+	    previousContext = component.prevContext || context,
+	    isUpdate = component.base,
+	    nextBase = component.nextBase,
+	    initialBase = isUpdate || nextBase,
+	    initialChildComponent = component._component,
+	    skip = false,
+	    rendered,
+	    inst,
+	    cbase;
+
+	// if updating
+	if (isUpdate) {
+		component.props = previousProps;
+		component.state = previousState;
+		component.context = previousContext;
+		if (opts !== 2 && component.shouldComponentUpdate && component.shouldComponentUpdate(props, state, context) === false) {
+			skip = true;
+		} else if (component.componentWillUpdate) {
+			component.componentWillUpdate(props, state, context);
+		}
+		component.props = props;
+		component.state = state;
+		component.context = context;
+	}
+
+	component.prevProps = component.prevState = component.prevContext = component.nextBase = null;
+	component._dirty = false;
+
+	if (!skip) {
+		rendered = component.render(props, state, context);
+
+		// context to pass to the child, can be updated via (grand-)parent component
+		if (component.getChildContext) {
+			context = extend(extend({}, context), component.getChildContext());
+		}
+
+		var childComponent = rendered && rendered.nodeName,
+		    toUnmount,
+		    base;
+
+		if (typeof childComponent === 'function') {
+			// set up high order component link
+
+			var childProps = getNodeProps(rendered);
+			inst = initialChildComponent;
+
+			if (inst && inst.constructor === childComponent && childProps.key == inst.__key) {
+				setComponentProps(inst, childProps, 1, context, false);
+			} else {
+				toUnmount = inst;
+
+				component._component = inst = createComponent(childComponent, childProps, context);
+				inst.nextBase = inst.nextBase || nextBase;
+				inst._parentComponent = component;
+				setComponentProps(inst, childProps, 0, context, false);
+				renderComponent(inst, 1, mountAll, true);
+			}
+
+			base = inst.base;
+		} else {
+			cbase = initialBase;
+
+			// destroy high order component link
+			toUnmount = initialChildComponent;
+			if (toUnmount) {
+				cbase = component._component = null;
+			}
+
+			if (initialBase || opts === 1) {
+				if (cbase) cbase._component = null;
+				base = diff(cbase, rendered, context, mountAll || !isUpdate, initialBase && initialBase.parentNode, true);
+			}
+		}
+
+		if (initialBase && base !== initialBase && inst !== initialChildComponent) {
+			var baseParent = initialBase.parentNode;
+			if (baseParent && base !== baseParent) {
+				baseParent.replaceChild(base, initialBase);
+
+				if (!toUnmount) {
+					initialBase._component = null;
+					recollectNodeTree(initialBase, false);
+				}
+			}
+		}
+
+		if (toUnmount) {
+			unmountComponent(toUnmount);
+		}
+
+		component.base = base;
+		if (base && !isChild) {
+			var componentRef = component,
+			    t = component;
+			while (t = t._parentComponent) {
+				(componentRef = t).base = base;
+			}
+			base._component = componentRef;
+			base._componentConstructor = componentRef.constructor;
+		}
+	}
+
+	if (!isUpdate || mountAll) {
+		mounts.unshift(component);
+	} else if (!skip) {
+		// Ensure that pending componentDidMount() hooks of child components
+		// are called before the componentDidUpdate() hook in the parent.
+		// Note: disabled as it causes duplicate hooks, see https://github.com/developit/preact/issues/750
+		// flushMounts();
+
+		if (component.componentDidUpdate) {
+			component.componentDidUpdate(previousProps, previousState, previousContext);
+		}
+		if (options.afterUpdate) options.afterUpdate(component);
+	}
+
+	if (component._renderCallbacks != null) {
+		while (component._renderCallbacks.length) {
+			component._renderCallbacks.pop().call(component);
+		}
+	}
+
+	if (!diffLevel && !isChild) flushMounts();
+}
+
+/** Apply the Component referenced by a VNode to the DOM.
+ *	@param {Element} dom	The DOM node to mutate
+ *	@param {VNode} vnode	A Component-referencing VNode
+ *	@returns {Element} dom	The created/mutated element
+ *	@private
+ */
+function buildComponentFromVNode(dom, vnode, context, mountAll) {
+	var c = dom && dom._component,
+	    originalComponent = c,
+	    oldDom = dom,
+	    isDirectOwner = c && dom._componentConstructor === vnode.nodeName,
+	    isOwner = isDirectOwner,
+	    props = getNodeProps(vnode);
+	while (c && !isOwner && (c = c._parentComponent)) {
+		isOwner = c.constructor === vnode.nodeName;
+	}
+
+	if (c && isOwner && (!mountAll || c._component)) {
+		setComponentProps(c, props, 3, context, mountAll);
+		dom = c.base;
+	} else {
+		if (originalComponent && !isDirectOwner) {
+			unmountComponent(originalComponent);
+			dom = oldDom = null;
+		}
+
+		c = createComponent(vnode.nodeName, props, context);
+		if (dom && !c.nextBase) {
+			c.nextBase = dom;
+			// passing dom/oldDom as nextBase will recycle it if unused, so bypass recycling on L229:
+			oldDom = null;
+		}
+		setComponentProps(c, props, 1, context, mountAll);
+		dom = c.base;
+
+		if (oldDom && dom !== oldDom) {
+			oldDom._component = null;
+			recollectNodeTree(oldDom, false);
+		}
+	}
+
+	return dom;
+}
+
+/** Remove a component from the DOM and recycle it.
+ *	@param {Component} component	The Component instance to unmount
+ *	@private
+ */
+function unmountComponent(component) {
+	if (options.beforeUnmount) options.beforeUnmount(component);
+
+	var base = component.base;
+
+	component._disable = true;
+
+	if (component.componentWillUnmount) component.componentWillUnmount();
+
+	component.base = null;
+
+	// recursively tear down & recollect high-order component children:
+	var inner = component._component;
+	if (inner) {
+		unmountComponent(inner);
+	} else if (base) {
+		if (base['__preactattr_'] && base['__preactattr_'].ref) base['__preactattr_'].ref(null);
+
+		component.nextBase = base;
+
+		removeNode(base);
+		collectComponent(component);
+
+		removeChildren(base);
+	}
+
+	if (component.__ref) component.__ref(null);
+}
+
+/** Base Component class.
+ *	Provides `setState()` and `forceUpdate()`, which trigger rendering.
+ *	@public
+ *
+ *	@example
+ *	class MyFoo extends Component {
+ *		render(props, state) {
+ *			return <div />;
+ *		}
+ *	}
+ */
+function Component(props, context) {
+	this._dirty = true;
+
+	/** @public
+  *	@type {object}
+  */
+	this.context = context;
+
+	/** @public
+  *	@type {object}
+  */
+	this.props = props;
+
+	/** @public
+  *	@type {object}
+  */
+	this.state = this.state || {};
+}
+
+extend(Component.prototype, {
+
+	/** Returns a `boolean` indicating if the component should re-render when receiving the given `props` and `state`.
+  *	@param {object} nextProps
+  *	@param {object} nextState
+  *	@param {object} nextContext
+  *	@returns {Boolean} should the component re-render
+  *	@name shouldComponentUpdate
+  *	@function
+  */
+
+	/** Update component state by copying properties from `state` to `this.state`.
+  *	@param {object} state		A hash of state properties to update with new values
+  *	@param {function} callback	A function to be called once component state is updated
+  */
+	setState: function setState(state, callback) {
+		var s = this.state;
+		if (!this.prevState) this.prevState = extend({}, s);
+		extend(s, typeof state === 'function' ? state(s, this.props) : state);
+		if (callback) (this._renderCallbacks = this._renderCallbacks || []).push(callback);
+		enqueueRender(this);
+	},
+
+	/** Immediately perform a synchronous re-render of the component.
+  *	@param {function} callback		A function to be called after component is re-rendered.
+  *	@private
+  */
+	forceUpdate: function forceUpdate(callback) {
+		if (callback) (this._renderCallbacks = this._renderCallbacks || []).push(callback);
+		renderComponent(this, 2);
+	},
+
+	/** Accepts `props` and `state`, and returns a new Virtual DOM tree to build.
+  *	Virtual DOM is generally constructed via [JSX](http://jasonformat.com/wtf-is-jsx).
+  *	@param {object} props		Props (eg: JSX attributes) received from parent element/component
+  *	@param {object} state		The component's current state
+  *	@param {object} context		Context object (if a parent component has provided context)
+  *	@returns VNode
+  */
+	render: function render() {}
+});
+
+/** Render JSX into a `parent` Element.
+ *	@param {VNode} vnode		A (JSX) VNode to render
+ *	@param {Element} parent		DOM element to render into
+ *	@param {Element} [merge]	Attempt to re-use an existing DOM tree rooted at `merge`
+ *	@public
+ *
+ *	@example
+ *	// render a div into <body>:
+ *	render(<div id="hello">hello!</div>, document.body);
+ *
+ *	@example
+ *	// render a "Thing" component into #foo:
+ *	const Thing = ({ name }) => <span>{ name }</span>;
+ *	render(<Thing name="one" />, document.querySelector('#foo'));
+ */
+function render(vnode, parent, merge) {
+	return diff(merge, vnode, {}, false, parent, false);
+}
+
+var preact = {
+	h: h,
+	createElement: h,
+	cloneElement: cloneElement,
+	Component: Component,
+	render: render,
+	rerender: rerender,
+	options: options
+};
+
+exports.h = h;
+exports.createElement = h;
+exports.cloneElement = cloneElement;
+exports.Component = Component;
+exports.render = render;
+exports.rerender = rerender;
+exports.options = options;
+exports.default = preact;
+//# sourceMappingURL=preact.esm.js.map
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function (useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if (item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function (modules, mediaQuery) {
+		if (typeof modules === "string") modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for (var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if (typeof id === "number") alreadyImportedModules[id] = true;
+		}
+		for (i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if (typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if (mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if (mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(selector) {
+		if (typeof memo[selector] === "undefined") {
+			var styleTarget = fn.call(this, selector);
+			// Special case to return head of iframe instead of iframe itself
+			if (styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[selector] = styleTarget;
+		}
+		return memo[selector]
+	};
+})(function (target) {
+	return document.querySelector(target)
+});
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(35);
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton) options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+	if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertInto + " " + options.insertAt.before);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	options.attrs.type = "text/css";
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	options.attrs.type = "text/css";
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = options.transform(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _preact = __webpack_require__(0);
+
+var _ripple = __webpack_require__(43);
+
+/**
+ * Base class for every Material component in this package
+ * NOTE: every component should add a ref by the name of `control` to its root dom for autoInit Properties
+ *
+ * @export
+ * @class MaterialComponent
+ * @extends {Component}
+ */
+class MaterialComponent extends _preact.Component {
+  constructor() {
+    super();
+    // Attributes inside this array will be check for boolean value true
+    // and will be converted to mdc classes
+    this._mdcProps = [];
+    // This will again be used to add apt classname to the component
+    this.componentName = "";
+    // The final class name given to the dom
+    this.classText = "";
+  }
+  attachRipple() {
+    if (this.props.ripple && this.control) {
+      _ripple.MDCRipple.attachTo(this.control);
+    }
+  }
+  // Build the className
+  buildClassName(props) {
+    this.classText = "mdc-" + this.componentName;
+    for (let propKey in this.props) {
+      if (this.props.hasOwnProperty(propKey)) {
+        const prop = this.props[propKey];
+        if (typeof prop === "boolean" && prop) {
+          if (this._mdcProps.indexOf(propKey) !== -1) {
+            this.classText += " mdc-" + this.componentName + "--" + propKey;
+          }
+        }
+      }
+    }
+  }
+  getClassName(element) {
+    if (!element) {
+      return "";
+    }
+    const attrs = element.attributes = element.attributes || {};
+    let classText = this.classText;
+    if (attrs.class) {
+      classText += " " + attrs.class;
+    }
+    if (attrs.className && attrs.className !== attrs.class) {
+      classText += " " + attrs.className;
+    }
+    return classText;
+  }
+  // Components must implement this method for their specific DOM structure
+  materialDom(props) {
+    return (0, _preact.h)("div", _extends({}, props), props.children);
+  }
+  render() {
+    this.buildClassName();
+    // Fetch a VNode
+    const componentProps = this.props;
+    if (componentProps.class) {
+      // We delete class prop here so that any sub node's class doesn't get over-ridden from this
+      delete componentProps.class;
+    }
+    const element = this.materialDom(componentProps);
+    element.attributes = element.attributes || {};
+    // Fix for className
+    element.attributes.class = this.getClassName(element);
+    element.attributes.className = this.getClassName(element);
+    // Clean this shit of proxy attributes
+    this._mdcProps.forEach(prop => {
+      delete element.attributes[prop];
+    });
+    return element;
+  }
+}
+exports.default = MaterialComponent;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _highlight = __webpack_require__(75);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+var _javascript = __webpack_require__(76);
+
+var _javascript2 = _interopRequireDefault(_javascript);
+
+__webpack_require__(77);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const LANGUAGES = { javascript: _javascript2.default };
+Object.keys(LANGUAGES).forEach(key => _highlight2.default.registerLanguage(key, LANGUAGES[key]));
+
+exports.default = ({ code }) => {
+  let text = code.replace(/(^\s+|\s+$)/g, ""),
+      highlighted = _highlight2.default.highlightAuto(text, Object.keys(LANGUAGES)),
+      hLang = highlighted.language;
+  return (0, _preact.h)(
+    "pre",
+    { "class": "highlight" },
+    (0, _preact.h)("code", {
+      "class": `hljs lang-${hLang}`,
+      dangerouslySetInnerHTML: { __html: highlighted.value }
+    })
+  );
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _MaterialComponent = __webpack_require__(3);
+
+var _MaterialComponent2 = _interopRequireDefault(_MaterialComponent);
+
+var _Button = __webpack_require__(79);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+class Card extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "card";
+    this._mdcProps = ["theme-dark"];
+  }
+}
+
+class CardSection extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("section", props, props.children);
+  }
+}
+
+class CardPrimary extends CardSection {
+  constructor() {
+    super();
+    this.componentName = "card__primary";
+  }
+}
+
+class CardSupportingText extends CardSection {
+  constructor() {
+    super();
+    this.componentName = "card__supporting-text";
+  }
+}
+
+class CardActions extends CardSection {
+  constructor() {
+    super();
+    this.componentName = "card__actions";
+    this._mdcProps = ["vertical"];
+  }
+}
+
+class CardMedia extends CardSection {
+  constructor() {
+    super();
+    this.componentName = "card__media";
+  }
+}
+
+class CardAction extends _Button2.default {
+  constructor() {
+    super();
+    this.componentName = "card__action";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("button", _extends({
+      className: "mdc-button mdc-button--compact"
+    }, props, {
+      ref: control => {
+        this.control = control;
+      }
+    }), props.children);
+  }
+}
+
+class CardTitle extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "card__title";
+    this._mdcProps = ["large"];
+  }
+  materialDom(props) {
+    return (0, _preact.h)("h1", props, props.children);
+  }
+}
+
+class CardSubtitle extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "card__subtitle";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("h2", props, props.children);
+  }
+}
+
+class CardHorizontalBlock extends CardSection {
+  constructor() {
+    super();
+    this.componentName = "card__horizontal-block";
+  }
+}
+
+class CardMediaItem extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "card__media-item";
+    this._mdcProps = [];
+  }
+  materialDom(props) {
+    let className = "";
+    if (props.x) {
+      className = "mdc-card__media-item--" + props.x + "x";
+    }
+    return (0, _preact.h)("img", _extends({ className: className }, props));
+  }
+}
+
+Card.Primary = CardPrimary;
+Card.SupportingText = CardSupportingText;
+Card.Actions = CardActions;
+Card.Action = CardAction;
+Card.Media = CardMedia;
+Card.Title = CardTitle;
+Card.Subtitle = CardSubtitle;
+Card.HorizontalBlock = CardHorizontalBlock;
+Card.MediaItem = CardMediaItem;
+
+exports.default = Card;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var addLeadingSlash = exports.addLeadingSlash = function addLeadingSlash(path) {
+  return path.charAt(0) === '/' ? path : '/' + path;
+};
+
+var stripLeadingSlash = exports.stripLeadingSlash = function stripLeadingSlash(path) {
+  return path.charAt(0) === '/' ? path.substr(1) : path;
+};
+
+var hasBasename = exports.hasBasename = function hasBasename(path, prefix) {
+  return new RegExp('^' + prefix + '(\\/|\\?|#|$)', 'i').test(path);
+};
+
+var stripBasename = exports.stripBasename = function stripBasename(path, prefix) {
+  return hasBasename(path, prefix) ? path.substr(prefix.length) : path;
+};
+
+var stripTrailingSlash = exports.stripTrailingSlash = function stripTrailingSlash(path) {
+  return path.charAt(path.length - 1) === '/' ? path.slice(0, -1) : path;
+};
+
+var parsePath = exports.parsePath = function parsePath(path) {
+  var pathname = path || '/';
+  var search = '';
+  var hash = '';
+
+  var hashIndex = pathname.indexOf('#');
+  if (hashIndex !== -1) {
+    hash = pathname.substr(hashIndex);
+    pathname = pathname.substr(0, hashIndex);
+  }
+
+  var searchIndex = pathname.indexOf('?');
+  if (searchIndex !== -1) {
+    search = pathname.substr(searchIndex);
+    pathname = pathname.substr(0, searchIndex);
+  }
+
+  return {
+    pathname: pathname,
+    search: search === '?' ? '' : search,
+    hash: hash === '#' ? '' : hash
+  };
+};
+
+var createPath = exports.createPath = function createPath(location) {
+  var pathname = location.pathname,
+      search = location.search,
+      hash = location.hash;
+
+  var path = pathname || '/';
+
+  if (search && search !== '?') path += search.charAt(0) === '?' ? search : '?' + search;
+
+  if (hash && hash !== '#') path += hash.charAt(0) === '#' ? hash : '#' + hash;
+
+  return path;
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @template A
+ */
+class MDCFoundation {
+  /** @return enum{cssClasses} */
+  static get cssClasses() {
+    // Classes extending MDCFoundation should implement this method to return an object which exports every
+    // CSS class the foundation class needs as a property. e.g. {ACTIVE: 'mdc-component--active'}
+    return {};
+  }
+
+  /** @return enum{strings} */
+  static get strings() {
+    // Classes extending MDCFoundation should implement this method to return an object which exports all
+    // semantic strings as constants. e.g. {ARIA_ROLE: 'tablist'}
+    return {};
+  }
+
+  /** @return enum{numbers} */
+  static get numbers() {
+    // Classes extending MDCFoundation should implement this method to return an object which exports all
+    // of its semantic numbers as constants. e.g. {ANIMATION_DELAY_MS: 350}
+    return {};
+  }
+
+  /** @return {!Object} */
+  static get defaultAdapter() {
+    // Classes extending MDCFoundation may choose to implement this getter in order to provide a convenient
+    // way of viewing the necessary methods of an adapter. In the future, this could also be used for adapter
+    // validation.
+    return {};
+  }
+
+  /**
+   * @param {A=} adapter
+   */
+  constructor(adapter = {}) {
+    /** @protected {!A} */
+    this.adapter_ = adapter;
+  }
+
+  init() {
+    // Subclasses should override this method to perform initialization routines (registering events, etc.)
+  }
+
+  destroy() {
+    // Subclasses should override this method to perform de-initialization routines (de-registering events, etc.)
+  }
+}
+
+exports.default = MDCFoundation;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.locationsAreEqual = exports.createLocation = undefined;
+
+var _resolvePathname = __webpack_require__(27);
+
+var _resolvePathname2 = _interopRequireDefault(_resolvePathname);
+
+var _valueEqual = __webpack_require__(28);
+
+var _valueEqual2 = _interopRequireDefault(_valueEqual);
+
+var _PathUtils = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+var createLocation = exports.createLocation = function createLocation(path, state, key, currentLocation) {
+  var location = void 0;
+  if (typeof path === 'string') {
+    // Two-arg form: push(path, state)
+    location = (0, _PathUtils.parsePath)(path);
+    location.state = state;
+  } else {
+    // One-arg form: push(location)
+    location = _extends({}, path);
+
+    if (location.pathname === undefined) location.pathname = '';
+
+    if (location.search) {
+      if (location.search.charAt(0) !== '?') location.search = '?' + location.search;
+    } else {
+      location.search = '';
+    }
+
+    if (location.hash) {
+      if (location.hash.charAt(0) !== '#') location.hash = '#' + location.hash;
+    } else {
+      location.hash = '';
+    }
+
+    if (state !== undefined && location.state === undefined) location.state = state;
+  }
+
+  try {
+    location.pathname = decodeURI(location.pathname);
+  } catch (e) {
+    if (e instanceof URIError) {
+      throw new URIError('Pathname "' + location.pathname + '" could not be decoded. ' + 'This is likely caused by an invalid percent-encoding.');
+    } else {
+      throw e;
+    }
+  }
+
+  if (key) location.key = key;
+
+  if (currentLocation) {
+    // Resolve incomplete/relative pathname relative to current location.
+    if (!location.pathname) {
+      location.pathname = currentLocation.pathname;
+    } else if (location.pathname.charAt(0) !== '/') {
+      location.pathname = (0, _resolvePathname2.default)(location.pathname, currentLocation.pathname);
+    }
+  } else {
+    // When there is no prior location and pathname is empty, set it to /
+    if (!location.pathname) {
+      location.pathname = '/';
+    }
+  }
+
+  return location;
+};
+
+var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
+  return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2014-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = function () {};
+
+if (false) {
+  warning = function (condition, format, args) {
+    var len = arguments.length;
+    args = new Array(len > 2 ? len - 2 : 0);
+    for (var key = 2; key < len; key++) {
+      args[key - 2] = arguments[key];
+    }
+    if (format === undefined) {
+      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+
+    if (format.length < 10 || /^[s\W]*$/.test(format)) {
+      throw new Error('The warning format should be able to uniquely identify this ' + 'warning. Please, use a more descriptive format than: ' + format);
+    }
+
+    if (!condition) {
+      var argIndex = 0;
+      var message = 'Warning: ' + format.replace(/%s/g, function () {
+        return args[argIndex++];
+      });
+      if (typeof console !== 'undefined') {
+        console.error(message);
+      }
+      try {
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+      } catch (x) {}
+    }
+  };
+}
+
+module.exports = warning;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MDCComponent = exports.MDCFoundation = undefined;
+
+var _foundation = __webpack_require__(7);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _component = __webpack_require__(15);
+
+var _component2 = _interopRequireDefault(_component);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+exports.MDCFoundation = _foundation2.default;
+exports.MDCComponent = _component2.default;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _constants = __webpack_require__(53);
+
+Object.defineProperty(exports, 'FOCUSABLE_ELEMENTS', {
+  enumerable: true,
+  get: function () {
+    return _constants.FOCUSABLE_ELEMENTS;
+  }
+});
+
+var _foundation = __webpack_require__(54);
+
+Object.defineProperty(exports, 'MDCSlidableDrawerFoundation', {
+  enumerable: true,
+  get: function () {
+    return _foundation.MDCSlidableDrawerFoundation;
+  }
+});
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(81);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.Link = exports.Route = exports.Router = exports.route = exports.getCurrentUrl = exports.subscribers = undefined;
+
+var _preact = __webpack_require__(0);
+
+var EMPTY$1 = {};
+
+function assign(obj, props) {
+	// eslint-disable-next-line guard-for-in
+	for (var i in props) {
+		obj[i] = props[i];
+	}
+	return obj;
+}
+
+function exec(url, route, opts) {
+	if (opts === void 0) opts = EMPTY$1;
+
+	var reg = /(?:\?([^#]*))?(#.*)?$/,
+	    c = url.match(reg),
+	    matches = {},
+	    ret;
+	if (c && c[1]) {
+		var p = c[1].split('&');
+		for (var i = 0; i < p.length; i++) {
+			var r = p[i].split('=');
+			matches[decodeURIComponent(r[0])] = decodeURIComponent(r.slice(1).join('='));
+		}
+	}
+	url = segmentize(url.replace(reg, ''));
+	route = segmentize(route || '');
+	var max = Math.max(url.length, route.length);
+	for (var i$1 = 0; i$1 < max; i$1++) {
+		if (route[i$1] && route[i$1].charAt(0) === ':') {
+			var param = route[i$1].replace(/(^\:|[+*?]+$)/g, ''),
+			    flags = (route[i$1].match(/[+*?]+$/) || EMPTY$1)[0] || '',
+			    plus = ~flags.indexOf('+'),
+			    star = ~flags.indexOf('*'),
+			    val = url[i$1] || '';
+			if (!val && !star && (flags.indexOf('?') < 0 || plus)) {
+				ret = false;
+				break;
+			}
+			matches[param] = decodeURIComponent(val);
+			if (plus || star) {
+				matches[param] = url.slice(i$1).map(decodeURIComponent).join('/');
+				break;
+			}
+		} else if (route[i$1] !== url[i$1]) {
+			ret = false;
+			break;
+		}
+	}
+	if (opts.default !== true && ret === false) {
+		return false;
+	}
+	return matches;
+}
+
+function pathRankSort(a, b) {
+	var aAttr = a.attributes || EMPTY$1,
+	    bAttr = b.attributes || EMPTY$1;
+	if (aAttr.default) {
+		return 1;
+	}
+	if (bAttr.default) {
+		return -1;
+	}
+	var diff = rank(aAttr.path) - rank(bAttr.path);
+	return diff || aAttr.path.length - bAttr.path.length;
+}
+
+function segmentize(url) {
+	return strip(url).split('/');
+}
+
+function rank(url) {
+	return (strip(url).match(/\/+/g) || '').length;
+}
+
+function strip(url) {
+	return url.replace(/(^\/+|\/+$)/g, '');
+}
+
+var customHistory = null;
+
+var ROUTERS = [];
+
+var subscribers = [];
+
+var EMPTY = {};
+
+function isPreactElement(node) {
+	return node.__preactattr_ != null || typeof Symbol !== 'undefined' && node[Symbol.for('preactattr')] != null;
+}
+
+function setUrl(url, type) {
+	if (type === void 0) type = 'push';
+
+	if (customHistory && customHistory[type]) {
+		customHistory[type](url);
+	} else if (typeof history !== 'undefined' && history[type + 'State']) {
+		history[type + 'State'](null, null, url);
+	}
+}
+
+function getCurrentUrl() {
+	var url;
+	if (customHistory && customHistory.location) {
+		url = customHistory.location;
+	} else if (customHistory && customHistory.getCurrentLocation) {
+		url = customHistory.getCurrentLocation();
+	} else {
+		url = typeof location !== 'undefined' ? location : EMPTY;
+	}
+	return "" + (url.pathname || '') + (url.search || '');
+}
+
+function route(url, replace) {
+	if (replace === void 0) replace = false;
+
+	if (typeof url !== 'string' && url.url) {
+		replace = url.replace;
+		url = url.url;
+	}
+
+	// only push URL into history if we can handle it
+	if (canRoute(url)) {
+		setUrl(url, replace ? 'replace' : 'push');
+	}
+
+	return routeTo(url);
+}
+
+/** Check if the given URL can be handled by any router instances. */
+function canRoute(url) {
+	for (var i = ROUTERS.length; i--;) {
+		if (ROUTERS[i].canRoute(url)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/** Tell all router instances to handle the given URL.  */
+function routeTo(url) {
+	var didRoute = false;
+	for (var i = 0; i < ROUTERS.length; i++) {
+		if (ROUTERS[i].routeTo(url) === true) {
+			didRoute = true;
+		}
+	}
+	for (var i$1 = subscribers.length; i$1--;) {
+		subscribers[i$1](url);
+	}
+	return didRoute;
+}
+
+function routeFromLink(node) {
+	// only valid elements
+	if (!node || !node.getAttribute) {
+		return;
+	}
+
+	var href = node.getAttribute('href'),
+	    target = node.getAttribute('target');
+
+	// ignore links with targets and non-path URLs
+	if (!href || !href.match(/^\//g) || target && !target.match(/^_?self$/i)) {
+		return;
+	}
+
+	// attempt to route, if no match simply cede control to browser
+	return route(href);
+}
+
+function handleLinkClick(e) {
+	if (e.button == 0) {
+		routeFromLink(e.currentTarget || e.target || this);
+		return prevent(e);
+	}
+}
+
+function prevent(e) {
+	if (e) {
+		if (e.stopImmediatePropagation) {
+			e.stopImmediatePropagation();
+		}
+		if (e.stopPropagation) {
+			e.stopPropagation();
+		}
+		e.preventDefault();
+	}
+	return false;
+}
+
+function delegateLinkHandler(e) {
+	// ignore events the browser takes care of already:
+	if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || e.button !== 0) {
+		return;
+	}
+
+	var t = e.target;
+	do {
+		if (String(t.nodeName).toUpperCase() === 'A' && t.getAttribute('href') && isPreactElement(t)) {
+			if (t.hasAttribute('native')) {
+				return;
+			}
+			// if link is handled by the router, prevent browser defaults
+			if (routeFromLink(t)) {
+				return prevent(e);
+			}
+		}
+	} while (t = t.parentNode);
+}
+
+var eventListenersInitialized = false;
+
+function initEventListeners() {
+	if (eventListenersInitialized) {
+		return;
+	}
+
+	if (typeof addEventListener === 'function') {
+		if (!customHistory) {
+			addEventListener('popstate', function () {
+				return routeTo(getCurrentUrl());
+			});
+		}
+		addEventListener('click', delegateLinkHandler);
+	}
+	eventListenersInitialized = true;
+}
+
+var Router = function (Component$$1) {
+	function Router(props) {
+		Component$$1.call(this, props);
+		if (props.history) {
+			customHistory = props.history;
+		}
+
+		this.state = {
+			url: props.url || getCurrentUrl()
+		};
+
+		initEventListeners();
+	}
+
+	if (Component$$1) Router.__proto__ = Component$$1;
+	Router.prototype = Object.create(Component$$1 && Component$$1.prototype);
+	Router.prototype.constructor = Router;
+
+	Router.prototype.shouldComponentUpdate = function shouldComponentUpdate(props) {
+		if (props.static !== true) {
+			return true;
+		}
+		return props.url !== this.props.url || props.onChange !== this.props.onChange;
+	};
+
+	/** Check if the given URL can be matched against any children */
+	Router.prototype.canRoute = function canRoute(url) {
+		return this.getMatchingChildren(this.props.children, url, false).length > 0;
+	};
+
+	/** Re-render children with a new URL to match against. */
+	Router.prototype.routeTo = function routeTo(url) {
+		this._didRoute = false;
+		this.setState({ url: url });
+
+		// if we're in the middle of an update, don't synchronously re-route.
+		if (this.updating) {
+			return this.canRoute(url);
+		}
+
+		this.forceUpdate();
+		return this._didRoute;
+	};
+
+	Router.prototype.componentWillMount = function componentWillMount() {
+		ROUTERS.push(this);
+		this.updating = true;
+	};
+
+	Router.prototype.componentDidMount = function componentDidMount() {
+		var this$1 = this;
+
+		if (customHistory) {
+			this.unlisten = customHistory.listen(function (location) {
+				this$1.routeTo("" + (location.pathname || '') + (location.search || ''));
+			});
+		}
+		this.updating = false;
+	};
+
+	Router.prototype.componentWillUnmount = function componentWillUnmount() {
+		if (typeof this.unlisten === 'function') {
+			this.unlisten();
+		}
+		ROUTERS.splice(ROUTERS.indexOf(this), 1);
+	};
+
+	Router.prototype.componentWillUpdate = function componentWillUpdate() {
+		this.updating = true;
+	};
+
+	Router.prototype.componentDidUpdate = function componentDidUpdate() {
+		this.updating = false;
+	};
+
+	Router.prototype.getMatchingChildren = function getMatchingChildren(children, url, invoke) {
+		return children.slice().sort(pathRankSort).map(function (vnode) {
+			var attrs = vnode.attributes || {},
+			    path = attrs.path,
+			    matches = exec(url, path, attrs);
+			if (matches) {
+				if (invoke !== false) {
+					var newProps = { url: url, matches: matches };
+					assign(newProps, matches);
+					return (0, _preact.cloneElement)(vnode, newProps);
+				}
+				return vnode;
+			}
+			return false;
+		}).filter(Boolean);
+	};
+
+	Router.prototype.render = function render(ref, ref$1) {
+		var children = ref.children;
+		var onChange = ref.onChange;
+		var url = ref$1.url;
+
+		var active = this.getMatchingChildren(children, url, true);
+
+		var current = active[0] || null;
+		this._didRoute = !!current;
+
+		var previous = this.previousUrl;
+		if (url !== previous) {
+			this.previousUrl = url;
+			if (typeof onChange === 'function') {
+				onChange({
+					router: this,
+					url: url,
+					previous: previous,
+					active: active,
+					current: current
+				});
+			}
+		}
+
+		return current;
+	};
+
+	return Router;
+}(_preact.Component);
+
+var Link = function (props) {
+	return (0, _preact.h)('a', assign({ onClick: handleLinkClick }, props));
+};
+
+var Route = function (props) {
+	return (0, _preact.h)(props.component, props);
+};
+
+Router.subscribers = subscribers;
+Router.getCurrentUrl = getCurrentUrl;
+Router.route = route;
+Router.Router = Router;
+Router.Route = Route;
+Router.Link = Link;
+
+exports.subscribers = subscribers;
+exports.getCurrentUrl = getCurrentUrl;
+exports.route = route;
+exports.Router = Router;
+exports.Route = Route;
+exports.Link = Link;
+exports.default = Router;
+//# sourceMappingURL=preact-router.es.js.map
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _warning = __webpack_require__(9);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var createTransitionManager = function createTransitionManager() {
+  var prompt = null;
+
+  var setPrompt = function setPrompt(nextPrompt) {
+    (0, _warning2.default)(prompt == null, 'A history supports only one prompt at a time');
+
+    prompt = nextPrompt;
+
+    return function () {
+      if (prompt === nextPrompt) prompt = null;
+    };
+  };
+
+  var confirmTransitionTo = function confirmTransitionTo(location, action, getUserConfirmation, callback) {
+    // TODO: If another transition starts while we're still confirming
+    // the previous one, we may end up in a weird state. Figure out the
+    // best way to handle this.
+    if (prompt != null) {
+      var result = typeof prompt === 'function' ? prompt(location, action) : prompt;
+
+      if (typeof result === 'string') {
+        if (typeof getUserConfirmation === 'function') {
+          getUserConfirmation(result, callback);
+        } else {
+          (0, _warning2.default)(false, 'A history needs a getUserConfirmation function in order to use a prompt message');
+
+          callback(true);
+        }
+      } else {
+        // Return false from a transition hook to cancel the transition.
+        callback(result !== false);
+      }
+    } else {
+      callback(true);
+    }
+  };
+
+  var listeners = [];
+
+  var appendListener = function appendListener(fn) {
+    var isActive = true;
+
+    var listener = function listener() {
+      if (isActive) fn.apply(undefined, arguments);
+    };
+
+    listeners.push(listener);
+
+    return function () {
+      isActive = false;
+      listeners = listeners.filter(function (item) {
+        return item !== listener;
+      });
+    };
+  };
+
+  var notifyListeners = function notifyListeners() {
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    listeners.forEach(function (listener) {
+      return listener.apply(undefined, args);
+    });
+  };
+
+  return {
+    setPrompt: setPrompt,
+    confirmTransitionTo: confirmTransitionTo,
+    appendListener: appendListener,
+    notifyListeners: notifyListeners
+  };
+};
+
+exports.default = createTransitionManager;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _foundation = __webpack_require__(7);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @template F
+ */
+class MDCComponent {
+  /**
+   * @param {!Element} root
+   * @return {!MDCComponent}
+   */
+  static attachTo(root) {
+    // Subclasses which extend MDCBase should provide an attachTo() method that takes a root element and
+    // returns an instantiated component with its root set to that element. Also note that in the cases of
+    // subclasses, an explicit foundation class will not have to be passed in; it will simply be initialized
+    // from getDefaultFoundation().
+    return new MDCComponent(root, new _foundation2.default());
+  }
+
+  /**
+   * @param {!Element} root
+   * @param {F=} foundation
+   * @param {...?} args
+   */
+  constructor(root, foundation = undefined, ...args) {
+    /** @protected {!Element} */
+    this.root_ = root;
+    this.initialize(...args);
+    // Note that we initialize foundation here and not within the constructor's default param so that
+    // this.root_ is defined and can be used within the foundation class.
+    /** @protected {!F} */
+    this.foundation_ = foundation === undefined ? this.getDefaultFoundation() : foundation;
+    this.foundation_.init();
+    this.initialSyncWithDOM();
+  }
+
+  initialize() /* ...args */{}
+  // Subclasses can override this to do any additional setup work that would be considered part of a
+  // "constructor". Essentially, it is a hook into the parent constructor before the foundation is
+  // initialized. Any additional arguments besides root and foundation will be passed in here.
+
+
+  /**
+   * @return {!F} foundation
+   */
+  getDefaultFoundation() {
+    // Subclasses must override this method to return a properly configured foundation class for the
+    // component.
+    throw new Error('Subclasses must override getDefaultFoundation to return a properly configured ' + 'foundation class');
+  }
+
+  initialSyncWithDOM() {
+    // Subclasses should override this method if they need to perform work to synchronize with a host DOM
+    // object. An example of this would be a form control wrapper that needs to synchronize its internal state
+    // to some property or attribute of the host DOM. Please note: this is *not* the place to perform DOM
+    // reads/writes that would cause layout / paint, as this is called synchronously from within the constructor.
+  }
+
+  destroy() {
+    // Subclasses may implement this method to release any resources / deregister any listeners they have
+    // attached. An example of this might be deregistering a resize event from the window object.
+    this.foundation_.destroy();
+  }
+
+  /**
+   * Wrapper method to add an event listener to the component's root element. This is most useful when
+   * listening for custom events.
+   * @param {string} evtType
+   * @param {!Function} handler
+   */
+  listen(evtType, handler) {
+    this.root_.addEventListener(evtType, handler);
+  }
+
+  /**
+   * Wrapper method to remove an event listener to the component's root element. This is most useful when
+   * unlistening for custom events.
+   * @param {string} evtType
+   * @param {!Function} handler
+   */
+  unlisten(evtType, handler) {
+    this.root_.removeEventListener(evtType, handler);
+  }
+
+  /**
+   * Fires a cross-browser-compatible custom event from the component root of the given type,
+   * with the given data.
+   * @param {string} evtType
+   * @param {!Object} evtData
+   * @param {boolean=} shouldBubble
+   */
+  emit(evtType, evtData, shouldBubble = false) {
+    let evt;
+    if (typeof CustomEvent === 'function') {
+      evt = new CustomEvent(evtType, {
+        detail: evtData,
+        bubbles: shouldBubble
+      });
+    } else {
+      evt = document.createEvent('CustomEvent');
+      evt.initCustomEvent(evtType, shouldBubble, false, evtData);
+    }
+
+    this.root_.dispatchEvent(evt);
+  }
+} /**
+   * @license
+   * Copyright 2016 Google Inc.
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *   http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   */
+
+exports.default = MDCComponent;
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _MaterialComponent = __webpack_require__(3);
+
+var _MaterialComponent2 = _interopRequireDefault(_MaterialComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+/**
+ * @prop dense = false
+ * @prop two-line = false
+ * @prop interactive = false
+ */
+class List extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "list";
+    this._mdcProps = ["dense", "two-line"];
+  }
+  materialDom(props) {
+    if (props.interactive) {
+      return (0, _preact.h)("nav", _extends({ ref: control => this.control = control }, props), props.children);
+    }
+
+    return (0, _preact.h)("ul", _extends({}, props, { ref: control => this.control = control }), props.children);
+  }
+}
+
+class ListItem extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "list-item";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("li", _extends({ role: "option" }, props, { ref: control => this.control = control }), props.children);
+  }
+}
+
+class LinkItem extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "list-item";
+  }
+  componentDidMount() {
+    super.attachRipple();
+  }
+  materialDom(props) {
+    return (0, _preact.h)("a", _extends({ role: "option" }, props, { ref: control => this.control = control }), props.children);
+  }
+}
+
+/**
+ * @prop start-detail = true
+ * @prop end-detail = false
+ */
+class ListItemIcon extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "mdc-list-item__icon";
+  }
+  getProxyClassName(props) {
+    let classNames = [];
+
+    // default behavior
+    props["start-detail"] = props["start-detail"] || true;
+
+    // setting class names mutually exclusive
+    if (props["end-detail"]) {
+      classNames.push("mdc-list-item__end-detail");
+    } else if (props["start-detail"]) {
+      classNames.push("mdc-list-item__start-detail");
+    }
+    return classNames.join(" ");
+  }
+  materialDom(props) {
+    const className = "material-icons " + this.getProxyClassName(props);
+    return (0, _preact.h)("i", _extends({
+      className: className,
+      "aria-hidden": "true"
+    }, props, {
+      ref: control => this.control = control
+    }), props.children);
+  }
+}
+
+/**
+ * @prop start-detail = true
+ * @prop end-detail = false
+ */
+class ListItemAvatar extends ListItemIcon {
+  constructor() {
+    super();
+    this.componentName = "mdc-list-item__avatar";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("img", _extends({}, props, {
+      className: super.getProxyClassName(props)
+    }, props, {
+      ref: control => this.control = control,
+      width: props.width || "56",
+      height: props.height || "56",
+      alt: props.alt || ""
+    }));
+  }
+}
+
+class ListDivider extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "list-divider";
+    this._mdcProps = ["inset"];
+  }
+  materialDom(props) {
+    return (0, _preact.h)("li", _extends({
+      role: "separator"
+    }, props, {
+      ref: control => this.control = control
+    }));
+  }
+}
+
+class ListTextContainer extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "list-item__text";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("span", _extends({}, props, { ref: control => this.control = control }), props.children);
+  }
+}
+
+class ListPrimaryText extends ListTextContainer {
+  constructor() {
+    super();
+    this.componentName = "list-item__text__primary";
+  }
+}
+
+class ListSecondaryText extends ListTextContainer {
+  constructor() {
+    super();
+    this.componentName = "list-item__text__secondary";
+  }
+}
+
+List.Item = ListItem;
+List.LinkItem = LinkItem;
+List.ItemIcon = ListItemIcon;
+List.ItemAvatar = ListItemAvatar;
+List.Divider = ListDivider;
+List.TextContainer = ListTextContainer;
+List.PrimaryText = ListPrimaryText;
+List.SecondaryText = ListSecondaryText;
+
+exports.default = List;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/** @type {string|undefined} */
+let storedTransformPropertyName_;
+
+/**
+ * Returns the name of the correct transform property to use on the current browser.
+ * @param {!Window} globalObj
+ * @param {boolean=} forceRefresh
+ * @return {string}
+ */
+function getTransformPropertyName(globalObj, forceRefresh = false) {
+  if (storedTransformPropertyName_ === undefined || forceRefresh) {
+    const el = globalObj.document.createElement('div');
+    const transformPropertyName = 'transform' in el.style ? 'transform' : 'webkitTransform';
+    storedTransformPropertyName_ = transformPropertyName;
+  }
+
+  return storedTransformPropertyName_;
+}
+
+/**
+ * Clamps a value between the minimum and the maximum, returning the clamped value.
+ * @param {number} value
+ * @param {number} min
+ * @param {number} max
+ * @return {number}
+ */
+function clamp(value, min = 0, max = 1) {
+  return Math.min(max, Math.max(min, value));
+}
+
+/**
+ * Returns the easing value to apply at time t, for a given cubic bezier curve.
+ * Control points P0 and P3 are assumed to be (0,0) and (1,1), respectively.
+ * Parameters are as follows:
+ * - time: The current time in the animation, scaled between 0 and 1.
+ * - x1: The x value of control point P1.
+ * - y1: The y value of control point P1.
+ * - x2: The x value of control point P2.
+ * - y2: The y value of control point P2.
+ * @param {number} time
+ * @param {number} x1
+ * @param {number} y1
+ * @param {number} x2
+ * @param {number} y2
+ * @return {number}
+ */
+function bezierProgress(time, x1, y1, x2, y2) {
+  return getBezierCoordinate_(solvePositionFromXValue_(time, x1, x2), y1, y2);
+}
+
+/**
+ * Compute a single coordinate at a position point between 0 and 1.
+ * c1 and c2 are the matching coordinate on control points P1 and P2, respectively.
+ * Control points P0 and P3 are assumed to be (0,0) and (1,1), respectively.
+ * Adapted from https://github.com/google/closure-library/blob/master/closure/goog/math/bezier.js.
+ * @param {number} t
+ * @param {number} c1
+ * @param {number} c2
+ * @return {number}
+ */
+function getBezierCoordinate_(t, c1, c2) {
+  // Special case start and end.
+  if (t === 0 || t === 1) {
+    return t;
+  }
+
+  // Step one - from 4 points to 3
+  let ic0 = t * c1;
+  let ic1 = c1 + t * (c2 - c1);
+  const ic2 = c2 + t * (1 - c2);
+
+  // Step two - from 3 points to 2
+  ic0 += t * (ic1 - ic0);
+  ic1 += t * (ic2 - ic1);
+
+  // Final step - last point
+  return ic0 + t * (ic1 - ic0);
+}
+
+/**
+ * Project a point onto the Bezier curve, from a given X. Calculates the position t along the curve.
+ * Adapted from https://github.com/google/closure-library/blob/master/closure/goog/math/bezier.js.
+ * @param {number} xVal
+ * @param {number} x1
+ * @param {number} x2
+ * @return {number}
+ */
+function solvePositionFromXValue_(xVal, x1, x2) {
+  const EPSILON = 1e-6;
+  const MAX_ITERATIONS = 8;
+
+  if (xVal <= 0) {
+    return 0;
+  } else if (xVal >= 1) {
+    return 1;
+  }
+
+  // Initial estimate of t using linear interpolation.
+  let t = xVal;
+
+  // Try gradient descent to solve for t. If it works, it is very fast.
+  let tMin = 0;
+  let tMax = 1;
+  let value = 0;
+  for (let i = 0; i < MAX_ITERATIONS; i++) {
+    value = getBezierCoordinate_(t, x1, x2);
+    const derivative = (getBezierCoordinate_(t + EPSILON, x1, x2) - value) / EPSILON;
+    if (Math.abs(value - xVal) < EPSILON) {
+      return t;
+    } else if (Math.abs(derivative) < EPSILON) {
+      break;
+    } else {
+      if (value < xVal) {
+        tMin = t;
+      } else {
+        tMax = t;
+      }
+      t -= (value - xVal) / derivative;
+    }
+  }
+
+  // If the gradient descent got stuck in a local minimum, e.g. because
+  // the derivative was close to 0, use a Dichotomy refinement instead.
+  // We limit the number of interations to 8.
+  for (let i = 0; Math.abs(value - xVal) > EPSILON && i < MAX_ITERATIONS; i++) {
+    if (value < xVal) {
+      tMin = t;
+      t = (t + tMax) / 2;
+    } else {
+      tMax = t;
+      t = (t + tMin) / 2;
+    }
+    value = getBezierCoordinate_(t, x1, x2);
+  }
+  return t;
+}
+
+exports.getTransformPropertyName = getTransformPropertyName;
+exports.clamp = clamp;
+exports.bezierProgress = bezierProgress;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2013-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function (condition, format, a, b, c, d, e, f) {
+  if (false) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var canUseDOM = exports.canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+
+var addEventListener = exports.addEventListener = function addEventListener(node, event, listener) {
+  return node.addEventListener ? node.addEventListener(event, listener, false) : node.attachEvent('on' + event, listener);
+};
+
+var removeEventListener = exports.removeEventListener = function removeEventListener(node, event, listener) {
+  return node.removeEventListener ? node.removeEventListener(event, listener, false) : node.detachEvent('on' + event, listener);
+};
+
+var getConfirmation = exports.getConfirmation = function getConfirmation(message, callback) {
+  return callback(window.confirm(message));
+}; // eslint-disable-line no-alert
+
+/**
+ * Returns true if the HTML5 history API is supported. Taken from Modernizr.
+ *
+ * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
+ * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
+ * changed to avoid false negatives for Windows Phones: https://github.com/reactjs/react-router/issues/586
+ */
+var supportsHistory = exports.supportsHistory = function supportsHistory() {
+  var ua = window.navigator.userAgent;
+
+  if ((ua.indexOf('Android 2.') !== -1 || ua.indexOf('Android 4.0') !== -1) && ua.indexOf('Mobile Safari') !== -1 && ua.indexOf('Chrome') === -1 && ua.indexOf('Windows Phone') === -1) return false;
+
+  return window.history && 'pushState' in window.history;
+};
+
+/**
+ * Returns true if browser fires popstate on hash change.
+ * IE10 and IE11 do not.
+ */
+var supportsPopStateOnHashChange = exports.supportsPopStateOnHashChange = function supportsPopStateOnHashChange() {
+  return window.navigator.userAgent.indexOf('Trident') === -1;
+};
+
+/**
+ * Returns false if using go(n) with hash history causes a full page reload.
+ */
+var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash = function supportsGoWithoutReloadUsingHash() {
+  return window.navigator.userAgent.indexOf('Firefox') === -1;
+};
+
+/**
+ * Returns true if a given popstate event is an extraneous WebKit event.
+ * Accounts for the fact that Chrome on iOS fires real popstate events
+ * containing undefined state when pressing the back button.
+ */
+var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
+  return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
+};
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.Link = exports.Match = undefined;
+
+var _extends = Object.assign || function (target) {
+	for (var i = 1; i < arguments.length; i++) {
+		var source = arguments[i];for (var key in source) {
+			if (Object.prototype.hasOwnProperty.call(source, key)) {
+				target[key] = source[key];
+			}
+		}
+	}return target;
+};
+
+var _preact = __webpack_require__(0);
+
+var _preactRouter = __webpack_require__(13);
+
+function _objectWithoutProperties(obj, keys) {
+	var target = {};for (var i in obj) {
+		if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+	}return target;
+}
+
+function _classCallCheck(instance, Constructor) {
+	if (!(instance instanceof Constructor)) {
+		throw new TypeError("Cannot call a class as a function");
+	}
+}
+
+function _possibleConstructorReturn(self, call) {
+	if (!self) {
+		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	}return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+	if (typeof superClass !== "function" && superClass !== null) {
+		throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var Match = exports.Match = function (_Component) {
+	_inherits(Match, _Component);
+
+	function Match() {
+		var _temp, _this, _ret;
+
+		_classCallCheck(this, Match);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.update = function (url) {
+			_this.nextUrl = url;
+			_this.setState({});
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
+
+	Match.prototype.componentDidMount = function componentDidMount() {
+		_preactRouter.subscribers.push(this.update);
+	};
+
+	Match.prototype.componentWillUnmount = function componentWillUnmount() {
+		_preactRouter.subscribers.splice(_preactRouter.subscribers.indexOf(this.update) >>> 0, 1);
+	};
+
+	Match.prototype.render = function render(props) {
+		var url = this.nextUrl || (0, _preactRouter.getCurrentUrl)(),
+		    path = url.replace(/\?.+$/, '');
+		this.nextUrl = null;
+		return props.children[0] && props.children[0]({
+			url: url,
+			path: path,
+			matches: path === props.path
+		});
+	};
+
+	return Match;
+}(_preact.Component);
+
+var Link = function Link(_ref) {
+	var activeClassName = _ref.activeClassName,
+	    path = _ref.path,
+	    props = _objectWithoutProperties(_ref, ['activeClassName', 'path']);
+
+	return (0, _preact.h)(Match, { path: path || props.href }, function (_ref2) {
+		var matches = _ref2.matches;
+		return (0, _preact.h)(_preactRouter.Link, _extends({}, props, { 'class': [props.class || props.className, matches && activeClassName].filter(Boolean).join(' ') }));
+	});
+};
+
+exports.Link = Link;
+exports.default = Match;
+
+Match.Link = Link;
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * @license
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* eslint no-unused-vars: [2, {"args": "none"}] */
+
+/**
+ * Adapter for MDC Ripple. Provides an interface for managing
+ * - classes
+ * - dom
+ * - CSS variables
+ * - position
+ * - dimensions
+ * - scroll position
+ * - event handlers
+ * - unbounded, active and disabled states
+ *
+ * Additionally, provides type information for the adapter to the Closure
+ * compiler.
+ *
+ * Implement this adapter for your framework of choice to delegate updates to
+ * the component in your framework of choice. See architecture documentation
+ * for more details.
+ * https://github.com/material-components/material-components-web/blob/master/docs/architecture.md
+ *
+ * @record
+ */
+class MDCRippleAdapter {
+  /** @return {boolean} */
+  browserSupportsCssVars() {}
+
+  /** @return {boolean} */
+  isUnbounded() {}
+
+  /** @return {boolean} */
+  isSurfaceActive() {}
+
+  /** @return {boolean} */
+  isSurfaceDisabled() {}
+
+  /** @param {string} className */
+  addClass(className) {}
+
+  /** @param {string} className */
+  removeClass(className) {}
+
+  /**
+   * @param {string} evtType
+   * @param {!Function} handler
+   */
+  registerInteractionHandler(evtType, handler) {}
+
+  /**
+   * @param {string} evtType
+   * @param {!Function} handler
+   */
+  deregisterInteractionHandler(evtType, handler) {}
+
+  /**
+   * @param {!Function} handler
+   */
+  registerResizeHandler(handler) {}
+
+  /**
+   * @param {!Function} handler
+   */
+  deregisterResizeHandler(handler) {}
+
+  /**
+   * @param {string} varName
+   * @param {?number|string} value
+   */
+  updateCssVariable(varName, value) {}
+
+  /** @return {!ClientRect} */
+  computeBoundingRect() {}
+
+  /** @return {{x: number, y: number}} */
+  getWindowPageOffset() {}
+}
+
+exports.default = MDCRippleAdapter;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * @license
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Stores result from supportsCssVariables to avoid redundant processing to detect CSS custom variable support.
+ * @private {boolean|undefined}
+ */
+let supportsCssVariables_;
+
+/**
+ * Stores result from applyPassive to avoid redundant processing to detect passive event listener support.
+ * @private {boolean|undefined}
+ */
+let supportsPassive_;
+
+/**
+ * @param {!Window} windowObj
+ * @return {boolean}
+ */
+function detectEdgePseudoVarBug(windowObj) {
+  // Detect versions of Edge with buggy var() support
+  // See: https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/11495448/
+  const document = windowObj.document;
+  const node = document.createElement('div');
+  node.className = 'mdc-ripple-surface--test-edge-var-bug';
+  document.body.appendChild(node);
+
+  // The bug exists if ::before style ends up propagating to the parent element.
+  // Additionally, getComputedStyle returns null in iframes with display: "none" in Firefox,
+  // but Firefox is known to support CSS custom properties correctly.
+  // See: https://bugzilla.mozilla.org/show_bug.cgi?id=548397
+  const computedStyle = windowObj.getComputedStyle(node);
+  const hasPseudoVarBug = computedStyle !== null && computedStyle.borderTopStyle === 'solid';
+  node.remove();
+  return hasPseudoVarBug;
+}
+
+/**
+ * @param {!Window} windowObj
+ * @param {boolean=} forceRefresh
+ * @return {boolean|undefined}
+ */
+
+function supportsCssVariables(windowObj, forceRefresh = false) {
+  if (typeof supportsCssVariables_ === 'boolean' && !forceRefresh) {
+    return supportsCssVariables_;
+  }
+
+  const supportsFunctionPresent = windowObj.CSS && typeof windowObj.CSS.supports === 'function';
+  if (!supportsFunctionPresent) {
+    return;
+  }
+
+  const explicitlySupportsCssVars = windowObj.CSS.supports('--css-vars', 'yes');
+  // See: https://bugs.webkit.org/show_bug.cgi?id=154669
+  // See: README section on Safari
+  const weAreFeatureDetectingSafari10plus = windowObj.CSS.supports('(--css-vars: yes)') && windowObj.CSS.supports('color', '#00000000');
+
+  if (explicitlySupportsCssVars || weAreFeatureDetectingSafari10plus) {
+    supportsCssVariables_ = !detectEdgePseudoVarBug(windowObj);
+  } else {
+    supportsCssVariables_ = false;
+  }
+  return supportsCssVariables_;
+}
+
+//
+/**
+ * Determine whether the current browser supports passive event listeners, and if so, use them.
+ * @param {!Window=} globalObj
+ * @param {boolean=} forceRefresh
+ * @return {boolean|{passive: boolean}}
+ */
+function applyPassive(globalObj = window, forceRefresh = false) {
+  if (supportsPassive_ === undefined || forceRefresh) {
+    let isSupported = false;
+    try {
+      globalObj.document.addEventListener('test', null, { get passive() {
+          isSupported = true;
+        } });
+    } catch (e) {}
+
+    supportsPassive_ = isSupported;
+  }
+
+  return supportsPassive_ ? { passive: true } : false;
+}
+
+/**
+ * @param {!Object} HTMLElementPrototype
+ * @return {!Array<string>}
+ */
+function getMatchesProperty(HTMLElementPrototype) {
+  return ['webkitMatchesSelector', 'msMatchesSelector', 'matches'].filter(p => p in HTMLElementPrototype).pop();
+}
+
+/**
+ * @param {!Event} ev
+ * @param {!{x: number, y: number}} pageOffset
+ * @param {!ClientRect} clientRect
+ * @return {!{x: number, y: number}}
+ */
+function getNormalizedEventCoords(ev, pageOffset, clientRect) {
+  const { x, y } = pageOffset;
+  const documentX = x + clientRect.left;
+  const documentY = y + clientRect.top;
+
+  let normalizedX;
+  let normalizedY;
+  // Determine touch point relative to the ripple container.
+  if (ev.type === 'touchstart') {
+    normalizedX = ev.changedTouches[0].pageX - documentX;
+    normalizedY = ev.changedTouches[0].pageY - documentY;
+  } else {
+    normalizedX = ev.pageX - documentX;
+    normalizedY = ev.pageY - documentY;
+  }
+
+  return { x: normalizedX, y: normalizedY };
+}
+
+exports.supportsCssVariables = supportsCssVariables;
+exports.applyPassive = applyPassive;
+exports.getMatchesProperty = getMatchesProperty;
+exports.getNormalizedEventCoords = getNormalizedEventCoords;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.remapEvent = remapEvent;
+exports.getTransformPropertyName = getTransformPropertyName;
+exports.supportsCssCustomProperties = supportsCssCustomProperties;
+exports.applyPassive = applyPassive;
+exports.saveElementTabState = saveElementTabState;
+exports.restoreElementTabState = restoreElementTabState;
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+const TAB_DATA = 'data-mdc-tabindex';
+const TAB_DATA_HANDLED = 'data-mdc-tabindex-handled';
+
+let storedTransformPropertyName_;
+let supportsPassive_;
+
+// Remap touch events to pointer events, if the browser doesn't support touch events.
+function remapEvent(eventName, globalObj = window) {
+  if (!('ontouchstart' in globalObj.document)) {
+    switch (eventName) {
+      case 'touchstart':
+        return 'pointerdown';
+      case 'touchmove':
+        return 'pointermove';
+      case 'touchend':
+        return 'pointerup';
+      default:
+        return eventName;
+    }
+  }
+
+  return eventName;
+}
+
+// Choose the correct transform property to use on the current browser.
+function getTransformPropertyName(globalObj = window, forceRefresh = false) {
+  if (storedTransformPropertyName_ === undefined || forceRefresh) {
+    const el = globalObj.document.createElement('div');
+    const transformPropertyName = 'transform' in el.style ? 'transform' : '-webkit-transform';
+    storedTransformPropertyName_ = transformPropertyName;
+  }
+
+  return storedTransformPropertyName_;
+}
+
+// Determine whether the current browser supports CSS properties.
+function supportsCssCustomProperties(globalObj = window) {
+  if ('CSS' in globalObj) {
+    return globalObj.CSS.supports('(--color: red)');
+  }
+  return false;
+}
+
+// Determine whether the current browser supports passive event listeners, and if so, use them.
+function applyPassive(globalObj = window, forceRefresh = false) {
+  if (supportsPassive_ === undefined || forceRefresh) {
+    let isSupported = false;
+    try {
+      globalObj.document.addEventListener('test', null, { get passive() {
+          isSupported = true;
+        } });
+    } catch (e) {}
+
+    supportsPassive_ = isSupported;
+  }
+
+  return supportsPassive_ ? { passive: true } : false;
+}
+
+// Save the tab state for an element.
+function saveElementTabState(el) {
+  if (el.hasAttribute('tabindex')) {
+    el.setAttribute(TAB_DATA, el.getAttribute('tabindex'));
+  }
+  el.setAttribute(TAB_DATA_HANDLED, true);
+}
+
+// Restore the tab state for an element, if it was saved.
+function restoreElementTabState(el) {
+  // Only modify elements we've already handled, in case anything was dynamically added since we saved state.
+  if (el.hasAttribute(TAB_DATA_HANDLED)) {
+    if (el.hasAttribute(TAB_DATA)) {
+      el.setAttribute('tabindex', el.getAttribute(TAB_DATA));
+      el.removeAttribute(TAB_DATA);
+    } else {
+      el.removeAttribute('tabindex');
+    }
+    el.removeAttribute(TAB_DATA_HANDLED);
+  }
+}
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(25);
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _preact = __webpack_require__(0);
+
+var _preactRouter = __webpack_require__(13);
+
+var _history = __webpack_require__(26);
+
+var _runtime = __webpack_require__(32);
+
+var runtime = _interopRequireWildcard(_runtime);
+
+__webpack_require__(33);
+
+__webpack_require__(36);
+
+__webpack_require__(38);
+
+__webpack_require__(40);
+
+var _header = __webpack_require__(41);
+
+var _header2 = _interopRequireDefault(_header);
+
+var _home = __webpack_require__(74);
+
+var _home2 = _interopRequireDefault(_home);
+
+var _about = __webpack_require__(82);
+
+var _about2 = _interopRequireDefault(_about);
+
+var _hello = __webpack_require__(83);
+
+var _hello2 = _interopRequireDefault(_hello);
+
+var _router = __webpack_require__(84);
+
+var _router2 = _interopRequireDefault(_router);
+
+var _offline = __webpack_require__(85);
+
+var _offline2 = _interopRequireDefault(_offline);
+
+var _highlight = __webpack_require__(86);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+var _whereami = __webpack_require__(87);
+
+var _whereami2 = _interopRequireDefault(_whereami);
+
+var _asyncawait = __webpack_require__(88);
+
+var _asyncawait2 = _interopRequireDefault(_asyncawait);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+class Index extends _preact.Component {
+  constructor() {
+    super();
+
+    runtime.install({
+      onUpdating: () => {
+        console.log("SW Event:", "onUpdating");
+      },
+      onUpdateReady: () => {
+        console.log("SW Event:", "onUpdateReady");
+        // Tells to new SW to take control immediately
+        runtime.applyUpdate();
+      },
+      onUpdated: () => {
+        console.log("SW Event:", "onUpdated");
+        // Reload the webpage to load into the new version
+        window.location.reload();
+      },
+
+      onUpdateFailed: () => {
+        console.log("SW Event:", "onUpdateFailed");
+      }
+    });
+  }
+  logPageView() {
+    window.dataLayer.push({ event: window.location.hash });
+  }
+
+  render() {
+    return (0, _preact.h)(
+      "div",
+      null,
+      (0, _preact.h)(_header2.default, null),
+      (0, _preact.h)(
+        "div",
+        { "class": "marginTop" },
+        (0, _preact.h)(
+          _preactRouter.Router,
+          { history: (0, _history.createHashHistory)(), onChange: this.logPageView },
+          (0, _preact.h)(_home2.default, { "default": true, path: "/" }),
+          (0, _preact.h)(_about2.default, { path: "/about" }),
+          (0, _preact.h)(_hello2.default, { path: "/code/hello" }),
+          (0, _preact.h)(_router2.default, { path: "/code/router" }),
+          (0, _preact.h)(_offline2.default, { path: "/code/offline" }),
+          (0, _preact.h)(_highlight2.default, { path: "/code/highlight" }),
+          (0, _preact.h)(_whereami2.default, { path: "/code/whereami" }),
+          (0, _preact.h)(_asyncawait2.default, { path: "/code/asyncawait" })
+        )
+      )
+    );
+  }
+}
+
+(0, _preact.render)((0, _preact.h)(Index, null), document.body);
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createPath = exports.parsePath = exports.locationsAreEqual = exports.createLocation = exports.createMemoryHistory = exports.createHashHistory = exports.createBrowserHistory = undefined;
+
+var _LocationUtils = __webpack_require__(8);
+
+Object.defineProperty(exports, 'createLocation', {
+  enumerable: true,
+  get: function () {
+    return _LocationUtils.createLocation;
+  }
+});
+Object.defineProperty(exports, 'locationsAreEqual', {
+  enumerable: true,
+  get: function () {
+    return _LocationUtils.locationsAreEqual;
+  }
+});
+
+var _PathUtils = __webpack_require__(6);
+
+Object.defineProperty(exports, 'parsePath', {
+  enumerable: true,
+  get: function () {
+    return _PathUtils.parsePath;
+  }
+});
+Object.defineProperty(exports, 'createPath', {
+  enumerable: true,
+  get: function () {
+    return _PathUtils.createPath;
+  }
+});
+
+var _createBrowserHistory2 = __webpack_require__(29);
+
+var _createBrowserHistory3 = _interopRequireDefault(_createBrowserHistory2);
+
+var _createHashHistory2 = __webpack_require__(30);
+
+var _createHashHistory3 = _interopRequireDefault(_createHashHistory2);
+
+var _createMemoryHistory2 = __webpack_require__(31);
+
+var _createMemoryHistory3 = _interopRequireDefault(_createMemoryHistory2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.createBrowserHistory = _createBrowserHistory3.default;
+exports.createHashHistory = _createHashHistory3.default;
+exports.createMemoryHistory = _createMemoryHistory3.default;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function isAbsolute(pathname) {
+  return pathname.charAt(0) === '/';
+}
+
+// About 1.5x faster than the two-arg version of Array#splice()
+function spliceOne(list, index) {
+  for (var i = index, k = i + 1, n = list.length; k < n; i += 1, k += 1) {
+    list[i] = list[k];
+  }
+
+  list.pop();
+}
+
+// This implementation is based heavily on node's url.parse
+function resolvePathname(to) {
+  var from = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+  var toParts = to && to.split('/') || [];
+  var fromParts = from && from.split('/') || [];
+
+  var isToAbs = to && isAbsolute(to);
+  var isFromAbs = from && isAbsolute(from);
+  var mustEndAbs = isToAbs || isFromAbs;
+
+  if (to && isAbsolute(to)) {
+    // to is absolute
+    fromParts = toParts;
+  } else if (toParts.length) {
+    // to is relative, drop the filename
+    fromParts.pop();
+    fromParts = fromParts.concat(toParts);
+  }
+
+  if (!fromParts.length) return '/';
+
+  var hasTrailingSlash = void 0;
+  if (fromParts.length) {
+    var last = fromParts[fromParts.length - 1];
+    hasTrailingSlash = last === '.' || last === '..' || last === '';
+  } else {
+    hasTrailingSlash = false;
+  }
+
+  var up = 0;
+  for (var i = fromParts.length; i >= 0; i--) {
+    var part = fromParts[i];
+
+    if (part === '.') {
+      spliceOne(fromParts, i);
+    } else if (part === '..') {
+      spliceOne(fromParts, i);
+      up++;
+    } else if (up) {
+      spliceOne(fromParts, i);
+      up--;
+    }
+  }
+
+  if (!mustEndAbs) for (; up--; up) {
+    fromParts.unshift('..');
+  }if (mustEndAbs && fromParts[0] !== '' && (!fromParts[0] || !isAbsolute(fromParts[0]))) fromParts.unshift('');
+
+  var result = fromParts.join('/');
+
+  if (hasTrailingSlash && result.substr(-1) !== '/') result += '/';
+
+  return result;
+}
+
+exports.default = resolvePathname;
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+function valueEqual(a, b) {
+  if (a === b) return true;
+
+  if (a == null || b == null) return false;
+
+  if (Array.isArray(a)) {
+    return Array.isArray(b) && a.length === b.length && a.every(function (item, index) {
+      return valueEqual(item, b[index]);
+    });
+  }
+
+  var aType = typeof a === 'undefined' ? 'undefined' : _typeof(a);
+  var bType = typeof b === 'undefined' ? 'undefined' : _typeof(b);
+
+  if (aType !== bType) return false;
+
+  if (aType === 'object') {
+    var aValue = a.valueOf();
+    var bValue = b.valueOf();
+
+    if (aValue !== a || bValue !== b) return valueEqual(aValue, bValue);
+
+    var aKeys = Object.keys(a);
+    var bKeys = Object.keys(b);
+
+    if (aKeys.length !== bKeys.length) return false;
+
+    return aKeys.every(function (key) {
+      return valueEqual(a[key], b[key]);
+    });
+  }
+
+  return false;
+}
+
+exports.default = valueEqual;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _warning = __webpack_require__(9);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+var _invariant = __webpack_require__(18);
+
+var _invariant2 = _interopRequireDefault(_invariant);
+
+var _LocationUtils = __webpack_require__(8);
+
+var _PathUtils = __webpack_require__(6);
+
+var _createTransitionManager = __webpack_require__(14);
+
+var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
+
+var _DOMUtils = __webpack_require__(19);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+var PopStateEvent = 'popstate';
+var HashChangeEvent = 'hashchange';
+
+var getHistoryState = function getHistoryState() {
+  try {
+    return window.history.state || {};
+  } catch (e) {
+    // IE 11 sometimes throws when accessing window.history.state
+    // See https://github.com/ReactTraining/history/pull/289
+    return {};
+  }
+};
+
+/**
+ * Creates a history object that uses the HTML5 history API including
+ * pushState, replaceState, and the popstate event.
+ */
+var createBrowserHistory = function createBrowserHistory() {
+  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  (0, _invariant2.default)(_DOMUtils.canUseDOM, 'Browser history needs a DOM');
+
+  var globalHistory = window.history;
+  var canUseHistory = (0, _DOMUtils.supportsHistory)();
+  var needsHashChangeListener = !(0, _DOMUtils.supportsPopStateOnHashChange)();
+
+  var _props$forceRefresh = props.forceRefresh,
+      forceRefresh = _props$forceRefresh === undefined ? false : _props$forceRefresh,
+      _props$getUserConfirm = props.getUserConfirmation,
+      getUserConfirmation = _props$getUserConfirm === undefined ? _DOMUtils.getConfirmation : _props$getUserConfirm,
+      _props$keyLength = props.keyLength,
+      keyLength = _props$keyLength === undefined ? 6 : _props$keyLength;
+
+  var basename = props.basename ? (0, _PathUtils.stripTrailingSlash)((0, _PathUtils.addLeadingSlash)(props.basename)) : '';
+
+  var getDOMLocation = function getDOMLocation(historyState) {
+    var _ref = historyState || {},
+        key = _ref.key,
+        state = _ref.state;
+
+    var _window$location = window.location,
+        pathname = _window$location.pathname,
+        search = _window$location.search,
+        hash = _window$location.hash;
+
+    var path = pathname + search + hash;
+
+    (0, _warning2.default)(!basename || (0, _PathUtils.hasBasename)(path, basename), 'You are attempting to use a basename on a page whose URL path does not begin ' + 'with the basename. Expected path "' + path + '" to begin with "' + basename + '".');
+
+    if (basename) path = (0, _PathUtils.stripBasename)(path, basename);
+
+    return (0, _LocationUtils.createLocation)(path, state, key);
+  };
+
+  var createKey = function createKey() {
+    return Math.random().toString(36).substr(2, keyLength);
+  };
+
+  var transitionManager = (0, _createTransitionManager2.default)();
+
+  var setState = function setState(nextState) {
+    _extends(history, nextState);
+
+    history.length = globalHistory.length;
+
+    transitionManager.notifyListeners(history.location, history.action);
+  };
+
+  var handlePopState = function handlePopState(event) {
+    // Ignore extraneous popstate events in WebKit.
+    if ((0, _DOMUtils.isExtraneousPopstateEvent)(event)) return;
+
+    handlePop(getDOMLocation(event.state));
+  };
+
+  var handleHashChange = function handleHashChange() {
+    handlePop(getDOMLocation(getHistoryState()));
+  };
+
+  var forceNextPop = false;
+
+  var handlePop = function handlePop(location) {
+    if (forceNextPop) {
+      forceNextPop = false;
+      setState();
+    } else {
+      var action = 'POP';
+
+      transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+        if (ok) {
+          setState({ action: action, location: location });
+        } else {
+          revertPop(location);
+        }
+      });
+    }
+  };
+
+  var revertPop = function revertPop(fromLocation) {
+    var toLocation = history.location;
+
+    // TODO: We could probably make this more reliable by
+    // keeping a list of keys we've seen in sessionStorage.
+    // Instead, we just default to 0 for keys we don't know.
+
+    var toIndex = allKeys.indexOf(toLocation.key);
+
+    if (toIndex === -1) toIndex = 0;
+
+    var fromIndex = allKeys.indexOf(fromLocation.key);
+
+    if (fromIndex === -1) fromIndex = 0;
+
+    var delta = toIndex - fromIndex;
+
+    if (delta) {
+      forceNextPop = true;
+      go(delta);
+    }
+  };
+
+  var initialLocation = getDOMLocation(getHistoryState());
+  var allKeys = [initialLocation.key];
+
+  // Public interface
+
+  var createHref = function createHref(location) {
+    return basename + (0, _PathUtils.createPath)(location);
+  };
+
+  var push = function push(path, state) {
+    (0, _warning2.default)(!((typeof path === 'undefined' ? 'undefined' : _typeof(path)) === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to push when the 1st ' + 'argument is a location-like object that already has state; it is ignored');
+
+    var action = 'PUSH';
+    var location = (0, _LocationUtils.createLocation)(path, state, createKey(), history.location);
+
+    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+      if (!ok) return;
+
+      var href = createHref(location);
+      var key = location.key,
+          state = location.state;
+
+      if (canUseHistory) {
+        globalHistory.pushState({ key: key, state: state }, null, href);
+
+        if (forceRefresh) {
+          window.location.href = href;
+        } else {
+          var prevIndex = allKeys.indexOf(history.location.key);
+          var nextKeys = allKeys.slice(0, prevIndex === -1 ? 0 : prevIndex + 1);
+
+          nextKeys.push(location.key);
+          allKeys = nextKeys;
+
+          setState({ action: action, location: location });
+        }
+      } else {
+        (0, _warning2.default)(state === undefined, 'Browser history cannot push state in browsers that do not support HTML5 history');
+
+        window.location.href = href;
+      }
+    });
+  };
+
+  var replace = function replace(path, state) {
+    (0, _warning2.default)(!((typeof path === 'undefined' ? 'undefined' : _typeof(path)) === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to replace when the 1st ' + 'argument is a location-like object that already has state; it is ignored');
+
+    var action = 'REPLACE';
+    var location = (0, _LocationUtils.createLocation)(path, state, createKey(), history.location);
+
+    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+      if (!ok) return;
+
+      var href = createHref(location);
+      var key = location.key,
+          state = location.state;
+
+      if (canUseHistory) {
+        globalHistory.replaceState({ key: key, state: state }, null, href);
+
+        if (forceRefresh) {
+          window.location.replace(href);
+        } else {
+          var prevIndex = allKeys.indexOf(history.location.key);
+
+          if (prevIndex !== -1) allKeys[prevIndex] = location.key;
+
+          setState({ action: action, location: location });
+        }
+      } else {
+        (0, _warning2.default)(state === undefined, 'Browser history cannot replace state in browsers that do not support HTML5 history');
+
+        window.location.replace(href);
+      }
+    });
+  };
+
+  var go = function go(n) {
+    globalHistory.go(n);
+  };
+
+  var goBack = function goBack() {
+    return go(-1);
+  };
+
+  var goForward = function goForward() {
+    return go(1);
+  };
+
+  var listenerCount = 0;
+
+  var checkDOMListeners = function checkDOMListeners(delta) {
+    listenerCount += delta;
+
+    if (listenerCount === 1) {
+      (0, _DOMUtils.addEventListener)(window, PopStateEvent, handlePopState);
+
+      if (needsHashChangeListener) (0, _DOMUtils.addEventListener)(window, HashChangeEvent, handleHashChange);
+    } else if (listenerCount === 0) {
+      (0, _DOMUtils.removeEventListener)(window, PopStateEvent, handlePopState);
+
+      if (needsHashChangeListener) (0, _DOMUtils.removeEventListener)(window, HashChangeEvent, handleHashChange);
+    }
+  };
+
+  var isBlocked = false;
+
+  var block = function block() {
+    var prompt = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+    var unblock = transitionManager.setPrompt(prompt);
+
+    if (!isBlocked) {
+      checkDOMListeners(1);
+      isBlocked = true;
+    }
+
+    return function () {
+      if (isBlocked) {
+        isBlocked = false;
+        checkDOMListeners(-1);
+      }
+
+      return unblock();
+    };
+  };
+
+  var listen = function listen(listener) {
+    var unlisten = transitionManager.appendListener(listener);
+    checkDOMListeners(1);
+
+    return function () {
+      checkDOMListeners(-1);
+      unlisten();
+    };
+  };
+
+  var history = {
+    length: globalHistory.length,
+    action: 'POP',
+    location: initialLocation,
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    goBack: goBack,
+    goForward: goForward,
+    block: block,
+    listen: listen
+  };
+
+  return history;
+};
+
+exports.default = createBrowserHistory;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _warning = __webpack_require__(9);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+var _invariant = __webpack_require__(18);
+
+var _invariant2 = _interopRequireDefault(_invariant);
+
+var _LocationUtils = __webpack_require__(8);
+
+var _PathUtils = __webpack_require__(6);
+
+var _createTransitionManager = __webpack_require__(14);
+
+var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
+
+var _DOMUtils = __webpack_require__(19);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+var HashChangeEvent = 'hashchange';
+
+var HashPathCoders = {
+  hashbang: {
+    encodePath: function encodePath(path) {
+      return path.charAt(0) === '!' ? path : '!/' + (0, _PathUtils.stripLeadingSlash)(path);
+    },
+    decodePath: function decodePath(path) {
+      return path.charAt(0) === '!' ? path.substr(1) : path;
+    }
+  },
+  noslash: {
+    encodePath: _PathUtils.stripLeadingSlash,
+    decodePath: _PathUtils.addLeadingSlash
+  },
+  slash: {
+    encodePath: _PathUtils.addLeadingSlash,
+    decodePath: _PathUtils.addLeadingSlash
+  }
+};
+
+var getHashPath = function getHashPath() {
+  // We can't use window.location.hash here because it's not
+  // consistent across browsers - Firefox will pre-decode it!
+  var href = window.location.href;
+  var hashIndex = href.indexOf('#');
+  return hashIndex === -1 ? '' : href.substring(hashIndex + 1);
+};
+
+var pushHashPath = function pushHashPath(path) {
+  return window.location.hash = path;
+};
+
+var replaceHashPath = function replaceHashPath(path) {
+  var hashIndex = window.location.href.indexOf('#');
+
+  window.location.replace(window.location.href.slice(0, hashIndex >= 0 ? hashIndex : 0) + '#' + path);
+};
+
+var createHashHistory = function createHashHistory() {
+  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  (0, _invariant2.default)(_DOMUtils.canUseDOM, 'Hash history needs a DOM');
+
+  var globalHistory = window.history;
+  var canGoWithoutReload = (0, _DOMUtils.supportsGoWithoutReloadUsingHash)();
+
+  var _props$getUserConfirm = props.getUserConfirmation,
+      getUserConfirmation = _props$getUserConfirm === undefined ? _DOMUtils.getConfirmation : _props$getUserConfirm,
+      _props$hashType = props.hashType,
+      hashType = _props$hashType === undefined ? 'slash' : _props$hashType;
+
+  var basename = props.basename ? (0, _PathUtils.stripTrailingSlash)((0, _PathUtils.addLeadingSlash)(props.basename)) : '';
+
+  var _HashPathCoders$hashT = HashPathCoders[hashType],
+      encodePath = _HashPathCoders$hashT.encodePath,
+      decodePath = _HashPathCoders$hashT.decodePath;
+
+  var getDOMLocation = function getDOMLocation() {
+    var path = decodePath(getHashPath());
+
+    (0, _warning2.default)(!basename || (0, _PathUtils.hasBasename)(path, basename), 'You are attempting to use a basename on a page whose URL path does not begin ' + 'with the basename. Expected path "' + path + '" to begin with "' + basename + '".');
+
+    if (basename) path = (0, _PathUtils.stripBasename)(path, basename);
+
+    return (0, _LocationUtils.createLocation)(path);
+  };
+
+  var transitionManager = (0, _createTransitionManager2.default)();
+
+  var setState = function setState(nextState) {
+    _extends(history, nextState);
+
+    history.length = globalHistory.length;
+
+    transitionManager.notifyListeners(history.location, history.action);
+  };
+
+  var forceNextPop = false;
+  var ignorePath = null;
+
+  var handleHashChange = function handleHashChange() {
+    var path = getHashPath();
+    var encodedPath = encodePath(path);
+
+    if (path !== encodedPath) {
+      // Ensure we always have a properly-encoded hash.
+      replaceHashPath(encodedPath);
+    } else {
+      var location = getDOMLocation();
+      var prevLocation = history.location;
+
+      if (!forceNextPop && (0, _LocationUtils.locationsAreEqual)(prevLocation, location)) return; // A hashchange doesn't always == location change.
+
+      if (ignorePath === (0, _PathUtils.createPath)(location)) return; // Ignore this change; we already setState in push/replace.
+
+      ignorePath = null;
+
+      handlePop(location);
+    }
+  };
+
+  var handlePop = function handlePop(location) {
+    if (forceNextPop) {
+      forceNextPop = false;
+      setState();
+    } else {
+      var action = 'POP';
+
+      transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+        if (ok) {
+          setState({ action: action, location: location });
+        } else {
+          revertPop(location);
+        }
+      });
+    }
+  };
+
+  var revertPop = function revertPop(fromLocation) {
+    var toLocation = history.location;
+
+    // TODO: We could probably make this more reliable by
+    // keeping a list of paths we've seen in sessionStorage.
+    // Instead, we just default to 0 for paths we don't know.
+
+    var toIndex = allPaths.lastIndexOf((0, _PathUtils.createPath)(toLocation));
+
+    if (toIndex === -1) toIndex = 0;
+
+    var fromIndex = allPaths.lastIndexOf((0, _PathUtils.createPath)(fromLocation));
+
+    if (fromIndex === -1) fromIndex = 0;
+
+    var delta = toIndex - fromIndex;
+
+    if (delta) {
+      forceNextPop = true;
+      go(delta);
+    }
+  };
+
+  // Ensure the hash is encoded properly before doing anything else.
+  var path = getHashPath();
+  var encodedPath = encodePath(path);
+
+  if (path !== encodedPath) replaceHashPath(encodedPath);
+
+  var initialLocation = getDOMLocation();
+  var allPaths = [(0, _PathUtils.createPath)(initialLocation)];
+
+  // Public interface
+
+  var createHref = function createHref(location) {
+    return '#' + encodePath(basename + (0, _PathUtils.createPath)(location));
+  };
+
+  var push = function push(path, state) {
+    (0, _warning2.default)(state === undefined, 'Hash history cannot push state; it is ignored');
+
+    var action = 'PUSH';
+    var location = (0, _LocationUtils.createLocation)(path, undefined, undefined, history.location);
+
+    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+      if (!ok) return;
+
+      var path = (0, _PathUtils.createPath)(location);
+      var encodedPath = encodePath(basename + path);
+      var hashChanged = getHashPath() !== encodedPath;
+
+      if (hashChanged) {
+        // We cannot tell if a hashchange was caused by a PUSH, so we'd
+        // rather setState here and ignore the hashchange. The caveat here
+        // is that other hash histories in the page will consider it a POP.
+        ignorePath = path;
+        pushHashPath(encodedPath);
+
+        var prevIndex = allPaths.lastIndexOf((0, _PathUtils.createPath)(history.location));
+        var nextPaths = allPaths.slice(0, prevIndex === -1 ? 0 : prevIndex + 1);
+
+        nextPaths.push(path);
+        allPaths = nextPaths;
+
+        setState({ action: action, location: location });
+      } else {
+        (0, _warning2.default)(false, 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack');
+
+        setState();
+      }
+    });
+  };
+
+  var replace = function replace(path, state) {
+    (0, _warning2.default)(state === undefined, 'Hash history cannot replace state; it is ignored');
+
+    var action = 'REPLACE';
+    var location = (0, _LocationUtils.createLocation)(path, undefined, undefined, history.location);
+
+    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+      if (!ok) return;
+
+      var path = (0, _PathUtils.createPath)(location);
+      var encodedPath = encodePath(basename + path);
+      var hashChanged = getHashPath() !== encodedPath;
+
+      if (hashChanged) {
+        // We cannot tell if a hashchange was caused by a REPLACE, so we'd
+        // rather setState here and ignore the hashchange. The caveat here
+        // is that other hash histories in the page will consider it a POP.
+        ignorePath = path;
+        replaceHashPath(encodedPath);
+      }
+
+      var prevIndex = allPaths.indexOf((0, _PathUtils.createPath)(history.location));
+
+      if (prevIndex !== -1) allPaths[prevIndex] = path;
+
+      setState({ action: action, location: location });
+    });
+  };
+
+  var go = function go(n) {
+    (0, _warning2.default)(canGoWithoutReload, 'Hash history go(n) causes a full page reload in this browser');
+
+    globalHistory.go(n);
+  };
+
+  var goBack = function goBack() {
+    return go(-1);
+  };
+
+  var goForward = function goForward() {
+    return go(1);
+  };
+
+  var listenerCount = 0;
+
+  var checkDOMListeners = function checkDOMListeners(delta) {
+    listenerCount += delta;
+
+    if (listenerCount === 1) {
+      (0, _DOMUtils.addEventListener)(window, HashChangeEvent, handleHashChange);
+    } else if (listenerCount === 0) {
+      (0, _DOMUtils.removeEventListener)(window, HashChangeEvent, handleHashChange);
+    }
+  };
+
+  var isBlocked = false;
+
+  var block = function block() {
+    var prompt = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+    var unblock = transitionManager.setPrompt(prompt);
+
+    if (!isBlocked) {
+      checkDOMListeners(1);
+      isBlocked = true;
+    }
+
+    return function () {
+      if (isBlocked) {
+        isBlocked = false;
+        checkDOMListeners(-1);
+      }
+
+      return unblock();
+    };
+  };
+
+  var listen = function listen(listener) {
+    var unlisten = transitionManager.appendListener(listener);
+    checkDOMListeners(1);
+
+    return function () {
+      checkDOMListeners(-1);
+      unlisten();
+    };
+  };
+
+  var history = {
+    length: globalHistory.length,
+    action: 'POP',
+    location: initialLocation,
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    goBack: goBack,
+    goForward: goForward,
+    block: block,
+    listen: listen
+  };
+
+  return history;
+};
+
+exports.default = createHashHistory;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _warning = __webpack_require__(9);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+var _PathUtils = __webpack_require__(6);
+
+var _LocationUtils = __webpack_require__(8);
+
+var _createTransitionManager = __webpack_require__(14);
+
+var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+var clamp = function clamp(n, lowerBound, upperBound) {
+  return Math.min(Math.max(n, lowerBound), upperBound);
+};
+
+/**
+ * Creates a history object that stores locations in memory.
+ */
+var createMemoryHistory = function createMemoryHistory() {
+  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var getUserConfirmation = props.getUserConfirmation,
+      _props$initialEntries = props.initialEntries,
+      initialEntries = _props$initialEntries === undefined ? ['/'] : _props$initialEntries,
+      _props$initialIndex = props.initialIndex,
+      initialIndex = _props$initialIndex === undefined ? 0 : _props$initialIndex,
+      _props$keyLength = props.keyLength,
+      keyLength = _props$keyLength === undefined ? 6 : _props$keyLength;
+
+  var transitionManager = (0, _createTransitionManager2.default)();
+
+  var setState = function setState(nextState) {
+    _extends(history, nextState);
+
+    history.length = history.entries.length;
+
+    transitionManager.notifyListeners(history.location, history.action);
+  };
+
+  var createKey = function createKey() {
+    return Math.random().toString(36).substr(2, keyLength);
+  };
+
+  var index = clamp(initialIndex, 0, initialEntries.length - 1);
+  var entries = initialEntries.map(function (entry) {
+    return typeof entry === 'string' ? (0, _LocationUtils.createLocation)(entry, undefined, createKey()) : (0, _LocationUtils.createLocation)(entry, undefined, entry.key || createKey());
+  });
+
+  // Public interface
+
+  var createHref = _PathUtils.createPath;
+
+  var push = function push(path, state) {
+    (0, _warning2.default)(!((typeof path === 'undefined' ? 'undefined' : _typeof(path)) === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to push when the 1st ' + 'argument is a location-like object that already has state; it is ignored');
+
+    var action = 'PUSH';
+    var location = (0, _LocationUtils.createLocation)(path, state, createKey(), history.location);
+
+    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+      if (!ok) return;
+
+      var prevIndex = history.index;
+      var nextIndex = prevIndex + 1;
+
+      var nextEntries = history.entries.slice(0);
+      if (nextEntries.length > nextIndex) {
+        nextEntries.splice(nextIndex, nextEntries.length - nextIndex, location);
+      } else {
+        nextEntries.push(location);
+      }
+
+      setState({
+        action: action,
+        location: location,
+        index: nextIndex,
+        entries: nextEntries
+      });
+    });
+  };
+
+  var replace = function replace(path, state) {
+    (0, _warning2.default)(!((typeof path === 'undefined' ? 'undefined' : _typeof(path)) === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to replace when the 1st ' + 'argument is a location-like object that already has state; it is ignored');
+
+    var action = 'REPLACE';
+    var location = (0, _LocationUtils.createLocation)(path, state, createKey(), history.location);
+
+    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+      if (!ok) return;
+
+      history.entries[history.index] = location;
+
+      setState({ action: action, location: location });
+    });
+  };
+
+  var go = function go(n) {
+    var nextIndex = clamp(history.index + n, 0, history.entries.length - 1);
+
+    var action = 'POP';
+    var location = history.entries[nextIndex];
+
+    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
+      if (ok) {
+        setState({
+          action: action,
+          location: location,
+          index: nextIndex
+        });
+      } else {
+        // Mimic the behavior of DOM histories by
+        // causing a render after a cancelled POP.
+        setState();
+      }
+    });
+  };
+
+  var goBack = function goBack() {
+    return go(-1);
+  };
+
+  var goForward = function goForward() {
+    return go(1);
+  };
+
+  var canGo = function canGo(n) {
+    var nextIndex = history.index + n;
+    return nextIndex >= 0 && nextIndex < history.entries.length;
+  };
+
+  var block = function block() {
+    var prompt = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+    return transitionManager.setPrompt(prompt);
+  };
+
+  var listen = function listen(listener) {
+    return transitionManager.appendListener(listener);
+  };
+
+  var history = {
+    length: entries.length,
+    action: 'POP',
+    location: entries[index],
+    index: index,
+    entries: entries,
+    createHref: createHref,
+    push: push,
+    replace: replace,
+    go: go,
+    goBack: goBack,
+    goForward: goForward,
+    canGo: canGo,
+    block: block,
+    listen: listen
+  };
+
+  return history;
+};
+
+exports.default = createMemoryHistory;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var appCacheIframe;
+
+function hasSW() {
+  return 'serviceWorker' in navigator && (
+  // This is how I block Chrome 40 and detect Chrome 41, because first has
+  // bugs with history.pustState and/or hashchange
+  window.fetch || 'imageRendering' in document.documentElement.style) && (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname.indexOf('127.') === 0);
+}
+
+function install(options) {
+  options || (options = {});
+
+  if (hasSW()) {
+    var registration = navigator.serviceWorker.register("sw.js");
+
+    var handleUpdating = function (registration) {
+      var sw = registration.installing || registration.waiting;
+      var ignoreInstalling;
+      var ignoreWaiting;
+
+      // No SW or already handled
+      if (!sw || sw.onstatechange) return;
+
+      var stateChangeHandler;
+
+      // Already has SW
+      if (registration.active) {
+        onUpdateStateChange();
+        stateChangeHandler = onUpdateStateChange;
+      } else {
+        onInstallStateChange();
+        stateChangeHandler = onInstallStateChange;
+      }
+
+      ignoreInstalling = true;
+      if (registration.waiting) {
+        ignoreWaiting = true;
+      }
+
+      sw.onstatechange = stateChangeHandler;
+
+      function onUpdateStateChange() {
+        switch (sw.state) {
+          case 'redundant':
+            {
+              sendEvent('onUpdateFailed');
+              sw.onstatechange = null;
+            }break;
+
+          case 'installing':
+            {
+              if (!ignoreInstalling) {
+                sendEvent('onUpdating');
+              }
+            }break;
+
+          case 'installed':
+            {
+              if (!ignoreWaiting) {
+                sendEvent('onUpdateReady');
+              }
+            }break;
+
+          case 'activated':
+            {
+              sendEvent('onUpdated');
+              sw.onstatechange = null;
+            }break;
+        }
+      }
+
+      function onInstallStateChange() {
+        switch (sw.state) {
+          case 'redundant':
+            {
+              // Failed to install, ignore
+              sw.onstatechange = null;
+            }break;
+
+          case 'installing':
+            {
+              // Installing, ignore
+            }break;
+
+          case 'installed':
+            {
+              // Installed, wait activation
+            }break;
+
+          case 'activated':
+            {
+              sendEvent('onInstalled');
+              sw.onstatechange = null;
+            }break;
+        }
+      }
+    };
+
+    var sendEvent = function (event) {
+      if (typeof options[event] === 'function') {
+        options[event]({
+          source: 'ServiceWorker'
+        });
+      }
+    };
+
+    registration.then(function (reg) {
+      // WTF no reg?
+      if (!reg) return;
+
+      // Installed but Shift-Reloaded (page is not controller by SW),
+      // update might be ready at this point (more than one tab opened).
+      // Anyway, if page is hard-reloaded, then it probably already have latest version
+      // but it's not controlled by SW yet. Applying update will claim this page
+      // to be controlled by SW. Maybe set flag to not reload it?
+      // if (!navigator.serviceWorker.controller) return;
+
+      handleUpdating(reg);
+      reg.onupdatefound = function () {
+        handleUpdating(reg);
+      };
+    }).catch(function (err) {
+      sendEvent('onError');
+      return Promise.reject(err);
+    });
+
+    return;
+  }
+
+  if (window.applicationCache) {
+    var directory = "appcache/";
+    var name = "manifest";
+
+    var doLoad = function () {
+      var page = directory + name + '.html';
+      var iframe = document.createElement('iframe');
+
+      iframe.src = page;
+      iframe.style.display = 'none';
+
+      appCacheIframe = iframe;
+      document.body.appendChild(iframe);
+    };
+
+    if (document.readyState === 'complete') {
+      setTimeout(doLoad);
+    } else {
+      window.addEventListener('load', doLoad);
+    }
+
+    return;
+  }
+}
+
+function applyUpdate(callback, errback) {
+
+  if (hasSW()) {
+    navigator.serviceWorker.getRegistration().then(function (registration) {
+      if (!registration || !registration.waiting) {
+        errback && errback();
+        return;
+      }
+
+      registration.waiting.postMessage({
+        action: 'skipWaiting'
+      });
+
+      callback && callback();
+    });
+
+    return;
+  }
+}
+
+function update() {
+
+  if (hasSW()) {
+    navigator.serviceWorker.getRegistration().then(function (registration) {
+      if (!registration) return;
+      return registration.update();
+    });
+  }
+
+  if (appCacheIframe) {
+    try {
+      appCacheIframe.contentWindow.applicationCache.update();
+    } catch (e) {}
+  }
+}
+
+exports.install = install;
+exports.applyUpdate = applyUpdate;
+exports.update = update;
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(34);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased; }\n\n.mdc-typography--display4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 7rem;\n  font-weight: 300;\n  letter-spacing: -0.04em;\n  line-height: 7rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display4 {\n  margin: -1rem 0 3.5rem -0.085em; }\n\n.mdc-typography--display3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.5rem;\n  font-weight: 400;\n  letter-spacing: -0.02em;\n  line-height: 3.5rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display3 {\n  margin: -8px 0 64px -0.07em; }\n\n.mdc-typography--display2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.813rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 3rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display2 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--display1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2.5rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--display1 {\n  margin: -0.5rem 0 4rem -0.07em; }\n\n.mdc-typography--headline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--headline {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  line-height: 2rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--title {\n  margin: -0.5rem 0 1rem -0.05em; }\n\n.mdc-typography--subheading2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading2 {\n  margin: -0.5rem 0 1rem -0.06em; }\n\n.mdc-typography--subheading1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.938rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--subheading1 {\n  margin: -0.313rem 0 0.813rem -0.06em; }\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body2 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--body1 {\n  margin: -0.25rem 0 0.75rem 0; }\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  font-weight: 400;\n  letter-spacing: 0.08em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-typography--adjust-margin.mdc-typography--caption {\n  margin: -0.5rem 0 1rem -0.04em; }\n\n.mdc-typography--button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 2.25rem;\n  text-decoration: none;\n  text-transform: uppercase; }\n\n.mdc-typography--adjust-margin.mdc-typography--button {\n  margin: inherit; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+	// get current location
+	var location = typeof window !== "undefined" && window.location;
+
+	if (!location) {
+		throw new Error("fixUrls requires window.location");
+	}
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+		return css;
+	}
+
+	var baseUrl = location.protocol + "//" + location.host;
+	var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+ This regular expression is just a way to recursively match brackets within
+ a string.
+ 	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+    (  = Start a capturing group
+      (?:  = Start a non-capturing group
+          [^)(]  = Match anything that isn't a parentheses
+          |  = OR
+          \(  = Match a start parentheses
+              (?:  = Start another non-capturing groups
+                  [^)(]+  = Match anything that isn't a parentheses
+                  |  = OR
+                  \(  = Match a start parentheses
+                      [^)(]*  = Match anything that isn't a parentheses
+                  \)  = Match a end parentheses
+              )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+  \)  = Match a close parens
+ 	 /gi  = Get all matches, not the first.  Be case insensitive.
+  */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function (fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl.trim().replace(/^"(.*)"$/, function (o, $1) {
+			return $1;
+		}).replace(/^'(.*)'$/, function (o, $1) {
+			return $1;
+		});
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
+			return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+			//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(37);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n:root {\n  --mdc-theme-primary: #3f51b5;\n  --mdc-theme-primary-light: #a4addf;\n  --mdc-theme-primary-dark: #6f7dcd;\n  --mdc-theme-secondary: #ff4081;\n  --mdc-theme-secondary-light: #ff87b0;\n  --mdc-theme-secondary-dark: #f80054;\n  --mdc-theme-background: #fff;\n  --mdc-theme-text-primary-on-primary: white;\n  --mdc-theme-text-secondary-on-primary: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-primary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-primary-light: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-primary-light: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-primary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-primary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-primary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-primary-dark: white;\n  --mdc-theme-text-secondary-on-primary-dark: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-primary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-primary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-primary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-secondary: white;\n  --mdc-theme-text-secondary-on-secondary: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-secondary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-secondary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-secondary: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-secondary-light: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-secondary-light: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-secondary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-secondary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-secondary-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-secondary-dark: white;\n  --mdc-theme-text-secondary-on-secondary-dark: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-secondary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-secondary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-secondary-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);\n  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);\n  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);\n  --mdc-theme-text-primary-on-dark: white;\n  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);\n  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);\n  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5); }\n\n.mdc-theme--background {\n  /* @alternate */\n  background-color: #fff;\n  background-color: var(--mdc-theme-background, #fff); }\n\n.mdc-theme--primary {\n  /* @alternate */\n  color: #3f51b5 !important;\n  color: var(--mdc-theme-primary, #3f51b5) !important; }\n\n.mdc-theme--primary-light {\n  /* @alternate */\n  color: #a4addf !important;\n  color: var(--mdc-theme-primary-light, #a4addf) !important; }\n\n.mdc-theme--primary-dark {\n  /* @alternate */\n  color: #6f7dcd !important;\n  color: var(--mdc-theme-primary-dark, #6f7dcd) !important; }\n\n.mdc-theme--secondary {\n  /* @alternate */\n  color: #ff4081 !important;\n  color: var(--mdc-theme-secondary, #ff4081) !important; }\n\n.mdc-theme--secondary-light {\n  /* @alternate */\n  color: #ff87b0 !important;\n  color: var(--mdc-theme-secondary-light, #ff87b0) !important; }\n\n.mdc-theme--secondary-dark {\n  /* @alternate */\n  color: #f80054 !important;\n  color: var(--mdc-theme-secondary-dark, #f80054) !important; }\n\n.mdc-theme--text-primary-on-primary {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-primary, white) !important; }\n\n.mdc-theme--text-secondary-on-primary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-primary, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-primary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-primary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-primary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-primary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-primary-light, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-primary-light, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-primary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-primary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-primary-dark {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-primary-dark, white) !important; }\n\n.mdc-theme--text-secondary-on-primary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-primary-dark, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-primary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-primary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-primary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-primary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-secondary {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-secondary, white) !important; }\n\n.mdc-theme--text-secondary-on-secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-secondary, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-secondary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-secondary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-secondary, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-secondary-light, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-secondary-light, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-secondary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-secondary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-secondary-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-secondary-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-secondary-dark {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-secondary-dark, white) !important; }\n\n.mdc-theme--text-secondary-on-secondary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-secondary-dark, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-secondary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-secondary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-secondary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-secondary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-secondary-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-secondary-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-primary-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-background {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87) !important;\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87)) !important; }\n\n.mdc-theme--text-secondary-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54) !important;\n  color: var(--mdc-theme-text-secondary-on-light, rgba(0, 0, 0, 0.54)) !important; }\n\n.mdc-theme--text-hint-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-hint-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-disabled-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-icon-on-light {\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38) !important;\n  color: var(--mdc-theme-text-icon-on-light, rgba(0, 0, 0, 0.38)) !important; }\n\n.mdc-theme--text-primary-on-dark {\n  /* @alternate */\n  color: white !important;\n  color: var(--mdc-theme-text-primary-on-dark, white) !important; }\n\n.mdc-theme--text-secondary-on-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7) !important;\n  color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)) !important; }\n\n.mdc-theme--text-hint-on-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-hint-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-disabled-on-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--text-icon-on-dark {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5) !important;\n  color: var(--mdc-theme-text-icon-on-dark, rgba(255, 255, 255, 0.5)) !important; }\n\n.mdc-theme--primary-bg {\n  /* @alternate */\n  background-color: #3f51b5 !important;\n  background-color: var(--mdc-theme-primary, #3f51b5) !important; }\n\n.mdc-theme--primary-light-bg {\n  /* @alternate */\n  background-color: #a4addf !important;\n  background-color: var(--mdc-theme-primary-light, #a4addf) !important; }\n\n.mdc-theme--primary-dark-bg {\n  /* @alternate */\n  background-color: #6f7dcd !important;\n  background-color: var(--mdc-theme-primary-dark, #6f7dcd) !important; }\n\n.mdc-theme--secondary-bg {\n  /* @alternate */\n  background-color: #ff4081 !important;\n  background-color: var(--mdc-theme-secondary, #ff4081) !important; }\n\n.mdc-theme--secondary-light-bg {\n  /* @alternate */\n  background-color: #ff87b0 !important;\n  background-color: var(--mdc-theme-secondary-light, #ff87b0) !important; }\n\n.mdc-theme--secondary-dark-bg {\n  /* @alternate */\n  background-color: #f80054 !important;\n  background-color: var(--mdc-theme-secondary-dark, #f80054) !important; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(39);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./style.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "li {\n  line-height: 1.5em; }\n\n.marginTop {\n  margin-top: 70px; }\n\n.toolbarTitleLink {\n  color: var(--mdc-theme-text-primary-on-primary, white);\n  text-decoration: none; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/* eslint-disable no-console */
+
+if (false) {
+	var preact = require('preact');
+	var options = preact.options;
+	var oldVnodeOption = options.vnode;
+
+	options.vnode = function (vnode) {
+		var nodeName = vnode.nodeName,
+		    attributes = vnode.attributes,
+		    children = vnode.children;
+
+		if (nodeName === void 0) {
+			console.error('Undefined component passed to preact.h()\n' + serializeVNode(vnode));
+		}
+
+		if (attributes && attributes.ref !== void 0 && typeof attributes.ref !== 'function' && !('$$typeof' in vnode) // allow string refs when preact-compat is installed
+		) {
+				throw new Error('Component\'s "ref" property should be a function,' + (' but [' + typeof attributes.ref + '] passed\n') + serializeVNode(vnode));
+			}
+
+		{
+			var keys = {};
+
+			inspectChildren(children, function (deepChild) {
+				if (!deepChild || deepChild.key == null) return;
+
+				// In Preact, all keys are stored as object values, i.e. being strings
+				var key = deepChild.key + '';
+
+				if (keys.hasOwnProperty(key)) {
+					console.error('Following component has two or more children with the ' + 'same "key" attribute. This may cause glitches and misbehavior ' + 'in rendering process. Component: \n\n' + serializeVNode(vnode));
+
+					// Return early to not spam the console
+					return true;
+				}
+
+				keys[key] = true;
+			});
+		}
+
+		if (oldVnodeOption) oldVnodeOption.call(this, vnode);
+	};
+
+	var oldRender = preact.render;
+	preact.render = function (vnode, parent, merge) {
+		if (parent == null && merge == null) {
+			// render(vnode, parent, merge) can't have both parent and merge be undefined
+			console.error('The "containerNode" or "replaceNode" is not defined in the render method. ' + 'Component: \n\n' + serializeVNode(vnode));
+		} else if (parent == merge) {
+			// if parent == merge, it doesn't reason well and would cause trouble when preact
+			// tries to update or replace that 'replaceNode' element
+			console.error('The "containerNode" and "replaceNode" are the same in render method, ' + 'when the "replaceNode" DOM node is expected to be a child of "containerNode". ' + 'docs-ref: https://preactjs.com/guide/api-reference#-preact-render-. Component: \n\n' + serializeVNode(vnode));
+		}
+		return oldRender(vnode, parent, merge);
+	};
+
+	var inspectChildren = function inspectChildren(children, inspect) {
+		if (!Array.isArray(children)) {
+			children = [children];
+		}
+		return children.some(function (child, i) {
+			if (Array.isArray(child)) {
+				return inspectChildren(child, inspect);
+			}
+
+			return inspect(child, i);
+		});
+	};
+
+	var serializeVNode = function serializeVNode(_ref) {
+		var nodeName = _ref.nodeName,
+		    attributes = _ref.attributes,
+		    children = _ref.children;
+
+		if (typeof nodeName === 'function') {
+			nodeName = nodeName.name || nodeName.displayName;
+		}
+
+		var props = '';
+		if (attributes) {
+			for (var attr in attributes) {
+				if (attributes.hasOwnProperty(attr) && attr !== 'children') {
+					var value = attributes[attr];
+
+					// If it is an object but doesn't have toString(), use Object.toString
+					if (typeof value === 'function') {
+						value = 'function ' + (value.displayName || value.name) + '() {}';
+					}
+					if (Object(value) === value && !value.toString) {
+						value = Object.prototype.toString.call(value);
+					} else {
+						value = value + '';
+					}
+
+					props += ' ' + attr + '=' + JSON.stringify(value);
+				}
+			}
+		}
+
+		return '<' + nodeName + props + (children && children.length ? '>..</' + nodeName + '>' : ' />');
+	};
+
+	require('preact/devtools');
+}
+
+//# sourceMappingURL=debug.js.map
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _preactRouter = __webpack_require__(13);
+
+var _match = __webpack_require__(20);
+
+var _Toolbar = __webpack_require__(42);
+
+var _Toolbar2 = _interopRequireDefault(_Toolbar);
+
+var _Drawer = __webpack_require__(50);
+
+var _Drawer2 = _interopRequireDefault(_Drawer);
+
+var _Menu = __webpack_require__(59);
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
+var _drawerList = __webpack_require__(65);
+
+var _drawerList2 = _interopRequireDefault(_drawerList);
+
+__webpack_require__(68);
+
+__webpack_require__(70);
+
+__webpack_require__(72);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class Header extends _preact.Component {
+  constructor() {
+    super();
+    this._onClick = this._onClick.bind(this);
+    this._onClickMenu = this._onClickMenu.bind(this);
+    this.state = {
+      drawerOpened: false
+    };
+  }
+  _routeFromLink(node) {
+    // only valid elements
+    if (!node || !node.getAttribute) return;
+
+    let href = node.getAttribute("href"),
+        target = node.getAttribute("target");
+
+    // ignore links with targets and non-path URLs
+    if (!href || !href.match(/^\//g) || target && !target.match(/^_?self$/i)) return;
+
+    // attempt to route, if no match simply cede control to browser
+    return (0, _preactRouter.route)(href);
+  }
+  _onClick(e) {
+    this.setState({
+      drawerOpened: false
+    });
+    this._handleLinkClick(e);
+  }
+  _onClickMenu(e) {
+    this.menu.MDComponent.open = false;
+    this._handleLinkClick(e);
+  }
+
+  _handleLinkClick(e) {
+    // eslint-disable-next-line eqeqeq
+    if (e.button == 0) {
+      this._routeFromLink(e.currentTarget || e.target || this);
+      return this._prevent(e);
+    }
+  }
+
+  _prevent(e) {
+    if (e) {
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      if (e.stopPropagation) e.stopPropagation();
+      e.preventDefault();
+    }
+    return false;
+  }
+  render() {
+    return (0, _preact.h)(
+      _Toolbar2.default,
+      { fixed: true },
+      (0, _preact.h)(
+        _Toolbar2.default.Row,
+        null,
+        (0, _preact.h)(
+          _Toolbar2.default.Section,
+          { "align-start": true },
+          (0, _preact.h)(
+            _Toolbar2.default.Icon,
+            {
+              onClick: () => {
+                this.setState({
+                  drawerOpened: !this.state.drawerOpened
+                });
+              }
+            },
+            "menu"
+          ),
+          (0, _preact.h)(
+            _Drawer2.default.TemporaryDrawer,
+            {
+              open: this.state.drawerOpened,
+              onClose: () => {
+                this.setState({
+                  drawerOpened: false
+                });
+              }
+            },
+            (0, _preact.h)(
+              _Drawer2.default.TemporaryDrawerContent,
+              null,
+              (0, _preact.h)(_drawerList2.default, { onClick: this._onClick })
+            )
+          ),
+          (0, _preact.h)(
+            _Toolbar2.default.Title,
+            null,
+            (0, _preact.h)(
+              _match.Link,
+              { href: "/#", "class": "toolbarTitleLink" },
+              "keemor.github.io"
+            )
+          )
+        ),
+        (0, _preact.h)(
+          _Toolbar2.default.Section,
+          { "align-end": true },
+          (0, _preact.h)(
+            _Menu2.default.Anchor,
+            null,
+            (0, _preact.h)(
+              _Toolbar2.default.Icon,
+              {
+                menu: true,
+                onClick: e => {
+                  this.menu.MDComponent.open = true;
+                }
+              },
+              "more_vert"
+            ),
+            (0, _preact.h)(
+              _Menu2.default,
+              {
+                ref: menu => {
+                  this.menu = menu;
+                }
+              },
+              (0, _preact.h)(
+                _match.Link,
+                {
+                  href: "/about",
+                  "class": "mdc-list-item",
+                  onClick: this._onClickMenu
+                },
+                (0, _preact.h)(
+                  _Menu2.default.Item,
+                  null,
+                  "About"
+                )
+              )
+            )
+          )
+        )
+      )
+    );
+  }
+}
+exports.default = Header;
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _MaterialComponent = __webpack_require__(3);
+
+var _MaterialComponent2 = _interopRequireDefault(_MaterialComponent);
+
+var _toolbar = __webpack_require__(46);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+/**
+ * @prop fixed = false
+ * @prop fixed-lastrow-only = false
+ * @prop waterfall = false
+ * @prop flexible = false
+ * @prop flexible-default-behavior = false
+ */
+class Toolbar extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "toolbar";
+    this._mdcProps = ["fixed", "fixed-lastrow-only", "waterfall", "flexible", "flexible-default-behavior"];
+    this._onChange = this._onChange.bind(this);
+  }
+  _onChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
+  }
+  componentDidMount() {
+    this.MDComponent = new _toolbar.MDCToolbar(this.control);
+    this.MDComponent.listen("MDCToolbar:change", this._onChange);
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCToolbar:change", this._onChange);
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  materialDom(props) {
+    return (0, _preact.h)("header", _extends({
+      ref: control => {
+        this.control = control;
+      }
+    }, props), props.children);
+  }
+}
+
+class ToolbarRow extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "toolbar__row";
+  }
+}
+
+/**
+ * @prop align-end = false
+ * @prop align-start = false
+ * @prop shrink-to-fit = false
+ */
+class ToolbarSection extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "toolbar__section";
+    this._mdcProps = ["align-start", "align-end", "shrink-to-fit"];
+  }
+  materialDom(props) {
+    return (0, _preact.h)("section", props, props.children);
+  }
+}
+
+/**
+ * @prop menu = false
+ */
+class ToolbarIcon extends _MaterialComponent2.default {
+  constructor(props) {
+    super();
+    this.componentName = "toolbar__icon";
+    if (props.menu) {
+      this.componentName = "toolbar__menu-icon";
+    }
+  }
+  materialDom(props) {
+    return (0, _preact.h)("a", _extends({ className: "material-icons" }, props), props.children || "menu");
+  }
+}
+
+/**
+ * @prop title = ''
+ */
+class ToolbarTitle extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "toolbar__title";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("span", props, props.children);
+  }
+}
+
+Toolbar.Section = ToolbarSection;
+Toolbar.Icon = ToolbarIcon;
+Toolbar.Title = ToolbarTitle;
+Toolbar.Row = ToolbarRow;
+
+exports.default = Toolbar;
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.util = exports.MDCRippleFoundation = exports.MDCRipple = undefined;
+
+var _component = __webpack_require__(15);
+
+var _component2 = _interopRequireDefault(_component);
+
+var _adapter = __webpack_require__(21);
+
+var _adapter2 = _interopRequireDefault(_adapter);
+
+var _foundation = __webpack_require__(44);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _util = __webpack_require__(22);
+
+var util = _interopRequireWildcard(_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @extends MDCComponent<!MDCRippleFoundation>
+ */
+/**
+ * @license
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+class MDCRipple extends _component2.default {
+  /** @param {...?} args */
+  constructor(...args) {
+    super(...args);
+
+    /** @type {boolean} */
+    this.disabled = false;
+
+    /** @private {boolean} */
+    this.unbounded_;
+  }
+
+  /**
+   * @param {!Element} root
+   * @param {{isUnbounded: (boolean|undefined)}=} options
+   * @return {!MDCRipple}
+   */
+  static attachTo(root, { isUnbounded = undefined } = {}) {
+    const ripple = new MDCRipple(root);
+    // Only override unbounded behavior if option is explicitly specified
+    if (isUnbounded !== undefined) {
+      ripple.unbounded = /** @type {boolean} */isUnbounded;
+    }
+    return ripple;
+  }
+
+  /**
+   * @param {!RippleCapableSurface} instance
+   * @return {!MDCRippleAdapter}
+   */
+  static createAdapter(instance) {
+    const MATCHES = util.getMatchesProperty(HTMLElement.prototype);
+
+    return {
+      browserSupportsCssVars: () => util.supportsCssVariables(window),
+      isUnbounded: () => instance.unbounded,
+      isSurfaceActive: () => instance.root_[MATCHES](':active'),
+      isSurfaceDisabled: () => instance.disabled,
+      addClass: className => instance.root_.classList.add(className),
+      removeClass: className => instance.root_.classList.remove(className),
+      registerInteractionHandler: (evtType, handler) => instance.root_.addEventListener(evtType, handler, util.applyPassive()),
+      deregisterInteractionHandler: (evtType, handler) => instance.root_.removeEventListener(evtType, handler, util.applyPassive()),
+      registerResizeHandler: handler => window.addEventListener('resize', handler),
+      deregisterResizeHandler: handler => window.removeEventListener('resize', handler),
+      updateCssVariable: (varName, value) => instance.root_.style.setProperty(varName, value),
+      computeBoundingRect: () => instance.root_.getBoundingClientRect(),
+      getWindowPageOffset: () => ({ x: window.pageXOffset, y: window.pageYOffset })
+    };
+  }
+
+  /** @return {boolean} */
+  get unbounded() {
+    return this.unbounded_;
+  }
+
+  /** @param {boolean} unbounded */
+  set unbounded(unbounded) {
+    const { UNBOUNDED } = _foundation2.default.cssClasses;
+    this.unbounded_ = Boolean(unbounded);
+    if (this.unbounded_) {
+      this.root_.classList.add(UNBOUNDED);
+    } else {
+      this.root_.classList.remove(UNBOUNDED);
+    }
+  }
+
+  activate() {
+    this.foundation_.activate();
+  }
+
+  deactivate() {
+    this.foundation_.deactivate();
+  }
+
+  layout() {
+    this.foundation_.layout();
+  }
+
+  /** @return {!MDCRippleFoundation} */
+  getDefaultFoundation() {
+    return new _foundation2.default(MDCRipple.createAdapter(this));
+  }
+
+  initialSyncWithDOM() {
+    this.unbounded = 'mdcRippleIsUnbounded' in this.root_.dataset;
+  }
+}
+
+/**
+ * See Material Design spec for more details on when to use ripples.
+ * https://material.io/guidelines/motion/choreography.html#choreography-creation
+ * @record
+ */
+class RippleCapableSurface {}
+
+/** @protected {!Element} */
+RippleCapableSurface.prototype.root_;
+
+/**
+ * Whether or not the ripple bleeds out of the bounds of the element.
+ * @type {boolean|undefined}
+ */
+RippleCapableSurface.prototype.unbounded;
+
+/**
+ * Whether or not the ripple is attached to a disabled component.
+ * @type {boolean|undefined}
+ */
+RippleCapableSurface.prototype.disabled;
+
+exports.MDCRipple = MDCRipple;
+exports.MDCRippleFoundation = _foundation2.default;
+exports.util = util;
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
+                                                                                                                                                                                                                                                                   * @license
+                                                                                                                                                                                                                                                                   * Copyright 2016 Google Inc. All Rights Reserved.
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Licensed under the Apache License, Version 2.0 (the "License");
+                                                                                                                                                                                                                                                                   * you may not use this file except in compliance with the License.
+                                                                                                                                                                                                                                                                   * You may obtain a copy of the License at
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   *      http://www.apache.org/licenses/LICENSE-2.0
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Unless required by applicable law or agreed to in writing, software
+                                                                                                                                                                                                                                                                   * distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                                                                                                                                                                                                   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                                                                                                                                                                                                   * See the License for the specific language governing permissions and
+                                                                                                                                                                                                                                                                   * limitations under the License.
+                                                                                                                                                                                                                                                                   */
+
+var _foundation = __webpack_require__(7);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _adapter = __webpack_require__(21);
+
+var _adapter2 = _interopRequireDefault(_adapter);
+
+var _constants = __webpack_require__(45);
+
+var _util = __webpack_require__(22);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @typedef {!{
+ *   isActivated: (boolean|undefined),
+ *   hasDeactivationUXRun: (boolean|undefined),
+ *   wasActivatedByPointer: (boolean|undefined),
+ *   wasElementMadeActive: (boolean|undefined),
+ *   activationStartTime: (number|undefined),
+ *   activationEvent: Event,
+ *   isProgrammatic: (boolean|undefined)
+ * }}
+ */
+let ActivationStateType;
+
+/**
+ * @typedef {!{
+ *   activate: (string|undefined),
+ *   deactivate: (string|undefined),
+ *   focus: (string|undefined),
+ *   blur: (string|undefined)
+ * }}
+ */
+let ListenerInfoType;
+
+/**
+ * @typedef {!{
+ *   activate: function(!Event),
+ *   deactivate: function(!Event),
+ *   focus: function(),
+ *   blur: function()
+ * }}
+ */
+let ListenersType;
+
+/**
+ * @typedef {!{
+ *   x: number,
+ *   y: number
+ * }}
+ */
+let PointType;
+
+/**
+ * @enum {string}
+ */
+const DEACTIVATION_ACTIVATION_PAIRS = {
+  mouseup: 'mousedown',
+  pointerup: 'pointerdown',
+  touchend: 'touchstart',
+  keyup: 'keydown',
+  blur: 'focus'
+};
+
+/**
+ * @extends {MDCFoundation<!MDCRippleAdapter>}
+ */
+class MDCRippleFoundation extends _foundation2.default {
+  static get cssClasses() {
+    return _constants.cssClasses;
+  }
+
+  static get strings() {
+    return _constants.strings;
+  }
+
+  static get numbers() {
+    return _constants.numbers;
+  }
+
+  static get defaultAdapter() {
+    return {
+      browserSupportsCssVars: () => /* boolean - cached */{},
+      isUnbounded: () => /* boolean */{},
+      isSurfaceActive: () => /* boolean */{},
+      isSurfaceDisabled: () => /* boolean */{},
+      addClass: () => /* className: string */{},
+      removeClass: () => /* className: string */{},
+      registerInteractionHandler: () => /* evtType: string, handler: EventListener */{},
+      deregisterInteractionHandler: () => /* evtType: string, handler: EventListener */{},
+      registerResizeHandler: () => /* handler: EventListener */{},
+      deregisterResizeHandler: () => /* handler: EventListener */{},
+      updateCssVariable: () => /* varName: string, value: string */{},
+      computeBoundingRect: () => /* ClientRect */{},
+      getWindowPageOffset: () => /* {x: number, y: number} */{}
+    };
+  }
+
+  constructor(adapter) {
+    super(_extends(MDCRippleFoundation.defaultAdapter, adapter));
+
+    /** @private {number} */
+    this.layoutFrame_ = 0;
+
+    /** @private {!ClientRect} */
+    this.frame_ = /** @type {!ClientRect} */{ width: 0, height: 0 };
+
+    /** @private {!ActivationStateType} */
+    this.activationState_ = this.defaultActivationState_();
+
+    /** @private {number} */
+    this.xfDuration_ = 0;
+
+    /** @private {number} */
+    this.initialSize_ = 0;
+
+    /** @private {number} */
+    this.maxRadius_ = 0;
+
+    /** @private {!Array<{ListenerInfoType}>} */
+    this.listenerInfos_ = [{ activate: 'touchstart', deactivate: 'touchend' }, { activate: 'pointerdown', deactivate: 'pointerup' }, { activate: 'mousedown', deactivate: 'mouseup' }, { activate: 'keydown', deactivate: 'keyup' }, { focus: 'focus', blur: 'blur' }];
+
+    /** @private {!ListenersType} */
+    this.listeners_ = {
+      activate: e => this.activate_(e),
+      deactivate: e => this.deactivate_(e),
+      focus: () => requestAnimationFrame(() => this.adapter_.addClass(MDCRippleFoundation.cssClasses.BG_FOCUSED)),
+      blur: () => requestAnimationFrame(() => this.adapter_.removeClass(MDCRippleFoundation.cssClasses.BG_FOCUSED))
+    };
+
+    /** @private {!Function} */
+    this.resizeHandler_ = () => this.layout();
+
+    /** @private {!{left: number, top:number}} */
+    this.unboundedCoords_ = {
+      left: 0,
+      top: 0
+    };
+
+    /** @private {number} */
+    this.fgScale_ = 0;
+
+    /** @private {number} */
+    this.activationTimer_ = 0;
+
+    /** @private {number} */
+    this.fgDeactivationRemovalTimer_ = 0;
+
+    /** @private {boolean} */
+    this.activationAnimationHasEnded_ = false;
+
+    /** @private {!Function} */
+    this.activationTimerCallback_ = () => {
+      this.activationAnimationHasEnded_ = true;
+      this.runDeactivationUXLogicIfReady_();
+    };
+  }
+
+  /**
+   * We compute this property so that we are not querying information about the client
+   * until the point in time where the foundation requests it. This prevents scenarios where
+   * client-side feature-detection may happen too early, such as when components are rendered on the server
+   * and then initialized at mount time on the client.
+   * @return {boolean}
+   * @private
+   */
+  isSupported_() {
+    return this.adapter_.browserSupportsCssVars();
+  }
+
+  /**
+   * @return {!ActivationStateType}
+   */
+  defaultActivationState_() {
+    return {
+      isActivated: false,
+      hasDeactivationUXRun: false,
+      wasActivatedByPointer: false,
+      wasElementMadeActive: false,
+      activationStartTime: 0,
+      activationEvent: null,
+      isProgrammatic: false
+    };
+  }
+
+  init() {
+    if (!this.isSupported_()) {
+      return;
+    }
+    this.addEventListeners_();
+
+    const { ROOT, UNBOUNDED } = MDCRippleFoundation.cssClasses;
+    requestAnimationFrame(() => {
+      this.adapter_.addClass(ROOT);
+      if (this.adapter_.isUnbounded()) {
+        this.adapter_.addClass(UNBOUNDED);
+      }
+      this.layoutInternal_();
+    });
+  }
+
+  /** @private */
+  addEventListeners_() {
+    this.listenerInfos_.forEach(info => {
+      Object.keys(info).forEach(k => {
+        this.adapter_.registerInteractionHandler(info[k], this.listeners_[k]);
+      });
+    });
+    this.adapter_.registerResizeHandler(this.resizeHandler_);
+  }
+
+  /**
+   * @param {Event} e
+   * @private
+   */
+  activate_(e) {
+    if (this.adapter_.isSurfaceDisabled()) {
+      return;
+    }
+
+    const { activationState_: activationState } = this;
+    if (activationState.isActivated) {
+      return;
+    }
+
+    activationState.isActivated = true;
+    activationState.isProgrammatic = e === null;
+    activationState.activationEvent = e;
+    activationState.wasActivatedByPointer = activationState.isProgrammatic ? false : e.type === 'mousedown' || e.type === 'touchstart' || e.type === 'pointerdown';
+    activationState.activationStartTime = Date.now();
+
+    requestAnimationFrame(() => {
+      // This needs to be wrapped in an rAF call b/c web browsers
+      // report active states inconsistently when they're called within
+      // event handling code:
+      // - https://bugs.chromium.org/p/chromium/issues/detail?id=635971
+      // - https://bugzilla.mozilla.org/show_bug.cgi?id=1293741
+      activationState.wasElementMadeActive = e && e.type === 'keydown' ? this.adapter_.isSurfaceActive() : true;
+      if (activationState.wasElementMadeActive) {
+        this.animateActivation_();
+      } else {
+        // Reset activation state immediately if element was not made active.
+        this.activationState_ = this.defaultActivationState_();
+      }
+    });
+  }
+
+  /**
+   * @param {?Event=} event Optional event containing position information.
+   */
+  activate(event = null) {
+    this.activate_(event);
+  }
+
+  /** @private */
+  animateActivation_() {
+    const { VAR_FG_TRANSLATE_START, VAR_FG_TRANSLATE_END } = MDCRippleFoundation.strings;
+    const {
+      BG_ACTIVE_FILL,
+      FG_DEACTIVATION,
+      FG_ACTIVATION
+    } = MDCRippleFoundation.cssClasses;
+    const { DEACTIVATION_TIMEOUT_MS } = MDCRippleFoundation.numbers;
+
+    let translateStart = '';
+    let translateEnd = '';
+
+    if (!this.adapter_.isUnbounded()) {
+      const { startPoint, endPoint } = this.getFgTranslationCoordinates_();
+      translateStart = `${startPoint.x}px, ${startPoint.y}px`;
+      translateEnd = `${endPoint.x}px, ${endPoint.y}px`;
+    }
+
+    this.adapter_.updateCssVariable(VAR_FG_TRANSLATE_START, translateStart);
+    this.adapter_.updateCssVariable(VAR_FG_TRANSLATE_END, translateEnd);
+    // Cancel any ongoing activation/deactivation animations
+    clearTimeout(this.activationTimer_);
+    clearTimeout(this.fgDeactivationRemovalTimer_);
+    this.rmBoundedActivationClasses_();
+    this.adapter_.removeClass(FG_DEACTIVATION);
+
+    // Force layout in order to re-trigger the animation.
+    this.adapter_.computeBoundingRect();
+    this.adapter_.addClass(BG_ACTIVE_FILL);
+    this.adapter_.addClass(FG_ACTIVATION);
+    this.activationTimer_ = setTimeout(() => this.activationTimerCallback_(), DEACTIVATION_TIMEOUT_MS);
+  }
+
+  /**
+   * @private
+   * @return {{startPoint: PointType, endPoint: PointType}}
+   */
+  getFgTranslationCoordinates_() {
+    const { activationState_: activationState } = this;
+    const { activationEvent, wasActivatedByPointer } = activationState;
+
+    let startPoint;
+    if (wasActivatedByPointer) {
+      startPoint = (0, _util.getNormalizedEventCoords)(
+      /** @type {!Event} */activationEvent, this.adapter_.getWindowPageOffset(), this.adapter_.computeBoundingRect());
+    } else {
+      startPoint = {
+        x: this.frame_.width / 2,
+        y: this.frame_.height / 2
+      };
+    }
+    // Center the element around the start point.
+    startPoint = {
+      x: startPoint.x - this.initialSize_ / 2,
+      y: startPoint.y - this.initialSize_ / 2
+    };
+
+    const endPoint = {
+      x: this.frame_.width / 2 - this.initialSize_ / 2,
+      y: this.frame_.height / 2 - this.initialSize_ / 2
+    };
+
+    return { startPoint, endPoint };
+  }
+
+  /** @private */
+  runDeactivationUXLogicIfReady_() {
+    const { FG_DEACTIVATION } = MDCRippleFoundation.cssClasses;
+    const { hasDeactivationUXRun, isActivated } = this.activationState_;
+    const activationHasEnded = hasDeactivationUXRun || !isActivated;
+    if (activationHasEnded && this.activationAnimationHasEnded_) {
+      this.rmBoundedActivationClasses_();
+      this.adapter_.addClass(FG_DEACTIVATION);
+      this.fgDeactivationRemovalTimer_ = setTimeout(() => {
+        this.adapter_.removeClass(FG_DEACTIVATION);
+      }, _constants.numbers.FG_DEACTIVATION_MS);
+    }
+  }
+
+  /** @private */
+  rmBoundedActivationClasses_() {
+    const { BG_ACTIVE_FILL, FG_ACTIVATION } = MDCRippleFoundation.cssClasses;
+    this.adapter_.removeClass(BG_ACTIVE_FILL);
+    this.adapter_.removeClass(FG_ACTIVATION);
+    this.activationAnimationHasEnded_ = false;
+    this.adapter_.computeBoundingRect();
+  }
+
+  /**
+   * @param {Event} e
+   * @private
+   */
+  deactivate_(e) {
+    const { activationState_: activationState } = this;
+    // This can happen in scenarios such as when you have a keyup event that blurs the element.
+    if (!activationState.isActivated) {
+      return;
+    }
+    // Programmatic deactivation.
+    if (activationState.isProgrammatic) {
+      const evtObject = null;
+      const state = /** @type {!ActivationStateType} */_extends({}, activationState);
+      requestAnimationFrame(() => this.animateDeactivation_(evtObject, state));
+      this.activationState_ = this.defaultActivationState_();
+      return;
+    }
+
+    const actualActivationType = DEACTIVATION_ACTIVATION_PAIRS[e.type];
+    const expectedActivationType = activationState.activationEvent.type;
+    // NOTE: Pointer events are tricky - https://patrickhlauke.github.io/touch/tests/results/
+    // Essentially, what we need to do here is decouple the deactivation UX from the actual
+    // deactivation state itself. This way, touch/pointer events in sequence do not trample one
+    // another.
+    const needsDeactivationUX = actualActivationType === expectedActivationType;
+    let needsActualDeactivation = needsDeactivationUX;
+    if (activationState.wasActivatedByPointer) {
+      needsActualDeactivation = e.type === 'mouseup';
+    }
+
+    const state = /** @type {!ActivationStateType} */_extends({}, activationState);
+    requestAnimationFrame(() => {
+      if (needsDeactivationUX) {
+        this.activationState_.hasDeactivationUXRun = true;
+        this.animateDeactivation_(e, state);
+      }
+
+      if (needsActualDeactivation) {
+        this.activationState_ = this.defaultActivationState_();
+      }
+    });
+  }
+
+  /**
+   * @param {?Event=} event Optional event containing position information.
+   */
+  deactivate(event = null) {
+    this.deactivate_(event);
+  }
+
+  /**
+   * @param {Event} e
+   * @param {!ActivationStateType} options
+   * @private
+   */
+  animateDeactivation_(e, { wasActivatedByPointer, wasElementMadeActive }) {
+    const { BG_FOCUSED } = MDCRippleFoundation.cssClasses;
+    if (wasActivatedByPointer || wasElementMadeActive) {
+      // Remove class left over by element being focused
+      this.adapter_.removeClass(BG_FOCUSED);
+      this.runDeactivationUXLogicIfReady_();
+    }
+  }
+
+  destroy() {
+    if (!this.isSupported_()) {
+      return;
+    }
+    this.removeEventListeners_();
+
+    const { ROOT, UNBOUNDED } = MDCRippleFoundation.cssClasses;
+    requestAnimationFrame(() => {
+      this.adapter_.removeClass(ROOT);
+      this.adapter_.removeClass(UNBOUNDED);
+      this.removeCssVars_();
+    });
+  }
+
+  /** @private */
+  removeEventListeners_() {
+    this.listenerInfos_.forEach(info => {
+      Object.keys(info).forEach(k => {
+        this.adapter_.deregisterInteractionHandler(info[k], this.listeners_[k]);
+      });
+    });
+    this.adapter_.deregisterResizeHandler(this.resizeHandler_);
+  }
+
+  /** @private */
+  removeCssVars_() {
+    const { strings } = MDCRippleFoundation;
+    Object.keys(strings).forEach(k => {
+      if (k.indexOf('VAR_') === 0) {
+        this.adapter_.updateCssVariable(strings[k], null);
+      }
+    });
+  }
+
+  layout() {
+    if (this.layoutFrame_) {
+      cancelAnimationFrame(this.layoutFrame_);
+    }
+    this.layoutFrame_ = requestAnimationFrame(() => {
+      this.layoutInternal_();
+      this.layoutFrame_ = 0;
+    });
+  }
+
+  /** @private */
+  layoutInternal_() {
+    this.frame_ = this.adapter_.computeBoundingRect();
+
+    const maxDim = Math.max(this.frame_.height, this.frame_.width);
+    const surfaceDiameter = Math.sqrt(Math.pow(this.frame_.width, 2) + Math.pow(this.frame_.height, 2));
+
+    // 60% of the largest dimension of the surface
+    this.initialSize_ = maxDim * MDCRippleFoundation.numbers.INITIAL_ORIGIN_SCALE;
+
+    // Diameter of the surface + 10px
+    this.maxRadius_ = surfaceDiameter + MDCRippleFoundation.numbers.PADDING;
+    this.fgScale_ = this.maxRadius_ / this.initialSize_;
+    this.xfDuration_ = 1000 * Math.sqrt(this.maxRadius_ / 1024);
+    this.updateLayoutCssVars_();
+  }
+
+  /** @private */
+  updateLayoutCssVars_() {
+    const {
+      VAR_SURFACE_WIDTH, VAR_SURFACE_HEIGHT, VAR_FG_SIZE,
+      VAR_LEFT, VAR_TOP, VAR_FG_SCALE
+    } = MDCRippleFoundation.strings;
+
+    this.adapter_.updateCssVariable(VAR_SURFACE_WIDTH, `${this.frame_.width}px`);
+    this.adapter_.updateCssVariable(VAR_SURFACE_HEIGHT, `${this.frame_.height}px`);
+    this.adapter_.updateCssVariable(VAR_FG_SIZE, `${this.initialSize_}px`);
+    this.adapter_.updateCssVariable(VAR_FG_SCALE, this.fgScale_);
+
+    if (this.adapter_.isUnbounded()) {
+      this.unboundedCoords_ = {
+        left: Math.round(this.frame_.width / 2 - this.initialSize_ / 2),
+        top: Math.round(this.frame_.height / 2 - this.initialSize_ / 2)
+      };
+
+      this.adapter_.updateCssVariable(VAR_LEFT, `${this.unboundedCoords_.left}px`);
+      this.adapter_.updateCssVariable(VAR_TOP, `${this.unboundedCoords_.top}px`);
+    }
+  }
+}
+
+exports.default = MDCRippleFoundation;
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * @license
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+const cssClasses = {
+  // Ripple is a special case where the "root" component is really a "mixin" of sorts,
+  // given that it's an 'upgrade' to an existing component. That being said it is the root
+  // CSS class that all other CSS classes derive from.
+  ROOT: 'mdc-ripple-upgraded',
+  UNBOUNDED: 'mdc-ripple-upgraded--unbounded',
+  BG_FOCUSED: 'mdc-ripple-upgraded--background-focused',
+  BG_ACTIVE_FILL: 'mdc-ripple-upgraded--background-active-fill',
+  FG_ACTIVATION: 'mdc-ripple-upgraded--foreground-activation',
+  FG_DEACTIVATION: 'mdc-ripple-upgraded--foreground-deactivation'
+};
+
+const strings = {
+  VAR_SURFACE_WIDTH: '--mdc-ripple-surface-width',
+  VAR_SURFACE_HEIGHT: '--mdc-ripple-surface-height',
+  VAR_FG_SIZE: '--mdc-ripple-fg-size',
+  VAR_LEFT: '--mdc-ripple-left',
+  VAR_TOP: '--mdc-ripple-top',
+  VAR_FG_SCALE: '--mdc-ripple-fg-scale',
+  VAR_FG_TRANSLATE_START: '--mdc-ripple-fg-translate-start',
+  VAR_FG_TRANSLATE_END: '--mdc-ripple-fg-translate-end'
+};
+
+const numbers = {
+  PADDING: 10,
+  INITIAL_ORIGIN_SCALE: 0.6,
+  DEACTIVATION_TIMEOUT_MS: 300,
+  FG_DEACTIVATION_MS: 83
+};
+
+exports.cssClasses = cssClasses;
+exports.strings = strings;
+exports.numbers = numbers;
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MDCToolbar = exports.util = exports.MDCToolbarFoundation = undefined;
+
+var _base = __webpack_require__(10);
+
+var _foundation = __webpack_require__(47);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _util = __webpack_require__(49);
+
+var util = _interopRequireWildcard(_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.MDCToolbarFoundation = _foundation2.default; /**
+                                                      * Copyright 2017 Google Inc. All Rights Reserved.
+                                                      *
+                                                      * Licensed under the Apache License, Version 2.0 (the "License");
+                                                      * you may not use this file except in compliance with the License.
+                                                      * You may obtain a copy of the License at
+                                                      *
+                                                      *      http://www.apache.org/licenses/LICENSE-2.0
+                                                      *
+                                                      * Unless required by applicable law or agreed to in writing, software
+                                                      * distributed under the License is distributed on an "AS IS" BASIS,
+                                                      * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                      * See the License for the specific language governing permissions and
+                                                      * limitations under the License.
+                                                      */
+
+exports.util = util;
+class MDCToolbar extends _base.MDCComponent {
+  static attachTo(root) {
+    return new MDCToolbar(root);
+  }
+
+  get firstRowElement_() {
+    return this.root_.querySelector(_foundation2.default.strings.FIRST_ROW_SELECTOR);
+  }
+
+  get titleElement_() {
+    return this.root_.querySelector(_foundation2.default.strings.TITLE_SELECTOR);
+  }
+
+  set fixedAdjustElement(fixedAdjustElement) {
+    this.fixedAdjustElement_ = fixedAdjustElement;
+    this.foundation_.updateAdjustElementStyles();
+  }
+
+  get fixedAdjustElement() {
+    return this.fixedAdjustElement_;
+  }
+
+  getDefaultFoundation() {
+    return new _foundation2.default({
+      hasClass: className => this.root_.classList.contains(className),
+      addClass: className => this.root_.classList.add(className),
+      removeClass: className => this.root_.classList.remove(className),
+      registerScrollHandler: handler => window.addEventListener('scroll', handler, util.applyPassive()),
+      deregisterScrollHandler: handler => window.removeEventListener('scroll', handler, util.applyPassive()),
+      registerResizeHandler: handler => window.addEventListener('resize', handler),
+      deregisterResizeHandler: handler => window.removeEventListener('resize', handler),
+      getViewportWidth: () => window.innerWidth,
+      getViewportScrollY: () => window.pageYOffset,
+      getOffsetHeight: () => this.root_.offsetHeight,
+      getFirstRowElementOffsetHeight: () => this.firstRowElement_.offsetHeight,
+      notifyChange: evtData => this.emit(_foundation2.default.strings.CHANGE_EVENT, evtData),
+      setStyle: (property, value) => this.root_.style.setProperty(property, value),
+      setStyleForTitleElement: (property, value) => this.titleElement_.style.setProperty(property, value),
+      setStyleForFlexibleRowElement: (property, value) => this.firstRowElement_.style.setProperty(property, value),
+      setStyleForFixedAdjustElement: (property, value) => {
+        if (this.fixedAdjustElement) {
+          this.fixedAdjustElement.style.setProperty(property, value);
+        }
+      }
+    });
+  }
+}
+exports.MDCToolbar = MDCToolbar;
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
+                                                                                                                                                                                                                                                                   * Copyright 2017 Google Inc. All Rights Reserved.
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Licensed under the Apache License, Version 2.0 (the "License");
+                                                                                                                                                                                                                                                                   * you may not use this file except in compliance with the License.
+                                                                                                                                                                                                                                                                   * You may obtain a copy of the License at
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   *      http://www.apache.org/licenses/LICENSE-2.0
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Unless required by applicable law or agreed to in writing, software
+                                                                                                                                                                                                                                                                   * distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                                                                                                                                                                                                   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                                                                                                                                                                                                   * See the License for the specific language governing permissions and
+                                                                                                                                                                                                                                                                   * limitations under the License.
+                                                                                                                                                                                                                                                                   */
+
+
+var _foundation = __webpack_require__(7);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _constants = __webpack_require__(48);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class MDCToolbarFoundation extends _foundation2.default {
+  static get cssClasses() {
+    return _constants.cssClasses;
+  }
+
+  static get strings() {
+    return _constants.strings;
+  }
+
+  static get numbers() {
+    return _constants.numbers;
+  }
+
+  static get defaultAdapter() {
+    return {
+      hasClass: () => /* className: string */ /* boolean */false,
+      addClass: () => /* className: string */{},
+      removeClass: () => /* className: string */{},
+      registerScrollHandler: () => /* handler: EventListener */{},
+      deregisterScrollHandler: () => /* handler: EventListener */{},
+      registerResizeHandler: () => /* handler: EventListener */{},
+      deregisterResizeHandler: () => /* handler: EventListener */{},
+      getViewportWidth: () => /* number */0,
+      getViewportScrollY: () => /* number */0,
+      getOffsetHeight: () => /* number */0,
+      getFirstRowElementOffsetHeight: () => /* number */0,
+      notifyChange: () => /* evtData: {flexibleExpansionRatio: number} */{},
+      setStyle: () => /* property: string, value: string */{},
+      setStyleForTitleElement: () => /* property: string, value: string */{},
+      setStyleForFlexibleRowElement: () => /* property: string, value: string */{},
+      setStyleForFixedAdjustElement: () => /* property: string, value: string */{}
+    };
+  }
+
+  constructor(adapter) {
+    super(_extends(MDCToolbarFoundation.defaultAdapter, adapter));
+    this.resizeHandler_ = () => this.checkRowHeight_();
+    this.scrollHandler_ = () => this.updateToolbarStyles_();
+    this.checkRowHeightFrame_ = 0;
+    this.scrollFrame_ = 0;
+    this.executedLastChange_ = false;
+
+    this.calculations_ = {
+      toolbarRowHeight: 0,
+      // Calculated Height ratio. We use ratio to calculate corresponding heights in resize event.
+      toolbarRatio: 0, // The ratio of toolbar height to row height
+      flexibleExpansionRatio: 0, // The ratio of flexible space height to row height
+      maxTranslateYRatio: 0, // The ratio of max toolbar move up distance to row height
+      scrollThresholdRatio: 0, // The ratio of max scrollTop that we should listen to to row height
+      // Derived Heights based on the above key ratios.
+      toolbarHeight: 0,
+      flexibleExpansionHeight: 0, // Flexible row minus toolbar height (derived)
+      maxTranslateYDistance: 0, // When toolbar only fix last row (derived)
+      scrollThreshold: 0
+    };
+    // Toolbar fixed behavior
+    // If toolbar is fixed
+    this.fixed_ = false;
+    // If fixed is targeted only at the last row
+    this.fixedLastrow_ = false;
+    // Toolbar flexible behavior
+    // If the first row is flexible
+    this.hasFlexibleRow_ = false;
+    // If use the default behavior
+    this.useFlexDefaultBehavior_ = false;
+  }
+
+  init() {
+    this.fixed_ = this.adapter_.hasClass(MDCToolbarFoundation.cssClasses.FIXED);
+    this.fixedLastrow_ = this.adapter_.hasClass(MDCToolbarFoundation.cssClasses.FIXED_LASTROW) & this.fixed_;
+    this.hasFlexibleRow_ = this.adapter_.hasClass(MDCToolbarFoundation.cssClasses.TOOLBAR_ROW_FLEXIBLE);
+    if (this.hasFlexibleRow_) {
+      this.useFlexDefaultBehavior_ = this.adapter_.hasClass(MDCToolbarFoundation.cssClasses.FLEXIBLE_DEFAULT_BEHAVIOR);
+    }
+    this.initKeyRatio_();
+    this.setKeyHeights_();
+    this.adapter_.registerResizeHandler(this.resizeHandler_);
+    this.adapter_.registerScrollHandler(this.scrollHandler_);
+  }
+
+  destroy() {
+    this.adapter_.deregisterResizeHandler(this.resizeHandler_);
+    this.adapter_.deregisterScrollHandler(this.scrollHandler_);
+  }
+
+  updateAdjustElementStyles() {
+    if (this.fixed_) {
+      this.adapter_.setStyleForFixedAdjustElement('margin-top', `${this.calculations_.toolbarHeight}px`);
+    }
+  }
+
+  getFlexibleExpansionRatio_(scrollTop) {
+    // To prevent division by zero when there is no flexibleExpansionHeight
+    const delta = 0.0001;
+    return Math.max(0, 1 - scrollTop / (this.calculations_.flexibleExpansionHeight + delta));
+  }
+
+  checkRowHeight_() {
+    cancelAnimationFrame(this.checkRowHeightFrame_);
+    this.checkRowHeightFrame_ = requestAnimationFrame(() => this.setKeyHeights_());
+  }
+
+  setKeyHeights_() {
+    const newToolbarRowHeight = this.getRowHeight_();
+    if (newToolbarRowHeight !== this.calculations_.toolbarRowHeight) {
+      this.calculations_.toolbarRowHeight = newToolbarRowHeight;
+      this.calculations_.toolbarHeight = this.calculations_.toolbarRatio * this.calculations_.toolbarRowHeight;
+      this.calculations_.flexibleExpansionHeight = this.calculations_.flexibleExpansionRatio * this.calculations_.toolbarRowHeight;
+      this.calculations_.maxTranslateYDistance = this.calculations_.maxTranslateYRatio * this.calculations_.toolbarRowHeight;
+      this.calculations_.scrollThreshold = this.calculations_.scrollThresholdRatio * this.calculations_.toolbarRowHeight;
+      this.updateAdjustElementStyles();
+      this.updateToolbarStyles_();
+    }
+  }
+
+  updateToolbarStyles_() {
+    cancelAnimationFrame(this.scrollFrame_);
+    this.scrollFrame_ = requestAnimationFrame(() => {
+      const scrollTop = this.adapter_.getViewportScrollY();
+      const hasScrolledOutOfThreshold = this.scrolledOutOfThreshold_(scrollTop);
+
+      if (hasScrolledOutOfThreshold && this.executedLastChange_) {
+        return;
+      }
+
+      const flexibleExpansionRatio = this.getFlexibleExpansionRatio_(scrollTop);
+
+      this.updateToolbarFlexibleState_(flexibleExpansionRatio);
+      if (this.fixedLastrow_) {
+        this.updateToolbarFixedState_(scrollTop);
+      }
+      if (this.hasFlexibleRow_) {
+        this.updateFlexibleRowElementStyles_(flexibleExpansionRatio);
+      }
+      this.executedLastChange_ = hasScrolledOutOfThreshold;
+      this.adapter_.notifyChange({ flexibleExpansionRatio: flexibleExpansionRatio });
+    });
+  }
+
+  scrolledOutOfThreshold_(scrollTop) {
+    return scrollTop > this.calculations_.scrollThreshold;
+  }
+
+  initKeyRatio_() {
+    const toolbarRowHeight = this.getRowHeight_();
+    const firstRowMaxRatio = this.adapter_.getFirstRowElementOffsetHeight() / toolbarRowHeight;
+    this.calculations_.toolbarRatio = this.adapter_.getOffsetHeight() / toolbarRowHeight;
+    this.calculations_.flexibleExpansionRatio = firstRowMaxRatio - 1;
+    this.calculations_.maxTranslateYRatio = this.fixedLastrow_ ? this.calculations_.toolbarRatio - firstRowMaxRatio : 0;
+    this.calculations_.scrollThresholdRatio = (this.fixedLastrow_ ? this.calculations_.toolbarRatio : firstRowMaxRatio) - 1;
+  }
+
+  getRowHeight_() {
+    const breakpoint = MDCToolbarFoundation.numbers.TOOLBAR_MOBILE_BREAKPOINT;
+    return this.adapter_.getViewportWidth() < breakpoint ? MDCToolbarFoundation.numbers.TOOLBAR_ROW_MOBILE_HEIGHT : MDCToolbarFoundation.numbers.TOOLBAR_ROW_HEIGHT;
+  }
+
+  updateToolbarFlexibleState_(flexibleExpansionRatio) {
+    this.adapter_.removeClass(MDCToolbarFoundation.cssClasses.FLEXIBLE_MAX);
+    this.adapter_.removeClass(MDCToolbarFoundation.cssClasses.FLEXIBLE_MIN);
+    if (flexibleExpansionRatio === 1) {
+      this.adapter_.addClass(MDCToolbarFoundation.cssClasses.FLEXIBLE_MAX);
+    } else if (flexibleExpansionRatio === 0) {
+      this.adapter_.addClass(MDCToolbarFoundation.cssClasses.FLEXIBLE_MIN);
+    }
+  }
+
+  updateToolbarFixedState_(scrollTop) {
+    const translateDistance = Math.max(0, Math.min(scrollTop - this.calculations_.flexibleExpansionHeight, this.calculations_.maxTranslateYDistance));
+    this.adapter_.setStyle('transform', `translateY(${-translateDistance}px)`);
+
+    if (translateDistance === this.calculations_.maxTranslateYDistance) {
+      this.adapter_.addClass(MDCToolbarFoundation.cssClasses.FIXED_AT_LAST_ROW);
+    } else {
+      this.adapter_.removeClass(MDCToolbarFoundation.cssClasses.FIXED_AT_LAST_ROW);
+    }
+  }
+
+  updateFlexibleRowElementStyles_(flexibleExpansionRatio) {
+    if (this.fixed_) {
+      const height = this.calculations_.flexibleExpansionHeight * flexibleExpansionRatio;
+      this.adapter_.setStyleForFlexibleRowElement('height', `${height + this.calculations_.toolbarRowHeight}px`);
+    }
+    if (this.useFlexDefaultBehavior_) {
+      this.updateElementStylesDefaultBehavior_(flexibleExpansionRatio);
+    }
+  }
+
+  updateElementStylesDefaultBehavior_(flexibleExpansionRatio) {
+    const maxTitleSize = MDCToolbarFoundation.numbers.MAX_TITLE_SIZE;
+    const minTitleSize = MDCToolbarFoundation.numbers.MIN_TITLE_SIZE;
+    const currentTitleSize = (maxTitleSize - minTitleSize) * flexibleExpansionRatio + minTitleSize;
+
+    this.adapter_.setStyleForTitleElement('font-size', `${currentTitleSize}rem`);
+  }
+}
+exports.default = MDCToolbarFoundation;
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * Copyright 2017 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+const cssClasses = exports.cssClasses = {
+  FIXED: 'mdc-toolbar--fixed',
+  FIXED_LASTROW: 'mdc-toolbar--fixed-lastrow-only',
+  FIXED_AT_LAST_ROW: 'mdc-toolbar--fixed-at-last-row',
+  TOOLBAR_ROW_FLEXIBLE: 'mdc-toolbar--flexible',
+  FLEXIBLE_DEFAULT_BEHAVIOR: 'mdc-toolbar--flexible-default-behavior',
+  FLEXIBLE_MAX: 'mdc-toolbar--flexible-space-maximized',
+  FLEXIBLE_MIN: 'mdc-toolbar--flexible-space-minimized'
+};
+
+const strings = exports.strings = {
+  TITLE_SELECTOR: '.mdc-toolbar__title',
+  FIRST_ROW_SELECTOR: '.mdc-toolbar__row:first-child',
+  CHANGE_EVENT: 'MDCToolbar:change'
+};
+
+const numbers = exports.numbers = {
+  MAX_TITLE_SIZE: 2.125,
+  MIN_TITLE_SIZE: 1.25,
+  TOOLBAR_ROW_HEIGHT: 64,
+  TOOLBAR_ROW_MOBILE_HEIGHT: 56,
+  TOOLBAR_MOBILE_BREAKPOINT: 600
+};
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.applyPassive = applyPassive;
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+let supportsPassive_;
+
+// Determine whether the current browser supports passive event listeners, and if so, use them.
+function applyPassive(globalObj = window, forceRefresh = false) {
+  if (supportsPassive_ === undefined || forceRefresh) {
+    let isSupported = false;
+    try {
+      globalObj.document.addEventListener('test', null, { get passive() {
+          isSupported = true;
+        } });
+    } catch (e) {}
+
+    supportsPassive_ = isSupported;
+  }
+
+  return supportsPassive_ ? { passive: true } : false;
+}
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _MaterialComponent = __webpack_require__(3);
+
+var _MaterialComponent2 = _interopRequireDefault(_MaterialComponent);
+
+var _temporary = __webpack_require__(51);
+
+var _persistent = __webpack_require__(56);
+
+var _List = __webpack_require__(16);
+
+var _List2 = _interopRequireDefault(_List);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+/*
+ * Default props for drawers
+ */
+const defaultProps = {
+  open: false
+};
+
+class TemporaryDrawer extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "temporary-drawer";
+    this._open = this._open.bind(this);
+    this._close = this._close.bind(this);
+  }
+  _open() {
+    if (this.props.onOpen) {
+      this.props.onOpen();
+    }
+  }
+  _close() {
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
+  }
+  componentDidMount() {
+    this.MDComponent = _temporary.MDCTemporaryDrawer.attachTo(this.control);
+    this.MDComponent.listen("MDCTemporaryDrawer:open", this._open);
+    this.MDComponent.listen("MDCTemporaryDrawer:close", this._close);
+    toggleDrawer(defaultProps, this.props, this.MDComponent);
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCTemporaryDrawer:close", this._close);
+    this.MDComponent.unlisten("MDCTemporaryDrawer:open", this._open);
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    toggleDrawer(this.props, nextProps, this.MDComponent);
+  }
+  materialDom(props) {
+    return (0, _preact.h)("aside", _extends({
+      className: "mdc-typography",
+      ref: control => {
+        this.control = control;
+      }
+    }, props), (0, _preact.h)("nav", { className: "mdc-temporary-drawer__drawer" }, props.children));
+  }
+}
+
+class TemporaryDrawerHeader extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "temporary-drawer__header";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("header", _extends({
+      ref: control => {
+        this.control = control;
+      }
+    }, props), (0, _preact.h)("div", { className: "mdc-temporary-drawer__header-content" }, props.children));
+  }
+}
+
+class TemporaryDrawerContent extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "temporary-drawer__content";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("nav", _extends({
+      className: "mdc-list",
+      ref: control => {
+        this.control = control;
+      }
+    }, props), props.children);
+  }
+}
+
+/**
+ * @prop spacer = false
+ */
+class PermanentDrawer extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "permanent-drawer";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("nav", _extends({ className: "mdc-typography" }, props), props.spacer && (0, _preact.h)("div", { className: "mdc-permanent-drawer__toolbar-spacer" }), (0, _preact.h)("div", { className: "mdc-permanent-drawer__content" }, (0, _preact.h)("nav", { className: "mdc-list" }, props.children)));
+  }
+}
+
+class PermanentDrawerHeader extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "permanent-drawer__header";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("header", _extends({
+      ref: control => {
+        this.control = control;
+      }
+    }, props), (0, _preact.h)("div", { className: "mdc-permanent-drawer__header-content" }, props.children));
+  }
+}
+
+class PermanentDrawerContent extends TemporaryDrawerContent {
+  constructor() {
+    super();
+    this.componentName = "permanent-drawer__content";
+  }
+}
+
+class PersistentDrawer extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "persistent-drawer";
+    this._open = this._open.bind(this);
+    this._close = this._close.bind(this);
+  }
+  _open() {
+    if (this.props.onOpen) {
+      this.props.onOpen();
+    }
+  }
+  _close() {
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
+  }
+  componentDidMount() {
+    this.MDComponent = _persistent.MDCPersistentDrawer.attachTo(this.control);
+    this.MDComponent.listen("MDCPersistentDrawer:open", this._open);
+    this.MDComponent.listen("MDCPersistentDrawer:close", this._close);
+    toggleDrawer(defaultProps, this.props, this.MDComponent);
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCPersistentDrawer:close", this._close);
+    this.MDComponent.unlisten("MDCPersistentDrawer:open", this._open);
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  componentWillUpdate(nextProps) {
+    toggleDrawer(this.props, nextProps, this.MDComponent);
+  }
+  materialDom(props) {
+    return (0, _preact.h)("aside", _extends({
+      className: "mdc-typography",
+      ref: control => {
+        this.control = control;
+      }
+    }, props), (0, _preact.h)("nav", { className: "mdc-persistent-drawer__drawer" }));
+  }
+}
+
+class PersistentDrawerHeader extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "persistent-drawer__header";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("header", _extends({
+      ref: control => {
+        this.control = control;
+      }
+    }, props), (0, _preact.h)("div", { className: "mdc-persistent-drawer__header-content" }, props.children));
+  }
+}
+
+class PersistentDrawerContent extends TemporaryDrawerContent {
+  constructor() {
+    super();
+    this.componentName = "persistent-drawer__content";
+  }
+}
+
+/**
+ * @prop selected = false
+ */
+class DrawerItem extends _List2.default.LinkItem {
+  constructor() {
+    super();
+  }
+  materialDom(props) {
+    const returnedNode = super.materialDom(props);
+    /* Logic to add selected class */
+    if (props.selected) {
+      returnedNode.attributes["className"] = "mdc-temporary-drawer--selected mdc-permanent-drawer--selected";
+    }
+    return returnedNode;
+  }
+}
+
+/*
+ * Function to add declarative opening/closing to drawer
+ */
+function toggleDrawer(oldprops, newprops, drawer) {
+  if ("open" in oldprops && "open" in newprops && oldprops.open !== newprops.open) {
+    drawer.open = newprops.open;
+  }
+}
+
+let Drawer = {};
+
+Drawer.DrawerItem = DrawerItem;
+Drawer.TemporaryDrawer = TemporaryDrawer;
+Drawer.TemporaryDrawerHeader = TemporaryDrawerHeader;
+Drawer.TemporaryDrawerContent = TemporaryDrawerContent;
+Drawer.PermanentDrawer = PermanentDrawer;
+Drawer.PermanentDrawerHeader = PermanentDrawerHeader;
+Drawer.PermanentDrawerContent = PermanentDrawerContent;
+Drawer.PersistentDrawer = PersistentDrawer;
+Drawer.PersistentDrawerHeader = PersistentDrawerHeader;
+Drawer.PersistentDrawerContent = PersistentDrawerContent;
+
+exports.default = Drawer;
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MDCTemporaryDrawer = exports.util = exports.MDCTemporaryDrawerFoundation = undefined;
+
+var _base = __webpack_require__(10);
+
+var _foundation = __webpack_require__(52);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _util = __webpack_require__(23);
+
+var util = _interopRequireWildcard(_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.MDCTemporaryDrawerFoundation = _foundation2.default; /**
+                                                              * Copyright 2016 Google Inc. All Rights Reserved.
+                                                              *
+                                                              * Licensed under the Apache License, Version 2.0 (the "License");
+                                                              * you may not use this file except in compliance with the License.
+                                                              * You may obtain a copy of the License at
+                                                              *
+                                                              *      http://www.apache.org/licenses/LICENSE-2.0
+                                                              *
+                                                              * Unless required by applicable law or agreed to in writing, software
+                                                              * distributed under the License is distributed on an "AS IS" BASIS,
+                                                              * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                              * See the License for the specific language governing permissions and
+                                                              * limitations under the License.
+                                                              */
+
+exports.util = util;
+class MDCTemporaryDrawer extends _base.MDCComponent {
+  static attachTo(root) {
+    return new MDCTemporaryDrawer(root);
+  }
+
+  get open() {
+    return this.foundation_.isOpen();
+  }
+
+  set open(value) {
+    if (value) {
+      this.foundation_.open();
+    } else {
+      this.foundation_.close();
+    }
+  }
+
+  /* Return the drawer element inside the component. */
+  get drawer() {
+    return this.root_.querySelector(_foundation2.default.strings.DRAWER_SELECTOR);
+  }
+
+  getDefaultFoundation() {
+    const { FOCUSABLE_ELEMENTS, OPACITY_VAR_NAME } = _foundation2.default.strings;
+
+    return new _foundation2.default({
+      addClass: className => this.root_.classList.add(className),
+      removeClass: className => this.root_.classList.remove(className),
+      hasClass: className => this.root_.classList.contains(className),
+      addBodyClass: className => document.body.classList.add(className),
+      removeBodyClass: className => document.body.classList.remove(className),
+      hasNecessaryDom: () => Boolean(this.drawer),
+      registerInteractionHandler: (evt, handler) => this.root_.addEventListener(util.remapEvent(evt), handler, util.applyPassive()),
+      deregisterInteractionHandler: (evt, handler) => this.root_.removeEventListener(util.remapEvent(evt), handler, util.applyPassive()),
+      registerDrawerInteractionHandler: (evt, handler) => this.drawer.addEventListener(util.remapEvent(evt), handler),
+      deregisterDrawerInteractionHandler: (evt, handler) => this.drawer.removeEventListener(util.remapEvent(evt), handler),
+      registerTransitionEndHandler: handler => this.drawer.addEventListener('transitionend', handler),
+      deregisterTransitionEndHandler: handler => this.drawer.removeEventListener('transitionend', handler),
+      registerDocumentKeydownHandler: handler => document.addEventListener('keydown', handler),
+      deregisterDocumentKeydownHandler: handler => document.removeEventListener('keydown', handler),
+      getDrawerWidth: () => this.drawer.offsetWidth,
+      setTranslateX: value => this.drawer.style.setProperty(util.getTransformPropertyName(), value === null ? null : `translateX(${value}px)`),
+      updateCssVariable: value => {
+        if (util.supportsCssCustomProperties()) {
+          this.root_.style.setProperty(OPACITY_VAR_NAME, value);
+        }
+      },
+      getFocusableElements: () => this.drawer.querySelectorAll(FOCUSABLE_ELEMENTS),
+      saveElementTabState: el => util.saveElementTabState(el),
+      restoreElementTabState: el => util.restoreElementTabState(el),
+      makeElementUntabbable: el => el.setAttribute('tabindex', -1),
+      notifyOpen: () => this.emit(_foundation2.default.strings.OPEN_EVENT),
+      notifyClose: () => this.emit(_foundation2.default.strings.CLOSE_EVENT),
+      isRtl: () => getComputedStyle(this.root_).getPropertyValue('direction') === 'rtl',
+      isDrawer: el => el === this.drawer
+    });
+  }
+}
+exports.MDCTemporaryDrawer = MDCTemporaryDrawer;
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
+                                                                                                                                                                                                                                                                   * Copyright 2016 Google Inc. All Rights Reserved.
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Licensed under the Apache License, Version 2.0 (the "License");
+                                                                                                                                                                                                                                                                   * you may not use this file except in compliance with the License.
+                                                                                                                                                                                                                                                                   * You may obtain a copy of the License at
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   *      http://www.apache.org/licenses/LICENSE-2.0
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Unless required by applicable law or agreed to in writing, software
+                                                                                                                                                                                                                                                                   * distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                                                                                                                                                                                                   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                                                                                                                                                                                                   * See the License for the specific language governing permissions and
+                                                                                                                                                                                                                                                                   * limitations under the License.
+                                                                                                                                                                                                                                                                   */
+
+var _slidable = __webpack_require__(11);
+
+var _constants = __webpack_require__(55);
+
+class MDCTemporaryDrawerFoundation extends _slidable.MDCSlidableDrawerFoundation {
+  static get cssClasses() {
+    return _constants.cssClasses;
+  }
+
+  static get strings() {
+    return _constants.strings;
+  }
+
+  static get defaultAdapter() {
+    return _extends(_slidable.MDCSlidableDrawerFoundation.defaultAdapter, {
+      addBodyClass: () => /* className: string */{},
+      removeBodyClass: () => /* className: string */{},
+      isDrawer: () => false,
+      updateCssVariable: () => /* value: string */{}
+    });
+  }
+
+  constructor(adapter) {
+    super(_extends(MDCTemporaryDrawerFoundation.defaultAdapter, adapter), MDCTemporaryDrawerFoundation.cssClasses.ROOT, MDCTemporaryDrawerFoundation.cssClasses.ANIMATING, MDCTemporaryDrawerFoundation.cssClasses.OPEN);
+
+    this.componentClickHandler_ = () => this.close();
+  }
+
+  init() {
+    super.init();
+
+    // Make browser aware of custom property being used in this element.
+    // Workaround for certain types of hard-to-reproduce heisenbugs.
+    this.adapter_.updateCssVariable(0);
+    this.adapter_.registerInteractionHandler('click', this.componentClickHandler_);
+  }
+
+  destroy() {
+    super.destroy();
+
+    this.adapter_.deregisterInteractionHandler('click', this.componentClickHandler_);
+    this.enableScroll_();
+  }
+
+  open() {
+    this.disableScroll_();
+    // Make sure custom property values are cleared before starting.
+    this.adapter_.updateCssVariable('');
+
+    super.open();
+  }
+
+  close() {
+    // Make sure custom property values are cleared before making any changes.
+    this.adapter_.updateCssVariable('');
+
+    super.close();
+  }
+
+  prepareForTouchEnd_() {
+    super.prepareForTouchEnd_();
+
+    this.adapter_.updateCssVariable('');
+  }
+
+  updateDrawer_() {
+    super.updateDrawer_();
+
+    const newOpacity = Math.max(0, 1 + this.direction_ * (this.newPosition_ / this.drawerWidth_));
+    this.adapter_.updateCssVariable(newOpacity);
+  }
+
+  isRootTransitioningEventTarget_(el) {
+    return this.adapter_.isDrawer(el);
+  }
+
+  handleTransitionEnd_(evt) {
+    super.handleTransitionEnd_(evt);
+    if (!this.isOpen_) {
+      this.enableScroll_();
+    }
+  }
+
+  disableScroll_() {
+    this.adapter_.addBodyClass(_constants.cssClasses.SCROLL_LOCK);
+  }
+
+  enableScroll_() {
+    this.adapter_.removeBodyClass(_constants.cssClasses.SCROLL_LOCK);
+  }
+}
+exports.default = MDCTemporaryDrawerFoundation;
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+const FOCUSABLE_ELEMENTS = exports.FOCUSABLE_ELEMENTS = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), ' + 'button:not([disabled]), iframe, object, embed, [tabindex], [contenteditable]';
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MDCSlidableDrawerFoundation = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
+                                                                                                                                                                                                                                                                   * Copyright 2016 Google Inc. All Rights Reserved.
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Licensed under the Apache License, Version 2.0 (the "License");
+                                                                                                                                                                                                                                                                   * you may not use this file except in compliance with the License.
+                                                                                                                                                                                                                                                                   * You may obtain a copy of the License at
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   *      http://www.apache.org/licenses/LICENSE-2.0
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Unless required by applicable law or agreed to in writing, software
+                                                                                                                                                                                                                                                                   * distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                                                                                                                                                                                                   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                                                                                                                                                                                                   * See the License for the specific language governing permissions and
+                                                                                                                                                                                                                                                                   * limitations under the License.
+                                                                                                                                                                                                                                                                   */
+
+var _base = __webpack_require__(10);
+
+class MDCSlidableDrawerFoundation extends _base.MDCFoundation {
+  static get defaultAdapter() {
+    return {
+      addClass: () => /* className: string */{},
+      removeClass: () => /* className: string */{},
+      hasClass: () => /* className: string */{},
+      hasNecessaryDom: () => /* boolean */false,
+      registerInteractionHandler: () => /* evt: string, handler: EventListener */{},
+      deregisterInteractionHandler: () => /* evt: string, handler: EventListener */{},
+      registerDrawerInteractionHandler: () => /* evt: string, handler: EventListener */{},
+      deregisterDrawerInteractionHandler: () => /* evt: string, handler: EventListener */{},
+      registerTransitionEndHandler: () => /* handler: EventListener */{},
+      deregisterTransitionEndHandler: () => /* handler: EventListener */{},
+      registerDocumentKeydownHandler: () => /* handler: EventListener */{},
+      deregisterDocumentKeydownHandler: () => /* handler: EventListener */{},
+      setTranslateX: () => /* value: number | null */{},
+      getFocusableElements: () => /* NodeList */{},
+      saveElementTabState: () => /* el: Element */{},
+      restoreElementTabState: () => /* el: Element */{},
+      makeElementUntabbable: () => /* el: Element */{},
+      notifyOpen: () => {},
+      notifyClose: () => {},
+      isRtl: () => /* boolean */false,
+      getDrawerWidth: () => /* number */0
+    };
+  }
+
+  constructor(adapter, rootCssClass, animatingCssClass, openCssClass) {
+    super(_extends(MDCSlidableDrawerFoundation.defaultAdapter, adapter));
+
+    this.rootCssClass_ = rootCssClass;
+    this.animatingCssClass_ = animatingCssClass;
+    this.openCssClass_ = openCssClass;
+
+    this.transitionEndHandler_ = evt => this.handleTransitionEnd_(evt);
+
+    this.inert_ = false;
+
+    this.drawerClickHandler_ = evt => evt.stopPropagation();
+    this.componentTouchStartHandler_ = evt => this.handleTouchStart_(evt);
+    this.componentTouchMoveHandler_ = evt => this.handleTouchMove_(evt);
+    this.componentTouchEndHandler_ = evt => this.handleTouchEnd_(evt);
+    this.documentKeydownHandler_ = evt => {
+      if (evt.key && evt.key === 'Escape' || evt.keyCode === 27) {
+        this.close();
+      }
+    };
+  }
+
+  init() {
+    const ROOT = this.rootCssClass_;
+    const OPEN = this.openCssClass_;
+
+    if (!this.adapter_.hasClass(ROOT)) {
+      throw new Error(`${ROOT} class required in root element.`);
+    }
+
+    if (!this.adapter_.hasNecessaryDom()) {
+      throw new Error(`Required DOM nodes missing in ${ROOT} component.`);
+    }
+
+    if (this.adapter_.hasClass(OPEN)) {
+      this.isOpen_ = true;
+    } else {
+      this.detabinate_();
+      this.isOpen_ = false;
+    }
+
+    this.adapter_.registerDrawerInteractionHandler('click', this.drawerClickHandler_);
+    this.adapter_.registerDrawerInteractionHandler('touchstart', this.componentTouchStartHandler_);
+    this.adapter_.registerInteractionHandler('touchmove', this.componentTouchMoveHandler_);
+    this.adapter_.registerInteractionHandler('touchend', this.componentTouchEndHandler_);
+  }
+
+  destroy() {
+    this.adapter_.deregisterDrawerInteractionHandler('click', this.drawerClickHandler_);
+    this.adapter_.deregisterDrawerInteractionHandler('touchstart', this.componentTouchStartHandler_);
+    this.adapter_.deregisterInteractionHandler('touchmove', this.componentTouchMoveHandler_);
+    this.adapter_.deregisterInteractionHandler('touchend', this.componentTouchEndHandler_);
+    // Deregister the document keydown handler just in case the component is destroyed while the menu is open.
+    this.adapter_.deregisterDocumentKeydownHandler(this.documentKeydownHandler_);
+  }
+
+  open() {
+    this.adapter_.registerTransitionEndHandler(this.transitionEndHandler_);
+    this.adapter_.registerDocumentKeydownHandler(this.documentKeydownHandler_);
+    this.adapter_.addClass(this.animatingCssClass_);
+    this.adapter_.addClass(this.openCssClass_);
+    this.retabinate_();
+    // Debounce multiple calls
+    if (!this.isOpen_) {
+      this.adapter_.notifyOpen();
+    }
+    this.isOpen_ = true;
+  }
+
+  close() {
+    this.adapter_.deregisterDocumentKeydownHandler(this.documentKeydownHandler_);
+    this.adapter_.registerTransitionEndHandler(this.transitionEndHandler_);
+    this.adapter_.addClass(this.animatingCssClass_);
+    this.adapter_.removeClass(this.openCssClass_);
+    this.detabinate_();
+    // Debounce multiple calls
+    if (this.isOpen_) {
+      this.adapter_.notifyClose();
+    }
+    this.isOpen_ = false;
+  }
+
+  isOpen() {
+    return this.isOpen_;
+  }
+
+  /**
+   *  Render all children of the drawer inert when it's closed.
+   */
+  detabinate_() {
+    if (this.inert_) {
+      return;
+    }
+
+    const elements = this.adapter_.getFocusableElements();
+    if (elements) {
+      for (let i = 0; i < elements.length; i++) {
+        this.adapter_.saveElementTabState(elements[i]);
+        this.adapter_.makeElementUntabbable(elements[i]);
+      }
+    }
+
+    this.inert_ = true;
+  }
+
+  /**
+   *  Make all children of the drawer tabbable again when it's open.
+   */
+  retabinate_() {
+    if (!this.inert_) {
+      return;
+    }
+
+    const elements = this.adapter_.getFocusableElements();
+    if (elements) {
+      for (let i = 0; i < elements.length; i++) {
+        this.adapter_.restoreElementTabState(elements[i]);
+      }
+    }
+
+    this.inert_ = false;
+  }
+
+  handleTouchStart_(evt) {
+    if (!this.adapter_.hasClass(this.openCssClass_)) {
+      return;
+    }
+    if (evt.pointerType && evt.pointerType !== 'touch') {
+      return;
+    }
+
+    this.direction_ = this.adapter_.isRtl() ? -1 : 1;
+    this.drawerWidth_ = this.adapter_.getDrawerWidth();
+    this.startX_ = evt.touches ? evt.touches[0].pageX : evt.pageX;
+    this.currentX_ = this.startX_;
+
+    this.updateRaf_ = requestAnimationFrame(this.updateDrawer_.bind(this));
+  }
+
+  handleTouchMove_(evt) {
+    if (evt.pointerType && evt.pointerType !== 'touch') {
+      return;
+    }
+
+    this.currentX_ = evt.touches ? evt.touches[0].pageX : evt.pageX;
+  }
+
+  handleTouchEnd_(evt) {
+    if (evt.pointerType && evt.pointerType !== 'touch') {
+      return;
+    }
+
+    this.prepareForTouchEnd_();
+
+    // Did the user close the drawer by more than 50%?
+    if (Math.abs(this.newPosition_ / this.drawerWidth_) >= 0.5) {
+      this.close();
+    } else {
+      // Triggering an open here means we'll get a nice animation back to the fully open state.
+      this.open();
+    }
+  }
+
+  prepareForTouchEnd_() {
+    cancelAnimationFrame(this.updateRaf_);
+    this.adapter_.setTranslateX(null);
+  }
+
+  updateDrawer_() {
+    this.updateRaf_ = requestAnimationFrame(this.updateDrawer_.bind(this));
+    this.adapter_.setTranslateX(this.newPosition_);
+  }
+
+  get newPosition_() {
+    let newPos = null;
+
+    if (this.direction_ === 1) {
+      newPos = Math.min(0, this.currentX_ - this.startX_);
+    } else {
+      newPos = Math.max(0, this.currentX_ - this.startX_);
+    }
+
+    return newPos;
+  }
+
+  isRootTransitioningEventTarget_() {
+    // Classes extending MDCSlidableDrawerFoundation should implement this method to return true or false
+    // if the event target is the root event target currently transitioning.
+    return false;
+  }
+
+  handleTransitionEnd_(evt) {
+    if (this.isRootTransitioningEventTarget_(evt.target)) {
+      this.adapter_.removeClass(this.animatingCssClass_);
+      this.adapter_.deregisterTransitionEndHandler(this.transitionEndHandler_);
+    }
+  }
+}
+exports.MDCSlidableDrawerFoundation = MDCSlidableDrawerFoundation;
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.strings = exports.cssClasses = undefined;
+
+var _slidable = __webpack_require__(11);
+
+const cssClasses = exports.cssClasses = {
+  ROOT: 'mdc-temporary-drawer',
+  OPEN: 'mdc-temporary-drawer--open',
+  ANIMATING: 'mdc-temporary-drawer--animating',
+  SCROLL_LOCK: 'mdc-drawer-scroll-lock'
+}; /**
+    * Copyright 2016 Google Inc. All Rights Reserved.
+    *
+    * Licensed under the Apache License, Version 2.0 (the "License");
+    * you may not use this file except in compliance with the License.
+    * You may obtain a copy of the License at
+    *
+    *      http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing, software
+    * distributed under the License is distributed on an "AS IS" BASIS,
+    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    * See the License for the specific language governing permissions and
+    * limitations under the License.
+    */
+
+const strings = exports.strings = {
+  DRAWER_SELECTOR: '.mdc-temporary-drawer__drawer',
+  OPACITY_VAR_NAME: '--mdc-temporary-drawer-opacity',
+  FOCUSABLE_ELEMENTS: _slidable.FOCUSABLE_ELEMENTS,
+  OPEN_EVENT: 'MDCTemporaryDrawer:open',
+  CLOSE_EVENT: 'MDCTemporaryDrawer:close'
+};
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MDCPersistentDrawer = exports.util = exports.MDCPersistentDrawerFoundation = undefined;
+
+var _base = __webpack_require__(10);
+
+var _foundation = __webpack_require__(57);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _util = __webpack_require__(23);
+
+var util = _interopRequireWildcard(_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.MDCPersistentDrawerFoundation = _foundation2.default; /**
+                                                               * Copyright 2016 Google Inc. All Rights Reserved.
+                                                               *
+                                                               * Licensed under the Apache License, Version 2.0 (the "License");
+                                                               * you may not use this file except in compliance with the License.
+                                                               * You may obtain a copy of the License at
+                                                               *
+                                                               *      http://www.apache.org/licenses/LICENSE-2.0
+                                                               *
+                                                               * Unless required by applicable law or agreed to in writing, software
+                                                               * distributed under the License is distributed on an "AS IS" BASIS,
+                                                               * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                               * See the License for the specific language governing permissions and
+                                                               * limitations under the License.
+                                                               */
+
+exports.util = util;
+class MDCPersistentDrawer extends _base.MDCComponent {
+  static attachTo(root) {
+    return new MDCPersistentDrawer(root);
+  }
+
+  get open() {
+    return this.foundation_.isOpen();
+  }
+
+  set open(value) {
+    if (value) {
+      this.foundation_.open();
+    } else {
+      this.foundation_.close();
+    }
+  }
+
+  // Return the drawer element inside the component.
+  get drawer() {
+    return this.root_.querySelector(_foundation2.default.strings.DRAWER_SELECTOR);
+  }
+
+  getDefaultFoundation() {
+    const { FOCUSABLE_ELEMENTS } = _foundation2.default.strings;
+
+    return new _foundation2.default({
+      addClass: className => this.root_.classList.add(className),
+      removeClass: className => this.root_.classList.remove(className),
+      hasClass: className => this.root_.classList.contains(className),
+      hasNecessaryDom: () => Boolean(this.drawer),
+      registerInteractionHandler: (evt, handler) => this.root_.addEventListener(util.remapEvent(evt), handler, util.applyPassive()),
+      deregisterInteractionHandler: (evt, handler) => this.root_.removeEventListener(util.remapEvent(evt), handler, util.applyPassive()),
+      registerDrawerInteractionHandler: (evt, handler) => this.drawer.addEventListener(util.remapEvent(evt), handler),
+      deregisterDrawerInteractionHandler: (evt, handler) => this.drawer.removeEventListener(util.remapEvent(evt), handler),
+      registerTransitionEndHandler: handler => this.root_.addEventListener('transitionend', handler),
+      deregisterTransitionEndHandler: handler => this.root_.removeEventListener('transitionend', handler),
+      registerDocumentKeydownHandler: handler => document.addEventListener('keydown', handler),
+      deregisterDocumentKeydownHandler: handler => document.removeEventListener('keydown', handler),
+      getDrawerWidth: () => this.drawer.offsetWidth,
+      setTranslateX: value => this.drawer.style.setProperty(util.getTransformPropertyName(), value === null ? null : `translateX(${value}px)`),
+      getFocusableElements: () => this.drawer.querySelectorAll(FOCUSABLE_ELEMENTS),
+      saveElementTabState: el => util.saveElementTabState(el),
+      restoreElementTabState: el => util.restoreElementTabState(el),
+      makeElementUntabbable: el => el.setAttribute('tabindex', -1),
+      notifyOpen: () => this.emit(_foundation2.default.strings.OPEN_EVENT),
+      notifyClose: () => this.emit(_foundation2.default.strings.CLOSE_EVENT),
+      isRtl: () => getComputedStyle(this.root_).getPropertyValue('direction') === 'rtl',
+      isDrawer: el => el === this.drawer
+    });
+  }
+}
+exports.MDCPersistentDrawer = MDCPersistentDrawer;
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
+                                                                                                                                                                                                                                                                   * Copyright 2016 Google Inc. All Rights Reserved.
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Licensed under the Apache License, Version 2.0 (the "License");
+                                                                                                                                                                                                                                                                   * you may not use this file except in compliance with the License.
+                                                                                                                                                                                                                                                                   * You may obtain a copy of the License at
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   *      http://www.apache.org/licenses/LICENSE-2.0
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Unless required by applicable law or agreed to in writing, software
+                                                                                                                                                                                                                                                                   * distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                                                                                                                                                                                                   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                                                                                                                                                                                                   * See the License for the specific language governing permissions and
+                                                                                                                                                                                                                                                                   * limitations under the License.
+                                                                                                                                                                                                                                                                   */
+
+var _slidable = __webpack_require__(11);
+
+var _constants = __webpack_require__(58);
+
+class MDCPersistentDrawerFoundation extends _slidable.MDCSlidableDrawerFoundation {
+  static get cssClasses() {
+    return _constants.cssClasses;
+  }
+
+  static get strings() {
+    return _constants.strings;
+  }
+
+  static get defaultAdapter() {
+    return _extends(_slidable.MDCSlidableDrawerFoundation.defaultAdapter, {
+      isDrawer: () => false
+    });
+  }
+
+  constructor(adapter) {
+    super(_extends(MDCPersistentDrawerFoundation.defaultAdapter, adapter), MDCPersistentDrawerFoundation.cssClasses.ROOT, MDCPersistentDrawerFoundation.cssClasses.ANIMATING, MDCPersistentDrawerFoundation.cssClasses.OPEN);
+  }
+
+  isRootTransitioningEventTarget_(el) {
+    return this.adapter_.isDrawer(el);
+  }
+}
+exports.default = MDCPersistentDrawerFoundation;
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.strings = exports.cssClasses = undefined;
+
+var _slidable = __webpack_require__(11);
+
+const cssClasses = exports.cssClasses = {
+  ROOT: 'mdc-persistent-drawer',
+  OPEN: 'mdc-persistent-drawer--open',
+  ANIMATING: 'mdc-persistent-drawer--animating'
+}; /**
+    * Copyright 2016 Google Inc. All Rights Reserved.
+    *
+    * Licensed under the Apache License, Version 2.0 (the "License");
+    * you may not use this file except in compliance with the License.
+    * You may obtain a copy of the License at
+    *
+    *      http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing, software
+    * distributed under the License is distributed on an "AS IS" BASIS,
+    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    * See the License for the specific language governing permissions and
+    * limitations under the License.
+    */
+
+const strings = exports.strings = {
+  DRAWER_SELECTOR: '.mdc-persistent-drawer__drawer',
+  FOCUSABLE_ELEMENTS: _slidable.FOCUSABLE_ELEMENTS,
+  OPEN_EVENT: 'MDCPersistentDrawer:open',
+  CLOSE_EVENT: 'MDCPersistentDrawer:close'
+};
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _MaterialComponent = __webpack_require__(3);
+
+var _MaterialComponent2 = _interopRequireDefault(_MaterialComponent);
+
+var _menu = __webpack_require__(60);
+
+var _List = __webpack_require__(16);
+
+var _List2 = _interopRequireDefault(_List);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+/*
+ * Default props for menu
+ */
+const defaultProps = {
+  open: false
+};
+
+/**
+ * @prop open = false
+ */
+class Menu extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "simple-menu";
+    this._mdcProps = ["open", "open-from-top-left", "open-from-top-right", "open-from-bottom-left", "open-from-bottom-right"];
+    this._select = this._select.bind(this);
+    this._cancel = this._cancel.bind(this);
+  }
+  componentDidMount() {
+    this.MDComponent = new _menu.MDCSimpleMenu(this.control);
+    this.MDComponent.listen("MDCSimpleMenu:selected", this._select);
+    this.MDComponent.listen("MDCSimpleMenu:cancel", this._cancel);
+    toggleMenu(defaultProps, this.props, this.MDComponent);
+  }
+  componentWillUnmount() {
+    this.MDComponent.unlisten("MDCSimpleMenu:selected", this._select);
+    this.MDComponent.unlisten("MDCSimpleMenu:cancel", this._cancel);
+    this.MDComponent.destroy && this.MDComponent.destroy();
+  }
+  _select() {
+    if (this.props.onSelect) {
+      this.props.onSelect();
+    }
+    this._menuClosed();
+  }
+  _cancel() {
+    if (this.props.onCancel) {
+      this.props.onCancel();
+    }
+    this._menuClosed();
+  }
+  _menuClosed() {
+    if (this.props.onMenuClosed) {
+      this.props.onMenuClosed();
+    }
+  }
+  componentWillUpdate(nextProps) {
+    toggleMenu(this.props, nextProps, this.MDComponent);
+  }
+  materialDom(props) {
+    return (0, _preact.h)("div", _extends({ tabindex: "-1" }, props, { ref: control => this.control = control }), (0, _preact.h)("ul", {
+      "class": "mdc-simple-menu__items mdc-list",
+      role: "menu",
+      "aria-hidden": "true"
+    }, props.children));
+  }
+}
+
+class MenuAnchor extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "menu-anchor";
+  }
+}
+
+/*
+ * Function to add declarative opening/closing to drawer
+ */
+function toggleMenu(oldprops, newprops, menu) {
+  if ("open" in oldprops && "open" in newprops && oldprops.open !== newprops.open) {
+    menu.open = newprops.open;
+  }
+}
+
+Menu.Anchor = MenuAnchor;
+Menu.Item = _List2.default.Item;
+exports.default = Menu;
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.util = exports.MDCSimpleMenuFoundation = exports.MDCSimpleMenu = undefined;
+
+var _util = __webpack_require__(17);
+
+var util = _interopRequireWildcard(_util);
+
+var _simple = __webpack_require__(61);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+/**
+ * @license
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+exports.MDCSimpleMenu = _simple.MDCSimpleMenu;
+exports.MDCSimpleMenuFoundation = _simple.MDCSimpleMenuFoundation;
+exports.util = util;
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MDCSimpleMenu = exports.MDCSimpleMenuFoundation = undefined;
+
+var _component = __webpack_require__(15);
+
+var _component2 = _interopRequireDefault(_component);
+
+var _foundation = __webpack_require__(62);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _util = __webpack_require__(17);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @extends MDCComponent<!MDCSimpleMenuFoundation>
+ */
+class MDCSimpleMenu extends _component2.default {
+  /** @param {...?} args */
+  constructor(...args) {
+    super(...args);
+    /** @private {!Element} */
+    this.previousFocus_;
+  }
+
+  /**
+   * @param {!Element} root
+   * @return {!MDCSimpleMenu}
+   */
+  static attachTo(root) {
+    return new MDCSimpleMenu(root);
+  }
+
+  /** @return {boolean} */
+  get open() {
+    return this.foundation_.isOpen();
+  }
+
+  /** @param {boolean} value */
+  set open(value) {
+    if (value) {
+      this.foundation_.open();
+    } else {
+      this.foundation_.close();
+    }
+  }
+
+  /** @param {{focusIndex: ?number}=} options */
+  show({ focusIndex = null } = {}) {
+    this.foundation_.open({ focusIndex: focusIndex });
+  }
+
+  hide() {
+    this.foundation_.close();
+  }
+
+  /**
+   * Return the item container element inside the component.
+   * @return {?Element}
+   */
+  get itemsContainer_() {
+    return this.root_.querySelector(_foundation2.default.strings.ITEMS_SELECTOR);
+  }
+
+  /**
+   * Return the items within the menu. Note that this only contains the set of elements within
+   * the items container that are proper list items, and not supplemental / presentational DOM
+   * elements.
+   * @return {!Array<!Element>}
+   */
+  get items() {
+    const { itemsContainer_: itemsContainer } = this;
+    return [].slice.call(itemsContainer.querySelectorAll('.mdc-list-item[role]'));
+  }
+
+  /** @return {!MDCSimpleMenuFoundation} */
+  getDefaultFoundation() {
+    return new _foundation2.default({
+      addClass: className => this.root_.classList.add(className),
+      removeClass: className => this.root_.classList.remove(className),
+      hasClass: className => this.root_.classList.contains(className),
+      hasNecessaryDom: () => Boolean(this.itemsContainer_),
+      getAttributeForEventTarget: (target, attributeName) => target.getAttribute(attributeName),
+      getInnerDimensions: () => {
+        const { itemsContainer_: itemsContainer } = this;
+        return { width: itemsContainer.offsetWidth, height: itemsContainer.offsetHeight };
+      },
+      hasAnchor: () => this.root_.parentElement && this.root_.parentElement.classList.contains('mdc-menu-anchor'),
+      getAnchorDimensions: () => this.root_.parentElement.getBoundingClientRect(),
+      getWindowDimensions: () => {
+        return { width: window.innerWidth, height: window.innerHeight };
+      },
+      setScale: (x, y) => {
+        this.root_.style[(0, _util.getTransformPropertyName)(window)] = `scale(${x}, ${y})`;
+      },
+      setInnerScale: (x, y) => {
+        this.itemsContainer_.style[(0, _util.getTransformPropertyName)(window)] = `scale(${x}, ${y})`;
+      },
+      getNumberOfItems: () => this.items.length,
+      registerInteractionHandler: (type, handler) => this.root_.addEventListener(type, handler),
+      deregisterInteractionHandler: (type, handler) => this.root_.removeEventListener(type, handler),
+      registerBodyClickHandler: handler => document.body.addEventListener('click', handler),
+      deregisterBodyClickHandler: handler => document.body.removeEventListener('click', handler),
+      getYParamsForItemAtIndex: index => {
+        const { offsetTop: top, offsetHeight: height } = this.items[index];
+        return { top, height };
+      },
+      setTransitionDelayForItemAtIndex: (index, value) => this.items[index].style.setProperty('transition-delay', value),
+      getIndexForEventTarget: target => this.items.indexOf(target),
+      notifySelected: evtData => this.emit(_foundation2.default.strings.SELECTED_EVENT, {
+        index: evtData.index,
+        item: this.items[evtData.index]
+      }),
+      notifyCancel: () => this.emit(_foundation2.default.strings.CANCEL_EVENT, {}),
+      saveFocus: () => {
+        this.previousFocus_ = document.activeElement;
+      },
+      restoreFocus: () => {
+        if (this.previousFocus_) {
+          this.previousFocus_.focus();
+        }
+      },
+      isFocused: () => document.activeElement === this.root_,
+      focus: () => this.root_.focus(),
+      getFocusedItemIndex: () => this.items.indexOf(document.activeElement),
+      focusItemAtIndex: index => this.items[index].focus(),
+      isRtl: () => getComputedStyle(this.root_).getPropertyValue('direction') === 'rtl',
+      setTransformOrigin: origin => {
+        this.root_.style[`${(0, _util.getTransformPropertyName)(window)}-origin`] = origin;
+      },
+      setPosition: position => {
+        this.root_.style.left = 'left' in position ? position.left : null;
+        this.root_.style.right = 'right' in position ? position.right : null;
+        this.root_.style.top = 'top' in position ? position.top : null;
+        this.root_.style.bottom = 'bottom' in position ? position.bottom : null;
+      },
+      getAccurateTime: () => window.performance.now()
+    });
+  }
+} /**
+   * @license
+   * Copyright 2016 Google Inc. All Rights Reserved.
+   *
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *      http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   */
+
+exports.MDCSimpleMenuFoundation = _foundation2.default;
+exports.MDCSimpleMenu = MDCSimpleMenu;
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
+                                                                                                                                                                                                                                                                   * @license
+                                                                                                                                                                                                                                                                   * Copyright 2016 Google Inc. All Rights Reserved.
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Licensed under the Apache License, Version 2.0 (the "License");
+                                                                                                                                                                                                                                                                   * you may not use this file except in compliance with the License.
+                                                                                                                                                                                                                                                                   * You may obtain a copy of the License at
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   *      http://www.apache.org/licenses/LICENSE-2.0
+                                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                                   * Unless required by applicable law or agreed to in writing, software
+                                                                                                                                                                                                                                                                   * distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                                                                                                                                                                                                   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                                                                                                                                                                                                   * See the License for the specific language governing permissions and
+                                                                                                                                                                                                                                                                   * limitations under the License.
+                                                                                                                                                                                                                                                                   */
+
+var _foundation = __webpack_require__(7);
+
+var _foundation2 = _interopRequireDefault(_foundation);
+
+var _adapter = __webpack_require__(63);
+
+var _adapter2 = _interopRequireDefault(_adapter);
+
+var _constants = __webpack_require__(64);
+
+var _util = __webpack_require__(17);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @extends {MDCFoundation<!MDCSimpleMenuAdapter>}
+ */
+class MDCSimpleMenuFoundation extends _foundation2.default {
+  /** @return enum{cssClasses} */
+  static get cssClasses() {
+    return _constants.cssClasses;
+  }
+
+  /** @return enum{strings} */
+  static get strings() {
+    return _constants.strings;
+  }
+
+  /** @return enum{numbers} */
+  static get numbers() {
+    return _constants.numbers;
+  }
+
+  /**
+   * {@see MDCSimpleMenuAdapter} for typing information on parameters and return
+   * types.
+   * @return {!MDCSimpleMenuAdapter}
+   */
+  static get defaultAdapter() {
+    return (/** @type {!MDCSimpleMenuAdapter} */{
+        addClass: () => {},
+        removeClass: () => {},
+        hasClass: () => false,
+        hasNecessaryDom: () => false,
+        getAttributeForEventTarget: () => {},
+        getInnerDimensions: () => ({}),
+        hasAnchor: () => false,
+        getAnchorDimensions: () => ({}),
+        getWindowDimensions: () => ({}),
+        setScale: () => {},
+        setInnerScale: () => {},
+        getNumberOfItems: () => 0,
+        registerInteractionHandler: () => {},
+        deregisterInteractionHandler: () => {},
+        registerBodyClickHandler: () => {},
+        deregisterBodyClickHandler: () => {},
+        getYParamsForItemAtIndex: () => ({}),
+        setTransitionDelayForItemAtIndex: () => {},
+        getIndexForEventTarget: () => 0,
+        notifySelected: () => {},
+        notifyCancel: () => {},
+        saveFocus: () => {},
+        restoreFocus: () => {},
+        isFocused: () => false,
+        focus: () => {},
+        getFocusedItemIndex: () => -1,
+        focusItemAtIndex: () => {},
+        isRtl: () => false,
+        setTransformOrigin: () => {},
+        setPosition: () => {},
+        getAccurateTime: () => 0
+      }
+    );
+  }
+
+  /** @param {!MDCSimpleMenuAdapter} adapter */
+  constructor(adapter) {
+    super(_extends(MDCSimpleMenuFoundation.defaultAdapter, adapter));
+
+    /** @private {function(!Event)} */
+    this.clickHandler_ = evt => this.handlePossibleSelected_(evt);
+    /** @private {function(!Event)} */
+    this.keydownHandler_ = evt => this.handleKeyboardDown_(evt);
+    /** @private {function(!Event)} */
+    this.keyupHandler_ = evt => this.handleKeyboardUp_(evt);
+    /** @private {function(!Event)} */
+    this.documentClickHandler_ = evt => {
+      this.adapter_.notifyCancel();
+      this.close(evt);
+    };
+    /** @private {boolean} */
+    this.isOpen_ = false;
+    /** @private {number} */
+    this.startScaleX_ = 0;
+    /** @private {number} */
+    this.startScaleY_ = 0;
+    /** @private {number} */
+    this.targetScale_ = 1;
+    /** @private {number} */
+    this.scaleX_ = 0;
+    /** @private {number} */
+    this.scaleY_ = 0;
+    /** @private {boolean} */
+    this.running_ = false;
+    /** @private {number} */
+    this.selectedTriggerTimerId_ = 0;
+    /** @private {number} */
+    this.animationRequestId_ = 0;
+    /** @private {!{ width: number, height: number }} */
+    this.dimensions_;
+    /** @private {number} */
+    this.startTime_;
+    /** @private {number} */
+    this.itemHeight_;
+  }
+
+  init() {
+    const { ROOT, OPEN } = MDCSimpleMenuFoundation.cssClasses;
+
+    if (!this.adapter_.hasClass(ROOT)) {
+      throw new Error(`${ROOT} class required in root element.`);
+    }
+
+    if (!this.adapter_.hasNecessaryDom()) {
+      throw new Error(`Required DOM nodes missing in ${ROOT} component.`);
+    }
+
+    if (this.adapter_.hasClass(OPEN)) {
+      this.isOpen_ = true;
+    }
+
+    this.adapter_.registerInteractionHandler('click', this.clickHandler_);
+    this.adapter_.registerInteractionHandler('keyup', this.keyupHandler_);
+    this.adapter_.registerInteractionHandler('keydown', this.keydownHandler_);
+  }
+
+  destroy() {
+    clearTimeout(this.selectedTriggerTimerId_);
+    // Cancel any currently running animations.
+    cancelAnimationFrame(this.animationRequestId_);
+    this.adapter_.deregisterInteractionHandler('click', this.clickHandler_);
+    this.adapter_.deregisterInteractionHandler('keyup', this.keyupHandler_);
+    this.adapter_.deregisterInteractionHandler('keydown', this.keydownHandler_);
+    this.adapter_.deregisterBodyClickHandler(this.documentClickHandler_);
+  }
+
+  /**
+   * Calculates transition delays for individual menu items, so that they fade in one at a time.
+   * @private
+   */
+  applyTransitionDelays_() {
+    const { BOTTOM_LEFT, BOTTOM_RIGHT } = MDCSimpleMenuFoundation.cssClasses;
+    const numItems = this.adapter_.getNumberOfItems();
+    const { height } = this.dimensions_;
+    const transitionDuration = MDCSimpleMenuFoundation.numbers.TRANSITION_DURATION_MS / 1000;
+    const start = MDCSimpleMenuFoundation.numbers.TRANSITION_SCALE_ADJUSTMENT_Y;
+
+    for (let index = 0; index < numItems; index++) {
+      const { top: itemTop, height: itemHeight } = this.adapter_.getYParamsForItemAtIndex(index);
+      this.itemHeight_ = itemHeight;
+      let itemDelayFraction = itemTop / height;
+      if (this.adapter_.hasClass(BOTTOM_LEFT) || this.adapter_.hasClass(BOTTOM_RIGHT)) {
+        itemDelayFraction = (height - itemTop - itemHeight) / height;
+      }
+      const itemDelay = (start + itemDelayFraction * (1 - start)) * transitionDuration;
+      // Use toFixed() here to normalize CSS unit precision across browsers
+      this.adapter_.setTransitionDelayForItemAtIndex(index, `${itemDelay.toFixed(3)}s`);
+    }
+  }
+
+  /**
+   * Removes transition delays from menu items.
+   * @private
+   */
+  removeTransitionDelays_() {
+    const numItems = this.adapter_.getNumberOfItems();
+    for (let i = 0; i < numItems; i++) {
+      this.adapter_.setTransitionDelayForItemAtIndex(i, null);
+    }
+  }
+
+  /**
+   * Animates menu opening or closing.
+   * @private
+   */
+  animationLoop_() {
+    const time = this.adapter_.getAccurateTime();
+    const { TRANSITION_DURATION_MS, TRANSITION_X1, TRANSITION_Y1, TRANSITION_X2, TRANSITION_Y2,
+      TRANSITION_SCALE_ADJUSTMENT_X, TRANSITION_SCALE_ADJUSTMENT_Y } = MDCSimpleMenuFoundation.numbers;
+    const currentTime = (0, _util.clamp)((time - this.startTime_) / TRANSITION_DURATION_MS);
+
+    // Animate X axis very slowly, so that only the Y axis animation is visible during fade-out.
+    let currentTimeX = (0, _util.clamp)((currentTime - TRANSITION_SCALE_ADJUSTMENT_X) / (1 - TRANSITION_SCALE_ADJUSTMENT_X));
+    // No time-shifting on the Y axis when closing.
+    let currentTimeY = currentTime;
+
+    let startScaleY = this.startScaleY_;
+    if (this.targetScale_ === 1) {
+      // Start with the menu at the height of a single item.
+      if (this.itemHeight_) {
+        startScaleY = Math.max(this.itemHeight_ / this.dimensions_.height, startScaleY);
+      }
+      // X axis moves faster, so time-shift forward.
+      currentTimeX = (0, _util.clamp)(currentTime + TRANSITION_SCALE_ADJUSTMENT_X);
+      // Y axis moves slower, so time-shift backwards and adjust speed by the difference.
+      currentTimeY = (0, _util.clamp)((currentTime - TRANSITION_SCALE_ADJUSTMENT_Y) / (1 - TRANSITION_SCALE_ADJUSTMENT_Y));
+    }
+
+    // Apply cubic bezier easing independently to each axis.
+    const easeX = (0, _util.bezierProgress)(currentTimeX, TRANSITION_X1, TRANSITION_Y1, TRANSITION_X2, TRANSITION_Y2);
+    const easeY = (0, _util.bezierProgress)(currentTimeY, TRANSITION_X1, TRANSITION_Y1, TRANSITION_X2, TRANSITION_Y2);
+
+    // Calculate the scales to apply to the outer container and inner container.
+    this.scaleX_ = this.startScaleX_ + (this.targetScale_ - this.startScaleX_) * easeX;
+    const invScaleX = 1 / (this.scaleX_ === 0 ? 1 : this.scaleX_);
+    this.scaleY_ = startScaleY + (this.targetScale_ - startScaleY) * easeY;
+    const invScaleY = 1 / (this.scaleY_ === 0 ? 1 : this.scaleY_);
+
+    // Apply scales.
+    this.adapter_.setScale(this.scaleX_, this.scaleY_);
+    this.adapter_.setInnerScale(invScaleX, invScaleY);
+
+    // Stop animation when we've covered the entire 0 - 1 range of time.
+    if (currentTime < 1) {
+      this.animationRequestId_ = requestAnimationFrame(() => this.animationLoop_());
+    } else {
+      this.animationRequestId_ = 0;
+      this.running_ = false;
+      this.adapter_.removeClass(MDCSimpleMenuFoundation.cssClasses.ANIMATING);
+    }
+  }
+
+  /**
+   * Starts the open or close animation.
+   * @private
+   */
+  animateMenu_() {
+    this.startTime_ = this.adapter_.getAccurateTime();
+    this.startScaleX_ = this.scaleX_;
+    this.startScaleY_ = this.scaleY_;
+
+    this.targetScale_ = this.isOpen_ ? 1 : 0;
+
+    if (!this.running_) {
+      this.running_ = true;
+      this.animationRequestId_ = requestAnimationFrame(() => this.animationLoop_());
+    }
+  }
+
+  /**
+   * @param {?number} focusIndex
+   * @private
+   */
+  focusOnOpen_(focusIndex) {
+    if (focusIndex === null) {
+      // First, try focusing the menu.
+      this.adapter_.focus();
+      // If that doesn't work, focus first item instead.
+      if (!this.adapter_.isFocused()) {
+        this.adapter_.focusItemAtIndex(0);
+      }
+    } else {
+      this.adapter_.focusItemAtIndex(focusIndex);
+    }
+  }
+
+  /**
+   * Handle keys that we want to repeat on hold (tab and arrows).
+   * @param {!Event} evt
+   * @return {boolean}
+   * @private
+   */
+  handleKeyboardDown_(evt) {
+    // Do nothing if Alt, Ctrl or Meta are pressed.
+    if (evt.altKey || evt.ctrlKey || evt.metaKey) {
+      return true;
+    }
+
+    const { keyCode, key, shiftKey } = evt;
+    const isTab = key === 'Tab' || keyCode === 9;
+    const isArrowUp = key === 'ArrowUp' || keyCode === 38;
+    const isArrowDown = key === 'ArrowDown' || keyCode === 40;
+    const isSpace = key === 'Space' || keyCode === 32;
+
+    const focusedItemIndex = this.adapter_.getFocusedItemIndex();
+    const lastItemIndex = this.adapter_.getNumberOfItems() - 1;
+
+    if (shiftKey && isTab && focusedItemIndex === 0) {
+      this.adapter_.focusItemAtIndex(lastItemIndex);
+      evt.preventDefault();
+      return false;
+    }
+
+    if (!shiftKey && isTab && focusedItemIndex === lastItemIndex) {
+      this.adapter_.focusItemAtIndex(0);
+      evt.preventDefault();
+      return false;
+    }
+
+    // Ensure Arrow{Up,Down} and space do not cause inadvertent scrolling
+    if (isArrowUp || isArrowDown || isSpace) {
+      evt.preventDefault();
+    }
+
+    if (isArrowUp) {
+      if (focusedItemIndex === 0 || this.adapter_.isFocused()) {
+        this.adapter_.focusItemAtIndex(lastItemIndex);
+      } else {
+        this.adapter_.focusItemAtIndex(focusedItemIndex - 1);
+      }
+    } else if (isArrowDown) {
+      if (focusedItemIndex === lastItemIndex || this.adapter_.isFocused()) {
+        this.adapter_.focusItemAtIndex(0);
+      } else {
+        this.adapter_.focusItemAtIndex(focusedItemIndex + 1);
+      }
+    }
+
+    return true;
+  }
+
+  /**
+   * Handle keys that we don't want to repeat on hold (Enter, Space, Escape).
+   * @param {!Event} evt
+   * @return {boolean}
+   * @private
+   */
+  handleKeyboardUp_(evt) {
+    // Do nothing if Alt, Ctrl or Meta are pressed.
+    if (evt.altKey || evt.ctrlKey || evt.metaKey) {
+      return true;
+    }
+
+    const { keyCode, key } = evt;
+    const isEnter = key === 'Enter' || keyCode === 13;
+    const isSpace = key === 'Space' || keyCode === 32;
+    const isEscape = key === 'Escape' || keyCode === 27;
+
+    if (isEnter || isSpace) {
+      this.handlePossibleSelected_(evt);
+    }
+
+    if (isEscape) {
+      this.adapter_.notifyCancel();
+      this.close();
+    }
+
+    return true;
+  }
+
+  /**
+   * @param {!Event} evt
+   * @private
+   */
+  handlePossibleSelected_(evt) {
+    if (this.adapter_.getAttributeForEventTarget(evt.target, _constants.strings.ARIA_DISABLED_ATTR) === 'true') {
+      return;
+    }
+    const targetIndex = this.adapter_.getIndexForEventTarget(evt.target);
+    if (targetIndex < 0) {
+      return;
+    }
+    // Debounce multiple selections
+    if (this.selectedTriggerTimerId_) {
+      return;
+    }
+    this.selectedTriggerTimerId_ = setTimeout(() => {
+      this.selectedTriggerTimerId_ = 0;
+      this.close();
+      this.adapter_.notifySelected({ index: targetIndex });
+    }, _constants.numbers.SELECTED_TRIGGER_DELAY);
+  }
+
+  /** @private */
+  autoPosition_() {
+    if (!this.adapter_.hasAnchor()) {
+      return;
+    }
+
+    // Defaults: open from the top left.
+    let vertical = 'top';
+    let horizontal = 'left';
+
+    const anchor = this.adapter_.getAnchorDimensions();
+    const windowDimensions = this.adapter_.getWindowDimensions();
+
+    const topOverflow = anchor.top + this.dimensions_.height - windowDimensions.height;
+    const bottomOverflow = this.dimensions_.height - anchor.bottom;
+    const extendsBeyondTopBounds = topOverflow > 0;
+
+    if (extendsBeyondTopBounds) {
+      if (bottomOverflow < topOverflow) {
+        vertical = 'bottom';
+      }
+    }
+
+    const leftOverflow = anchor.left + this.dimensions_.width - windowDimensions.width;
+    const rightOverflow = this.dimensions_.width - anchor.right;
+    const extendsBeyondLeftBounds = leftOverflow > 0;
+    const extendsBeyondRightBounds = rightOverflow > 0;
+
+    if (this.adapter_.isRtl()) {
+      // In RTL, we prefer to open from the right.
+      horizontal = 'right';
+      if (extendsBeyondRightBounds && leftOverflow < rightOverflow) {
+        horizontal = 'left';
+      }
+    } else if (extendsBeyondLeftBounds && rightOverflow < leftOverflow) {
+      horizontal = 'right';
+    }
+
+    const position = {
+      [horizontal]: '0',
+      [vertical]: '0'
+    };
+
+    this.adapter_.setTransformOrigin(`${vertical} ${horizontal}`);
+    this.adapter_.setPosition(position);
+  }
+
+  /**
+   * Open the menu.
+   * @param {{focusIndex: ?number}=} options
+   */
+  open({ focusIndex = null } = {}) {
+    this.adapter_.saveFocus();
+    this.adapter_.addClass(MDCSimpleMenuFoundation.cssClasses.ANIMATING);
+    this.animationRequestId_ = requestAnimationFrame(() => {
+      this.dimensions_ = this.adapter_.getInnerDimensions();
+      this.applyTransitionDelays_();
+      this.autoPosition_();
+      this.animateMenu_();
+      this.adapter_.addClass(MDCSimpleMenuFoundation.cssClasses.OPEN);
+      this.focusOnOpen_(focusIndex);
+      this.adapter_.registerBodyClickHandler(this.documentClickHandler_);
+    });
+    this.isOpen_ = true;
+  }
+
+  /**
+   * Closes the menu.
+   * @param {Event=} evt
+   */
+  close(evt = null) {
+    const targetIsDisabled = evt ? this.adapter_.getAttributeForEventTarget(evt.target, _constants.strings.ARIA_DISABLED_ATTR) === 'true' : false;
+
+    if (targetIsDisabled) {
+      return;
+    }
+
+    this.adapter_.deregisterBodyClickHandler(this.documentClickHandler_);
+    this.adapter_.addClass(MDCSimpleMenuFoundation.cssClasses.ANIMATING);
+    requestAnimationFrame(() => {
+      this.removeTransitionDelays_();
+      this.animateMenu_();
+      this.adapter_.removeClass(MDCSimpleMenuFoundation.cssClasses.OPEN);
+    });
+    this.isOpen_ = false;
+    this.adapter_.restoreFocus();
+  }
+
+  /** @return {boolean} */
+  isOpen() {
+    return this.isOpen_;
+  }
+}
+
+exports.default = MDCSimpleMenuFoundation;
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * @license
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* eslint no-unused-vars: [2, {"args": "none"}] */
+
+/**
+ * Adapter for MDC Simple Menu. Provides an interface for managing
+ * - classes
+ * - dom
+ * - focus
+ * - position
+ * - dimensions
+ * - event handlers
+ *
+ * Additionally, provides type information for the adapter to the Closure
+ * compiler.
+ *
+ * Implement this adapter for your framework of choice to delegate updates to
+ * the component in your framework of choice. See architecture documentation
+ * for more details.
+ * https://github.com/material-components/material-components-web/blob/master/docs/architecture.md
+ *
+ * @record
+ */
+class MDCSimpleMenuAdapter {
+  /** @param {string} className */
+  addClass(className) {}
+
+  /** @param {string} className */
+  removeClass(className) {}
+
+  /**
+   * @param {string} className
+   * @return {boolean}
+   */
+  hasClass(className) {}
+
+  /** @return {boolean} */
+  hasNecessaryDom() {}
+
+  /**
+   * @param {EventTarget} target
+   * @param {string} attributeName
+   * @return {string}
+   */
+  getAttributeForEventTarget(target, attributeName) {}
+
+  /** @return {{ width: number, height: number }} */
+  getInnerDimensions() {}
+
+  /** @return {boolean} */
+  hasAnchor() {}
+
+  /** @return {{width: number, height: number, top: number, right: number, bottom: number, left: number}} */
+  getAnchorDimensions() {}
+
+  /** @return {{ width: number, height: number }} */
+  getWindowDimensions() {}
+
+  /**
+   * @param {number} x
+   * @param {number} y
+   */
+  setScale(x, y) {}
+
+  /**
+   * @param {number} x
+   * @param {number} y
+   */
+  setInnerScale(x, y) {}
+
+  /** @return {number} */
+  getNumberOfItems() {}
+
+  /**
+   * @param {string} type
+   * @param {function(!Event)} handler
+   */
+  registerInteractionHandler(type, handler) {}
+
+  /**
+   * @param {string} type
+   * @param {function(!Event)} handler
+   */
+  deregisterInteractionHandler(type, handler) {}
+
+  /** @param {function(!Event)} handler */
+  registerBodyClickHandler(handler) {}
+
+  /** @param {function(!Event)} handler */
+  deregisterBodyClickHandler(handler) {}
+
+  /**
+   * @param {number} index
+   * @return {{top: number, height: number}}
+   */
+  getYParamsForItemAtIndex(index) {}
+
+  /**
+   * @param {number} index
+   * @param {string|null} value
+   */
+  setTransitionDelayForItemAtIndex(index, value) {}
+
+  /**
+   * @param {EventTarget} target
+   * @return {number}
+   */
+  getIndexForEventTarget(target) {}
+
+  /** @param {{index: number}} evtData */
+  notifySelected(evtData) {}
+
+  notifyCancel() {}
+
+  saveFocus() {}
+
+  restoreFocus() {}
+
+  /** @return {boolean} */
+  isFocused() {}
+
+  focus() {}
+
+  /** @return {number} */
+  getFocusedItemIndex() /* number */{}
+
+  /** @param {number} index */
+  focusItemAtIndex(index) {}
+
+  /** @return {boolean} */
+  isRtl() {}
+
+  /** @param {string} origin */
+  setTransformOrigin(origin) {}
+
+  /** @param {{
+  *   top: (string|undefined),
+  *   right: (string|undefined),
+  *   bottom: (string|undefined),
+  *   left: (string|undefined)
+  * }} position */
+  setPosition(position) {}
+
+  /** @return {number} */
+  getAccurateTime() {}
+}
+
+exports.default = MDCSimpleMenuAdapter;
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * @license
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/** @enum {string} */
+const cssClasses = {
+  ROOT: 'mdc-simple-menu',
+  OPEN: 'mdc-simple-menu--open',
+  ANIMATING: 'mdc-simple-menu--animating',
+  TOP_RIGHT: 'mdc-simple-menu--open-from-top-right',
+  BOTTOM_LEFT: 'mdc-simple-menu--open-from-bottom-left',
+  BOTTOM_RIGHT: 'mdc-simple-menu--open-from-bottom-right'
+};
+
+/** @enum {string} */
+const strings = {
+  ITEMS_SELECTOR: '.mdc-simple-menu__items',
+  SELECTED_EVENT: 'MDCSimpleMenu:selected',
+  CANCEL_EVENT: 'MDCSimpleMenu:cancel',
+  ARIA_DISABLED_ATTR: 'aria-disabled'
+};
+
+/** @enum {number} */
+const numbers = {
+  // Amount of time to wait before triggering a selected event on the menu. Note that this time
+  // will most likely be bumped up once interactive lists are supported to allow for the ripple to
+  // animate before closing the menu
+  SELECTED_TRIGGER_DELAY: 50,
+  // Total duration of the menu animation.
+  TRANSITION_DURATION_MS: 300,
+  // The menu starts its open animation with the X axis at this time value (0 - 1).
+  TRANSITION_SCALE_ADJUSTMENT_X: 0.5,
+  // The time value the menu waits until the animation starts on the Y axis (0 - 1).
+  TRANSITION_SCALE_ADJUSTMENT_Y: 0.2,
+  // The cubic bezier control points for the animation (cubic-bezier(0, 0, 0.2, 1)).
+  TRANSITION_X1: 0,
+  TRANSITION_Y1: 0,
+  TRANSITION_X2: 0.2,
+  TRANSITION_Y2: 1
+};
+
+exports.cssClasses = cssClasses;
+exports.strings = strings;
+exports.numbers = numbers;
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _match = __webpack_require__(20);
+
+var _List = __webpack_require__(16);
+
+var _List2 = _interopRequireDefault(_List);
+
+__webpack_require__(66);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class DrawerList extends _preact.Component {
+  render({ onClick }) {
+    const links = [{
+      href: "/",
+      icon: "home",
+      name: "Home"
+    }, {
+      href: "/hello",
+      icon: "code",
+      name: "Hello"
+    }, {
+      href: "/code/router",
+      icon: "code",
+      name: "Router"
+    }, {
+      href: "/code/offline",
+      icon: "code",
+      name: "Offline"
+    }, {
+      href: "/code/highlight",
+      icon: "code",
+      name: "Highlight.js"
+    }, {
+      href: "/code/whereami",
+      icon: "code",
+      name: "Where am I?"
+    }, {
+      href: "/code/asyncawait",
+      icon: "code",
+      name: "Async/await"
+    }];
+
+    return (0, _preact.h)(
+      _List2.default,
+      null,
+      links.map(link => {
+        return (0, _preact.h)(
+          _match.Link,
+          { href: link.href, "class": "mdc-list-item", onClick: onClick },
+          (0, _preact.h)(
+            _List2.default.LinkItem,
+            null,
+            (0, _preact.h)(
+              _List2.default.ItemIcon,
+              null,
+              link.icon
+            ),
+            link.name
+          )
+        );
+      })
+    );
+  }
+}
+exports.default = DrawerList;
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(67);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/** MDC Ripple keyframes are split into their own file so that _mixins.scss can rely on them. */\n@-webkit-keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1); }\n  to {\n    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n@-webkit-keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden; }\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var); }\n\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 16px 0;\n  line-height: 1.5rem;\n  list-style-type: none; }\n\n.mdc-list--theme-dark,\n.mdc-theme--dark .mdc-list {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-list--dense {\n  padding-top: 4px;\n  font-size: .812rem; }\n\n.mdc-list-item {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-pack: start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  height: 48px; }\n\n.mdc-list-item__start-detail {\n  width: 24px;\n  height: 24px;\n  margin-left: 0;\n  margin-right: 32px; }\n\n[dir=\"rtl\"] .mdc-list-item .mdc-list-item__start-detail,\n.mdc-list-item[dir=\"rtl\"] .mdc-list-item__start-detail {\n  margin-left: 32px;\n  margin-right: 0; }\n\n.mdc-list-item__end-detail {\n  width: 24px;\n  height: 24px;\n  margin-left: auto;\n  margin-right: 0; }\n\n[dir=\"rtl\"] .mdc-list-item .mdc-list-item__end-detail,\n.mdc-list-item[dir=\"rtl\"] .mdc-list-item__end-detail {\n  margin-left: 0;\n  margin-right: auto; }\n\n.mdc-list-item__text {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column; }\n\n.mdc-list-item__text__secondary {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.54);\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }\n\n.mdc-list-item__text__secondary--theme-dark,\n.mdc-theme--dark .mdc-list-item__text__secondary {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.7);\n  color: var(--mdc-theme-text-secondary-on-dark, rgba(255, 255, 255, 0.7)); }\n\n.mdc-list--dense .mdc-list-item__text__secondary {\n  font-size: inherit; }\n\n.mdc-list--dense .mdc-list-item {\n  height: 40px; }\n\n.mdc-list--dense .mdc-list-item__start-detail {\n  width: 20px;\n  height: 20px;\n  margin-left: 0;\n  margin-right: 36px; }\n\n[dir=\"rtl\"] .mdc-list-item .mdc-list--dense .mdc-list-item__start-detail,\n.mdc-list-item[dir=\"rtl\"] .mdc-list--dense .mdc-list-item__start-detail {\n  margin-left: 36px;\n  margin-right: 0; }\n\n.mdc-list--dense .mdc-list-item__end-detail {\n  width: 20px;\n  height: 20px; }\n\n.mdc-list--avatar-list .mdc-list-item {\n  height: 56px; }\n\n.mdc-list--avatar-list .mdc-list-item__start-detail {\n  width: 40px;\n  height: 40px;\n  margin-left: 0;\n  margin-right: 16px;\n  border-radius: 50%; }\n\n[dir=\"rtl\"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__start-detail,\n.mdc-list-item[dir=\"rtl\"] .mdc-list--avatar-list .mdc-list-item__start-detail {\n  margin-left: 16px;\n  margin-right: 0; }\n\n.mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item {\n  height: 48px; }\n\n.mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {\n  width: 36px;\n  height: 36px;\n  margin-left: 0;\n  margin-right: 20px; }\n\n[dir=\"rtl\"] .mdc-list-item .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail,\n.mdc-list-item[dir=\"rtl\"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list__item__start-detail {\n  margin-left: 20px;\n  margin-right: 0; }\n\n.mdc-list--two-line .mdc-list-item {\n  height: 72px; }\n\n.mdc-list--two-line.mdc-list--dense .mdc-list-item {\n  height: 60px; }\n\na.mdc-list-item {\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-list-item.mdc-ripple-upgraded {\n  --mdc-ripple-surface-width: 0;\n  --mdc-ripple-surface-height: 0;\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  will-change: transform, opacity;\n  -webkit-tap-highlight-color: transparent;\n  left: -16px;\n  right: initial;\n  position: relative;\n  width: 100%;\n  padding: 0 16px;\n  overflow: hidden; }\n\n.mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):hover::before, .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):focus::before, .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded):active::after {\n  -webkit-transition-duration: 85ms;\n  transition-duration: 85ms;\n  opacity: .6; }\n\n.mdc-list-item.mdc-ripple-upgraded::before {\n  background-color: rgba(0, 0, 0, 0.06);\n  position: absolute;\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  -webkit-transition: opacity 250ms linear;\n  transition: opacity 250ms linear;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: \"\"; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  /* @alternate */\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));\n  transform: scale(var(--mdc-ripple-fg-scale, 0)); }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before {\n  opacity: .99999; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before {\n  -webkit-transition-duration: 120ms;\n  transition-duration: 120ms;\n  opacity: 1; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n  /* @alternate */\n  top: calc(50% - 50%);\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  /* @alternate */\n  left: calc(50% - 50%);\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));\n  transform: scale(var(--mdc-ripple-fg-scale, 0)); }\n\n.mdc-list-item.mdc-ripple-upgraded::after {\n  background-color: rgba(0, 0, 0, 0.06);\n  position: absolute;\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  -webkit-transition: opacity 250ms linear;\n  transition: opacity 250ms linear;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: \"\"; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center;\n  opacity: 0; }\n\n.mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n  /* @alternate */\n  top: 0;\n  top: var(--mdc-ripple-top, 0);\n  /* @alternate */\n  left: 0;\n  left: var(--mdc-ripple-left, 0);\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;\n  animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 83ms mdc-ripple-fg-opacity-out;\n  animation: 83ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n[dir=\"rtl\"] .mdc-list-item.mdc-ripple-upgraded, .mdc-list-item.mdc-ripple-upgraded[dir=\"rtl\"] {\n  left: initial;\n  right: -16px; }\n\n.mdc-list-item.mdc-ripple-upgraded:focus {\n  outline: none; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::before {\n  background-color: rgba(255, 255, 255, 0.12);\n  position: absolute;\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  -webkit-transition: opacity 250ms linear;\n  transition: opacity 250ms linear;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: \"\"; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::before {\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  /* @alternate */\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));\n  transform: scale(var(--mdc-ripple-fg-scale, 0)); }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-focused::before {\n  opacity: .99999; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--background-active-fill::before {\n  -webkit-transition-duration: 120ms;\n  transition-duration: 120ms;\n  opacity: 1; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::before {\n  /* @alternate */\n  top: calc(50% - 50%);\n  top: var(--mdc-ripple-top, calc(50% - 50%));\n  /* @alternate */\n  left: calc(50% - 50%);\n  left: var(--mdc-ripple-left, calc(50% - 50%));\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 0));\n  transform: scale(var(--mdc-ripple-fg-scale, 0)); }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded::after {\n  background-color: rgba(255, 255, 255, 0.12);\n  position: absolute;\n  top: calc(50% - 100%);\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n  -webkit-transition: opacity 250ms linear;\n  transition: opacity 250ms linear;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: \"\"; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded::after {\n  top: 0;\n  left: 0;\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center;\n  opacity: 0; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded:not(.mdc-ripple-upgraded--unbounded)::after {\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--unbounded::after {\n  /* @alternate */\n  top: 0;\n  top: var(--mdc-ripple-top, 0);\n  /* @alternate */\n  left: 0;\n  left: var(--mdc-ripple-left, 0);\n  /* @alternate */\n  width: 100%;\n  width: var(--mdc-ripple-fg-size, 100%);\n  /* @alternate */\n  height: 100%;\n  height: var(--mdc-ripple-fg-size, 100%);\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: center center;\n  transform-origin: center center; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-activation::after {\n  -webkit-animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards;\n  animation: 300ms mdc-ripple-fg-radius-in forwards, 83ms mdc-ripple-fg-opacity-in forwards; }\n\n.mdc-list--theme-dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after,\n.mdc-theme--dark .mdc-list-item.mdc-ripple-upgraded.mdc-ripple-upgraded--foreground-deactivation::after {\n  -webkit-animation: 83ms mdc-ripple-fg-opacity-out;\n  animation: 83ms mdc-ripple-fg-opacity-out;\n  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }\n\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }\n\n.mdc-list--theme-dark .mdc-list-divider,\n.mdc-theme--dark .mdc-list-divider {\n  border-bottom-color: rgba(255, 255, 255, 0.2); }\n\n.mdc-list-divider--inset {\n  margin-left: 56px;\n  margin-right: 0;\n  width: calc(100% - 56px); }\n\n[dir=\"rtl\"] .mdc-list-group .mdc-list-divider--inset,\n.mdc-list-group[dir=\"rtl\"] .mdc-list-divider--inset {\n  margin-left: 0;\n  margin-right: 56px; }\n\n.mdc-list-group {\n  padding: 0 16px; }\n\n.mdc-list-group__subheader {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0.75rem 0; }\n\n.mdc-list-group__subheader--theme-dark,\n.mdc-theme--dark .mdc-list-group__subheader {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-list-group .mdc-list {\n  padding: 0; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(69);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Applies styles to the different types of icons that can exist in toolbars.\n * Both .mdc-toolbar__icon and .mdc-toolbar__menu-icon share all styles except for\n * horizontal padding.\n */\n.mdc-toolbar {\n  /* @alternate */\n  background-color: #3f51b5;\n  background-color: var(--mdc-theme-primary, #3f51b5);\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%; }\n\n.mdc-toolbar__row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: auto;\n  min-height: 64px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar__row {\n    min-height: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__row {\n    min-height: 56px; } }\n\n.mdc-toolbar__section {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  -webkit-box-align: start;\n  -ms-flex-align: start;\n  align-items: flex-start;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  min-width: 0;\n  height: 100%;\n  z-index: 1; }\n\n.mdc-toolbar__section--align-start {\n  -webkit-box-pack: start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-box-ordinal-group: 0;\n  -ms-flex-order: -1;\n  order: -1; }\n\n.mdc-toolbar__section--align-end {\n  -webkit-box-pack: end;\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n  -webkit-box-ordinal-group: 2;\n  -ms-flex-order: 1;\n  order: 1; }\n\n.mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  line-height: 2rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  margin-left: 24px;\n  margin-right: 0;\n  -ms-flex-item-align: center;\n  align-self: center;\n  padding: 16px 0;\n  line-height: 1.5rem;\n  z-index: 1; }\n\n[dir=\"rtl\"] .mdc-toolbar__title, .mdc-toolbar__title[dir=\"rtl\"] {\n  margin-left: 0;\n  margin-right: 24px; }\n\n.mdc-toolbar__icon {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  padding: 16px;\n  border: none;\n  background-color: inherit;\n  color: inherit;\n  text-decoration: none;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white);\n  padding-right: 12px;\n  padding-left: 12px;\n  cursor: pointer; }\n\n.mdc-toolbar__icon:last-of-type {\n  padding-left: 12px;\n  padding-right: 24px; }\n\n[dir=\"rtl\"] .mdc-toolbar__icon:last-of-type, .mdc-toolbar__icon:last-of-type[dir=\"rtl\"] {\n  padding-left: 24px;\n  padding-right: 12px; }\n\n.mdc-toolbar__menu-icon {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  padding: 16px;\n  border: none;\n  background-color: inherit;\n  color: inherit;\n  text-decoration: none;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-primary, white);\n  padding-right: 24px;\n  padding-left: 24px;\n  cursor: pointer; }\n\n.mdc-toolbar__menu-icon + .mdc-toolbar__title {\n  margin-left: 8px;\n  margin-right: 0; }\n\n[dir=\"rtl\"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir=\"rtl\"] {\n  margin-left: 0;\n  margin-right: 8px; }\n\n@media (max-width: 599px) {\n  .mdc-toolbar__title {\n    margin-left: 16px;\n    margin-right: 0; }\n  [dir=\"rtl\"] .mdc-toolbar__title, .mdc-toolbar__title[dir=\"rtl\"] {\n    margin-left: 0;\n    margin-right: 16px; }\n  .mdc-toolbar__icon {\n    padding-right: 8px;\n    padding-left: 8px; }\n  .mdc-toolbar__icon:last-of-type {\n    padding-left: 8px;\n    padding-right: 16px; }\n  [dir=\"rtl\"] .mdc-toolbar__icon:last-of-type, .mdc-toolbar__icon:last-of-type[dir=\"rtl\"] {\n    padding-left: 16px;\n    padding-right: 8px; }\n  .mdc-toolbar__menu-icon {\n    padding-right: 16px;\n    padding-left: 16px; }\n  .mdc-toolbar__menu-icon + .mdc-toolbar__title {\n    margin-left: 16px;\n    margin-right: 0; }\n  [dir=\"rtl\"] .mdc-toolbar__menu-icon + .mdc-toolbar__title, .mdc-toolbar__menu-icon + .mdc-toolbar__title[dir=\"rtl\"] {\n    margin-left: 0;\n    margin-right: 16px; } }\n\n.mdc-toolbar--fixed {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 4; }\n\n.mdc-toolbar--flexible {\n  --mdc-toolbar-ratio-to-extend-flexible: 4; }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n  height: 256px;\n  height: calc(64px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); }\n\n@media (max-width: 599px) {\n  .mdc-toolbar--flexible .mdc-toolbar__row:first-child {\n    height: 224px;\n    height: calc(56px * var(--mdc-toolbar-ratio-to-extend-flexible, 4)); } }\n\n.mdc-toolbar--flexible .mdc-toolbar__row:first-child::after {\n  position: absolute;\n  content: \"\"; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  -ms-flex-item-align: end;\n  align-self: flex-end;\n  line-height: 1.5rem; }\n\n.mdc-toolbar--flexible-default-behavior .mdc-toolbar__row:first-child::after {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity .2s ease;\n  transition: opacity .2s ease;\n  opacity: 1; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__row:first-child::after {\n  opacity: 0; }\n\n.mdc-toolbar--flexible-default-behavior.mdc-toolbar--flexible-space-minimized .mdc-toolbar__title {\n  font-weight: 500; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed {\n  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  -webkit-transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow; }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--flexible-space-minimized {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--flexible-space-minimized {\n  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar--waterfall.mdc-toolbar--fixed.mdc-toolbar--fixed-lastrow-only.mdc-toolbar--fixed-at-last-row {\n  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }\n\n.mdc-toolbar-fixed-adjust {\n  margin-top: 64px; }\n\n@media (max-width: 959px) and (orientation: landscape) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 48px; } }\n\n@media (max-width: 599px) {\n  .mdc-toolbar-fixed-adjust {\n    margin-top: 56px; } }\n\n.mdc-toolbar__section--shrink-to-fit {\n  -webkit-box-flex: 0;\n  -ms-flex: none;\n  flex: none; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(71);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/* postcss-bem-linter: define simple-menu */\n.mdc-simple-menu {\n  display: none;\n  position: absolute;\n  min-width: 170px;\n  max-width: calc(100vw - 32px);\n  max-height: calc(100vh - 32px);\n  margin: 0;\n  padding: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  border-radius: 2px;\n  background-color: white;\n  white-space: nowrap;\n  opacity: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  will-change: transform, opacity;\n  z-index: 4;\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-enable plugin/selector-bem-pattern */\n  /* stylelint-disable plugin/selector-bem-pattern */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  /* stylelint-enable plugin/selector-bem-pattern */ }\n\n.mdc-simple-menu--theme-dark,\n.mdc-theme--dark .mdc-simple-menu {\n  background-color: #424242; }\n\n.mdc-simple-menu:focus {\n  outline: none; }\n\n.mdc-simple-menu--open {\n  display: inline-block;\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1; }\n\n.mdc-simple-menu--animating {\n  display: inline-block;\n  -webkit-transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-simple-menu__items {\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  will-change: transform;\n  /* stylelint-disable plugin/selector-bem-pattern, selector-no-universal */\n  /* stylelint-enable plugin/selector-bem-pattern, selector-no-universal */ }\n\n.mdc-simple-menu__items > * {\n  opacity: 0; }\n\n.mdc-simple-menu__items > .mdc-list-item {\n  cursor: pointer; }\n\n.mdc-simple-menu--animating .mdc-simple-menu__items {\n  overflow-y: hidden; }\n\n.mdc-simple-menu--animating .mdc-simple-menu__items > * {\n  -webkit-transition-duration: 0.3s;\n  transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);\n  transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-simple-menu--open .mdc-simple-menu__items > * {\n  opacity: 1;\n  will-change: opacity; }\n\n[dir=\"rtl\"] .mdc-simple-menu {\n  -webkit-transform-origin: top right;\n  transform-origin: top right; }\n\n.mdc-simple-menu--open-from-top-left {\n  -webkit-transform-origin: top left !important;\n  transform-origin: top left !important; }\n\n.mdc-simple-menu--open-from-top-right {\n  -webkit-transform-origin: top right !important;\n  transform-origin: top right !important; }\n\n.mdc-simple-menu--open-from-bottom-left {\n  -webkit-transform-origin: bottom left !important;\n  transform-origin: bottom left !important; }\n\n.mdc-simple-menu--open-from-bottom-right {\n  -webkit-transform-origin: bottom right !important;\n  transform-origin: bottom right !important; }\n\n.mdc-simple-menu .mdc-list-group,\n.mdc-simple-menu .mdc-list {\n  padding: 8px 0; }\n\n.mdc-simple-menu .mdc-list-item {\n  position: relative;\n  padding: 0 16px;\n  outline: none;\n  color: inherit;\n  text-decoration: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.75rem;\n  text-decoration: inherit;\n  text-transform: inherit; }\n\n.mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-item,\n.mdc-theme--dark .mdc-simple-menu .mdc-list-item {\n  color: white; }\n\n.mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-divider,\n.mdc-theme--dark .mdc-simple-menu .mdc-list-divider {\n  border-color: rgba(255, 255, 255, 0.12); }\n\n.mdc-simple-menu .mdc-list-item__start-detail {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-simple-menu--theme-dark.mdc-simple-menu .mdc-list-item__start-detail,\n.mdc-theme--dark .mdc-simple-menu .mdc-list-item__start-detail {\n  color: rgba(255, 255, 255, 0.54); }\n\n.mdc-simple-menu--selected.mdc-list-item,\n.mdc-simple-menu--selected.mdc-list-item .mdc-list-item__start-detail {\n  /* @alternate */\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-simple-menu .mdc-list-item::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity 120ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 120ms cubic-bezier(0, 0, 0.2, 1);\n  border-radius: inherit;\n  background: currentColor;\n  content: \"\";\n  opacity: 0;\n  pointer-events: none; }\n\n.mdc-simple-menu .mdc-list-item:focus::before {\n  opacity: .12; }\n\n.mdc-simple-menu .mdc-list-item:active::before {\n  /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n  opacity: .18; }\n\n.mdc-simple-menu .mdc-list-item[aria-disabled=\"true\"] {\n  cursor: default;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.38);\n  color: var(--mdc-theme-text-disabled-on-light, rgba(0, 0, 0, 0.38)); }\n\n.mdc-select--theme-dark .mdc-simple-menu .mdc-list-item[aria-disabled=\"true\"],\n.mdc-theme--dark .mdc-simple-menu .mdc-list-item[aria-disabled=\"true\"] {\n  /* @alternate */\n  color: rgba(255, 255, 255, 0.5);\n  color: var(--mdc-theme-text-disabled-on-dark, rgba(255, 255, 255, 0.5)); }\n\n.mdc-simple-menu .mdc-list-item[aria-disabled=\"true\"]:focus::before, .mdc-simple-menu .mdc-list-item[aria-disabled=\"true\"]:active::before {\n  opacity: 0; }\n\n/* postcss-bem-linter: end */\n.mdc-menu-anchor {\n  position: relative;\n  overflow: visible; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(73);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n:root {\n  --mdc-persistent-drawer-dark-theme-bg-color: #212121; }\n\n.mdc-persistent-drawer {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  width: 0; }\n\n.mdc-persistent-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: flex-center;\n  -ms-flex-align: flex-center;\n  align-items: flex-center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n.mdc-persistent-drawer__toolbar-spacer--theme-dark .mdc-persistent-drawer__toolbar-spacer,\n.mdc-theme--dark .mdc-persistent-drawer__toolbar-spacer {\n  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n\n@media (min-width: 600px) {\n  .mdc-persistent-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-persistent-drawer__header {\n  position: relative; }\n\n.mdc-persistent-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: \"\"; }\n\n.mdc-persistent-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-persistent-drawer .mdc-list-group,\n.mdc-persistent-drawer .mdc-list {\n  padding-right: 0;\n  padding-left: 0; }\n\n.mdc-persistent-drawer .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  padding: 0 16px;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-persistent-drawer .mdc-list-item.mdc-ripple-upgraded {\n  left: 0; }\n\n.mdc-persistent-drawer .mdc-list-item__start-detail {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-persistent-drawer .mdc-list-item__start-detail--theme-dark .mdc-persistent-drawer .mdc-list-item__start-detail,\n.mdc-theme--dark .mdc-persistent-drawer .mdc-list-item__start-detail {\n  color: rgba(255, 255, 255, 0.54); }\n\n.mdc-persistent-drawer--selected.mdc-list-item,\n.mdc-persistent-drawer--selected.mdc-list-item .mdc-list-item__start-detail {\n  /* @alternate */\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-persistent-drawer .mdc-list-item::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: inherit;\n  background: currentColor;\n  opacity: 0;\n  content: \"\"; }\n\n.mdc-persistent-drawer .mdc-list-item:focus::before {\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .12; }\n\n.mdc-persistent-drawer .mdc-list-item:active::before {\n  /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .18; }\n\n.mdc-persistent-drawer .mdc-list-item:active:focus::before {\n  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-persistent-drawer__drawer {\n  /* @alternate */\n  background: #fff;\n  background: var(--mdc-theme-background, #fff);\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 240px;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none; }\n\n[dir=\"rtl\"] .mdc-persistent-drawer__drawer, .mdc-persistent-drawer__drawer[dir=\"rtl\"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir=\"rtl\"] .mdc-persistent-drawer__drawer, .mdc-persistent-drawer__drawer[dir=\"rtl\"] {\n  left: initial;\n  right: 0; }\n\n.mdc-persistent-drawer__drawer--theme-dark,\n.mdc-theme--dark .mdc-persistent-drawer__drawer {\n  background-color: #212121;\n  background-color: var(--mdc-persistent-drawer-dark-theme-bg-color, #212121);\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white);\n  border-left: 0;\n  border-right: 1px solid rgba(255, 255, 255, 0.12); }\n\n[dir=\"rtl\"] .mdc-persistent-drawer__drawer--theme-dark, .mdc-persistent-drawer__drawer--theme-dark[dir=\"rtl\"], [dir=\"rtl\"]\n.mdc-theme--dark .mdc-persistent-drawer__drawer,\n.mdc-theme--dark .mdc-persistent-drawer__drawer[dir=\"rtl\"] {\n  border-left: 1px solid rgba(255, 255, 255, 0.12);\n  border-right: 0; }\n\n[dir=\"rtl\"] .mdc-persistent-drawer .mdc-persistent-drawer__drawer,\n.mdc-persistent-drawer[dir=\"rtl\"] .mdc-persistent-drawer__drawer {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n.mdc-persistent-drawer--animating .mdc-persistent-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-persistent-drawer--animating.mdc-persistent-drawer--open .mdc-persistent-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-persistent-drawer--open {\n  width: 240px;\n  pointer-events: auto; }\n\n.mdc-persistent-drawer--open .mdc-persistent-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir=\"rtl\"] .mdc-persistent-drawer--open .mdc-persistent-drawer__drawer, .mdc-persistent-drawer--open[dir=\"rtl\"] .mdc-persistent-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n:root {\n  --mdc-permanent-drawer-dark-theme-bg-color: #212121; }\n\n.mdc-permanent-drawer {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  /* @alternate */\n  background: #fff;\n  background: var(--mdc-theme-background, #fff);\n  border-left: 0;\n  border-right: 1px solid #e4e4e4;\n  left: 0;\n  right: initial;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-flex: 0;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  width: 240px;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  overflow: hidden; }\n\n.mdc-permanent-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: flex-center;\n  -ms-flex-align: flex-center;\n  align-items: flex-center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n.mdc-permanent-drawer__toolbar-spacer--theme-dark .mdc-permanent-drawer__toolbar-spacer,\n.mdc-theme--dark .mdc-permanent-drawer__toolbar-spacer {\n  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n\n@media (min-width: 600px) {\n  .mdc-permanent-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-permanent-drawer__header {\n  position: relative; }\n\n.mdc-permanent-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: \"\"; }\n\n.mdc-permanent-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-permanent-drawer .mdc-list-group,\n.mdc-permanent-drawer .mdc-list {\n  padding-right: 0;\n  padding-left: 0; }\n\n.mdc-permanent-drawer .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  padding: 0 16px;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-permanent-drawer .mdc-list-item.mdc-ripple-upgraded {\n  left: 0; }\n\n.mdc-permanent-drawer .mdc-list-item__start-detail {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-permanent-drawer .mdc-list-item__start-detail--theme-dark .mdc-permanent-drawer .mdc-list-item__start-detail,\n.mdc-theme--dark .mdc-permanent-drawer .mdc-list-item__start-detail {\n  color: rgba(255, 255, 255, 0.54); }\n\n.mdc-permanent-drawer--selected.mdc-list-item,\n.mdc-permanent-drawer--selected.mdc-list-item .mdc-list-item__start-detail {\n  /* @alternate */\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-permanent-drawer .mdc-list-item::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: inherit;\n  background: currentColor;\n  opacity: 0;\n  content: \"\"; }\n\n.mdc-permanent-drawer .mdc-list-item:focus::before {\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .12; }\n\n.mdc-permanent-drawer .mdc-list-item:active::before {\n  /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .18; }\n\n.mdc-permanent-drawer .mdc-list-item:active:focus::before {\n  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n\n[dir=\"rtl\"] .mdc-permanent-drawer, .mdc-permanent-drawer[dir=\"rtl\"] {\n  border-left: 1px solid #e4e4e4;\n  border-right: 0; }\n\n[dir=\"rtl\"] .mdc-permanent-drawer, .mdc-permanent-drawer[dir=\"rtl\"] {\n  left: initial;\n  right: 0; }\n\n.mdc-permanent-drawer--theme-dark,\n.mdc-theme--dark .mdc-permanent-drawer {\n  background-color: #212121;\n  background-color: var(--mdc-permanent-drawer-dark-theme-bg-color, #212121);\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white);\n  border-left: 0;\n  border-right: 1px solid rgba(255, 255, 255, 0.12); }\n\n[dir=\"rtl\"] .mdc-permanent-drawer--theme-dark, .mdc-permanent-drawer--theme-dark[dir=\"rtl\"], [dir=\"rtl\"]\n.mdc-theme--dark .mdc-permanent-drawer,\n.mdc-theme--dark .mdc-permanent-drawer[dir=\"rtl\"] {\n  border-left: 1px solid rgba(255, 255, 255, 0.12);\n  border-right: 0; }\n\n.mdc-permanent-drawer--floating {\n  background: none;\n  border-left: 0;\n  border-right: none; }\n\n[dir=\"rtl\"] .mdc-permanent-drawer--floating, .mdc-permanent-drawer--floating[dir=\"rtl\"] {\n  border-left: none;\n  border-right: 0; }\n\n.mdc-permanent-drawer--floating--theme-dark,\n.mdc-theme--dark .mdc-permanent-drawer--floating {\n  background: none;\n  border-left: 0;\n  border-right: none; }\n\n[dir=\"rtl\"] .mdc-permanent-drawer--floating--theme-dark, .mdc-permanent-drawer--floating--theme-dark[dir=\"rtl\"], [dir=\"rtl\"]\n.mdc-theme--dark .mdc-permanent-drawer--floating,\n.mdc-theme--dark .mdc-permanent-drawer--floating[dir=\"rtl\"] {\n  border-left: none;\n  border-right: 0; }\n\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-temporary-drawer {\n  /* Use aspect ratio trick to maintain 16:9 aspect ratio on the header */\n  /* stylelint-disable selector-no-qualifying-type */\n  /* stylelint-enable selector-no-qualifying-type */\n  /* TODO(sgomes): Revisit when we have interactive lists. */\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  pointer-events: none;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  contain: strict;\n  z-index: 5;\n  /* Shaded background */ }\n\n.mdc-temporary-drawer__toolbar-spacer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-negative: 0;\n  flex-shrink: 0;\n  -webkit-box-align: flex-center;\n  -ms-flex-align: flex-center;\n  align-items: flex-center;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  height: 56px;\n  padding: 16px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n.mdc-temporary-drawer__toolbar-spacer--theme-dark .mdc-temporary-drawer__toolbar-spacer,\n.mdc-theme--dark .mdc-temporary-drawer__toolbar-spacer {\n  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }\n\n@media (min-width: 600px) {\n  .mdc-temporary-drawer__toolbar-spacer {\n    height: 64px; } }\n\n.mdc-temporary-drawer__header {\n  position: relative; }\n\n.mdc-temporary-drawer__header::before {\n  display: block;\n  padding-top: 56.25%;\n  content: \"\"; }\n\n.mdc-temporary-drawer__header-content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-box-align: end;\n  -ms-flex-align: end;\n  align-items: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-temporary-drawer .mdc-list-group,\n.mdc-temporary-drawer .mdc-list {\n  padding-right: 0;\n  padding-left: 0; }\n\n.mdc-temporary-drawer .mdc-list-item {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  position: relative;\n  padding: 0 16px;\n  outline: none;\n  color: inherit;\n  text-decoration: none; }\n\n.mdc-temporary-drawer .mdc-list-item.mdc-ripple-upgraded {\n  left: 0; }\n\n.mdc-temporary-drawer .mdc-list-item__start-detail {\n  color: rgba(0, 0, 0, 0.54); }\n\n.mdc-temporary-drawer .mdc-list-item__start-detail--theme-dark .mdc-temporary-drawer .mdc-list-item__start-detail,\n.mdc-theme--dark .mdc-temporary-drawer .mdc-list-item__start-detail {\n  color: rgba(255, 255, 255, 0.54); }\n\n.mdc-temporary-drawer--selected.mdc-list-item,\n.mdc-temporary-drawer--selected.mdc-list-item .mdc-list-item__start-detail {\n  /* @alternate */\n  color: #3f51b5;\n  color: var(--mdc-theme-primary, #3f51b5); }\n\n.mdc-temporary-drawer .mdc-list-item::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -webkit-transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: opacity 120ms 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  border-radius: inherit;\n  background: currentColor;\n  opacity: 0;\n  content: \"\"; }\n\n.mdc-temporary-drawer .mdc-list-item:focus::before {\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .12; }\n\n.mdc-temporary-drawer .mdc-list-item:active::before {\n  /*\n      Slightly darker value for visual distinction.\n      This allows a full base that has distinct modes.\n      Progressive enhancement with ripples will provide complete button spec alignment.\n    */\n  -webkit-transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1);\n  opacity: .18; }\n\n.mdc-temporary-drawer .mdc-list-item:active:focus::before {\n  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }\n\n.mdc-temporary-drawer::before {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.6);\n  content: \"\";\n  opacity: 0;\n  opacity: var(--mdc-temporary-drawer-opacity, 0);\n  will-change: opacity;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.mdc-temporary-drawer__drawer {\n  /* @alternate */\n  background: #fff;\n  background: var(--mdc-theme-background, #fff);\n  -webkit-box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n  left: 0;\n  right: initial;\n  height: 100%;\n  -webkit-transform: translateX(-107%);\n  transform: translateX(-107%);\n  -webkit-transform: translateX(calc(-100% - 20px));\n  transform: translateX(calc(-100% - 20px));\n  will-change: transform;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: absolute;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  width: calc(100% - 56px);\n  max-width: 280px;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  overflow: hidden;\n  -ms-touch-action: none;\n  touch-action: none;\n  /* TODO(sgomes): replace with global breakpoints when we have them */ }\n\n[dir=\"rtl\"] .mdc-temporary-drawer__drawer, .mdc-temporary-drawer__drawer[dir=\"rtl\"] {\n  left: initial;\n  right: 0; }\n\n.mdc-temporary-drawer--theme-dark .mdc-temporary-drawer__drawer,\n.mdc-theme--dark .mdc-temporary-drawer__drawer {\n  background: #303030;\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n[dir=\"rtl\"] .mdc-temporary-drawer .mdc-temporary-drawer__drawer,\n.mdc-temporary-drawer[dir=\"rtl\"] .mdc-temporary-drawer__drawer {\n  -webkit-transform: translateX(107%);\n  transform: translateX(107%);\n  -webkit-transform: translateX(calc(100% + 20px));\n  transform: translateX(calc(100% + 20px)); }\n\n@media (min-width: 600px) {\n  .mdc-temporary-drawer__drawer {\n    width: calc(100% - 64px);\n    max-width: 320px; } }\n\n.mdc-temporary-drawer__content {\n  -webkit-box-flex: 1;\n  -ms-flex-positive: 1;\n  flex-grow: 1;\n  margin: 0;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-overflow-scrolling: touch;\n  -ms-touch-action: pan-y;\n  touch-action: pan-y; }\n\n.mdc-temporary-drawer__footer {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  -ms-flex-negative: 0;\n  flex-shrink: 0; }\n\n.mdc-temporary-drawer--animating::before {\n  -webkit-transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: opacity 0.3s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-temporary-drawer--animating.mdc-temporary-drawer--open .mdc-temporary-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1);\n  transition: transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.225s 0ms cubic-bezier(0, 0, 0.2, 1); }\n\n.mdc-temporary-drawer--animating .mdc-temporary-drawer__drawer {\n  -webkit-transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1);\n  transition: transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.195s 0ms cubic-bezier(0.4, 0, 0.6, 1); }\n\n.mdc-temporary-drawer--open {\n  pointer-events: auto; }\n\n.mdc-temporary-drawer--open::before {\n  opacity: 1;\n  opacity: var(--mdc-temporary-drawer-opacity, 1); }\n\n.mdc-temporary-drawer--open .mdc-temporary-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n[dir=\"rtl\"] .mdc-temporary-drawer--open .mdc-temporary-drawer__drawer, .mdc-temporary-drawer--open[dir=\"rtl\"] .mdc-temporary-drawer__drawer {\n  -webkit-transform: none;\n  transform: none; }\n\n.mdc-drawer-scroll-lock {\n  height: 100vh;\n  overflow: hidden; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _highlight = __webpack_require__(4);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+var _Card = __webpack_require__(5);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+__webpack_require__(12);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class Home extends _preact.Component {
+  render(props, { text }) {
+    const demoDev = `npm install 
+npm start`;
+
+    const demoProd = `npm run build`;
+
+    return (0, _preact.h)(
+      _Card2.default,
+      null,
+      (0, _preact.h)(
+        _Card2.default.Primary,
+        null,
+        (0, _preact.h)(
+          _Card2.default.Title,
+          { large: true },
+          "Preact Progressive Web App Boilerplate 2017"
+        )
+      ),
+      (0, _preact.h)(
+        _Card2.default.Media,
+        null,
+        "Code snippets:",
+        (0, _preact.h)(
+          "ul",
+          null,
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "#/code/hello" },
+              "Hello"
+            )
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "#/code/router" },
+              "Router"
+            )
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "#/code/offline" },
+              "Offline"
+            )
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "#/code/highlight" },
+              "Highlight.js"
+            )
+          )
+        ),
+        "The smallest Preact Progressive Web App stack with:",
+        (0, _preact.h)(
+          "ul",
+          null,
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "https://github.com/developit/preact-router" },
+              "preact router"
+            ),
+            " ",
+            "with",
+            " ",
+            (0, _preact.h)(
+              "a",
+              { href: "https://github.com/ReactTraining/history" },
+              "history"
+            )
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "https://github.com/prateekbh/preact-material-components" },
+              "preact material components"
+            )
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "https://github.com/babel/babel-preset-env" },
+              "babel-preset-env"
+            ),
+            " ",
+            "for ES6 & JSX support"
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "https://github.com/kentcdodds/webpack-config-utils" },
+              "webpack-config-utils"
+            ),
+            " ",
+            "in single ",
+            (0, _preact.h)(
+              "i",
+              null,
+              "webpack.config.babel.js"
+            ),
+            " for production and development"
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "https://github.com/NekR/offline-plugin" },
+              "offline-plugin"
+            ),
+            " ",
+            "for serving files when offline"
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            (0, _preact.h)(
+              "a",
+              { href: "https://github.com/webpack/webpack-dev-server" },
+              "webpack dev server"
+            ),
+            " ",
+            "included for local development"
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            "SASS support"
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            "Compatible with IE11 and higher"
+          ),
+          (0, _preact.h)(
+            "li",
+            null,
+            "100% in",
+            " ",
+            (0, _preact.h)(
+              "a",
+              { href: "https://developers.google.com/web/tools/lighthouse/" },
+              "Lighthouse Audit"
+            )
+          )
+        ),
+        (0, _preact.h)(
+          "p",
+          null,
+          "Source code",
+          " ",
+          (0, _preact.h)(
+            "a",
+            { href: "https://github.com/keemor/keemor.github.io" },
+            "https://github.com/keemor/keemor.github.io"
+          )
+        ),
+        "Local development",
+        (0, _preact.h)(_highlight2.default, { code: demoDev }),
+        "Production version",
+        (0, _preact.h)(_highlight2.default, { code: demoProd })
+      )
+    );
+  }
+}
+exports.default = Home;
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+Syntax highlighting with language autodetection.
+https://highlightjs.org/
+*/
+
+(function (factory) {
+
+  // Find the global object for export to both the browser and web workers.
+  var globalObject = typeof window === 'object' && window || typeof self === 'object' && self;
+
+  // Setup highlight.js for different environments. First is Node.js or
+  // CommonJS.
+  if (true) {
+    factory(exports);
+  } else if (globalObject) {
+    // Export hljs globally even when using AMD for cases when this script
+    // is loaded with others that may still expect a global hljs.
+    globalObject.hljs = factory({});
+
+    // Finally register the global hljs with AMD.
+    if (typeof define === 'function' && define.amd) {
+      define([], function () {
+        return globalObject.hljs;
+      });
+    }
+  }
+})(function (hljs) {
+  // Convenience variables for build-in objects
+  var ArrayProto = [],
+      objectKeys = Object.keys;
+
+  // Global internal variables used within the highlight.js library.
+  var languages = {},
+      aliases = {};
+
+  // Regular expressions used throughout the highlight.js library.
+  var noHighlightRe = /^(no-?highlight|plain|text)$/i,
+      languagePrefixRe = /\blang(?:uage)?-([\w-]+)\b/i,
+      fixMarkupRe = /((^(<[^>]+>|\t|)+|(?:\n)))/gm;
+
+  var spanEndTag = '</span>';
+
+  // Global options used when within external APIs. This is modified when
+  // calling the `hljs.configure` function.
+  var options = {
+    classPrefix: 'hljs-',
+    tabReplace: null,
+    useBR: false,
+    languages: undefined
+  };
+
+  /* Utility functions */
+
+  function escape(value) {
+    return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function tag(node) {
+    return node.nodeName.toLowerCase();
+  }
+
+  function testRe(re, lexeme) {
+    var match = re && re.exec(lexeme);
+    return match && match.index === 0;
+  }
+
+  function isNotHighlighted(language) {
+    return noHighlightRe.test(language);
+  }
+
+  function blockLanguage(block) {
+    var i, match, length, _class;
+    var classes = block.className + ' ';
+
+    classes += block.parentNode ? block.parentNode.className : '';
+
+    // language-* takes precedence over non-prefixed class names.
+    match = languagePrefixRe.exec(classes);
+    if (match) {
+      return getLanguage(match[1]) ? match[1] : 'no-highlight';
+    }
+
+    classes = classes.split(/\s+/);
+
+    for (i = 0, length = classes.length; i < length; i++) {
+      _class = classes[i];
+
+      if (isNotHighlighted(_class) || getLanguage(_class)) {
+        return _class;
+      }
+    }
+  }
+
+  function inherit(parent) {
+    // inherit(parent, override_obj, override_obj, ...)
+    var key;
+    var result = {};
+    var objects = Array.prototype.slice.call(arguments, 1);
+
+    for (key in parent) result[key] = parent[key];
+    objects.forEach(function (obj) {
+      for (key in obj) result[key] = obj[key];
+    });
+    return result;
+  }
+
+  /* Stream merging */
+
+  function nodeStream(node) {
+    var result = [];
+    (function _nodeStream(node, offset) {
+      for (var child = node.firstChild; child; child = child.nextSibling) {
+        if (child.nodeType === 3) offset += child.nodeValue.length;else if (child.nodeType === 1) {
+          result.push({
+            event: 'start',
+            offset: offset,
+            node: child
+          });
+          offset = _nodeStream(child, offset);
+          // Prevent void elements from having an end tag that would actually
+          // double them in the output. There are more void elements in HTML
+          // but we list only those realistically expected in code display.
+          if (!tag(child).match(/br|hr|img|input/)) {
+            result.push({
+              event: 'stop',
+              offset: offset,
+              node: child
+            });
+          }
+        }
+      }
+      return offset;
+    })(node, 0);
+    return result;
+  }
+
+  function mergeStreams(original, highlighted, value) {
+    var processed = 0;
+    var result = '';
+    var nodeStack = [];
+
+    function selectStream() {
+      if (!original.length || !highlighted.length) {
+        return original.length ? original : highlighted;
+      }
+      if (original[0].offset !== highlighted[0].offset) {
+        return original[0].offset < highlighted[0].offset ? original : highlighted;
+      }
+
+      /*
+      To avoid starting the stream just before it should stop the order is
+      ensured that original always starts first and closes last:
+       if (event1 == 'start' && event2 == 'start')
+        return original;
+      if (event1 == 'start' && event2 == 'stop')
+        return highlighted;
+      if (event1 == 'stop' && event2 == 'start')
+        return original;
+      if (event1 == 'stop' && event2 == 'stop')
+        return highlighted;
+       ... which is collapsed to:
+      */
+      return highlighted[0].event === 'start' ? original : highlighted;
+    }
+
+    function open(node) {
+      function attr_str(a) {
+        return ' ' + a.nodeName + '="' + escape(a.value).replace('"', '&quot;') + '"';
+      }
+      result += '<' + tag(node) + ArrayProto.map.call(node.attributes, attr_str).join('') + '>';
+    }
+
+    function close(node) {
+      result += '</' + tag(node) + '>';
+    }
+
+    function render(event) {
+      (event.event === 'start' ? open : close)(event.node);
+    }
+
+    while (original.length || highlighted.length) {
+      var stream = selectStream();
+      result += escape(value.substring(processed, stream[0].offset));
+      processed = stream[0].offset;
+      if (stream === original) {
+        /*
+        On any opening or closing tag of the original markup we first close
+        the entire highlighted node stack, then render the original tag along
+        with all the following original tags at the same offset and then
+        reopen all the tags on the highlighted stack.
+        */
+        nodeStack.reverse().forEach(close);
+        do {
+          render(stream.splice(0, 1)[0]);
+          stream = selectStream();
+        } while (stream === original && stream.length && stream[0].offset === processed);
+        nodeStack.reverse().forEach(open);
+      } else {
+        if (stream[0].event === 'start') {
+          nodeStack.push(stream[0].node);
+        } else {
+          nodeStack.pop();
+        }
+        render(stream.splice(0, 1)[0]);
+      }
+    }
+    return result + escape(value.substr(processed));
+  }
+
+  /* Initialization */
+
+  function expand_mode(mode) {
+    if (mode.variants && !mode.cached_variants) {
+      mode.cached_variants = mode.variants.map(function (variant) {
+        return inherit(mode, { variants: null }, variant);
+      });
+    }
+    return mode.cached_variants || mode.endsWithParent && [inherit(mode)] || [mode];
+  }
+
+  function compileLanguage(language) {
+
+    function reStr(re) {
+      return re && re.source || re;
+    }
+
+    function langRe(value, global) {
+      return new RegExp(reStr(value), 'm' + (language.case_insensitive ? 'i' : '') + (global ? 'g' : ''));
+    }
+
+    function compileMode(mode, parent) {
+      if (mode.compiled) return;
+      mode.compiled = true;
+
+      mode.keywords = mode.keywords || mode.beginKeywords;
+      if (mode.keywords) {
+        var compiled_keywords = {};
+
+        var flatten = function (className, str) {
+          if (language.case_insensitive) {
+            str = str.toLowerCase();
+          }
+          str.split(' ').forEach(function (kw) {
+            var pair = kw.split('|');
+            compiled_keywords[pair[0]] = [className, pair[1] ? Number(pair[1]) : 1];
+          });
+        };
+
+        if (typeof mode.keywords === 'string') {
+          // string
+          flatten('keyword', mode.keywords);
+        } else {
+          objectKeys(mode.keywords).forEach(function (className) {
+            flatten(className, mode.keywords[className]);
+          });
+        }
+        mode.keywords = compiled_keywords;
+      }
+      mode.lexemesRe = langRe(mode.lexemes || /\w+/, true);
+
+      if (parent) {
+        if (mode.beginKeywords) {
+          mode.begin = '\\b(' + mode.beginKeywords.split(' ').join('|') + ')\\b';
+        }
+        if (!mode.begin) mode.begin = /\B|\b/;
+        mode.beginRe = langRe(mode.begin);
+        if (!mode.end && !mode.endsWithParent) mode.end = /\B|\b/;
+        if (mode.end) mode.endRe = langRe(mode.end);
+        mode.terminator_end = reStr(mode.end) || '';
+        if (mode.endsWithParent && parent.terminator_end) mode.terminator_end += (mode.end ? '|' : '') + parent.terminator_end;
+      }
+      if (mode.illegal) mode.illegalRe = langRe(mode.illegal);
+      if (mode.relevance == null) mode.relevance = 1;
+      if (!mode.contains) {
+        mode.contains = [];
+      }
+      mode.contains = Array.prototype.concat.apply([], mode.contains.map(function (c) {
+        return expand_mode(c === 'self' ? mode : c);
+      }));
+      mode.contains.forEach(function (c) {
+        compileMode(c, mode);
+      });
+
+      if (mode.starts) {
+        compileMode(mode.starts, parent);
+      }
+
+      var terminators = mode.contains.map(function (c) {
+        return c.beginKeywords ? '\\.?(' + c.begin + ')\\.?' : c.begin;
+      }).concat([mode.terminator_end, mode.illegal]).map(reStr).filter(Boolean);
+      mode.terminators = terminators.length ? langRe(terminators.join('|'), true) : { exec: function () /*s*/{
+          return null;
+        } };
+    }
+
+    compileMode(language);
+  }
+
+  /*
+  Core highlighting function. Accepts a language name, or an alias, and a
+  string with the code to highlight. Returns an object with the following
+  properties:
+   - relevance (int)
+  - value (an HTML string with highlighting markup)
+   */
+  function highlight(name, value, ignore_illegals, continuation) {
+
+    function subMode(lexeme, mode) {
+      var i, length;
+
+      for (i = 0, length = mode.contains.length; i < length; i++) {
+        if (testRe(mode.contains[i].beginRe, lexeme)) {
+          return mode.contains[i];
+        }
+      }
+    }
+
+    function endOfMode(mode, lexeme) {
+      if (testRe(mode.endRe, lexeme)) {
+        while (mode.endsParent && mode.parent) {
+          mode = mode.parent;
+        }
+        return mode;
+      }
+      if (mode.endsWithParent) {
+        return endOfMode(mode.parent, lexeme);
+      }
+    }
+
+    function isIllegal(lexeme, mode) {
+      return !ignore_illegals && testRe(mode.illegalRe, lexeme);
+    }
+
+    function keywordMatch(mode, match) {
+      var match_str = language.case_insensitive ? match[0].toLowerCase() : match[0];
+      return mode.keywords.hasOwnProperty(match_str) && mode.keywords[match_str];
+    }
+
+    function buildSpan(classname, insideSpan, leaveOpen, noPrefix) {
+      var classPrefix = noPrefix ? '' : options.classPrefix,
+          openSpan = '<span class="' + classPrefix,
+          closeSpan = leaveOpen ? '' : spanEndTag;
+
+      openSpan += classname + '">';
+
+      return openSpan + insideSpan + closeSpan;
+    }
+
+    function processKeywords() {
+      var keyword_match, last_index, match, result;
+
+      if (!top.keywords) return escape(mode_buffer);
+
+      result = '';
+      last_index = 0;
+      top.lexemesRe.lastIndex = 0;
+      match = top.lexemesRe.exec(mode_buffer);
+
+      while (match) {
+        result += escape(mode_buffer.substring(last_index, match.index));
+        keyword_match = keywordMatch(top, match);
+        if (keyword_match) {
+          relevance += keyword_match[1];
+          result += buildSpan(keyword_match[0], escape(match[0]));
+        } else {
+          result += escape(match[0]);
+        }
+        last_index = top.lexemesRe.lastIndex;
+        match = top.lexemesRe.exec(mode_buffer);
+      }
+      return result + escape(mode_buffer.substr(last_index));
+    }
+
+    function processSubLanguage() {
+      var explicit = typeof top.subLanguage === 'string';
+      if (explicit && !languages[top.subLanguage]) {
+        return escape(mode_buffer);
+      }
+
+      var result = explicit ? highlight(top.subLanguage, mode_buffer, true, continuations[top.subLanguage]) : highlightAuto(mode_buffer, top.subLanguage.length ? top.subLanguage : undefined);
+
+      // Counting embedded language score towards the host language may be disabled
+      // with zeroing the containing mode relevance. Usecase in point is Markdown that
+      // allows XML everywhere and makes every XML snippet to have a much larger Markdown
+      // score.
+      if (top.relevance > 0) {
+        relevance += result.relevance;
+      }
+      if (explicit) {
+        continuations[top.subLanguage] = result.top;
+      }
+      return buildSpan(result.language, result.value, false, true);
+    }
+
+    function processBuffer() {
+      result += top.subLanguage != null ? processSubLanguage() : processKeywords();
+      mode_buffer = '';
+    }
+
+    function startNewMode(mode) {
+      result += mode.className ? buildSpan(mode.className, '', true) : '';
+      top = Object.create(mode, { parent: { value: top } });
+    }
+
+    function processLexeme(buffer, lexeme) {
+
+      mode_buffer += buffer;
+
+      if (lexeme == null) {
+        processBuffer();
+        return 0;
+      }
+
+      var new_mode = subMode(lexeme, top);
+      if (new_mode) {
+        if (new_mode.skip) {
+          mode_buffer += lexeme;
+        } else {
+          if (new_mode.excludeBegin) {
+            mode_buffer += lexeme;
+          }
+          processBuffer();
+          if (!new_mode.returnBegin && !new_mode.excludeBegin) {
+            mode_buffer = lexeme;
+          }
+        }
+        startNewMode(new_mode, lexeme);
+        return new_mode.returnBegin ? 0 : lexeme.length;
+      }
+
+      var end_mode = endOfMode(top, lexeme);
+      if (end_mode) {
+        var origin = top;
+        if (origin.skip) {
+          mode_buffer += lexeme;
+        } else {
+          if (!(origin.returnEnd || origin.excludeEnd)) {
+            mode_buffer += lexeme;
+          }
+          processBuffer();
+          if (origin.excludeEnd) {
+            mode_buffer = lexeme;
+          }
+        }
+        do {
+          if (top.className) {
+            result += spanEndTag;
+          }
+          if (!top.skip) {
+            relevance += top.relevance;
+          }
+          top = top.parent;
+        } while (top !== end_mode.parent);
+        if (end_mode.starts) {
+          startNewMode(end_mode.starts, '');
+        }
+        return origin.returnEnd ? 0 : lexeme.length;
+      }
+
+      if (isIllegal(lexeme, top)) throw new Error('Illegal lexeme "' + lexeme + '" for mode "' + (top.className || '<unnamed>') + '"');
+
+      /*
+      Parser should not reach this point as all types of lexemes should be caught
+      earlier, but if it does due to some bug make sure it advances at least one
+      character forward to prevent infinite looping.
+      */
+      mode_buffer += lexeme;
+      return lexeme.length || 1;
+    }
+
+    var language = getLanguage(name);
+    if (!language) {
+      throw new Error('Unknown language: "' + name + '"');
+    }
+
+    compileLanguage(language);
+    var top = continuation || language;
+    var continuations = {}; // keep continuations for sub-languages
+    var result = '',
+        current;
+    for (current = top; current !== language; current = current.parent) {
+      if (current.className) {
+        result = buildSpan(current.className, '', true) + result;
+      }
+    }
+    var mode_buffer = '';
+    var relevance = 0;
+    try {
+      var match,
+          count,
+          index = 0;
+      while (true) {
+        top.terminators.lastIndex = index;
+        match = top.terminators.exec(value);
+        if (!match) break;
+        count = processLexeme(value.substring(index, match.index), match[0]);
+        index = match.index + count;
+      }
+      processLexeme(value.substr(index));
+      for (current = top; current.parent; current = current.parent) {
+        // close dangling modes
+        if (current.className) {
+          result += spanEndTag;
+        }
+      }
+      return {
+        relevance: relevance,
+        value: result,
+        language: name,
+        top: top
+      };
+    } catch (e) {
+      if (e.message && e.message.indexOf('Illegal') !== -1) {
+        return {
+          relevance: 0,
+          value: escape(value)
+        };
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  /*
+  Highlighting with language detection. Accepts a string with the code to
+  highlight. Returns an object with the following properties:
+   - language (detected language)
+  - relevance (int)
+  - value (an HTML string with highlighting markup)
+  - second_best (object with the same structure for second-best heuristically
+    detected language, may be absent)
+   */
+  function highlightAuto(text, languageSubset) {
+    languageSubset = languageSubset || options.languages || objectKeys(languages);
+    var result = {
+      relevance: 0,
+      value: escape(text)
+    };
+    var second_best = result;
+    languageSubset.filter(getLanguage).forEach(function (name) {
+      var current = highlight(name, text, false);
+      current.language = name;
+      if (current.relevance > second_best.relevance) {
+        second_best = current;
+      }
+      if (current.relevance > result.relevance) {
+        second_best = result;
+        result = current;
+      }
+    });
+    if (second_best.language) {
+      result.second_best = second_best;
+    }
+    return result;
+  }
+
+  /*
+  Post-processing of the highlighted markup:
+   - replace TABs with something more useful
+  - replace real line-breaks with '<br>' for non-pre containers
+   */
+  function fixMarkup(value) {
+    return !(options.tabReplace || options.useBR) ? value : value.replace(fixMarkupRe, function (match, p1) {
+      if (options.useBR && match === '\n') {
+        return '<br>';
+      } else if (options.tabReplace) {
+        return p1.replace(/\t/g, options.tabReplace);
+      }
+      return '';
+    });
+  }
+
+  function buildClassName(prevClassName, currentLang, resultLang) {
+    var language = currentLang ? aliases[currentLang] : resultLang,
+        result = [prevClassName.trim()];
+
+    if (!prevClassName.match(/\bhljs\b/)) {
+      result.push('hljs');
+    }
+
+    if (prevClassName.indexOf(language) === -1) {
+      result.push(language);
+    }
+
+    return result.join(' ').trim();
+  }
+
+  /*
+  Applies highlighting to a DOM node containing code. Accepts a DOM node and
+  two optional parameters for fixMarkup.
+  */
+  function highlightBlock(block) {
+    var node, originalStream, result, resultNode, text;
+    var language = blockLanguage(block);
+
+    if (isNotHighlighted(language)) return;
+
+    if (options.useBR) {
+      node = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
+      node.innerHTML = block.innerHTML.replace(/\n/g, '').replace(/<br[ \/]*>/g, '\n');
+    } else {
+      node = block;
+    }
+    text = node.textContent;
+    result = language ? highlight(language, text, true) : highlightAuto(text);
+
+    originalStream = nodeStream(node);
+    if (originalStream.length) {
+      resultNode = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
+      resultNode.innerHTML = result.value;
+      result.value = mergeStreams(originalStream, nodeStream(resultNode), text);
+    }
+    result.value = fixMarkup(result.value);
+
+    block.innerHTML = result.value;
+    block.className = buildClassName(block.className, language, result.language);
+    block.result = {
+      language: result.language,
+      re: result.relevance
+    };
+    if (result.second_best) {
+      block.second_best = {
+        language: result.second_best.language,
+        re: result.second_best.relevance
+      };
+    }
+  }
+
+  /*
+  Updates highlight.js global options with values passed in the form of an object.
+  */
+  function configure(user_options) {
+    options = inherit(options, user_options);
+  }
+
+  /*
+  Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+  */
+  function initHighlighting() {
+    if (initHighlighting.called) return;
+    initHighlighting.called = true;
+
+    var blocks = document.querySelectorAll('pre code');
+    ArrayProto.forEach.call(blocks, highlightBlock);
+  }
+
+  /*
+  Attaches highlighting to the page load event.
+  */
+  function initHighlightingOnLoad() {
+    addEventListener('DOMContentLoaded', initHighlighting, false);
+    addEventListener('load', initHighlighting, false);
+  }
+
+  function registerLanguage(name, language) {
+    var lang = languages[name] = language(hljs);
+    if (lang.aliases) {
+      lang.aliases.forEach(function (alias) {
+        aliases[alias] = name;
+      });
+    }
+  }
+
+  function listLanguages() {
+    return objectKeys(languages);
+  }
+
+  function getLanguage(name) {
+    name = (name || '').toLowerCase();
+    return languages[name] || languages[aliases[name]];
+  }
+
+  /* Interface definition */
+
+  hljs.highlight = highlight;
+  hljs.highlightAuto = highlightAuto;
+  hljs.fixMarkup = fixMarkup;
+  hljs.highlightBlock = highlightBlock;
+  hljs.configure = configure;
+  hljs.initHighlighting = initHighlighting;
+  hljs.initHighlightingOnLoad = initHighlightingOnLoad;
+  hljs.registerLanguage = registerLanguage;
+  hljs.listLanguages = listLanguages;
+  hljs.getLanguage = getLanguage;
+  hljs.inherit = inherit;
+
+  // Common regexps
+  hljs.IDENT_RE = '[a-zA-Z]\\w*';
+  hljs.UNDERSCORE_IDENT_RE = '[a-zA-Z_]\\w*';
+  hljs.NUMBER_RE = '\\b\\d+(\\.\\d+)?';
+  hljs.C_NUMBER_RE = '(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)'; // 0x..., 0..., decimal, float
+  hljs.BINARY_NUMBER_RE = '\\b(0b[01]+)'; // 0b...
+  hljs.RE_STARTERS_RE = '!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~';
+
+  // Common modes
+  hljs.BACKSLASH_ESCAPE = {
+    begin: '\\\\[\\s\\S]', relevance: 0
+  };
+  hljs.APOS_STRING_MODE = {
+    className: 'string',
+    begin: '\'', end: '\'',
+    illegal: '\\n',
+    contains: [hljs.BACKSLASH_ESCAPE]
+  };
+  hljs.QUOTE_STRING_MODE = {
+    className: 'string',
+    begin: '"', end: '"',
+    illegal: '\\n',
+    contains: [hljs.BACKSLASH_ESCAPE]
+  };
+  hljs.PHRASAL_WORDS_MODE = {
+    begin: /\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/
+  };
+  hljs.COMMENT = function (begin, end, inherits) {
+    var mode = hljs.inherit({
+      className: 'comment',
+      begin: begin, end: end,
+      contains: []
+    }, inherits || {});
+    mode.contains.push(hljs.PHRASAL_WORDS_MODE);
+    mode.contains.push({
+      className: 'doctag',
+      begin: '(?:TODO|FIXME|NOTE|BUG|XXX):',
+      relevance: 0
+    });
+    return mode;
+  };
+  hljs.C_LINE_COMMENT_MODE = hljs.COMMENT('//', '$');
+  hljs.C_BLOCK_COMMENT_MODE = hljs.COMMENT('/\\*', '\\*/');
+  hljs.HASH_COMMENT_MODE = hljs.COMMENT('#', '$');
+  hljs.NUMBER_MODE = {
+    className: 'number',
+    begin: hljs.NUMBER_RE,
+    relevance: 0
+  };
+  hljs.C_NUMBER_MODE = {
+    className: 'number',
+    begin: hljs.C_NUMBER_RE,
+    relevance: 0
+  };
+  hljs.BINARY_NUMBER_MODE = {
+    className: 'number',
+    begin: hljs.BINARY_NUMBER_RE,
+    relevance: 0
+  };
+  hljs.CSS_NUMBER_MODE = {
+    className: 'number',
+    begin: hljs.NUMBER_RE + '(' + '%|em|ex|ch|rem' + '|vw|vh|vmin|vmax' + '|cm|mm|in|pt|pc|px' + '|deg|grad|rad|turn' + '|s|ms' + '|Hz|kHz' + '|dpi|dpcm|dppx' + ')?',
+    relevance: 0
+  };
+  hljs.REGEXP_MODE = {
+    className: 'regexp',
+    begin: /\//, end: /\/[gimuy]*/,
+    illegal: /\n/,
+    contains: [hljs.BACKSLASH_ESCAPE, {
+      begin: /\[/, end: /\]/,
+      relevance: 0,
+      contains: [hljs.BACKSLASH_ESCAPE]
+    }]
+  };
+  hljs.TITLE_MODE = {
+    className: 'title',
+    begin: hljs.IDENT_RE,
+    relevance: 0
+  };
+  hljs.UNDERSCORE_TITLE_MODE = {
+    className: 'title',
+    begin: hljs.UNDERSCORE_IDENT_RE,
+    relevance: 0
+  };
+  hljs.METHOD_GUARD = {
+    // excludes method names from keyword processing
+    begin: '\\.\\s*' + hljs.UNDERSCORE_IDENT_RE,
+    relevance: 0
+  };
+
+  return hljs;
+});
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (hljs) {
+  var IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
+  var KEYWORDS = {
+    keyword: 'in of if for while finally var new function do return void else break catch ' + 'instanceof with throw case default try this switch continue typeof delete ' + 'let yield const export super debugger as async await static ' +
+    // ECMAScript 6 modules import
+    'import from as',
+
+    literal: 'true false null undefined NaN Infinity',
+    built_in: 'eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent ' + 'encodeURI encodeURIComponent escape unescape Object Function Boolean Error ' + 'EvalError InternalError RangeError ReferenceError StopIteration SyntaxError ' + 'TypeError URIError Number Math Date String RegExp Array Float32Array ' + 'Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array ' + 'Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require ' + 'module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect ' + 'Promise'
+  };
+  var EXPRESSIONS;
+  var NUMBER = {
+    className: 'number',
+    variants: [{ begin: '\\b(0[bB][01]+)' }, { begin: '\\b(0[oO][0-7]+)' }, { begin: hljs.C_NUMBER_RE }],
+    relevance: 0
+  };
+  var SUBST = {
+    className: 'subst',
+    begin: '\\$\\{', end: '\\}',
+    keywords: KEYWORDS,
+    contains: [] // defined later
+  };
+  var TEMPLATE_STRING = {
+    className: 'string',
+    begin: '`', end: '`',
+    contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+  };
+  SUBST.contains = [hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE, TEMPLATE_STRING, NUMBER, hljs.REGEXP_MODE];
+  var PARAMS_CONTAINS = SUBST.contains.concat([hljs.C_BLOCK_COMMENT_MODE, hljs.C_LINE_COMMENT_MODE]);
+
+  return {
+    aliases: ['js', 'jsx'],
+    keywords: KEYWORDS,
+    contains: [{
+      className: 'meta',
+      relevance: 10,
+      begin: /^\s*['"]use (strict|asm)['"]/
+    }, {
+      className: 'meta',
+      begin: /^#!/, end: /$/
+    }, hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE, TEMPLATE_STRING, hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE, NUMBER, { // object attr container
+      begin: /[{,]\s*/, relevance: 0,
+      contains: [{
+        begin: IDENT_RE + '\\s*:', returnBegin: true,
+        relevance: 0,
+        contains: [{ className: 'attr', begin: IDENT_RE, relevance: 0 }]
+      }]
+    }, { // "value" container
+      begin: '(' + hljs.RE_STARTERS_RE + '|\\b(case|return|throw)\\b)\\s*',
+      keywords: 'return throw case',
+      contains: [hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE, hljs.REGEXP_MODE, {
+        className: 'function',
+        begin: '(\\(.*?\\)|' + IDENT_RE + ')\\s*=>', returnBegin: true,
+        end: '\\s*=>',
+        contains: [{
+          className: 'params',
+          variants: [{
+            begin: IDENT_RE
+          }, {
+            begin: /\(\s*\)/
+          }, {
+            begin: /\(/, end: /\)/,
+            excludeBegin: true, excludeEnd: true,
+            keywords: KEYWORDS,
+            contains: PARAMS_CONTAINS
+          }]
+        }]
+      }, { // E4X / JSX
+        begin: /</, end: /(\/\w+|\w+\/)>/,
+        subLanguage: 'xml',
+        contains: [{ begin: /<\w+\s*\/>/, skip: true }, {
+          begin: /<\w+/, end: /(\/\w+|\w+\/)>/, skip: true,
+          contains: [{ begin: /<\w+\s*\/>/, skip: true }, 'self']
+        }]
+      }],
+      relevance: 0
+    }, {
+      className: 'function',
+      beginKeywords: 'function', end: /\{/, excludeEnd: true,
+      contains: [hljs.inherit(hljs.TITLE_MODE, { begin: IDENT_RE }), {
+        className: 'params',
+        begin: /\(/, end: /\)/,
+        excludeBegin: true,
+        excludeEnd: true,
+        contains: PARAMS_CONTAINS
+      }],
+      illegal: /\[|%/
+    }, {
+      begin: /\$[(.]/ // relevance booster for a pattern common to JS libs: `$(something)` and `$.something`
+    }, hljs.METHOD_GUARD, { // ES6 class
+      className: 'class',
+      beginKeywords: 'class', end: /[{;=]/, excludeEnd: true,
+      illegal: /[:"\[\]]/,
+      contains: [{ beginKeywords: 'extends' }, hljs.UNDERSCORE_TITLE_MODE]
+    }, {
+      beginKeywords: 'constructor', end: /\{/, excludeEnd: true
+    }],
+    illegal: /#(?!!)/
+  };
+};
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(78);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./monokai-sublime.css", function() {
+			var newContent = require("!!../../css-loader/index.js!../../sass-loader/lib/loader.js!./monokai-sublime.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*\n\nMonokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/\n\n*/\n.hljs {\n  display: block;\n  overflow-x: auto;\n  padding: 0.5em;\n  background: #23241f; }\n\n.hljs,\n.hljs-tag,\n.hljs-subst {\n  color: #f8f8f2; }\n\n.hljs-strong,\n.hljs-emphasis {\n  color: #a8a8a2; }\n\n.hljs-bullet,\n.hljs-quote,\n.hljs-number,\n.hljs-regexp,\n.hljs-literal,\n.hljs-link {\n  color: #ae81ff; }\n\n.hljs-code,\n.hljs-title,\n.hljs-section,\n.hljs-selector-class {\n  color: #a6e22e; }\n\n.hljs-strong {\n  font-weight: bold; }\n\n.hljs-emphasis {\n  font-style: italic; }\n\n.hljs-keyword,\n.hljs-selector-tag,\n.hljs-name,\n.hljs-attr {\n  color: #f92672; }\n\n.hljs-symbol,\n.hljs-attribute {\n  color: #66d9ef; }\n\n.hljs-params,\n.hljs-class .hljs-title {\n  color: #f8f8f2; }\n\n.hljs-string,\n.hljs-type,\n.hljs-built_in,\n.hljs-builtin-name,\n.hljs-selector-id,\n.hljs-selector-attr,\n.hljs-selector-pseudo,\n.hljs-addition,\n.hljs-variable,\n.hljs-template-variable {\n  color: #e6db74; }\n\n.hljs-comment,\n.hljs-deletion,\n.hljs-meta {\n  color: #75715e; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _MaterialComponent = __webpack_require__(3);
+
+var _MaterialComponent2 = _interopRequireDefault(_MaterialComponent);
+
+var _Icon = __webpack_require__(80);
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+/**
+ *  @prop dense = false
+ *  @prop raised = false
+ *  @prop compact = false
+ *  @prop disabled = false
+ *  @prop unelevated = false
+ *  @prop stroked = false
+ */
+class Button extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "button";
+    this._mdcProps = ["dense", "raised", "compact", "unelevated", "stroked"];
+  }
+  componentDidMount() {
+    super.attachRipple();
+  }
+  materialDom(props) {
+    const ButtonElement = props.href ? "a" : "button";
+
+    return (0, _preact.h)(ButtonElement, _extends({
+      ref: control => {
+        this.control = control;
+      }
+    }, props), this.props.children);
+  }
+}
+
+class ButtonIcon extends _Icon2.default {
+  constructor() {
+    super();
+    this.componentName = "button__icon";
+  }
+}
+
+Button.Icon = ButtonIcon;
+exports.default = Button;
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _MaterialComponent = __webpack_require__(3);
+
+var _MaterialComponent2 = _interopRequireDefault(_MaterialComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+/**
+ * @prop disabled = false
+ */
+class Icon extends _MaterialComponent2.default {
+  constructor() {
+    super();
+    this.componentName = "icon";
+  }
+  materialDom(props) {
+    return (0, _preact.h)("i", _extends({}, props, { className: "material-icons" }), props.children);
+  }
+}
+exports.default = Icon;
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n Material Components for the web\n Copyright (c) 2017 Google Inc.\n License: Apache-2.0\n*/\n/**\n * The css property used for elevation. In most cases this should not be changed. It is exposed\n * as a variable for abstraction / easy use when needing to reference the property directly, for\n * example in a `will-change` rule.\n */\n/**\n * The default duration value for elevation transitions.\n */\n/**\n * The default easing value for elevation transitions.\n */\n/**\n * Applies the correct css rules to an element to give it the elevation specified by $z-value.\n * The $z-value must be between 0 and 24.\n */\n/**\n * Returns a string that can be used as the value for a `transition` property for elevation.\n * Calling this function directly is useful in situations where a component needs to transition\n * more than one property.\n *\n * ```scss\n * .foo {\n *   transition: mdc-elevation-transition-rule(), opacity 100ms ease;\n *   will-change: $mdc-elevation-property, opacity;\n * }\n * ```\n */\n/**\n * Applies the correct css rules needed to have an element transition between elevations.\n * This mixin should be applied to elements whose elevation values will change depending on their\n * context (e.g. when active or disabled).\n */\n/* TODO(sgomes): Figure out what to do about desktop font sizes. */\n/* TODO(sgomes): Figure out what to do about i18n and i18n font sizes. */\n/**\n * Creates a rule that will be applied when an MDC-Web component is within the context of an RTL layout.\n *\n * Usage Example:\n * ```scss\n * .mdc-foo {\n *   position: absolute;\n *   left: 0;\n *\n *   @include mdc-rtl {\n *     left: auto;\n *     right: 0;\n *   }\n *\n *   &__bar {\n *     margin-left: 4px;\n *     @include mdc-rtl(\".mdc-foo\") {\n *       margin-left: auto;\n *       margin-right: 4px;\n *     }\n *   }\n * }\n *\n * .mdc-foo--mod {\n *   padding-left: 4px;\n *\n *   @include mdc-rtl {\n *     padding-left: auto;\n *     padding-right: 4px;\n *   }\n * }\n * ```\n *\n * Note that this works by checking for [dir=\"rtl\"] on an ancestor element. While this will work\n * in most cases, it will in some cases lead to false negatives, e.g.\n *\n * ```html\n * <html dir=\"rtl\">\n *   <!-- ... -->\n *   <div dir=\"ltr\">\n *     <div class=\"mdc-foo\">Styled incorrectly as RTL!</div>\n *   </div>\n * </html>\n * ```\n *\n * In the future, selectors such as :dir (http://mdn.io/:dir) will help us mitigate this.\n */\n/**\n * Takes a base box-model property - e.g. margin / border / padding - along with a default\n * direction and value, and emits rules which apply the value to the\n * \"<base-property>-<default-direction>\" property by default, but flips the direction\n * when within an RTL context.\n *\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, left, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 8px;\n *     margin-left: 0;\n *   }\n * }\n * ```\n * whereas:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-box(margin, right, 8px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-right: 8px;\n *\n *   @include mdc-rtl {\n *     margin-right: 0;\n *     margin-left: 8px;\n *   }\n * }\n * ```\n *\n * You can also pass a 4th optional $root-selector argument which will be forwarded to `mdc-rtl`,\n * e.g. `@include mdc-rtl-reflexive-box(margin, left, 8px, \".mdc-component\")`.\n *\n * Note that this function will always zero out the original value in an RTL context. If you're\n * trying to flip the values, use mdc-rtl-reflexive-property().\n */\n/**\n * Takes a base property and emits rules that assign <base-property>-left to <left-value> and\n * <base-property>-right to <right-value> in a LTR context, and vice versa in a RTL context.\n * For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-property(margin, auto, 12px);\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n * .mdc-foo {\n *   margin-left: auto;\n *   margin-right: 12px;\n *\n *   @include mdc-rtl {\n *     margin-left: 12px;\n *     margin-right: auto;\n *   }\n * }\n * ```\n *\n * A 4th optional $root-selector argument can be given, which will be passed to `mdc-rtl`.\n */\n/**\n * Takes an argument specifying a horizontal position property (either \"left\" or \"right\") as well\n * as a value, and applies that value to the specified position in a LTR context, and flips it in a\n * RTL context. For example:\n *\n * ```scss\n * .mdc-foo {\n *   @include mdc-rtl-reflexive-position(left, 0);\n *   position: absolute;\n * }\n * ```\n * is equivalent to:\n *\n * ```scss\n *  .mdc-foo {\n *    position: absolute;\n *    left: 0;\n *    right: initial;\n *\n *    @include mdc-rtl {\n *      right: 0;\n *      left: initial;\n *    }\n *  }\n * ```\n * An optional third $root-selector argument may also be given, which is passed to `mdc-rtl`.\n */\n.mdc-card {\n  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: end;\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0;\n  border-radius: 2px;\n  overflow: hidden; }\n\n.mdc-card__primary {\n  padding: 16px; }\n\n.mdc-card__primary .mdc-card__title--large {\n  padding-top: 8px; }\n\n.mdc-card__primary:last-child {\n  padding-bottom: 24px; }\n\n.mdc-card__supporting-text {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 8px 16px; }\n\n.mdc-card--theme-dark .mdc-card__supporting-text,\n.mdc-theme--dark .mdc-card__supporting-text {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-card__primary + .mdc-card__supporting-text {\n  margin-top: -8px;\n  padding-top: 0; }\n\n.mdc-card__supporting-text:last-child {\n  padding-bottom: 24px; }\n\n.mdc-card__actions {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 8px; }\n\n.mdc-card--theme-dark .mdc-card__actions,\n.mdc-theme--dark .mdc-card__actions {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-card__actions .mdc-card__action {\n  margin: 0 8px 0 0; }\n\n[dir=\"rtl\"] .mdc-card__actions .mdc-card__action, .mdc-card__actions .mdc-card__action[dir=\"rtl\"] {\n  margin: 0 0 0 8px; }\n\n.mdc-card__actions .mdc-card__action:last-child {\n  margin-left: 0;\n  margin-right: 0; }\n\n[dir=\"rtl\"] .mdc-card__actions .mdc-card__action:last-child, .mdc-card__actions .mdc-card__action:last-child[dir=\"rtl\"] {\n  margin-left: 0;\n  margin-right: 0; }\n\n.mdc-card__actions--vertical {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-flow: column;\n  flex-flow: column;\n  -webkit-box-align: start;\n  -ms-flex-align: start;\n  align-items: flex-start; }\n\n.mdc-card__actions--vertical .mdc-card__action {\n  margin: 0 0 4px; }\n\n.mdc-card__actions--vertical .mdc-card__action:last-child {\n  margin-bottom: 0; }\n\n.mdc-card__media {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: end;\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 16px; }\n\n.mdc-card__media-item {\n  display: inline-block;\n  width: auto;\n  height: 80px;\n  margin: 16px 0 0;\n  padding: 0; }\n\n.mdc-card__media-item--1dot5x {\n  width: auto;\n  height: 120px; }\n\n.mdc-card__media-item--2x {\n  width: auto;\n  height: 160px; }\n\n.mdc-card__media-item--3x {\n  width: auto;\n  height: 240px; }\n\n.mdc-card__title {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 500;\n  letter-spacing: 0.04em;\n  line-height: 1.5rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  margin: -.063rem 0; }\n\n.mdc-card--theme-dark .mdc-card__title,\n.mdc-theme--dark .mdc-card__title {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-card__title--large {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-height: 2rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin: 0; }\n\n.mdc-card__subtitle {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  font-weight: 400;\n  letter-spacing: 0.04em;\n  line-height: 1.25rem;\n  text-decoration: inherit;\n  text-transform: inherit;\n  /* @alternate */\n  color: rgba(0, 0, 0, 0.87);\n  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));\n  margin: -.063rem 0; }\n\n.mdc-card--theme-dark .mdc-card__subtitle,\n.mdc-theme--dark .mdc-card__subtitle {\n  /* @alternate */\n  color: white;\n  color: var(--mdc-theme-text-primary-on-dark, white); }\n\n.mdc-card__horizontal-block {\n  padding-left: 0;\n  padding-right: 16px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-box-align: start;\n  -ms-flex-align: start;\n  align-items: flex-start;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\n[dir=\"rtl\"] .mdc-card__horizontal-block, .mdc-card__horizontal-block[dir=\"rtl\"] {\n  padding-left: 16px;\n  padding-right: 0; }\n\n.mdc-card__horizontal-block .mdc-card__actions--vertical {\n  margin: 16px; }\n\n.mdc-card__horizontal-block .mdc-card__media-item {\n  margin-left: 16px;\n  margin-right: 0; }\n\n[dir=\"rtl\"] .mdc-card__horizontal-block .mdc-card__media-item, .mdc-card__horizontal-block .mdc-card__media-item[dir=\"rtl\"] {\n  margin-left: 0;\n  margin-right: 16px; }\n\n.mdc-card__horizontal-block .mdc-card__media-item--3x {\n  margin-bottom: 16px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+class About extends _preact.Component {
+  render(props, { text }) {
+    return (0, _preact.h)(
+      "div",
+      null,
+      (0, _preact.h)(
+        "h2",
+        null,
+        "Source code"
+      ),
+      (0, _preact.h)(
+        "a",
+        { href: "https://github.com/keemor/keemor.github.io" },
+        "https://github.com/keemor/keemor.github.io"
+      )
+    );
+  }
+}
+exports.default = About;
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _Card = __webpack_require__(5);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _highlight = __webpack_require__(4);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+__webpack_require__(12);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class Hello extends _preact.Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: "" };
+    this.onInput = this.onInput.bind(this);
+  }
+
+  componentDidMount() {
+    this.element.focus();
+  }
+
+  onInput(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  render(props, { text = "" }) {
+    const demo = `
+import { h, render, Component } from "preact";
+import Card from "preact-material-components/Card";
+import "preact-material-components/Card/style.css";
+
+export default class Hello extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: "" };
+    this.onInput = this.onInput.bind(this);
+  }
+
+  componentDidMount() {
+    this.element.focus();
+  }
+
+  onInput(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  render(props, { text = "" }) {
+    return (
+      <Card>
+        <Card.Media>
+          <h4>
+            <label for="hello">Your name</label>:{" "}
+            <input
+              ref={ref => {
+                this.element = ref;
+              }}
+              id="hello"
+              value={text}
+              onInput={this.onInput}
+            />
+          </h4>
+          <h4>
+            Hello: <span>{text} </span>
+          </h4>
+          
+        </Card.Media>
+      </Card>
+    );
+  }
+}`;
+
+    return (0, _preact.h)(
+      _Card2.default,
+      null,
+      (0, _preact.h)(
+        _Card2.default.Media,
+        null,
+        (0, _preact.h)(
+          "h4",
+          null,
+          (0, _preact.h)(
+            "label",
+            { "for": "hello" },
+            "Your name"
+          ),
+          ":",
+          " ",
+          (0, _preact.h)("input", {
+            ref: ref => {
+              this.element = ref;
+            },
+            id: "hello",
+            value: text,
+            onInput: this.onInput
+          })
+        ),
+        (0, _preact.h)(
+          "h4",
+          null,
+          "Hello: ",
+          (0, _preact.h)(
+            "span",
+            null,
+            text,
+            " "
+          )
+        ),
+        (0, _preact.h)(_highlight2.default, { code: demo })
+      )
+    );
+  }
+}
+exports.default = Hello;
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _Card = __webpack_require__(5);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _highlight = __webpack_require__(4);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class RouterCode extends _preact.Component {
+  render(props, { text }) {
+    const demo = `
+import { h, render, Component } from "preact";
+import { Router } from "preact-router";
+import { createHashHistory } from "history";
+
+import Header from "./components/header";
+import Hello from "./route/hello";
+import Home from "./route/home";
+import About from "./route/about";
+
+class Index extends Component {
+  logPageView() {
+    
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <div class="marginTop">
+          <Router history={createHashHistory()} onChange={this.logPageView}>
+            <Home default path="/" />
+            <Hello path="/hello" />
+            <About path="/about" />
+          </Router>
+        </div>
+      </div>
+    );
+  }
+}
+
+render(<Index />, document.body);`;
+
+    return (0, _preact.h)(
+      _Card2.default,
+      null,
+      (0, _preact.h)(
+        _Card2.default.Primary,
+        null,
+        (0, _preact.h)(
+          _Card2.default.Title,
+          null,
+          "Example of",
+          " ",
+          (0, _preact.h)(
+            "a",
+            { href: "https://github.com/developit/preact-router" },
+            "preact router"
+          ),
+          " ",
+          "with hash",
+          " ",
+          (0, _preact.h)(
+            "a",
+            { href: "https://github.com/ReactTraining/history" },
+            "history"
+          ),
+          " ",
+          "support"
+        )
+      ),
+      (0, _preact.h)(
+        _Card2.default.Media,
+        null,
+        (0, _preact.h)(_highlight2.default, { code: demo })
+      )
+    );
+  }
+}
+exports.default = RouterCode;
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _Card = __webpack_require__(5);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _highlight = __webpack_require__(4);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class OfflineCode extends _preact.Component {
+  render(props, { text }) {
+    const demo = `
+import { h, render, Component } from "preact";
+import * as runtime from "offline-plugin/runtime";
+
+import Header from "./components/header";
+
+class Index extends Component {
+  constructor(props) {
+    super(props);
+    runtime.install({
+      onUpdating: () => {
+        console.log("SW Event:", "onUpdating");
+      },
+      onUpdateReady: () => {
+        console.log("SW Event:", "onUpdateReady");
+        // Tells to new SW to take control immediately
+        runtime.applyUpdate();
+      },
+      onUpdated: () => {
+        console.log("SW Event:", "onUpdated");
+        // Reload the webpage to load into the new version
+        window.location.reload();
+      },
+
+      onUpdateFailed: () => {
+        console.log("SW Event:", "onUpdateFailed");
+      }
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Header />
+      </div>
+    );
+  }
+}
+
+render(<Index />, document.body);`;
+
+    return (0, _preact.h)(
+      _Card2.default,
+      null,
+      (0, _preact.h)(
+        _Card2.default.Primary,
+        null,
+        (0, _preact.h)(
+          _Card2.default.Title,
+          null,
+          "Example of using",
+          " ",
+          (0, _preact.h)(
+            "a",
+            { href: "https://github.com/NekR/offline-plugin" },
+            "offline-plugin"
+          )
+        )
+      ),
+      (0, _preact.h)(
+        _Card2.default.Media,
+        null,
+        (0, _preact.h)(_highlight2.default, { code: demo })
+      )
+    );
+  }
+}
+exports.default = OfflineCode;
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _Card = __webpack_require__(5);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _highlight = __webpack_require__(4);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class HighlightCode extends _preact.Component {
+  render(props, { text }) {
+    const demo = `
+import { h } from "preact";
+import hljs from "highlight.js/lib/highlight";
+import javascript from "highlight.js/lib/languages/javascript";
+import "highlight.js/styles/monokai-sublime.css";
+
+const LANGUAGES = { javascript };
+Object.keys(LANGUAGES).forEach(key =>
+  hljs.registerLanguage(key, LANGUAGES[key])
+);
+
+export default ({ code }) => {
+  let text = code.replace(/(^\s+|\s+$)/g, ""),
+    highlighted = hljs.highlightAuto(text, Object.keys(LANGUAGES)),
+    hLang = highlighted.language;
+  return (
+    <pre class="highlight">
+      <code
+        class={\`hljs lang-\${hLang}\`}
+        dangerouslySetInnerHTML={{ __html: highlighted.value }}
+      />
+    </pre>
+  );
+};`;
+
+    return (0, _preact.h)(
+      _Card2.default,
+      null,
+      (0, _preact.h)(
+        _Card2.default.Primary,
+        null,
+        (0, _preact.h)(
+          _Card2.default.Title,
+          null,
+          "Example of using",
+          " ",
+          (0, _preact.h)(
+            "a",
+            { href: "https://github.com/isagalaev/highlight.js/" },
+            "highlight.js"
+          ),
+          " ",
+          "based on preact-material-components",
+          " ",
+          (0, _preact.h)(
+            "a",
+            { href: "https://github.com/prateekbh/preact-material-components/blob/master/docs/src/components/code-block/index.js" },
+            "code-block"
+          )
+        )
+      ),
+      (0, _preact.h)(
+        _Card2.default.Media,
+        null,
+        (0, _preact.h)(_highlight2.default, { code: demo })
+      )
+    );
+  }
+}
+exports.default = HighlightCode;
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _Card = __webpack_require__(5);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _highlight = __webpack_require__(4);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+__webpack_require__(12);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class WhereAmI extends _preact.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    var output = document.getElementById("out");
+
+    if (!navigator.geolocation) {
+      output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+      return;
+    }
+
+    function success(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      output.innerHTML = "<p>Latitude is " + latitude + "° <br>Longitude is " + longitude + "°</p>";
+
+      var img = new Image();
+      img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + String(latitude) + "," + String(longitude) + "&zoom=13&size=300x300&sensor=false";
+
+      output.appendChild(img);
+    }
+
+    function error() {
+      output.innerHTML = "Unable to retrieve your location";
+    }
+
+    output.innerHTML = "<p>Locating…</p>";
+
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
+  render() {
+    const demo = ``;
+
+    return (0, _preact.h)(
+      _Card2.default,
+      null,
+      (0, _preact.h)(
+        _Card2.default.Media,
+        null,
+        (0, _preact.h)("div", { id: "out" })
+      )
+    );
+  }
+}
+exports.default = WhereAmI;
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _preact = __webpack_require__(0);
+
+var _Card = __webpack_require__(5);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _highlight = __webpack_require__(4);
+
+var _highlight2 = _interopRequireDefault(_highlight);
+
+__webpack_require__(12);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class AsyncAwait extends _preact.Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: "" };
+  }
+
+  componentDidMount() {}
+
+  render(props, { text = "" }) {
+    const demo = ``;
+
+    function doubleAfter2Seconds(x) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(x * 2);
+        }, 2000);
+      });
+    }
+
+    async function addAsync(x) {
+      const a = doubleAfter2Seconds(10);
+      const b = doubleAfter2Seconds(20);
+      const c = doubleAfter2Seconds(30);
+      // Place all awaits on the same line
+      // so that they're handled in parallel
+      // like promise.all.
+      return x + (await a) + (await b) + (await c);
+    }
+
+    addAsync(5).then(result => {
+      const text = "Note that this was calculated in only 2 seconds because calculations above were handed in parallel: " + result;
+
+      this.setState({ text: text });
+    });
+
+    return (0, _preact.h)(
+      _Card2.default,
+      null,
+      (0, _preact.h)(
+        _Card2.default.Media,
+        null,
+        (0, _preact.h)(
+          "h4",
+          null,
+          "Async operation: ",
+          (0, _preact.h)(
+            "span",
+            null,
+            text,
+            " "
+          )
+        ),
+        (0, _preact.h)(_highlight2.default, { code: demo })
+      )
+    );
+  }
+}
+exports.default = AsyncAwait;
+
+/***/ })
+/******/ ]);
