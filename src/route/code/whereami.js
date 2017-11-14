@@ -31,9 +31,9 @@ export default class WhereAmI extends Component {
       var img = new Image();
       img.src =
         "https://maps.googleapis.com/maps/api/staticmap?center=" +
-        latitude +
+        String(latitude) +
         "," +
-        longitude +
+        String(longitude) +
         "&zoom=13&size=300x300&sensor=false";
 
       output.appendChild(img);
