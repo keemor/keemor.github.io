@@ -17,6 +17,7 @@ export default class AsyncAwait extends Component {
 
     //https://babeljs.io/docs/plugins/transform-runtime/
     //https://stackoverflow.com/questions/36313885/babel-6-transform-runtime-export-is-not-a-function
+    //https://babeljs.io/docs/usage/polyfill/
 
     function doubleAfter2Seconds(x) {
       return new Promise(resolve => {
