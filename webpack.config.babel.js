@@ -3,6 +3,7 @@ import { resolve } from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import OfflinePlugin from "offline-plugin";
 import { getIfUtils, removeEmpty } from "webpack-config-utils";
+import "babel-polyfill";
 //https://medium.com/@ryandrewjohnson/one-webpack-config-to-rule-them-all-environments-that-is-277457769779
 
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
@@ -12,7 +13,7 @@ export default env => {
 
   return {
     devtool: ifProd("", "cheap-module-source-map"),
-    entry: ["./src/index.js"],
+    entry: ["babel-polyfill", "./src/index.js"],
     output: {
       filename: "./dist/bundle.js"
     },

@@ -15,6 +15,9 @@ export default class AsyncAwait extends Component {
   render(props, { text = "" }) {
     const demo = ``;
 
+    //https://babeljs.io/docs/plugins/transform-runtime/
+    //https://stackoverflow.com/questions/36313885/babel-6-transform-runtime-export-is-not-a-function
+
     function doubleAfter2Seconds(x) {
       return new Promise(resolve => {
         setTimeout(() => {
