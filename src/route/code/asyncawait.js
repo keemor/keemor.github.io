@@ -120,7 +120,7 @@ export default class AsyncAwait extends Component {
 }]
               `}
           />
-          <h4>To support IE11 add Promise support with babel-polyfill</h4>
+          <h4>For IE11 add Promise support with babel-polyfill</h4>
           Install babel-runtime as dependencies:
           <HighLightJS code={"npm install babel-polyfill --save"} />
           In webpack.config.babel.js add entry point:
