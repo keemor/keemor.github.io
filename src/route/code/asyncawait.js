@@ -102,9 +102,7 @@ export default class AsyncAwait extends Component {
           <HighLightJS code={demo1} />
           <h4>To support browsers without async/await</h4>
           Install babel-runtime as dependencies:
-          <HighLightJS
-            code={"npm install babel-plugin-transform-runtime --save"}
-          />
+          <HighLightJS code={"npm install babel-runtime --save"} />
           Install babel-plugin-transform-runtime as devDependencies:
           <HighLightJS
             code={"npm install babel-plugin-transform-runtime --save-dev"}
