@@ -33,6 +33,9 @@ npm start`;
             <li>
               <a href="#/code/highlight">Highlight.js</a>
             </li>
+            <li>
+              <a href="#/code/asyncawait">async/await support</a>
+            </li>
           </ul>
           The smallest Preact Progressive Web App stack with:
           <ul>

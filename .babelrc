@@ -9,7 +9,6 @@
         "regenerator": true
       }
     ],
-
     "transform-object-assign",
     ["transform-react-jsx", { "pragma": "h" }]
   ]
