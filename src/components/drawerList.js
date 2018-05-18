@@ -1,6 +1,7 @@
 import { h, render, Component } from "preact";
 import { Link } from "preact-router/match";
 import List from "preact-material-components/List";
+import Icon from 'preact-material-components/Icon';
 
 import "preact-material-components/List/style.css";
 
@@ -50,7 +51,7 @@ export default class DrawerList extends Component {
           return (
             <Link href={link.href} class="mdc-list-item" onClick={onClick}>
               <List.LinkItem>
-                <List.ItemIcon>{link.icon}</List.ItemIcon>
+                <Icon>{link.icon}</Icon>
                 {link.name}
               </List.LinkItem>
             </Link>
