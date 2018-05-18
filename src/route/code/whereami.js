@@ -29,6 +29,10 @@ export default class WhereAmI extends Component {
                 String(latitude) +
                 ',' +
                 String(longitude) +
+                '&markers=color:blue|label:Y|' +
+                String(latitude) +
+                ',' +
+                String(longitude) +
                 '&zoom=13&size=300x300&sensor=false' +
                 '&key=AIzaSyCgZJHiaOZl_RhpFRXM9gXX8yiYPB-mYbU';
 
