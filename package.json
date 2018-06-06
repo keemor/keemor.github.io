@@ -35,6 +35,8 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.7",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.9.1",
     "highlight.js": "^9.12.0",
     "history": "^4.7.2",
     "html-webpack-plugin": "^2.30.1",

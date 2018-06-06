@@ -9,13 +9,11 @@ export default class Home extends Component {
 npm start`;
 
         const demoProd = `npm run build`;
-
         return (
             <Card>
                 <Card.Primary>
-                    <Card.Title large={true}>Preact Progressive Web App Boilerplate 2017</Card.Title>
+                    <Card.Title large={true}>Preact Progressive Web App Boilerplate 2018</Card.Title>
                 </Card.Primary>
-
                 <Card.Media>
                     Code snippets:
                     <ul>
@@ -71,7 +69,9 @@ npm start`;
                             100% in <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse Audit</a>
                         </li>
                     </ul>
-                    <img src="img/lighthouse.png" alt="Lighthouse" class="scale" />
+                    <p>
+                        <img src="img/lighthouse.png" alt="Lighthouse" class="scale" />
+                    </p>
                     <p>
                         Source code{' '}
                         <a href="https://github.com/keemor/keemor.github.io">
