@@ -71,6 +71,7 @@ npm start`;
                             100% in <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse Audit</a>
                         </li>
                     </ul>
+                    <img src="img/lighthouse.png" alt="Lighthouse" class="scale" />
                     <p>
                         Source code{' '}
                         <a href="https://github.com/keemor/keemor.github.io">
