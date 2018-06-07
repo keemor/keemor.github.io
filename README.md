@@ -1,4 +1,4 @@
-# Preact Progressive Web App Boilerplate 2017
+# Preact Progressive Web App Boilerplate 2018
 
 <p><strong>Demo</strong> <a href="https://keemor.github.io/"> https://keemor.github.io </a></p>
 
