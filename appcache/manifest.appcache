@@ -1,15 +1,15 @@
 CACHE MANIFEST
-#ver:2018-6-7 14:31:30
+#ver:2018-6-7 14:58:56
 #plugin:4.9.1
 
 CACHE:
-../dist/bundle.js
-../1../dist/bundle.js
-../2../dist/bundle.js
-../3../dist/bundle.js
-../4../dist/bundle.js
-../5../dist/bundle.js
-../6../dist/bundle.js
+../dist/0.bundle.js
+../dist/1.bundle.js
+../dist/2.bundle.js
+../dist/3.bundle.js
+../dist/4.bundle.js
+../dist/5.bundle.js
+../dist/main.bundle.js
 ../
 
 NETWORK:

@@ -14,13 +14,6 @@ import Header from './components/header';
 import Home from './route/home';
 import About from './route/about';
 
-//import Hello from './route/code/hello';
-// import RouterCode from './route/code/router';
-// import OfflineCode from './route/code/offline';
-// import HighlightCode from './route/code/highlight';
-// import WhereAmI from './route/code/whereami';
-// import AsyncAwait from './route/code/asyncawait';
-
 class Index extends Component {
     constructor() {
         super();
