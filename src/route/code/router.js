@@ -1,11 +1,11 @@
-import { h, render, Component } from "preact";
-import Card from "preact-material-components/Card";
+import { h, render, Component } from 'preact';
+import Card from 'preact-material-components/Card';
 
-import HighLightJS from "~/components/highlight";
+import HighLightJS from '~/components/highlight';
 
 export default class RouterCode extends Component {
-  render(props, { text }) {
-    const demo = `
+    render(props, { text }) {
+        const demo = `
 import { h, render, Component } from "preact";
 import { Router } from "preact-router";
 import { createHashHistory } from "history";
@@ -38,23 +38,18 @@ class Index extends Component {
 
 render(<Index />, document.body);`;
 
-    return (
-      <Card>
-        <Card.Primary>
-          <Card.Title>
-            Example of{" "}
-            <a href="https://github.com/developit/preact-router">
-              preact router
-            </a>{" "}
-            with hash{" "}
-            <a href="https://github.com/ReactTraining/history">history</a>{" "}
-            support
-          </Card.Title>
-        </Card.Primary>
-        <Card.Media>
-          <HighLightJS code={demo} />
-        </Card.Media>
-      </Card>
-    );
-  }
+        return (
+            <Card>
+                <div>
+                    <h3>
+                        Example of <a href="https://github.com/developit/preact-router">preact router</a> with hash{' '}
+                        <a href="https://github.com/ReactTraining/history">history</a> support
+                    </h3>
+                </div>
+                <Card.Media>
+                    <HighLightJS code={demo} />
+                </Card.Media>
+            </Card>
+        );
+    }
 }

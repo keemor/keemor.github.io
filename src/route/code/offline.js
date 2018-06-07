@@ -1,11 +1,11 @@
-import { h, render, Component } from "preact";
-import Card from "preact-material-components/Card";
+import { h, render, Component } from 'preact';
+import Card from 'preact-material-components/Card';
 
-import HighLightJS from "~/components/highlight";
+import HighLightJS from '~/components/highlight';
 
 export default class OfflineCode extends Component {
-  render(props, { text }) {
-    const demo = `
+    render(props, { text }) {
+        const demo = `
 import { h, render, Component } from "preact";
 import * as runtime from "offline-plugin/runtime";
 
@@ -45,18 +45,17 @@ class Index extends Component {
 
 render(<Index />, document.body);`;
 
-    return (
-      <Card>
-        <Card.Primary>
-          <Card.Title>
-            Example of using{" "}
-            <a href="https://github.com/NekR/offline-plugin">offline-plugin</a>
-          </Card.Title>
-        </Card.Primary>
-        <Card.Media>
-          <HighLightJS code={demo} />
-        </Card.Media>
-      </Card>
-    );
-  }
+        return (
+            <Card>
+                <div>
+                    <h3>
+                        Example of using <a href="https://github.com/NekR/offline-plugin">offline-plugin</a>
+                    </h3>
+                </div>
+                <Card.Media>
+                    <HighLightJS code={demo} />
+                </Card.Media>
+            </Card>
+        );
+    }
 }

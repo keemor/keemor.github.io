@@ -1,11 +1,11 @@
-import { h, render, Component } from "preact";
-import Card from "preact-material-components/Card";
+import { h, render, Component } from 'preact';
+import Card from 'preact-material-components/Card';
 
-import HighLightJS from "~/components/highlight";
+import HighLightJS from '~/components/highlight';
 
 export default class HighlightCode extends Component {
-  render(props, { text }) {
-    const demo = `
+    render(props, { text }) {
+        const demo = `
 import { h } from "preact";
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -30,24 +30,21 @@ export default ({ code }) => {
   );
 };`;
 
-    return (
-      <Card>
-        <Card.Primary>
-          <Card.Title>
-            Example of using{" "}
-            <a href="https://github.com/isagalaev/highlight.js/">
-              highlight.js
-            </a>{" "}
-            based on preact-material-components{" "}
-            <a href="https://github.com/prateekbh/preact-material-components/blob/master/docs/src/components/code-block/index.js">
-              code-block
-            </a>
-          </Card.Title>
-        </Card.Primary>
-        <Card.Media>
-          <HighLightJS code={demo} />
-        </Card.Media>
-      </Card>
-    );
-  }
+        return (
+            <Card>
+                <div>
+                    <h3>
+                        Example of using <a href="https://github.com/isagalaev/highlight.js/">highlight.js</a> based on
+                        preact-material-components{' '}
+                        <a href="https://github.com/prateekbh/preact-material-components/blob/master/docs/src/components/code-block/index.js">
+                            code-block
+                        </a>
+                    </h3>
+                </div>
+                <Card.Media>
+                    <HighLightJS code={demo} />
+                </Card.Media>
+            </Card>
+        );
+    }
 }

@@ -11,9 +11,9 @@ npm start`;
         const demoProd = `npm run build`;
         return (
             <Card>
-                <Card.Primary>
-                    <Card.Title large={true}>Preact Progressive Web App Boilerplate 2018</Card.Title>
-                </Card.Primary>
+                <div>
+                    <h2 class=" mdc-typography--title">Preact Progressive Web App Boilerplate 2018</h2>
+                </div>
                 <Card.Media>
                     Code snippets:
                     <ul>
