@@ -43,6 +43,10 @@ npm start`;
                             <a href="https://github.com/ReactTraining/history">history</a>
                         </li>
                         <li>
+                            <a href="https://github.com/prateekbh/preact-async-route">preact-async-route</a> for lazy
+                            loading components
+                        </li>
+                        <li>
                             <a href="https://github.com/prateekbh/preact-material-components">
                                 preact material components
                             </a>
