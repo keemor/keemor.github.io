@@ -49,6 +49,12 @@ render(<Index />, document.body);`;
                         <a href="https://github.com/prateekbh/preact-async-route">preact-async-route</a> with hash{' '}
                         <a href="https://github.com/ReactTraining/history">history</a> support
                     </h3>
+                    <p>
+                        Based on{' '}
+                        <a href="https://medium.com/@prateekbh/code-splitting-and-server-side-rendering-for-preact-async-routes-e8052e08ba22">
+                            Code splitting and Server side rendering for preact async routes.
+                        </a>
+                    </p>
                 </div>
                 <Card.Media>
                     <HighLightJS code={demo} />
