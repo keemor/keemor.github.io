@@ -7,19 +7,22 @@ export default class RouterCode extends Component {
     render(props, { text }) {
         const demo = `
 import { h, render, Component } from "preact";
-import { Router } from "preact-router";
+import Router from "preact-router";
+import AsyncRoute from 'preact-async-route';
 import { createHashHistory } from "history";
 
 import Header from "./components/header";
-import Hello from "./route/hello";
 import Home from "./route/home";
-import About from "./route/about";
 
 class Index extends Component {
   logPageView() {
     
   }
 
+  getComponent(url, cb, props) {
+    return System.import('./route' + url).then(module => module.default);
+  }
+  
   render() {
     return (
       <div>
@@ -27,8 +30,8 @@ class Index extends Component {
         <div class="marginTop">
           <Router history={createHashHistory()} onChange={this.logPageView}>
             <Home default path="/" />
-            <Hello path="/hello" />
-            <About path="/about" />
+            <AsyncRoute path="/hello" getComponent={this.getComponent} />
+            <AsyncRoute path="/about" getComponent={this.getComponent} />
           </Router>
         </div>
       </div>
@@ -42,7 +45,8 @@ render(<Index />, document.body);`;
             <Card>
                 <div>
                     <h3>
-                        Example of <a href="https://github.com/developit/preact-router">preact router</a> with hash{' '}
+                        Example of <a href="https://github.com/developit/preact-router">preact router</a> and{' '}
+                        <a href="https://github.com/prateekbh/preact-async-route">preact-async-route</a> with hash{' '}
                         <a href="https://github.com/ReactTraining/history">history</a> support
                     </h3>
                 </div>
