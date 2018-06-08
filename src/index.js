@@ -39,8 +39,11 @@ class Index extends Component {
         window.dataLayer.push({ event: window.location.hash });
     }
 
-    getHome(url, cb, props) {
-        const componentOrPromise = System.import('./route/home');
+    getComponent(path, cb, props) {
+        if (path === '/') {
+            path = '/home';
+        }
+        const componentOrPromise = System.import('./route' + path);
         if (componentOrPromise.then) {
             // for client
             return componentOrPromise.then(module => module.default);
@@ -48,33 +51,24 @@ class Index extends Component {
             // for node
             cb({ component: componentOrPromise.default });
         }
-        //return System.import('./route/home').then(module => module.default);
     }
 
-    getComponent(url, cb, props) {
-        return System.import('./route' + url).then(module => module.default);
-    }
     getLoadingComponent(route) {
-        return <div>loading...</div>;
-        // if (this.state.ssrShown) {
-        //     return <div>loading...</div>;
-        // } else {
-        //     return <div dangerouslySetInnerHTML={{ __html: this.ssrText }} />;
-        // }
+        return <div>Loading...</div>;
     }
 
-    // componentWillMount() {
-    //     if (typeof document !== 'undefined') {
-    //         this.ssrText = document.querySelector('.content').innerHTML;
-    //     }
-    // }
     render() {
         return (
             <div>
                 <Header />
                 <div class="marginTop content">
                     <Router history={createHashHistory()} onChange={this.logPageView}>
-                        <AsyncRoute loading={this.getLoadingComponent} default path="/" getComponent={this.getHome} />
+                        <AsyncRoute
+                            loading={this.getLoadingComponent}
+                            default
+                            path="/"
+                            getComponent={this.getComponent}
+                        />
                         <AsyncRoute path="/about" getComponent={this.getComponent} />
                         <AsyncRoute path="/code/hello" getComponent={this.getComponent} />
                         <AsyncRoute path="/code/router" getComponent={this.getComponent} />

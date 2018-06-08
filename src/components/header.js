@@ -91,7 +91,7 @@ export default class Header extends Component {
                             </Drawer.DrawerContent>
                         </Drawer.TemporaryDrawer>
                         <Toolbar.Title>
-                            <Link href="/#" class="toolbarTitleLink">
+                            <Link href="/" class="toolbarTitleLink">
                                 keemor.github.io
                             </Link>
                         </Toolbar.Title>
